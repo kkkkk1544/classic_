@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <div id="bodyContainer">
+
 	<div class="wrapper">
 		
 		<!-- MY PAGE -->
