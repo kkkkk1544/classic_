@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>classic Navigation Demo</title>
+<link rel="stylesheet" href="pages/css/index.css">
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="bootstrap.css">
+</head>
+<header>
+ <!-- 상품 Nav -->
+ 	<div id="productNav">
+ 		<ul class="header_ul">
+ 			<li><a href="#">CLASSIC</a></li>
+ 			<li><a href="#">NEW</a></li>
+ 			<li><a href="#">BEST</a></li>
+ 			<li>
+ 				<a href="#">OUTER</a>
+ 				<ul class="header_mini_cate">
+ 					<li><a href="#">COAT</a></li>				
+ 					<li><a href="#">JACKET</a></li>				
+ 					<li><a href="#">JUMPER</a></li>				
+ 					<li><a href="#">CARDIGAN</a></li>				
+ 				</ul>
+ 			</li>
+ 			<li>
+ 				<a href="#">TOP</a>
+ 				<ul class="header_mini_cate">
+ 					<li><a href="#">T-SHIRT</a></li>				
+ 					<li><a href="#">BLOUSE</a></li>				
+ 					<li><a href="#">KNIT</a></li>				
+ 				</ul>
+ 			</li>
+ 			<li>
+ 				<a href="#">BOTTOM</a>
+ 				<ul class="header_mini_cate">
+ 					<li><a href="#">SKIRTS</a></li>				
+ 					<li><a href="#">PANTS</a></li>				
+ 					<li><a href="#">DENIM</a></li>				
+ 				</ul>
+ 			</li>
+ 			<li>
+ 				<a href="#">SHOES&amp;BAG</a>
+ 				<ul class="header_mini_cate">
+ 					<li><a href="#">SHOES</a></li>				
+ 					<li><a href="#">BAG</a></li>				
+ 				</ul>
+ 			</li>
+ 			<li>
+ 				<a href="#">ACC</a>
+ 				<ul class="header_mini_cate">
+ 					<li><a href="#">ACC</a></li>				
+ 				</ul>
+ 			</li>
+ 		</ul>
+ 	</div>
+ 	
+ <!-- 회원 Nav -->
+ 	<div id="memberNav">
+ 		<ul class="header_ul">
+ 			<li><a href="#">LOGIN</a></li>
+ 			<li><a href="#">JOIN US</a></li>
+ 			<li>
+ 				<a href="#">MY PAGE</a>
+ 				<ul>
+ 					<li><a href="#">회원정보수정</a></li>
+ 					<li><a href="#">배송주소록</a></li>
+ 					<li><a href="#">적립금</a></li>
+ 					<li><a href="#">쿠폰</a></li>
+ 					<li><a href="#">장바구니</a></li>
+ 					<li><a href="#">위시리스트</a></li>
+ 					<li><a href="#">주문내역</a></li>
+ 					<li><a href="#">내가쓴글</a></li>
+ 				</ul>
+ 			</li>
+ 			<li><a href="#">CART</a></li>
+ 			<li><a href="#">ORDER</a></li>
+ 			<li>
+ 				<a href="#">COMMUNITY</a>
+ 				<ul>
+ 					<li><a href="#">NOTICE</a></li>
+ 					<li><a href="#">QNA</a></li>
+ 					<li><a href="#">FAQ</a></li>
+ 				</ul>
+ 			</li>
+ 			<li>
+ 				<a href="#">&#128269;</a>
+ 				<ul>
+ 					<li>
+ 						<input type="text" placeholder="상품명 검색">
+ 						<button>&#128269;</button>
+ 					</li>
+ 				</ul>
+ 			</li>
+ 		</ul>
+ 	</div>
+ </header>
+ <hr> 
+
+	<!-- contact -->
+	<div id="contact" class="container">
+		<h3 class="text-left">FAQ관리</h3>
+		<div class="row">
+
+
+
+
+
+			<body>
+				<!-- wrap -->
+				<div id="wrap">
+					<!-- header -->
+					<div id="header">
+						<header>
+							<h1>Classic Admin</h1>
+						</header>
+
+
+					</div>
+
+					<!-- 580px 이하에서 메뉴바 생성 -->
+					<script type="text/javascript">
+						$(".handle").on("click", function() {
+							$("nav ul").toggleClass("showing");
+						});
+					</script>
+
+					<div class="type1_nav">
+
+
+
+						<a href="admin(seldel).html"><input type="button" value="글목록"></a>
+
+
+						<!-- container -->
+						<div id="container">
+
+							<!-- section -->
+							<div class="section">
+
+
+
+
+
+
+								<div class="panel panel-default">
+									<!-- Default panel contents -->
+									<div class="panel-heading">Classic Admin 글목록</div>
+									<div class="panel-body"></div>
+
+									<!-- Table -->
+									<table class="table">
+
+
+										<table class="type1">
+											<tr>
+												<th>bNum</th>
+												<th>bTitle</th>
+												<th>id</th>
+												<th>bHit</th>
+												<th>date</th>
+											</tr>
+
+
+
+
+
+											<tr>
+												<td>1</td>
+
+												<td>
+													<div class="row">
+														<div class="col-lg-6">
+															<div class="input-group">
+																<span class="input-group-addon"> <input
+																	type="checkbox" aria-label="  <a href="admin(regist).html">
+																	<a href="admin(regist).html">1번글입니다</a>
+
+																</span>
+															</div>
+														</div>
+													</div>
+
+												</td>
+
+
+												<td>user1</td>
+
+												<td>1일</td>
+											</tr>
+
+
+
+											<tr>
+												<td>2</td>
+
+												<td>
+													<div class="row">
+														<div class="col-lg-6">
+															<div class="input-group">
+																<span class="input-group-addon"> <input
+																	type="checkbox" aria-label="  <a href="admin(regist).html">
+																	<a href="admin(regist).html">2번글입니다</a>
+
+																</span>
+															</div>
+														</div>
+													</div>
+
+												</td>
+
+
+												<td>user2</td>
+												<td>2일</td>
+											</tr>
+
+
+
+											<tr>
+												<td>3</td>
+
+												<td>
+													<div class="row">
+														<div class="col-lg-6">
+															<div class="input-group">
+																<span class="input-group-addon"> <input
+																	type="checkbox" aria-label="  <a href="admin(regist).html">
+																	<a href="admin(regist).html">3번글입니다</a>
+
+																</span>
+															</div>
+														</div>
+													</div>
+
+												</td>
+
+
+												<td>user3</td>
+												<td>3일</td>
+											</tr>
+
+
+
+
+											<tr>
+												<td>1</td>
+
+												<td>
+													<div class="row">
+														<div class="col-lg-6">
+															<div class="input-group">
+																<span class="input-group-addon"> <input
+																	type="checkbox" aria-label="  <a href="admin(regist).html">
+																	<a href="admin(regist).html">1번글입니다</a>
+
+																</span>
+															</div>
+														</div>
+													</div>
+
+												</td>
+
+
+												<td>user1</td>
+												<td>1일</td>
+											</tr>
+
+
+
+
+											<tr>
+												<td>1</td>
+
+												<td>
+													<div class="row">
+														<div class="col-lg-6">
+															<div class="input-group">
+																<span class="input-group-addon"> <input
+																	type="checkbox" aria-label="  <a href="admin(regist).html">
+																	<a href="admin(regist).html">1번글입니다</a>
+
+																</span>
+															</div>
+														</div>
+													</div>
+
+												</td>
+
+
+												<td>user1</td>
+												<td>1일</td>
+											</tr>
+
+
+
+
+
+											<tr>
+												<td>1</td>
+
+												<td>
+													<div class="row">
+														<div class="col-lg-6">
+															<div class="input-group">
+																<span class="input-group-addon"> <input
+																	type="checkbox" aria-label="  <a href="admin(regist).html">
+																	<a href="admin(regist).html">1번글입니다</a>
+
+																</span>
+															</div>
+														</div>
+													</div>
+
+												</td>
+
+
+												<td>user1</td>
+												<td>1일</td>
+											</tr>
+
+
+
+
+										</table>
+										</div>
+
+
+										<div class="type1_nav">
+
+											<a href="admin(seldel).html"><input type="button"
+												value="선택한 글 삭제"></a>
+										</div>
+
+
+
+
+
+
+
+										<!-- footer -->
+										<div id="footer">
+											<h1></h1>
+										</div>
+										</div>
+			</body>
+</html>
