@@ -14,6 +14,8 @@
 <link rel="stylesheet" href="<c:url value='/public/css/comu.css' />">
 <link rel="stylesheet" href="<c:url value='/public/css/product.css' />">
 <link rel="stylesheet" href="<c:url value='/public/css/member.css' />">
+<link rel="stylesheet" href="<c:url value='/public/css/orderList.css' />">
+<link rel="stylesheet" href="<c:url value='/public/css/orderDetail.css' />">
 <title>CLASSIC</title>
 </head>
 <body>

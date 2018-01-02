@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+body{
+padding: 50px 50px;
+margin: 50px 50px;
+}
+#serchContents{
+text-align: center;
+}
+.searchDay{
+margin:0 auto;
+padding:30px 30px 30px 30px;
+}
+#listPage{
+text-align: center;
+padding: 20px 20px;
+}
+.pagination{
+margin: 0 auto;
+}
+.serchBtn{
+padding: 0 10px 10px 10px;
+}
+.serchBtn>button{
+padding-right: 10px;
+}
+.listTable{
+width:100%;
+}
+.listTable tr td img{
+width: 50px;
+height: 50px;
+background: lightgray;
+font-size: 10px;
+}
+.listTitle{
+border-top:solid 1px black;
+border-bottom:solid 1px black;	
+}
+tr,td,th{
+padding: 20px 20px;
+font-size: 10pt;
+}
+input{
+padding: 5px 5px;
+}
