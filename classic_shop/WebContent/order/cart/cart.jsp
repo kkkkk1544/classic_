@@ -3,7 +3,7 @@
 
 <body>
 	<div class="container" id="cartMainDiv">
-		<h2 class="text-left">CART</h2>
+		<h2 class="text-left" id="cartName">CART</h2>
 		<table class="table" id="cartTable">
 			<tbody id="cartTitle">
 				<tr>
