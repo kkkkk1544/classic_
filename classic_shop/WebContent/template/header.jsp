@@ -29,7 +29,7 @@
 							<li><a href="#">NEW</a></li>
 							<li><a href="#">BEST</a></li>
 							<li role="presentation" class="dropdown">
-								<a class="dropdown-toggle" href="<c:url value='/product/list/outerList.jsp' />" role="button" aria-expanded="false">OUTER</a>
+								<a class="dropdown-toggle" href="<c:url value='/product/list.jsp' />" role="button" aria-expanded="false">OUTER</a>
 								<%-- <a class="dropdown-toggle" data-toggle="dropdown" href="<c:url value='/product/list/outerList.jsp' />" role="button" aria-expanded="false">OUTER</a>
 								 --%>
 								 <ul class="dropdown-menu" role="menu">
