@@ -77,6 +77,7 @@
 				<div id="memNav">
 					<div class="nav navbar-nav navbar-right">
 						<ul class="nav nav-pills">
+							<!--로그인 -->
 							<li><a href="<c:url value='/member/login.jsp' />">LOGIN</a></li>
 							<li><a href="<c:url value='/member/join.jsp' />">JOIN US</a></li>
 							<li role="presentation" class="dropdown">
