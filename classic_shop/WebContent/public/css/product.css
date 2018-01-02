@@ -59,3 +59,37 @@
 	width: 120px;
 	height: 40px;
 }
+
+#productTitle{
+	margin: auto 100px;
+	text-align: center;
+}
+
+.bs-example{
+	text-align: center;
+}
+.colorbtn{
+	background: red;
+	align-items: right;
+}
+.colorbtn2{
+	background: blue;
+	align-items: right;
+}
+
+.cate{
+	text-decoration:none;
+	color:#000000;
+	text-decoration:none !important;
+}
+.product_name{
+	text-align:center;
+	font-weight: bold;
+	font-size: 14px;
+}
+.product_price{
+	font-size:14px;
+}
+.product_description{
+	font-size:14px
+}
