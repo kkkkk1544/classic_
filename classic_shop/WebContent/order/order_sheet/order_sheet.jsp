@@ -106,7 +106,7 @@ h2{
 	background: red;
 	border-radius: 10px;
 	color:red;
-	font-size: 10px;
+	font-size: 8px;
 	vertical-align: middle;
 }
 #delivInfo>p{
@@ -114,6 +114,14 @@ h2{
 	margin-top: 20px;
 	font-size: 14px;
 	font-weight: bolder;
+}
+#orderInfo table th{
+	width: 15%;
+	padding-right: 0px;
+}
+#orderInfo table td{
+    padding-left: 0px;
+    padding-right: 0px;
 }
 </style>
 <body>
@@ -199,36 +207,36 @@ h2{
 		</div>
 		<button class="btn btn-defult" id="selectProductDel">선택 상품 삭제</button>
 		<div id="orderInfo">
-			<p>주문정보     <span class="redRound">10</span><span>필수</span></p>
+			<p>주문정보 <span class="redRound sec">10</span><span>필수</span></p>
 			<table class ="table">
 				<tr>
 					<th>주문하시는  분</th>
-					<td><span class="redRound">10</span></td>
+					<td><span class="redRound sec">10</span></td>
 					<td><input type="text"></td>
 				</tr>
 				<tr>
 					<th>주소</th>
-					<td><span class="redRound">10</span></td>
+					<td><span class="redRound sec">10</span></td>
 					<td><input type="text"><button type="button" class="btn">우편번호</button></td>
 				</tr>
 				<tr>
 					<th></th>
-					<td></td>
+					<td class="sec"></td>
 					<td><input type="text" value="기본주소"></td>
 				</tr>
 				<tr>
 					<th></th>
-					<td></td>
+					<td class="sec"></td>
 					<td><input type="text" value="상세주소"></td>
 				</tr>
 				<tr>
 					<th>일반전화</th>
-					<td><span class="redRound">10</span></td>
+					<td><span class="redRound sec">10</span></td>
 					<td><input type="number"></td>
 				</tr>
 				<tr>
 					<th>휴대전화</th>
-					<td><span class="redRound">10</span></td>
+					<td><span class="redRound sec">10</span></td>
 					<td><input type="number"></td>
 				</tr>
 			</table>
@@ -238,7 +246,15 @@ h2{
 			<table class ="table">
 				<tr>
 					<th>배송지선택</th>
-					
+					<td>
+						<div class="radio">
+							<label><input type="radio" name="optraio" >주문자 정보와 동일</label>
+						</div>
+						<div class="radio">
+							<label><input type="radio" name="optraio" checked>새로운 배송지</label>
+						</div>
+						<button type="button">주소록보기</button>
+					</td>
 				</tr>
 				<tr>
 					<th>주문하시는  분</th>
@@ -269,6 +285,49 @@ h2{
 					<th>휴대전화</th>
 					<td><span class="redRound">10</span></td>
 					<td><input type="number"></td>
+				</tr>
+				<tr>
+					<th>배송메세지</th>
+					<td></td>
+					<td>
+						<div class="form-group">
+							<textarea class="form-control" rows="5" id="delivComent"></textarea>
+							<p>배송 메세지란에는 배송시 참고 할 사항이 있으면 적어주세요.</p>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="methodPay">
+			<p>결제예정금액</p>
+			<table class="table table-bordered">
+				<tr>
+					<th>총 주문금액</th>
+					<th>총할인+부가결제금액</th>
+					<th>총 결제 예정금액</th>
+				</tr>
+				<tr>
+					<td>200,000원</td>
+					<td>-0 원</td>
+					<td>200,000원</td>
+				</tr>
+			</table>
+			<table class="table">
+				<tr>
+					<th>총 할인금액</th>
+					<td><strong>0원</strong></td>
+				</tr>
+				<tr>
+					<th>총 부가결제금액</th>
+					<td><strong>0원</strong></td>
+				</tr>
+				<tr>
+					<th>적립금</th>
+					<td><input type="number"><p>원 <span>(총 사용 가능 적립금: 3000)</span></p></td>
+				</tr>
+				<tr>
+					<th>적립금</th>
+					<td><input type="number"><p>원 <span>(총 사용 가능 적립금: 3000)</span></p></td>
 				</tr>
 			</table>
 		</div>
