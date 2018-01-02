@@ -82,10 +82,14 @@
 	color:#000000;
 	text-decoration:none !important;
 }
-.product_name{
-	text-align:center;
-	font-weight: bold;
-	font-size: 14px;
+.product_name>a{
+	text-decoration:none;
+	color:#000000;
+	text-decoration:none !important;
+}
+
+.product_colorchip{
+	float: right;
 }
 .product_price{
 	font-size:14px;
@@ -93,3 +97,23 @@
 .product_description{
 	font-size:14px
 }
+.detail_top_left{
+	float: left;
+	width: 50%;
+	height: 500px;
+}
+.detail_top_right{
+	float: right;
+	width: 50%;
+	height: 500px;
+}
+.detail_hr{
+	border: solid 1px gray;
+}
+.detail_left>img{
+	width: 100%;
+}
+
+.mySlides {display:none}
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
