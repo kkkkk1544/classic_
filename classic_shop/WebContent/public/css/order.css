@@ -64,7 +64,7 @@ margin: 50px 50px;
 	width:80%!important;
 	margin-right: auto;
 	margin-left: auto;
-	margin-top: 80px;
+	margin-top: 200px;
 }  
 #cartTable{
 	width:100%;
@@ -232,12 +232,11 @@ margin: 50px 50px;
 	background: #CCC;
 }
 /*wist-list css*/
-<style>
 #mainDiv{ 
 	width:80%!important;
 	margin-right: auto;
 	margin-left: auto;
-	margin-top: 80px;
+	margin-top: 200px;
 }  
 #wishTable{
 	width:100%;
@@ -372,4 +371,131 @@ margin: 50px 50px;
 	color: #000;
 	border: hidden;
 }
-/* order-sheet*/
+/* order-sheet */
+#orderMainDiv{
+	width:80%!important;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 200px; 
+}
+#orderName{
+	border-bottom-style: solid;
+	height: 40px;
+}
+#benefitInfo{
+	border-top: hidden;
+	border-bottom: solid;
+}
+#benefitInfo th{
+	text-align: center;
+	vertical-align: middle;
+}
+#benefitInfo div p span{
+	font-weight: bold;
+}
+#orderTitle th{
+	font-size: 14px;
+	text-align: center;
+	border-top: solid;
+}
+#orderContents{
+	border-bottom: solid;
+}
+#orderContents td{
+	font-size: 14px;
+	text-align: center;
+	vertical-align: middle;
+}
+#orderContents p{
+	background:#ccc;
+	width: 104px;
+	height: 104px;
+	vertical-align: middle;
+}
+#orderDetailListDiv div{
+	float:left;
+	margin-bottom: 5px;
+	text-align: left;
+}
+#orderDetailListDiv li {
+	height: auto;
+	border: hidden;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+#orderDetailListDiv2 div{
+	float:left;
+	margin-bottom: 5px;
+	text-align: left;
+}
+#orderDetailListDiv2 li {
+	height: auto;
+	border: hidden;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+#orderInfo table{
+	border-top: hidden;
+	border-bottom: hidden;
+}
+#orderInfo table {
+	width: 20px;
+}
+#paymentInfo{
+	border-bottom: solid;
+	width:auto;
+	height: auto;
+}
+#paymentInfo p:first-child{
+	float: left;
+	color:red;
+	font-size: 10px;
+}
+#paymentInfo p:last-child {
+	float:right;
+	font-size: 14px;
+	margin-right: 8px;
+}
+#paymentInfo p:last-child span{
+	font-weight: bolder;
+}
+#selectProductDel{
+	background: #ccc;
+	color:#000;
+	border: hidden;
+	height: 40px;
+}
+#orderInfo>p{
+	border-bottom: solid;
+	margin-top: 20px;
+	font-size: 14px;
+	font-weight: bolder;
+}
+.redRound {
+	width:16px;
+	height:16px;
+	background: red;
+	border-radius: 10px;
+	color:red;
+	font-size: 8px;
+	vertical-align: middle;
+}
+#delivInfo>p{
+	border-bottom: solid;
+	margin-top: 20px;
+	font-size: 14px;
+	font-weight: bolder;
+}
+#orderInfo table th{
+	width: 15%;
+	padding-right: 0px;
+}
+#orderInfo table td{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+#orderInfoText p{
+	background: #CCC;
+	text-align: center;
+	height: 200px;
+}

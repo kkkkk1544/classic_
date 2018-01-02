@@ -174,7 +174,7 @@
 				</tr>
 			</table>
 		</div>
-		<div id="methodPay">
+		<div id="payAmount">
 			<p>결제예정금액</p>
 			<table class="table table-bordered">
 				<tr>
@@ -202,9 +202,51 @@
 					<td><input type="number"><p>원 <span>(총 사용 가능 적립금: 3000)</span></p></td>
 				</tr>
 				<tr>
-					<th>적립금</th>
-					<td><input type="number"><p>원 <span>(총 사용 가능 적립금: 3000)</span></p></td>
+					<th>쿠폰사용</th>
+					<td>
+						<select>
+							<option>회원가입 기념 쿠폰</option>
+							<option>생일기념 할인 쿠폰</option>
+							<option>신년기념 할인 쿠폰</option>
+						</select>
+					</td>
 				</tr>
 			</table>
+		</div>
+		<div id="methodPay">
+			<p>결제수단</p>
+			<div id="methodPayDetail">
+				<div class="radio">
+					<label><input type="radio" name="optraio" checked>무통장입금</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="optraio">신용카드</label>
+				</div>
+				<table>
+					<tr>
+						<th>입금자명</th>
+						<td><input type="text"></td>
+					</tr>
+					<tr>
+						<th>입금은행</th>
+						<td>
+							<select>
+								<option value="1">국민(241587-51-17452)</option>
+								<option value="2">하나(899631-158-2564)</option>
+								<option value="3">신한(62583-8550-8874)</option>
+							</select>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div id="finalAmount">
+				<p><span>무통장입금</span>최종 결제 금액</p>
+				<h2>200,000원</h2>
+				<p><input type="checkbox" value="true">결제 정보를 확인하였으며, 구매 진행에 동의 합니다.</p>
+				<button type="button" class="btn btn-primary btn-lg">결제하기</button>
+			</div>
+		</div>
+		<div id="orderInfoText">
+			<p><strong>주문<br>이용 안내 공간</strong></p>
 		</div>
 	</div>
