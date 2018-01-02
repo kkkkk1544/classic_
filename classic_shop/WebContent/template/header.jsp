@@ -86,13 +86,13 @@
 									<li><a href="<c:url value='/member/mypage/memAddr.jsp'/>">배송주소록</a></li>
 									<li><a href="#">적립금</a></li>
 									<li><a href="<c:url value='/member/mypage/memCoupon.jsp'/>">쿠폰</a></li>
-									<li><a href="#">장바구니</a></li>
-									<li><a href="#">위시리스트</a></li>
+									<li><a href="<c:url value='/order/cart/cart.jsp'/>">장바구니</a></li>
+									<li><a href="<c:url value='/order/wish/wish.jsp'/>">위시리스트</a></li>
 									<li><a href="#">주문내역</a></li>
 									<li><a href="#">내가쓴글</a></li>
 								</ul>
 							</li>
-							<li><a href="#">CART</a></li>
+							<li><a href="<c:url value='/order/cart/cart.jsp'/>">CART</a></li>
 							<li><a href="<c:url value='/order/list.jsp' />">ORDER</a></li>
 							<li role="presentation" class="dropdown">
 <%-- 								<a class="dropdown-toggle" data-toggle="dropdown" href="<c:url value='/comu/notice/list.jsp' />"  role="button" aria-expanded="false">COMMUNITY</a>
