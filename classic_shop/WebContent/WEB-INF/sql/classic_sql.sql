@@ -762,3 +762,4 @@ INSERT INTO review VALUES(review_seq.nextval, 1, 1, '치수', '내용', 5, sysda
 INSERT INTO review VALUES(review_seq.nextval, 1, 1, '치수', '내용', 5, sysdate);
 
 -- bank, delivery, trade, refund, cancel, mileage, img_path TEST DATA 없음
+-- 수정사항: 주문테이블(paid) 주문번호에 uk 빼야함니다!!
