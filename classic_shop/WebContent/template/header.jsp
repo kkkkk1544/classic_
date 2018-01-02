@@ -17,7 +17,6 @@
 <link rel="stylesheet" href="<c:url value='/public/css/order.css' />">
 <link rel="stylesheet" href="<c:url value='/public/css/memdetail.css' />">
 <link rel="stylesheet" href="<c:url value='/public/css/memmodify.css' />">
-<link rel="stylesheet" href="<c:url value='/public/css/memcoupon.css' />">
 <title>CLASSIC</title>
 </head>
 <body>

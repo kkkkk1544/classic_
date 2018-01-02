@@ -154,3 +154,11 @@
 		<div style="clear:both"></div>
 	</div>
 </div>
+
+<!-- 
+버튼 위치 조정
+order List 좀 올려
+table 맨 밑줄 border
+order List에 주문번호 추가(일단 이건 하지마)
+my posting 제목에 링크
+ -->
