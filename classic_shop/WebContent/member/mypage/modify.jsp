@@ -1,11 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<div id="bodyContainer">
-
-	<div class="wrapper">
-		
-		<!-- MY PAGE -->
+<div class="member_body">
+	<div class="container">
 		<div class="memberInfo">
 			<div class="memberTitle">
 				<h2>MEMBER MODIFY</h2>

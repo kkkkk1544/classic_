@@ -145,48 +145,98 @@
 	
 }
 
-/* 배송주소록 */
-#bodyContainer{
-	width: 100%;
-    padding: 8% 8% 2% 8%;
-}
-#bodyContainer .wrapper{
-	width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-}
-.memberInfo{
-	float: left;
-    width: 100%;
-    margin-top: 20px;
 
+
+
+
+
+/* 배송주소록 */
+
+.adressTitle{
+	padding-bottom: 15px;
+	border-bottom: 1px solid #000;
+	margin-bottom: 0px;
+	color: #000;
 }
-.memberTitle>h2{
-	margin: 30px 0px 13px 0px;
+.btn-default{
+	font-size: 14px;
 }
-.memberInfo li{
+.orderInfo .orderTitle{
+	margin: 38px 0 0px 0;
+	overflow: hidden;
+	padding-top: 100px;
+	color: #000;
+}
+.addr_wrap{
+	border-bottom: 1px solid #000;
+    padding-bottom: 40px;
+}
+.addr_wrap .table{
+	border-top: none;
+	border-bottom: 1px solid #e6e6e6;
+}
+
+.recentaddr_wrap{
+	border-bottom: 1px solid #000;
+	padding-bottom: 40px;
+	padding-top: 40px;
+}
+.recentaddr_wrap .table{	
+	border-top: none;
+	border-bottom: 1px solid #e6e6e6;
+}
+
+.table>thead>tr>th>label{
+	margin-bottom: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* 마이페이지 */
+
+
+.mypageTitle{
+	padding-bottom: 15px;
+	border-bottom: 1px solid #000;
+	margin-bottom: 0px;
+	color: #000;
+}
+.mypage_info{
+    border-bottom: 1px solid #000;
+    margin-bottom: 20px;
+}
+.mypage_info li{
 	float: left;
     min-width: 68px;
     background: #fff;
     padding: 9px 16px 9px 0;
     list-style-type: none;
 }
-.memberInfo .bxx{
+.mypage_info>ul{
 	float: left;
     margin-top: 11px;
     padding: 0px 100px 0px 14px;
 }
-.memberInfo .bxx li .lab{
+.mypage_info ul li .lab{
 	font-size: 14px;
 	color: #000;
 	margin-left: 14px;
 }
-.memberInfo .bxx li .value {
-font-size: 14px;
+.mypage_info li .value {
+	font-size: 14px;
     color: #000;
     margin: 5px 0 0 15px;
 }
-.memberInfo .myInfo{
+.mypage_info .benefit_group{
 	display: table;
     margin-left: 0;
     padding: 2px 0 2px 0;
@@ -196,50 +246,52 @@ font-size: 14px;
     height: 70px;
    	font-size: 14px;
 }
-.memberInfo .myInfo .benefitInfo{
+.mypage_info .benefit_group .benefitInfo{
 	display: table-cell;
     vertical-align: middle;
     width: 145px;
     text-align: center;
     border-right: 1px solid #e7e7e7;
 }
-.myInfoWrap{
+.benefitprint{
     display: table-cell;
     vertical-align: middle;
     padding-left: 20px;
    	font-size: 14px;
 }
-.edit{
-    clear: both;
-    float: left;
-    margin: 11px 0 0 0;
-}
 .btn-default{
 	font-size: 14px;
 }
-.orderInfo .orderTitle{
-	margin: 38px 0 0px 0;
-	overflow: hidden;
-	padding-top: 100px;
+.orderList_wrap{
+	margin-top: 38px;
 }
-.orderInfo .orderTitle>h2{
+.orderList_info{
+	overflow: hidden;
+}
+.orderListTitle{
+    float: left;
     color: #000;
     font-weight: 500;
-    margin: 0px 0px 13px 0px;
+	padding-bottom: 15px;
+	margin-bottom: 0px;
 }
-
-.orderInfo .orderTitle p>a{
+.orderList_wrap .orderList_info p{
+	float: right;
+    margin-top: 35px;
+    margin-bottom: 0px;
+}
+.orderList_wrap .orderList_info p>a{
 	color: #000;
 }
-.orderInfo .orderTitle p>a:hover{
+.orderList_wrap .orderList_info p>a:hover{
 	color: #949393;
 }
-.table{
-	background-color: #fff;
+.table.orderList_table{
 	border-top: 1px solid #000;
-	border-bottom: 1px solid #e6e6e6;
-	
+	border-bottom: 1px solid #000;
 }
+
+
 .myPostingInfo .myPostingTitle{
 	margin: 38px 0 0px 0;
 	overflow: hidden;
@@ -273,6 +325,9 @@ font-size: 14px;
 	margin: 10px 0 10px 0;
 	font-size: 14px;
 }
+
+
+
 .myPostingInfo .qnaInfo{
 	float: right;
 	width: 50%;
@@ -287,7 +342,11 @@ font-size: 14px;
 
 }
 
-/* 회원 쿠폰 */
+
+
+
+/* 
+회원 쿠폰
 #bodyContainer{
 	width: 100%;
     padding: 8% 8% 2% 8%;
@@ -424,7 +483,7 @@ font-size: 14px;
 .jb-center {
 	text-align: center;
 }
-
+ */
 
 
 

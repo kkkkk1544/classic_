@@ -15,7 +15,6 @@
 <link rel="stylesheet" href="<c:url value='/public/css/product.css' />">
 <link rel="stylesheet" href="<c:url value='/public/css/member.css' />">
 <link rel="stylesheet" href="<c:url value='/public/css/order.css' />">
-<link rel="stylesheet" href="<c:url value='/public/css/memdetail.css' />">
 <link rel="stylesheet" href="<c:url value='/public/css/memmodify.css' />">
 <title>CLASSIC</title>
 </head>
@@ -80,12 +79,12 @@
 							<li><a href="<c:url value='/member/login.jsp' />">LOGIN</a></li>
 							<li><a href="<c:url value='/member/join.jsp' />">JOIN US</a></li>
 							<li role="presentation" class="dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown" href="<c:url value='/member/mypage/memDetail.jsp'/>" role="button" aria-expanded="false">MY PAGE</a>
+								<a class="dropdown-toggle" data-toggle="dropdown" href="<c:url value='/member/mypage/detail.jsp'/>" role="button" aria-expanded="false">MY PAGE</a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="<c:url value='/member/mypage/memModify.jsp'/>">회원정보수정</a></li>
-									<li><a href="<c:url value='/member/mypage/memAddr.jsp'/>">배송주소록</a></li>
+									<li><a href="<c:url value='/member/mypage/modify.jsp'/>">회원정보수정</a></li>
+									<li><a href="<c:url value='/member/mypage/addr.jsp'/>">배송주소록</a></li>
 									<li><a href="#">적립금</a></li>
-									<li><a href="<c:url value='/member/mypage/memCoupon.jsp'/>">쿠폰</a></li>
+									<li><a href="<c:url value='/member/mypage/coupon.jsp'/>">쿠폰</a></li>
 									<li><a href="#">장바구니</a></li>
 									<li><a href="#">위시리스트</a></li>
 									<li><a href="#">주문내역</a></li>

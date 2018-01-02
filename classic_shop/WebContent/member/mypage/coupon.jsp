@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<div id="bodyContainer">
-	<div class="wrapper">
-	
-	
+    
+<div class="member_body">
+	<div class="container">
 	<!-- ADRESS LIST -->
 		<div class="memberInfo">
 			<div class="memberTitle">
