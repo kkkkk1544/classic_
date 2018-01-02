@@ -14,6 +14,9 @@
 <link rel="stylesheet" href="<c:url value='/public/css/comu.css' />">
 <link rel="stylesheet" href="<c:url value='/public/css/product.css' />">
 <link rel="stylesheet" href="<c:url value='/public/css/member.css' />">
+<link rel="stylesheet" href="<c:url value='/public/css/order.css' />">
+<link rel="stylesheet" href="<c:url value='/public/css/memdetail.css' />">
+<link rel="stylesheet" href="<c:url value='/public/css/memmodify.css' />">
 <title>CLASSIC</title>
 </head>
 <body>
@@ -28,8 +31,10 @@
 							<li><a href="#">NEW</a></li>
 							<li><a href="#">BEST</a></li>
 							<li role="presentation" class="dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">OUTER</a>
-								<ul class="dropdown-menu" role="menu">
+								<a class="dropdown-toggle" href="<c:url value='/product/list.jsp' />" role="button" aria-expanded="false">OUTER</a>
+								<%-- <a class="dropdown-toggle" data-toggle="dropdown" href="<c:url value='/product/list/outerList.jsp' />" role="button" aria-expanded="false">OUTER</a>
+								 --%>
+								 <ul class="dropdown-menu" role="menu">
 									<li><a href="#">COAT</a></li>
 									<li><a href="#">JACKET</a></li>
 									<li><a href="#">JUMPER</a></li>
@@ -75,20 +80,20 @@
 							<li><a href="<c:url value='/member/login.jsp' />">LOGIN</a></li>
 							<li><a href="<c:url value='/member/join.jsp' />">JOIN US</a></li>
 							<li role="presentation" class="dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">MY PAGE</a>
+								<a class="dropdown-toggle" data-toggle="dropdown" href="<c:url value='/member/mypage/memDetail.jsp'/>" role="button" aria-expanded="false">MY PAGE</a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="#">회원정보수정</a></li>
-									<li><a href="#">배송주소록</a></li>
+									<li><a href="<c:url value='/member/mypage/memModify.jsp'/>">회원정보수정</a></li>
+									<li><a href="<c:url value='/member/mypage/memAddr.jsp'/>">배송주소록</a></li>
 									<li><a href="#">적립금</a></li>
-									<li><a href="#">쿠폰</a></li>
-									<li><a href="#">장바구니</a></li>
-									<li><a href="#">위시리스트</a></li>
+									<li><a href="<c:url value='/member/mypage/memCoupon.jsp'/>">쿠폰</a></li>
+									<li><a href="<c:url value='/order/cart/cart.jsp'/>">장바구니</a></li>
+									<li><a href="<c:url value='/order/wish/wish.jsp'/>">위시리스트</a></li>
 									<li><a href="#">주문내역</a></li>
 									<li><a href="#">내가쓴글</a></li>
 								</ul>
 							</li>
-							<li><a href="#">CART</a></li>
-							<li><a href="#">ORDER</a></li>
+							<li><a href="<c:url value='/order/cart/cart.jsp'/>">CART</a></li>
+							<li><a href="<c:url value='/order/list.jsp' />">ORDER</a></li>
 							<li role="presentation" class="dropdown">
 <%-- 								<a class="dropdown-toggle" data-toggle="dropdown" href="<c:url value='/comu/notice/list.jsp' />"  role="button" aria-expanded="false">COMMUNITY</a>
  --%>								<a class="dropdown-toggle" href="<c:url value='/comu/notice/list.jsp' />" role="button" aria-expanded="false">COMMUNITY</a>

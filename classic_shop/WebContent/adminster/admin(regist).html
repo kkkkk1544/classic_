@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>classic Navigation Demo</title>
+<link rel="stylesheet" href="pages/css/index.css">
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="bootstrap.css">
+</head>
+<header>
+ <!-- 상품 Nav -->
+ 	<div id="productNav">
+ 		<ul class="header_ul">
+ 			<li><a href="#">CLASSIC</a></li>
+ 			<li><a href="#">NEW</a></li>
+ 			<li><a href="#">BEST</a></li>
+ 			<li>
+ 				<a href="#">OUTER</a>
+ 				<ul class="header_mini_cate">
+ 					<li><a href="#">COAT</a></li>				
+ 					<li><a href="#">JACKET</a></li>				
+ 					<li><a href="#">JUMPER</a></li>				
+ 					<li><a href="#">CARDIGAN</a></li>				
+ 				</ul>
+ 			</li>
+ 			<li>
+ 				<a href="#">TOP</a>
+ 				<ul class="header_mini_cate">
+ 					<li><a href="#">T-SHIRT</a></li>				
+ 					<li><a href="#">BLOUSE</a></li>				
+ 					<li><a href="#">KNIT</a></li>				
+ 				</ul>
+ 			</li>
+ 			<li>
+ 				<a href="#">BOTTOM</a>
+ 				<ul class="header_mini_cate">
+ 					<li><a href="#">SKIRTS</a></li>				
+ 					<li><a href="#">PANTS</a></li>				
+ 					<li><a href="#">DENIM</a></li>				
+ 				</ul>
+ 			</li>
+ 			<li>
+ 				<a href="#">SHOES&amp;BAG</a>
+ 				<ul class="header_mini_cate">
+ 					<li><a href="#">SHOES</a></li>				
+ 					<li><a href="#">BAG</a></li>				
+ 				</ul>
+ 			</li>
+ 			<li>
+ 				<a href="#">ACC</a>
+ 				<ul class="header_mini_cate">
+ 					<li><a href="#">ACC</a></li>				
+ 				</ul>
+ 			</li>
+ 		</ul>
+ 	</div>
+ 	
+ <!-- 회원 Nav -->
+ 	<div id="memberNav">
+ 		<ul class="header_ul">
+ 			<li><a href="#">LOGIN</a></li>
+ 			<li><a href="#">JOIN US</a></li>
+ 			<li>
+ 				<a href="#">MY PAGE</a>
+ 				<ul>
+ 					<li><a href="#">회원정보수정</a></li>
+ 					<li><a href="#">배송주소록</a></li>
+ 					<li><a href="#">적립금</a></li>
+ 					<li><a href="#">쿠폰</a></li>
+ 					<li><a href="#">장바구니</a></li>
+ 					<li><a href="#">위시리스트</a></li>
+ 					<li><a href="#">주문내역</a></li>
+ 					<li><a href="#">내가쓴글</a></li>
+ 				</ul>
+ 			</li>
+ 			<li><a href="#">CART</a></li>
+ 			<li><a href="#">ORDER</a></li>
+ 			<li>
+ 				<a href="#">COMMUNITY</a>
+ 				<ul>
+ 					<li><a href="#">NOTICE</a></li>
+ 					<li><a href="#">QNA</a></li>
+ 					<li><a href="#">FAQ</a></li>
+ 				</ul>
+ 			</li>
+ 			<li>
+ 				<a href="#">&#128269;</a>
+ 				<ul>
+ 					<li>
+ 						<input type="text" placeholder="상품명 검색">
+ 						<button>&#128269;</button>
+ 					</li>
+ 				</ul>
+ 			</li>
+ 		</ul>
+ 	</div>
+ </header>
+ <hr> 
+ 
+
+<body>
+	<!-- wrap -->
+	<div id="wrap">
+		<!-- header -->
+		<div id="header">
+			<header>
+				<h1>Classic Admin</h1>
+			</header>
+
+		
+			<!-- nav -->
+			<nav class="navbar navbar-default navbar-fixed-top">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse"
+							data-target="#myNavbar">
+							<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#">CLASSIC admin</a>
+					</div>
+					<div class="collapse navbar-collapse" id="myNavbar">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="#home">MEMBER</a></li>
+							<li><a href="#board">BOARD</a></li>
+							<li><a href="#contact">CONTACT</a></li>
+							<li><a href="#sign" data-toggle="modal"
+								data-target="#signModal">SIGN UP</a> <!-- Sign Modal -->
+								<div class="modal fade" id="signModal" role="dialog"
+									data-backdrop="false">
+									<div class="modal-dialog">
+
+										<!-- Modal content-->
+
+									</div>
+								</div></li>
+							<li><a href="#login" data-toggle="modal"
+								data-target="#loginModal">LOGIN</a> <!-- Sign Modal -->
+								<div class="modal fade" id="loginModal" role="dialog"
+									data-backdrop="false">
+									<div class="modal-dialog">
+
+										<!-- Modal content-->
+										<div class="modal-content">
+
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												<h4></h4>
+											</div>
+										</div>
+									</div>
+								</div></li>
+							<li><a href="#search"><span
+									class="glyphicon glyphicon-search"></span></a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+
+		</div>
+
+		<!-- header Jquery -->
+		<script type="text/javascript">
+			$(".handle").on("click", function() {
+				$("nav ul").toggleClass("showing");
+			});
+		</script>
+
+		<!-- container -->
+		<div id="container">
+
+			<!-- section -->
+			<div class="section">
+				<!-- ----------------------replyForm------------------------ -->
+				<h1>FAQ등록</h1>
+				<form action="reply" method="post">
+					<input type="hidden" name="b_id" value="<%=u_id%>"> <input
+						type="hidden" name="b_num" value="${replyView.b_num}"> <input
+						type="hidden" name="b_group" value="${replyView.b_group}">
+					<input type="hidden" name="b_step" value="${replyView.b_step}">
+					<input type="hidden" name="b_indent" value="${replyView.b_indent}">
+					<br> TITLE<input type="text" name="b_title"><br>
+					답글 내용<br>
+					<textarea rows="5" cols="40" name="b_content"></textarea>
+
+
+					<a href="admin(alert).html"><input type="button" value="등록"></a>
+					<button type="reset">취소</button>
+				</form>
+
+			</div>
+		</div>
+
+
+		<!-- footer -->
+		<div id="footer">
+			<h3></h3>
+		</div>
+	</div>
+</body>
+</html>
