@@ -14,8 +14,7 @@
 <link rel="stylesheet" href="<c:url value='/public/css/comu.css' />">
 <link rel="stylesheet" href="<c:url value='/public/css/product.css' />">
 <link rel="stylesheet" href="<c:url value='/public/css/member.css' />">
-<link rel="stylesheet" href="<c:url value='/public/css/orderList.css' />">
-<link rel="stylesheet" href="<c:url value='/public/css/orderDetail.css' />">
+<link rel="stylesheet" href="<c:url value='/public/css/order.css' />">
 <title>CLASSIC</title>
 </head>
 <body>
@@ -90,7 +89,7 @@
 								</ul>
 							</li>
 							<li><a href="#">CART</a></li>
-							<li><a href="#">ORDER</a></li>
+							<li><a href="<c:url value='/order/list.jsp' />">ORDER</a></li>
 							<li role="presentation" class="dropdown">
 <%-- 								<a class="dropdown-toggle" data-toggle="dropdown" href="<c:url value='/comu/notice/list.jsp' />"  role="button" aria-expanded="false">COMMUNITY</a>
  --%>								<a class="dropdown-toggle" href="<c:url value='/comu/notice/list.jsp' />" role="button" aria-expanded="false">COMMUNITY</a>
