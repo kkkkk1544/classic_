@@ -1,0 +1,156 @@
+@charset "UTF-8";
+#bodyContainer{
+
+	
+	width: 100%;
+    padding: 8% 8% 2% 8%;
+}
+#bodyContainer .wrapper{
+	width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.memberInfo{
+	float: left;
+    width: 100%;
+    margin-top: 20px;
+    height: 170px;
+    border-bottom: 1px solid;
+}
+
+.memberInfo .memberTitle{
+	border-bottom: 1px solid #000;
+}
+.memberTitle>h2{
+	margin: 30px 0px 13px 0px;
+}
+.memberInfo li{
+	float: left;
+    min-width: 68px;
+    background: #fff;
+    padding: 9px 16px 9px 0;
+    list-style-type: none;
+}
+.memberInfo .bxx{
+	float: left;
+    margin-top: 11px;
+    padding: 0px 100px 0px 14px;
+}
+.memberInfo .bxx li .lab{
+	font-size: 14px;
+	color: #000;
+	margin-left: 14px;
+}
+.memberInfo .bxx li .value {
+font-size: 14px;
+    color: #000;
+    margin: 5px 0 0 15px;
+}
+.memberInfo .myInfo{
+	display: table;
+    margin-left: 0;
+    padding: 2px 0 2px 0;
+    min-height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 70px;
+   	font-size: 14px;
+}
+.memberInfo .myInfo .benefitInfo{
+	display: table-cell;
+    vertical-align: middle;
+    width: 145px;
+    text-align: center;
+    border-right: 1px solid #e7e7e7;
+}
+.myInfoWrap{
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 20px;
+   	font-size: 14px;
+}
+.edit{
+    clear: both;
+    float: left;
+    margin: 11px 0 0 0;
+}
+.btn-default{
+	font-size: 14px;
+}
+.orderInfo .orderTitle{
+	margin: 38px 0 0px 0;
+	overflow: hidden;
+}
+.orderInfo .orderTitle>h2{
+    float: left;
+    color: #000;
+    height: 27px;
+    font-weight: 500;
+    margin: 0px 0px 15px 0px;
+}
+.orderInfo .orderTitle p{
+	float: right;
+	margin: 15px 0px 13px 0px;
+}
+.orderInfo .orderTitle p>a{
+	color: #000;
+}
+.orderInfo .orderTitle p>a:hover{
+	color: #949393;
+}
+.table{
+	background-color: #fff;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #e6e6e6;
+	
+}
+.myPostingInfo .myPostingTitle{
+	margin: 38px 0 0px 0;
+	overflow: hidden;
+	border-bottom: 1px solid #000;
+}
+.myPostingInfo .myPostingTitle>h2{
+	float: left;
+    color: #000;
+    height: 27px;
+    font-weight: 500;
+    margin: 0px 0px 15px 0px;
+}
+.myPostingInfo .myPostingTitle p{
+	float: right;
+	margin: 15px 0px 13px 0px;
+}
+.myPostingInfo .myPostingTitle p>a{
+	color: #000;
+}
+.myPostingInfo .myPostingTitle p>a:hover{
+	color: #949393;
+}
+.myPostingInfo .reviewInfo{
+	float: left;
+	width: 50%;
+}
+.myPostingInfo .reviewInfo .onemore2{
+		margin: 0 5px 0 0px;
+}
+.myPostingInfo .reviewInfo .reviewTitle{
+	margin: 10px 0 10px 0;
+	font-size: 14px;
+}
+
+
+
+.myPostingInfo .qnaInfo{
+	float: right;
+	width: 50%;
+}
+.myPostingInfo .qnaInfo .qnaTitle{
+	margin: 10px 0 10px 0;
+	font-size: 14px;
+}
+
+.myPostingInfo .qnaInfo .onemore{
+	margin: 0 0px 0 5px;
+
+}
