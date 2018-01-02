@@ -1,0 +1,55 @@
+@charset "UTF-8";
+#bodyContainer{
+    width: 100%;
+    padding: 8% 8% 2% 8%;
+}
+#bodyContainer .wrapper{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.memberInfo{
+	float: left;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.memberInfo .memberTitle{
+	border-bottom: 1px solid #000;
+}
+.memberTitle>h2{
+	margin: 30px 0px 13px 0px;
+}
+.edit{
+	padding: 30px 0 20px;
+    margin: 11px 0 0 0;
+	text-align: center;
+}
+.btn-default{
+	font-size: 14px;
+}
+.btn.oxbtn{
+	padding: 0 1.0em;
+    font-size: 12px;
+    min-width: 125px;
+    height: 42px;
+    line-height: 41px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.formstart{
+	margin: 30px 0px 0px 0px;
+}
+.form-horizontal .form-group {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.form-control{
+	width:60%;
+}
+
+.form-control.addr1{
+	width:20%;
+}
