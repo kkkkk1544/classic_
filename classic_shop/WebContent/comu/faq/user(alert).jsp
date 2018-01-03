@@ -2,14 +2,9 @@
      pageEncoding="UTF-8"%>
  
  
-<body>
 <script>
 		alert("등록되었습니다");
-		location.href="admin(regist).jsp";
+		location.href="list.jsp";
 </script>
-	<footer>
- 		<h3>footer</h3>
- 	</footer>
 
-</body>
-</html>
+<!-- 알림창인데 삭제 알람등은 if문 때문에 아직 수정중이에용~ -->

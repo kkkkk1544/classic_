@@ -50,7 +50,7 @@
 
 <!-- 팝업창 -->
 <script>
-	var popupBanner = window.open("banner/openPop.html","_blank","top=100 left=200 width=400 height=400");
+	//var popupBanner = window.open("banner/openPop.html","_blank","top=100 left=200 width=400 height=400");
 </script>
 
 <!-- 

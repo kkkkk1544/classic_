@@ -215,7 +215,7 @@ create table paid(
 	mem_num number(8) constraint paid_fk_mem_num references member(num),
 	product_num number(8) constraint paid_fk_product_num references product(num),
 	coupon_num number(8) null constraint paid_fk_coupon_num references coupon(num),
-	order_num number(8) UNIQUE,
+	order_num number(8) not null,
 	name varchar2(10) not null,
 	phone number(11) not null,
 	zip_code varchar2(21) not null,

@@ -47,7 +47,7 @@ public class ClassicDBConnection {
 	}
 
 	
-	public static void main(String[] args) {
+/*	public static void main(String[] args) {
 		Connection conn;
 		try {
 			conn = ClassicDBConnection.getConnection();
@@ -55,6 +55,6 @@ public class ClassicDBConnection {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
+	}*/
 	
 }

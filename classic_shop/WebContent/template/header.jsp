@@ -9,14 +9,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="<c:url value='/public/bootstrap/css/bootstrap.css' />">
 <script src="public/js/jquery/jquery-3.2.1.min.js"></script>
+<!-- kakao 지도 api -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9634cbc392b8b80779d4f419ee72bf3a"></script>
 <!-- 개인 스크립트 파일 -->
 <link rel="stylesheet" href="<c:url value='/public/css/common.css' />">
 <link rel="stylesheet" href="<c:url value='/public/css/comu.css' />">
 <link rel="stylesheet" href="<c:url value='/public/css/product.css' />">
 <link rel="stylesheet" href="<c:url value='/public/css/member.css' />">
 <link rel="stylesheet" href="<c:url value='/public/css/order.css' />">
-<link rel="stylesheet" href="<c:url value='/public/css/memdetail.css' />">
-<link rel="stylesheet" href="<c:url value='/public/css/memmodify.css' />">
 <title>CLASSIC</title>
 </head>
 <body>
@@ -77,26 +77,43 @@
 				<div id="memNav">
 					<div class="nav navbar-nav navbar-right">
 						<ul class="nav nav-pills">
-							<li><a href="<c:url value='/member/login.jsp' />">LOGIN</a></li>
-							<li><a href="<c:url value='/member/join.jsp' />">JOIN US</a></li>
+							<!--로그인 -->
+							<c:choose>
+								<c:when test="${loginMem.grade>=0}">
+										<c:if test="${loginMem.grade==0}">
+											<li><a href="#"><strong style="color: navy;">관리자 페이지 이동</strong></a></li>
+										</c:if>
+									<li><a><strong>${loginMem.id}님 접속</strong></a></li>
+									<li><a href="<c:url value='/logout.do' />">LOGOUT</a></li>
+								</c:when>
+								<c:otherwise>
+									<li><a href="<c:url value='/member/login.jsp' />">LOGIN</a></li>
+									<li>
+										<a href="<c:url value='/member/join.jsp' />">JOIN US</a>
+									</li>
+								</c:otherwise>
+							</c:choose>
 							<li role="presentation" class="dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown" href="<c:url value='/member/mypage/memDetail.jsp'/>" role="button" aria-expanded="false">MY PAGE</a>
+								<a class="dropdown-toggle" href="<c:url value='/member/mypage/detail.jsp'/>" role="button" aria-expanded="false">MY PAGE</a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="<c:url value='/member/mypage/memModify.jsp'/>">회원정보수정</a></li>
-									<li><a href="<c:url value='/member/mypage/memAddr.jsp'/>">배송주소록</a></li>
-									<li><a href="#">적립금</a></li>
-									<li><a href="<c:url value='/member/mypage/memCoupon.jsp'/>">쿠폰</a></li>
+									<li><a href="<c:url value='/member/mypage/modify.jsp'/>">회원정보수정</a></li>
+									<li><a href="<c:url value='/member/mypage/address.jsp'/>">배송주소록</a></li>
+									<li><a href="<c:url value='/member/mypage/mileage.jsp'/>">적립금</a></li>
+									<li><a href="<c:url value='/member/mypage/coupon.jsp'/>">쿠폰</a></li>
 									<li><a href="<c:url value='/order/cart/cart.jsp'/>">장바구니</a></li>
 									<li><a href="<c:url value='/order/wish/wish.jsp'/>">위시리스트</a></li>
 									<li><a href="#">주문내역</a></li>
 									<li><a href="#">내가쓴글</a></li>
 								</ul>
 							</li>
-							<li><a href="<c:url value='/order/cart/cart.jsp'/>">CART</a></li>
+							<li>
+								<a href="<c:url value='/order/cart/cart.jsp'/>">CART
+									<span class="badge badge-pill badge-secondary" style="background-color: #ccc;">0</span>
+								</a>
+							</li>
 							<li><a href="<c:url value='/order/list.jsp' />">ORDER</a></li>
 							<li role="presentation" class="dropdown">
-<%-- 								<a class="dropdown-toggle" data-toggle="dropdown" href="<c:url value='/comu/notice/list.jsp' />"  role="button" aria-expanded="false">COMMUNITY</a>
- --%>								<a class="dropdown-toggle" href="<c:url value='/comu/notice/list.jsp' />" role="button" aria-expanded="false">COMMUNITY</a>
+								<a class="dropdown-toggle" href="<c:url value='/comu/notice/list.jsp' />" role="button" aria-expanded="false">COMMUNITY</a>
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="<c:url value='/comu/notice/list.jsp' />">NOTICE</a></li>
 									<li><a href="<c:url value='/comu/qna/list.jsp' />">QNA</a></li>
