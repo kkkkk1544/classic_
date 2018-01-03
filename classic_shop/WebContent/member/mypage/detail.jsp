@@ -1,55 +1,53 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 	
-<div id="bodyContainer">
-
-	<div class="wrapper">
-	<!-- MY PAGE -->
-		<div class="memberInfo">
-			<div class="memberTitle">
-				<h2>MY PAGE</h2>
+<div class="member_body">
+	<div class="container">
+		<!-- My Page -->
+		<div class="mypage_wrap">
+			<div class="mypage_info">
+				<h2 class="mypageTitle">MY PAGE</h2>
+					<ul>
+						<li> <span class="mypageInfoLabel">회원등급</span>
+							<div class="value"><strong>Lv1</strong></div>
+						</li>
+						<li> <span class="mypageInfoLabel">적립금</span>
+							<div class="value"><strong>0원</strong></div>
+						</li>
+						<li> <span class="mypageInfoLabel">쿠폰</span>
+							<div class="value"><strong>0장</strong></div>
+						</li>
+						<li> <span class="mypageInfoLabel">구매이력</span>
+							<div class="value"><strong>0건</strong></div>
+						</li>
+					</ul>
+					<div class="benefit_group">
+						<div class="benefitInfo">회원님의 혜택정보</div>
+						<div class="benefitprint">혜택 정보 출력</div>
+					</div>
 			</div>
-			<ul class="bxx">
-				<li> <span class="lab">회원등급</span>
-					<div class="value"><strong>Lv1</strong></div>
-				</li>
-				<li> <span class="lab">적립금</span>
-					<div class="value"><strong>0원</strong></div>
-				</li>
-				<li> <span class="lab">쿠폰</span>
-					<div class="value"><strong>0장</strong></div>
-				</li>
-				<li> <span class="lab">구매이력</span>
-					<div class="value"><strong>0건</strong></div>
-				</li>
-			</ul>
-			<div class="myInfo">
-				<div class="benefitInfo">회원님의 혜택정보</div>
-				<div class="myInfoWrap">혜택 정보 출력</div>
+			<div class="mypage_btn_group">
+				<button class="btn btn-default" type="button">회원정보 수정</button>
+				<button class="btn btn-default" type="button">배송주소록 관리</button>
 			</div>
 		</div>
-		<div class="edit">
-			<button class="btn btn-default" type="button">회원정보 수정</button>
-			<button class="btn btn-default" type="button">배송주소록 관리</button>
-		</div>
-		<div style="clear:both"></div>
 		
-		<!-- ORDER LIST-->
-		<div class="orderInfo">
-			<div class="orderTitle">
-				<h2>ORDER LIST</h2>
+		<!-- Oder List-->
+		<div class="orderList_wrap">
+			<div class="orderList_titleandbtn">
+				<h2 class="orderListTitle">ORDER LIST</h2>
 				<p>
 					<a href="#">
 						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 					</a>
 				</p>
 			</div>
-			<table class="table">
+			<table class="table orderList_table">
 				<thead>
-					<tr class="trone">
+					<tr>
 						<th class="col-sm-1">No.</th>
-						<th class="col-sm-1">이미지</th>
-						<th class="col-sm-3">상품명</th>
+						<th class="col-sm-2">이미지</th>
+						<th class="col-sm-2">상품명</th>
 						<th class="col-sm-1">옵션</th>
 						<th class="col-sm-1">수량</th>
 						<th class="col-sm-1">판매가</th>
@@ -59,14 +57,14 @@
 						<th class="col-sm-2">주문상태</th>
 					</tr>
 				</thead>
-				<tbody class="one">
+				<tbody>
 					<tr>
 						<td>1</td>
-						<td class="tumbnail">
-							<a href="#">이미지</a>
+						<td>
+							<img alt="images" src="" align="left" hspace="10">
 						</td>
 						<td>상품명이야</td>
-						<td>옵션</td>
+						<td>[옵션]색상:color_name, 사이즈:product_sizu</td>
 						<td>1개</td>
 						<td>100,000원</td>
 						<td>10M</td>
@@ -75,11 +73,11 @@
 						<td>결제대기중</td>
 					</tr>
 				</tbody>
-					<tbody class="two">
+					<tbody>
 					<tr>
 						<td>2</td>
-						<td class="tumbnail">
-							<a href="#">이미지</a>
+						<td>
+							<img alt="images" src="" align="left" hspace="10">
 						</td>
 						<td>상품명이야</td>
 						<td>옵션</td>
@@ -94,20 +92,20 @@
 			</table>
 		</div>
 		
-		<!-- MY POSTING -->
-		<div class="myPostingInfo">
-			<div class="myPostingTitle">
-				<h2>MY POSTING</h2>
+		<!-- My Posting -->
+		<div class="myPosting_wrap">
+			<div class="myPosting_titleandbtn">
+				<h2 class="myPostingTitle">MY POSTING</h2>
 				<p>
 					<a href="#">
 						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 					</a>
 				</p>
 			</div>
-			<div class="reviewInfo">
-				<div class="onemore2">
-					<div class="reviewTitle">REVEIW</div>
-					<table class="table">
+			<div class="reviewList">
+				<div class="reviewList_wrap">
+					<div class="reviewListTitle">REVEIW</div>
+					<table class="table reviewList_table">
 						<thead>
 							<tr>
 								<th class="col-sm-1">No.</th>
@@ -127,10 +125,10 @@
 					</table>
 				</div>
 			</div>
-			<div class="qnaInfo">
-				<div class="onemore">
-					<div class="qnaTitle">QNA</div>
-					<table class="table">
+			<div class="qnaList">
+				<div class="qnaList_wrap">
+					<div class="qnaListTitle">QNA</div>
+					<table class="table qnaList_table">
 						<thead>
 							<tr>
 								<th class="col-sm-1">No.</th>
@@ -156,8 +154,13 @@
 </div>
 
 <!-- 
-버튼 위치 조정
-order List 좀 올려
+table 맨 밑줄 border
+order List에 주문번호 추가(일단 이건 하지마)
+my posting 제목에 링크
+ -->
+
+
+<!-- 
 table 맨 밑줄 border
 order List에 주문번호 추가(일단 이건 하지마)
 my posting 제목에 링크

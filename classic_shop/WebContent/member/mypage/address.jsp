@@ -1,20 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<div id="bodyContainer">
-	<div class="wrapper">
-	
-	<!-- ADRESS LIST -->
-		<div class="memberInfo">
-			<div class="memberTitle">
-				<h2>ADRESS LIST</h2>
-			</div>
-			<table class="table">
+<div class="member_body">
+	<div class="container">
+		<div class="address_wrap">
+			<h2 class="adressTitle">ADRESS LIST</h2>
+			<table class="table address_table">
 				<thead>
-					<tr class="trone">
+					<tr>
 						<th class="col-sm-1">
 							<label>
-								<input type="checkbox" id="blankCheckbox" value="option3" aria-label="checkbox">
+								<input type="checkbox" id="blankCheckbox" value="option1" aria-label="checkbox">
 							</label>
 						</th>
 						<th class="col-sm-1">No.</th>
@@ -32,33 +28,30 @@
 							</label>
 						</td>
 						<td>1</td>
-						<td>주소야주소</td>
+						<td><a href="#">주소야주소</a></td>
 						<td>010-2222-3333</td>
 						<td>나야나</td>
 						<td>상태</td>
 					</tr>
 				</tbody>
 			</table>
-			<div class="edit">
+ 			<div class="adress_btn_group">
 				<button class="btn btn-default" type="button">전체 선택</button>
 				<button class="btn btn-default" type="button">선택 삭제</button>
 				<button class="btn btn-default" type="button">주소 등록</button>
 			</div>
 		</div>
-		<div style="clear:both"></div> <!-- float를 끊는다고? -->
-		
 		<!-- RECENT ADDRESS -->
-		<div class="orderInfo">
-			<div class="orderTitle">
-				<h2>RECENT ADDRESS</h2>
-			</div>
-			<table class="table">
+		<div class="recentaddr_wrap">
+			<h2 class="adressTitle">RECENT ADDRESS</h2>
+			<table class="table address_table">
 				<thead>
 					<tr>
 						<th class="col-sm-1">
 							<label>
-								<input type="checkbox" id="blankCheckbox" value="option1" aria-label="checkbox"></th>
+								<input type="checkbox" id="blankCheckbox" value="option1" aria-label="checkbox">
 							</label>
+						</th>
 						<th class="col-sm-1">No.</th>
 						<th class="col-sm-3">주소</th>
 						<th class="col-sm-1">연락처</th>
@@ -74,14 +67,14 @@
 							</label>
 						</td>
 						<td>1</td>
-						<td>주소야주소</td>
+						<td><a href="#">주소야주소</a></td>
 						<td>010-2222-3333</td>
 						<td>나야나</td>
 						<td>상태</td>
 					</tr>
 				</tbody>
 			</table>
-			<div class="edit">
+ 			<div class="recentadress_btn_group">
 				<button class="btn btn-default" type="button">전체 선택</button>
 				<button class="btn btn-default" type="button">선택 삭제</button>
 				<button class="btn btn-default" type="button">기본 주소로 등록</button>
@@ -89,6 +82,3 @@
 		</div>					
 	</div>
 </div>
-
-
-<!-- 버튼 위치 조정하고 테이블 바텀 보더 하나 만들어  -->
