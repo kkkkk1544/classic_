@@ -299,7 +299,6 @@ create table review(
 create sequence img_path_seq start with 1 increment by 1;
 create table img_path(
 	num number(8) constraint img_pk_num primary key,
-	company_num number(8) null constraint img_fk_company_num references company(num),
 	data_num number(8) null constraint img_fk_data_num references product_data(num),
 	guide_num number(8) null constraint img_fk_guide_num references shop_guide(num),
 	icon_num number(8) null constraint img_fk_icon_num references icon(num),

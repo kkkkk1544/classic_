@@ -37,7 +37,7 @@
 					<td>
 						<div id="productQuantity">
 							<div>
-								<input type="number" value="1">
+								<input type="number" value="1" min="1">
 							</div>
 							<div>
 								<button class="btn" >변경</button>
@@ -48,10 +48,10 @@
 					<td>0원</td>
 					<td>100000원</td>
 					<td>
-						<div class="btn-group-vertical" id="cartListBtn">
-							<button type="button" class="btn btn-default" >주문하기</button>
-							<button type="button" class="btn btn-default">WISH LIST 등록</button>
-							<button type="button" class="btn btn-default">삭제</button>
+						<div class="btn-group" id="cartListBtn">
+							<button type="button" class="btn" >주문하기</button>
+							<button type="button" class="btn">WISH LIST 등록</button>
+							<button type="button" class="btn">삭제</button>
 						</div>
 					</td>
 				</tr>
@@ -75,7 +75,7 @@
 					<td>
 						<div id="productQuantity2">
 							<div>
-								<input type="number" value="1">
+								<input type="number" value="1" min="1">
 							</div>
 							<div>
 								<button class="btn" >변경</button>
@@ -115,9 +115,9 @@
 				</tr>
 			</table>
 		</div>
-		<div class="btn-group" id="paidUpdateBtn">
-			<button type="button" class="btn btn-primary"><strong>전체 상품 주문</strong></button>
-			<button type="button" class="btn btn-primary"><strong>선택 상품 주문</strong></button>
+		<div id="paidUpdateBtn">
+			<button type="button" class="btn"><strong>전체 상품 주문</strong></button>
+			<button type="button" class="btn"><strong>선택 상품 주문</strong></button>
 		</div>
 		<div id="cartInfo">
 			<p>장바구니 안내문</p>

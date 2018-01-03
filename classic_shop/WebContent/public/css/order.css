@@ -99,21 +99,20 @@ margin: 50px 50px;
 	height: 40px;
 } 
 #cartListBtn button{
-	background: #CCC;
-	color: black;
 	margin: 2px;
 	border: none;
 	border-radius: 4px;
 	height: 35px;
 	font-size: 10px;
+	width:100%;
 }
 #cartListBtn2 button{
-	color: black;
 	margin: 2px;
 	border: none;
 	border-radius: 4px;
 	height: 35px;
 	font-size: 10px;
+	width:100%;
 }
 #cartDetailList{
 	text-align: left!important;
@@ -219,12 +218,10 @@ margin: 50px 50px;
 	font-size: 14px;
 }
 #paidUpdateBtn button{
-	background: #CCC;
-	color: #000;
 	font-size: 14px;
-	border: hidden;
 	margin:2px;
 	border-radius: 4px;
+	width:auto;
 }
 #cartInfo p{
 	margin-top: 25px;
