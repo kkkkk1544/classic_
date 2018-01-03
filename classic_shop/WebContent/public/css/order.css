@@ -107,7 +107,6 @@ margin: 50px 50px;
 	font-size: 10px;
 }
 #cartListBtn2 button{
-	background: #CCC;
 	color: black;
 	margin: 2px;
 	border: none;
@@ -201,18 +200,20 @@ margin: 50px 50px;
 	background: #ccc;
 }
 #cartCRUDBtn button{
-	background: #CCC;
-	color: black;
 	margin: 2px;
-	border: none;
 	border-radius: 4px;
 	height :35px;
-	font-size: 10px;
+	font-size: 12px;
+
+}
+#cartCRUDBtn button:last-child{
+	font-size: 12px;
+	padding-top: 0px;
 }
 #AllPriceTab{
 	margin-top: 25px;
 }
-#AllPriceTab th,td{
+#AllPriceTab th, #AllPriceTab td{
 	text-align: center;
 	font-size: 14px;
 }
@@ -481,7 +482,7 @@ margin: 50px 50px;
 	text-align: center;
 	vertical-align: middle;
 }
-#adressChoiceBtn div,button{
+#adressChoiceBtn div,#adressChoiceBtn button{
 	vertical-align: middle;
 }
 .orderTab{

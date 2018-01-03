@@ -49,9 +49,9 @@
 					<td>100000원</td>
 					<td>
 						<div class="btn-group-vertical" id="cartListBtn">
-							<button type="button" class="btn btn-primary">주문하기</button>
-							<button type="button" class="btn btn-primary">WISH LIST 등록</button>
-							<button type="button" class="btn btn-primary">삭제</button>
+							<button type="button" class="btn btn-default" >주문하기</button>
+							<button type="button" class="btn btn-default">WISH LIST 등록</button>
+							<button type="button" class="btn btn-default">삭제</button>
 						</div>
 					</td>
 				</tr>
@@ -86,20 +86,20 @@
 					<td>0원</td>
 					<td>100000원</td>
 					<td>
-						<div class="btn-group-vertical" id="cartListBtn2">
-							<button type="button" class="btn btn-primary">주문하기</button>
-							<button type="button" class="btn btn-primary">장바구니 등록</button>
-							<button type="button" class="btn btn-primary">삭제</button>
+						<div class="btn-group" id="cartListBtn2">
+							<button type="button" class="btn">주문하기</button>
+							<button type="button" class="btn">장바구니 등록</button>
+							<button type="button" class="btn">삭제</button>
 						</div>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 		<div class="btn-group" id="cartCRUDBtn">
-			<button type="button" class="btn btn-primary">전체삭제</button>
-			<button type="button" class="btn btn-primary">선택주문</button>
-			<button type="button" class="btn btn-primary">선택삭제</button>
-			<button type="button" class="btn btn-primary">선택한 상품을<br> 위시리스트에 등록</button>
+			<button type="button" class="btn">전체삭제</button>
+			<button type="button" class="btn">선택주문</button>
+			<button type="button" class="btn">선택삭제</button>
+			<button type="button" class="btn">선택한 상품을<br> 위시리스트에 등록</button>
 		</div>
 		<div>
 			<table class="table table-bordered" id="AllPriceTab">
