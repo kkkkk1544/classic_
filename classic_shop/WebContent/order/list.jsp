@@ -3,7 +3,7 @@
 
 <div class="order_list_body">
 	<div id="contents">
-		<h2 id="listTitle">ORDER LIST</h2>
+		<h2 id="orderlistTitle">ORDER LIST</h2>
 		<!-- <hr style="border:solid 2px black"> --><!-- 이거 지우고 border로 넣을게요 -->
 		<!-- 다혜님 id="이름" class="이름" 동일한 게 있는데 이거 수정해주세요! 그리고 태그 자체 이름으로 css 하시면 모든 jsp에 걸려요
 		무조건 id나 class로 이름 지어서 사용해주세요!  -->
@@ -22,7 +22,7 @@
 					<button type="button" class="btn btn-default">
 						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
 					</button> ~ 
-					<input value="2018-01-01">
+					<input type="text" name="startDate" value="" class="order_date_input">
 					<button type="button" class="btn btn-default">
 						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
 					</button>
@@ -31,11 +31,10 @@
 			</div>
 		</div>
 	
-		<div >
-		  	<table class="listTable">
-		    <tr class="listTitle">
+		<div id="list">
+		  <table class="listTable">
+		    <tr class="tableTitle">
 				<th>주문번호</th>
-				<th>쿠폰번호</th> <!-- 이거 없애주세요 -->
 				<th>상품정보</th>
 				<th>수량</th>
 				<th>상품구매금액</th>
@@ -44,7 +43,6 @@
 			</tr>
 			<tr>
 				<td><a href="<c:url value='/order/detail.jsp' />">order_num</a></td> <!-- 주문번호 누르면 디테일로 -->
-				<td>cupon_num</td>
 				<td>
 					<img alt="images" src=""  align="left" hspace="10">
 					<label><a href="#">상품명:product_name</a></label><br><!-- 상품명 누르면 상품상세정보로 -->
@@ -61,7 +59,6 @@
 			</tr>
 			<tr>
 				<td><a href="#">order_num</a></td>
-				<td>cupon_num</td>
 				<td>
 					<img alt="" src=""  align="left" hspace="10">
 					<label><a href="#">상품명:product_name</a></label><br>
@@ -74,7 +71,6 @@
 			</tr>
 			<tr>
 				<td><a href="#">order_num</a></td>
-				<td>cupon_num</td>
 				<td>
 					<img alt="" src="" align="left" hspace="10">
 					<label><a href="#">상품명:product_name</a></label><br>
@@ -90,13 +86,22 @@
 			</tr>
 			<tr>
 				<td><a href="#">order_num</a></td>
-				<td>cupon_num</td>
 				<td>
-					<img alt="" src=""  align="left" hspace="10">
-					<label><a href="#">상품명:product_name</a></label><br>
-					[옵션]색상:color_name, 사이즈:product_sizu
+					<p>
+						<img alt="" src=""  align="left" hspace="10">
+						<label><a href="#">상품명:product_name</a></label><br>
+						[옵션]색상:color_name, 사이즈:product_sizu
+					</p>
+					<p>
+						<img alt="" src=""  align="left" hspace="10">
+						<label><a href="#">상품명:product_name</a></label><br>
+						[옵션]색상:color_name, 사이즈:product_sizu
+					</p>
 				</td>
-				<td>3</td>
+				<td>
+					<p>3</p>
+					<p>1</p>
+				</td>
 				<td>order_money</td>
 				<td>delivery_state:3수취확인</td>
 				<td>
