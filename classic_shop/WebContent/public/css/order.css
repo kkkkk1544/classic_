@@ -47,7 +47,7 @@ padding-bottom: 15px;
 tr,td,th{
 padding: 20px 20px;
 font-size: 10pt;
-}
+} 
 .order_date_input{
 padding: 5px 5px;
 }
@@ -390,6 +390,9 @@ margin: 50px 50px;
 	text-align: center;
 	vertical-align: middle;
 }
+#benefitInfo div p{
+	text-align: left;
+}
 #benefitInfo div p span{
 	font-weight: bold;
 }
@@ -465,11 +468,68 @@ margin: 50px 50px;
 	border: hidden;
 	height: 40px;
 }
+#orderInfo .table{
+	width:100%;
+}
 #orderInfo>p{
 	border-bottom: solid;
 	margin-top: 20px;
 	font-size: 14px;
 	font-weight: bolder;
+}
+#adressChoiceBtn{
+	text-align: center;
+	vertical-align: middle;
+}
+#adressChoiceBtn div,button{
+	vertical-align: middle;
+}
+.orderTab{
+	width:100%;
+}
+.tabFirst{
+	width:10%;
+}
+.tabSecond{
+	width:5%;
+}
+.tabThird{
+	width:85%;
+	text-align: left;
+}
+#delivInfo table{
+	border-top: hidden;
+	border-bottom: hidden;
+} 
+#delivInfo table td{
+	text-align: left;
+}
+#delivInfo table tr:last-child{
+	width:85%;
+	text-align: left;
+}
+#payAmount p:first-child{
+	border-bottom: solid;
+	margin-top: 20px;
+	font-size: 14px;
+	font-weight: bolder;
+}
+#payAmount {
+	border-top:hidden;
+	border-bottem:hidden;
+}
+#payAmount table:last-child {
+	border-top: hidden;
+	border-bottom: hidden;
+}
+#payAmount table th{
+	width: 10%;
+}
+#payAmount table td{
+	text-align: left;
+}
+#payPoint td input{
+	float: left;
 }
 .redRound {
 	width:16px;
@@ -486,16 +546,31 @@ margin: 50px 50px;
 	font-size: 14px;
 	font-weight: bolder;
 }
-#orderInfo table th{
-	width: 15%;
-	padding-right: 0px;
+#methodPayDetail{
+	float: left;
 }
-#orderInfo table td{
-    padding-left: 0px;
-    padding-right: 0px;
+#payName {
+	border-bottom: solid;
+	margin-top: 20px;
+	font-size: 14px;
+	font-weight: bolder;
+}
+#methodPay{
+	height: 250px;
+}
+#payBank label{
+	margin: 10px 0px;
+}
+#finalAmount{
+	text-align: right;
+	border-bottom:solid!impoetant;
+}
+#finalAmount h2{
+	color: red;
+	font-weight: bold;	
 }
 #orderInfoText p{
-	background: #CCC;
 	text-align: center;
+	background: #CCC;
 	height: 200px;
 }

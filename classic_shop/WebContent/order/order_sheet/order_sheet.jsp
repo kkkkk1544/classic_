@@ -36,12 +36,12 @@
 					<td id ="orderDetailList">
 						<div id="orderDetailListDiv">
 							<div>
-								<p>이미지임</p>
+								<p><a href="#">이미지임</a></p>
 							</div>
 							<div>
 								<ul class="list-group" >
-									<li class="list-group-item"><strong>product Name</strong></li>
-									<li class="list-group-item"><strong>color 검정 size M<strong></strong></li>
+									<li class="list-group-item"><strong><a href="#">product Name</a></strong></li>
+									<li class="list-group-item"><strong><a href="#">color 검정 size M</a></strong></li>
 								</ul>
 							</div>
 						</div>
@@ -58,12 +58,12 @@
 					<td id ="orderDetailList2">
 						<div id="orderDetailListDiv2">
 							<div>
-								<p>이미지임</p>
+								<p><a href="#">이미지임</a></p>
 							</div>
 							<div>
 								<ul class="list-group" >
-									<li class="list-group-item"><strong>product Name</strong></li>
-									<li class="list-group-item"><strong>color 검정 size M<strong></strong></li>
+									<li class="list-group-item"><strong><a href="#">product Name</a></strong></li>
+									<li class="list-group-item"><strong><a href="#">color 검정 size M</a></strong></li>
 								</ul>
 							</div>
 						</div>
@@ -83,37 +83,37 @@
 		</div>
 		<button class="btn btn-defult" id="selectProductDel">선택 상품 삭제</button>
 		<div id="orderInfo">
-			<p>주문정보 <span class="redRound sec">10</span><span>필수</span></p>
-			<table class ="table">
+			<p>주문정보 <span class="redRound">10</span><span>필수</span></p>
+			<table class ="table orderTab">
 				<tr>
-					<th>주문하시는  분</th>
-					<td><span class="redRound sec">10</span></td>
-					<td><input type="text"></td>
+					<th class="tabFirst">주문하시는  분</th>
+					<td class="tabSecond "><span class="redRound">10</span></td>
+					<td class="tabThird" ><input type="text"></td>
 				</tr>
 				<tr>
-					<th>주소</th>
-					<td><span class="redRound sec">10</span></td>
-					<td><input type="text"><button type="button" class="btn">우편번호</button></td>
+					<th class="tabFirst">주소</th>
+					<td class="tabSecond"><span class="redRound">10</span></td>
+					<td class="tabThird" ><input type="text"><button type="button" class="btn" onclick='javascript:window.open()'>우편번호</button></td>
 				</tr>
 				<tr>
-					<th></th>
-					<td class="sec"></td>
-					<td><input type="text" value="기본주소"></td>
+					<th class="tabFirst"></th>
+					<td class="tabSecond"></td>
+					<td class="tabThird" ><input type="text" value="기본주소"></td>
 				</tr>
 				<tr>
-					<th></th>
-					<td class="sec"></td>
-					<td><input type="text" value="상세주소"></td>
+					<th class="tabFirst"></th>
+					<td class="tabSecond"></td>
+					<td class="tabThird" ><input type="text" value="상세주소"></td>
 				</tr>
 				<tr>
-					<th>일반전화</th>
-					<td><span class="redRound sec">10</span></td>
-					<td><input type="number"></td>
+					<th class="tabFirst">일반전화</th>
+					<td class="tabSecond"><span class="redRound">10</span></td>
+					<td class="tabThird" ><input type="number"></td>
 				</tr>
 				<tr>
-					<th>휴대전화</th>
-					<td><span class="redRound sec">10</span></td>
-					<td><input type="number"></td>
+					<th class="orderTab tabFirst">휴대전화</th>
+					<td class="tabSecond"><span class="redRound sec">10</span></td>
+					<td class="tabThird"><input type="number"></td>
 				</tr>
 			</table>
 		</div>
@@ -121,51 +121,52 @@
 			<p>배송정보     <span class="redRound">10</span><span>필수</span></p>
 			<table class ="table">
 				<tr>
-					<th>배송지선택</th>
-					<td>
+					<th class="tabFirst">배송지선택</th>
+					<td class="tabSecond"></td>
+					<td class="tabThird" id="adressChoiceBtn">
 						<div class="radio">
 							<label><input type="radio" name="optraio" >주문자 정보와 동일</label>
 						</div>
 						<div class="radio">
 							<label><input type="radio" name="optraio" checked>새로운 배송지</label>
 						</div>
-						<button type="button">주소록보기</button>
+						<button type="button" onclick='javascript:window.open()'>주소록보기</button>
 					</td>
 				</tr>
 				<tr>
-					<th>주문하시는  분</th>
-					<td><span class="redRound">10</span></td>
-					<td><input type="text"></td>
+					<th class="tabFirst">주문하시는  분</th>
+					<td class="tabSecond"><span class="redRound">10</span></td>
+					<td class="tabThird"><input type="text"></td>
 				</tr>
 				<tr>
-					<th>주소</th>
-					<td><span class="redRound">10</span></td>
-					<td><input type="text"><button type="button" class="btn">우편번호</button></td>
+					<th class="tabFirst">주소</th>
+					<td class="tabSecond"><span class="redRound">10</span></td>
+					<td class="tabThird" ><input type="text"><button type="button" class="btn" onclick='javascript:window.open()'>우편번호</button></td>
 				</tr>
 				<tr>
-					<th></th>
-					<td></td>
-					<td><input type="text" value="기본주소"></td>
+					<th class="tabFirst"></th>
+					<td class="tabSecond"></td>
+					<td class="tabThird" ><input type="text" value="기본주소"></td>
 				</tr>
 				<tr>
-					<th></th>
-					<td></td>
-					<td><input type="text" value="상세주소"></td>
+					<th class="tabFirst"></th>
+					<td class="tabSecond"></td>
+					<td class="tabThird" ><input type="text" value="상세주소"></td>
 				</tr>
 				<tr>
-					<th>일반전화</th>
-					<td><span class="redRound">10</span></td>
-					<td><input type="number"></td>
+					<th class="tabFirst">일반전화</th>
+					<td class="tabSecond"><span class="redRound">10</span></td>
+					<td class="tabThird" ><input type="number"></td>
 				</tr>
 				<tr>
-					<th>휴대전화</th>
-					<td><span class="redRound">10</span></td>
-					<td><input type="number"></td>
+					<th class="tabFirst">휴대전화</th>
+					<td class="tabSecond"><span class="redRound">10</span></td>
+					<td class="tabThird" ><input type="number"></td>
 				</tr>
 				<tr>
-					<th>배송메세지</th>
-					<td></td>
-					<td>
+					<th class="delivTab tabFirst">배송메세지</th>
+					<td class="tabSecond"></td>
+					<td class="tabThird" >
 						<div class="form-group">
 							<textarea class="form-control" rows="5" id="delivComent"></textarea>
 							<p>배송 메세지란에는 배송시 참고 할 사항이 있으면 적어주세요.</p>
@@ -197,7 +198,7 @@
 					<th>총 부가결제금액</th>
 					<td><strong>0원</strong></td>
 				</tr>
-				<tr>
+				<tr id="payPoint">
 					<th>적립금</th>
 					<td><input type="number"><p>원 <span>(총 사용 가능 적립금: 3000)</span></p></td>
 				</tr>
@@ -214,7 +215,7 @@
 			</table>
 		</div>
 		<div id="methodPay">
-			<p>결제수단</p>
+			<p id="payName">결제수단</p>
 			<div id="methodPayDetail">
 				<div class="radio">
 					<label><input type="radio" name="optraio" checked>무통장입금</label>
@@ -222,22 +223,16 @@
 				<div class="radio">
 					<label><input type="radio" name="optraio">신용카드</label>
 				</div>
-				<table>
-					<tr>
-						<th>입금자명</th>
-						<td><input type="text"></td>
-					</tr>
-					<tr>
-						<th>입금은행</th>
-						<td>
-							<select>
+				<div id="payBank">
+					<label>입금자명 : <input type="text"></label><br>
+					<label>입금은행: 
+						<select>
 								<option value="1">국민(241587-51-17452)</option>
 								<option value="2">하나(899631-158-2564)</option>
 								<option value="3">신한(62583-8550-8874)</option>
 							</select>
-						</td>
-					</tr>
-				</table>
+					</label>
+				</div>
 			</div>
 			<div id="finalAmount">
 				<p><span>무통장입금</span>최종 결제 금액</p>
