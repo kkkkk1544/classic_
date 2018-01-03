@@ -16,20 +16,6 @@
 					</tr>
 				</tbody>
 				<tbody class="qna_contents">
-					<tr>
-						<td>1</td>
-						<td><a href="<c:url value='/comu/qna/read.jsp' />">배송 문의</a></td>
-						<td>testMember</td>
-						<td>2017-12-30</td>
-						<td>0</td>
-					<tr>
-					<tr>
-						<td>1</td>
-						<td><a href="javascript:window.open('securePassword.html','_blank','top=300 left=300 width=300 height=300')">배송 문의(비밀글)</a></td>
-						<td>testMember</td>
-						<td>2017-12-30</td>
-						<td>0</td>
-					<tr>
 				</tbody>
 			</table>
 		</div>
@@ -70,6 +56,35 @@
 			</form>
 		</div>
 </div>
+
+<script>
+	var loadQnaList = function(){
+		var setting={
+			url: "qna.do",
+			type: "GET",
+			dataType: "json",
+			success: function(data){
+				console.log(data);
+				var qna_contents="";
+				$(data).each(function(index,item){
+					qna_contents+="<tr>";
+					qna_contents+="<td>"+item.num+"</td>";
+					qna_contents+="<td>"+item.subject+"</td>";
+					qna_contents+="<td>"+item.mem_num+"</td>";
+					qna_contents+="<td>"+item.indate+"</td>";
+					qna_contents+="<td>"+item.count+"</td>";
+					qna_contents+="</tr>";
+				});
+				$(".qna_contents").html(qna_contents);
+			}
+		}
+		$.ajax(setting);
+	}
+</script>
+
+
+
+
 
 <!--
 1. 리스트에서 글을 누른다.
