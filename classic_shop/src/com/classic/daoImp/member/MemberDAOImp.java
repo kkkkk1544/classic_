@@ -8,47 +8,66 @@ import com.classic.dao.member.MemberDAO;
 import com.classic.dto.MemberDTO;
 
 public class MemberDAOImp implements MemberDAO{
+	
+	private Connection conn;
+	public MemberDAOImp(Connection conn) {
+		this.conn = conn;
+	}
 
 //주연 시작
+	//로그인
 	@Override
 	public MemberDTO memberSelect(String id, String pw) throws Exception{
 		MemberDTO memDTO = null;
-		String sql = "SELECT id, pw FROM member WHERE id=? AND pw=?";
-		Connection conn = null;
-		PreparedStatement pstmt = conn.prepareStatement(sql);
+		String sql = "SELECT * FROM member WHERE id=? AND pw=?";
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, id);
 		pstmt.setString(2, pw);
-		ResultSet rs = pstmt.executeQuery();
+		rs = pstmt.executeQuery();
 		if(rs.next()) {
 			memDTO = new MemberDTO();
+			memDTO.setNum(rs.getInt("num"));
 			memDTO.setId(rs.getString("id"));
 			memDTO.setPw(rs.getString("pw"));
+			memDTO.setPhone(rs.getString("phone"));
+			memDTO.setMail(rs.getString("mail"));
+			memDTO.setGrade(rs.getInt("grade"));
+			memDTO.setIndate(rs.getDate("indate"));
 		}
 		return memDTO;
 	}
-
+	//id 중복체크
 	@Override
 	public MemberDTO memberSelect(String id) throws Exception {
 		MemberDTO memDTO = null;
-		String sql = "SELECT id FROM member WHERE id=?";
-		Connection conn = null;
-		PreparedStatement pstmt = conn.prepareStatement(sql);
+		String sql = "SELECT * FROM member WHERE id=?";
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, id);
-		ResultSet rs = pstmt.executeQuery();
+		rs = pstmt.executeQuery();
 		if(rs.next()) {
 			memDTO = new MemberDTO();
+			memDTO.setNum(rs.getInt("num"));
 			memDTO.setId(rs.getString("id"));
+			memDTO.setPw(rs.getString("pw"));
+			memDTO.setPhone(rs.getString("phone"));
+			memDTO.setMail(rs.getString("mail"));
+			memDTO.setGrade(rs.getInt("grade"));
+			memDTO.setIndate(rs.getDate("indate"));
 		}
 		return memDTO;
 	}
-
+	//회원가입
 	@Override
 	public int memberInsert(MemberDTO memDTO) throws Exception {
 		int insert = 0;
 		String sql = "INSERT INTO member (num, id, pw, phone, mail, grade, indate) "
 				+ "VALUES(member_seq.nextval, ?, ?, ?, ?, 1, sysdate)";
-		Connection conn = null;
-		PreparedStatement pstmt = conn.prepareStatement(sql);
+		PreparedStatement pstmt = null;
+		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, memDTO.getId());
 		pstmt.setString(2, memDTO.getPw());
 		pstmt.setString(3, memDTO.getPhone());
