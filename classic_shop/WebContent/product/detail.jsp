@@ -44,7 +44,7 @@
 				<table>
 					<tr>
 						<th>Color</th>
-						<td style="text-align: 'right'"><button type="button" class="colorbtn"></button>
+						<td style="text-align: 'right';"><button type="button" class="colorbtn"></button>
 					        <button type="button" class="colorbtn2"></button>
 					    </td>
 					</tr>
@@ -67,7 +67,7 @@
 <!-- <img src="http://placehold.it/10x10" alt="" width="10" height="10" class="bt_down" /> -->
                  		
 						<script>
-						$(function(){ 
+						/* $(function(){ 
 							  $('.bt_up').click(function(){ 
 							    var n = $('.bt_up').index(this);
 							    var num = $(".num:eq("+n+")").val();
@@ -78,7 +78,7 @@
 							    var num = $(".num:eq("+n+")").val();
 							    num = $(".num:eq("+n+")").val(num*1-1); 
 							  });
-						}) 
+						})  */
 						</script>
 						</td>
 						<td>100,000원</td>
@@ -148,14 +148,15 @@
 	<a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> 
 	<a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a> 
 	</div>
-	</div> <!-- 이미지슬라이  -->
-	<h6 id="home"></h6>
+	</div> <!-- 이미지슬라이드  -->
+	<h6 id="product_info"></h6>
 	<div id="" class="bs-example">
 <!-- 	<div id="home" class="bs-example" data-example-id="simple-nav-tabs"> -->
 	    <ul class="nav nav-tabs">
-	      <li role="presentation" class="active"><a href="#home">Home</a></li>
-	      <li role="presentation"><a href="#profile">Profile</a></li>
-	      <li role="presentation"><a href="#message">Messages</a></li>
+	      <li role="presentation" class="active"><a href="#product_info">DETAIL INFO</a></li>
+	      <li role="presentation"><a href="#product_shopguide">SHOP GUIDE</a></li>
+	      <li role="presentation"><a href="#product_reviw">REVIEW</a></li>
+	      <li role="presentation"><a href="#product_qna">QNA</a></li>
 	    </ul>
  	</div>
 	<div class="highlight"><pre><code class="language-html" data-lang="html">
@@ -191,12 +192,13 @@
  		여기에다가 내용입력 
 	</code></pre></div>
 	<!-- <div id="profile" class="bs-example" data-example-id="simple-nav-tabs"> -->
-	<h6 id="profile"></h6>
+	<h6 id="product_shopguide"></h6>
 	<div id="" class="bs-example">
 	    <ul class="nav nav-tabs">
-	      <li role="presentation"><a href="#home">Home</a></li>
-	      <li role="presentation" class="active"><a href="#profile">Profile</a></li>
-	      <li role="presentation"><a href="#message">Messages</a></li>
+	      <li role="presentation"><a href="#product_info">DETAIL INFO</a></li>
+	      <li role="presentation" class="active"><a href="#product_shopguide">SHOP GUIDE</a></li>
+	      <li role="presentation"><a href="#product_review">REVIEW</a></li>
+	      <li role="presentation"><a href="#product_qna">QNA</a></li>
 	    </ul>
  	</div>
 	<div class="highlight"><pre><code class="language-html" data-lang="html">
@@ -236,13 +238,49 @@
  		여기에다가 내용입력 
  		여기에다가 내용입력 
 	</code></pre></div>
-	<h6 id="message"></h6>
+	<h6 id="product_review"></h6>
 	<div id="" class="bs-example">
 <!-- 	<div id="message" class="bs-example" data-example-id="simple-nav-tabs"> -->
 	    <ul class="nav nav-tabs">
-	      <li role="presentation"><a href="#home">Home</a></li>
-	      <li role="presentation"><a href="#profile">Profile</a></li>
-	      <li role="presentation" class="active"><a href="#message">Messages</a></li>
+	      <li role="presentation"><a href="#product_info">DETAIL INFO</a></li>
+	      <li role="presentation"><a href="#product_shopguide">SHOP GUIDE</a></li>
+	      <li role="presentation" class="active"><a href="#product_review">REVIEW</a></li>
+	      <li role="presentation"><a href="#product_qna">QNA</a></li>
+	    </ul>
+ 	</div>
+	<div class="highlight"><pre><code class="language-html" data-lang="html">
+ 		여기에다가 내용입력 
+ 		여기에다가 내용입력 
+ 		여기에다가 내용입력 
+ 		여기에다가 내용입력 
+ 		여기에다가 내용입력 
+ 		여기에다가 내용입력 
+ 		여기에다가 내용입력 
+ 		여기에다가 내용입력 
+ 		여기에다가 내용입력 
+ 		여기에다가 내용입력 
+ 		여기에다가 내용입력 
+ 		여기에다가 내용입력 
+ 		여기에다가 내용입력 
+ 		여기에다가 내용입력 
+ 		여기에다가 내용입력 
+ 		여기에다가 내용입력 
+ 		여기에다가 내용입력 
+ 		여기에다가 내용입력 
+ 		여기에다가 내용입력 
+ 		여기에다가 내용입력 
+ 		여기에다가 내용입력 
+ 		여기에다가 내용입력 
+ 		여기에다가 내용입력 
+	</code></pre></div>
+	<h6 id="product_qna"></h6>
+	<div id="" class="bs-example">
+<!-- 	<div id="message" class="bs-example" data-example-id="simple-nav-tabs"> -->
+	    <ul class="nav nav-tabs">
+	      <li role="presentation"><a href="#product_info">DETAIL INFO</a></li>
+	      <li role="presentation"><a href="#product_shopguide">SHOP GUIDE</a></li>
+	      <li role="presentation"><a href="#product_review">REVIEW</a></li>
+	      <li role="presentation" class="active"><a href="#product_qna">QNA</a></li>
 	    </ul>
  	</div>
 	<div class="highlight"><pre><code class="language-html" data-lang="html">

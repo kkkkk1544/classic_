@@ -97,15 +97,19 @@
 .product_description{
 	font-size:14px
 }
+
 .detail_top_left{
 	float: left;
-	width: 50%;
+	width: 500px !important;
 	height: 500px;
+	display: block;
 }
+
 .detail_top_right{
 	float: right;
-	width: 50%;
+	width: 500px !important;
 	height: 500px;
+	display: block;
 }
 .detail_hr{
 	border: solid 1px gray;
