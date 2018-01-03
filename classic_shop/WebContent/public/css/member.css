@@ -146,38 +146,27 @@
 }
 
 
-
-
-
-
 /* 배송주소록 */
-
 .adressTitle{
 	padding-bottom: 15px;
-	border-bottom: 1px solid #000;
 	margin-bottom: 0px;
 	color: #000;
 }
 .btn-default{
 	font-size: 14px;
 }
-.orderInfo .orderTitle{
+.orderTitle{
 	margin: 38px 0 0px 0;
 	overflow: hidden;
 	padding-top: 100px;
 	color: #000;
 }
-.addr_wrap{
-	border-bottom: 1px solid #000;
+.address_wrap{
+	border-bottom: 1px solid #c5b4b4e6;
     padding-bottom: 40px;
 }
-.addr_wrap .table{
-	border-top: none;
-	border-bottom: 1px solid #e6e6e6;
-}
-
 .recentaddr_wrap{
-	border-bottom: 1px solid #000;
+	border-bottom: 1px solid #c5b4b4e6;
 	padding-bottom: 40px;
 	padding-top: 40px;
 }
@@ -185,25 +174,16 @@
 	border-top: none;
 	border-bottom: 1px solid #e6e6e6;
 }
-
+.table.address_table{
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
 .table>thead>tr>th>label{
 	margin-bottom: 0px;
 }
 
 
-
-
-
-
-
-
-
-
-
-
 /* 마이페이지 */
-
-
 .mypageTitle{
 	padding-bottom: 15px;
 	border-bottom: 1px solid #000;
@@ -226,7 +206,7 @@
     margin-top: 11px;
     padding: 0px 100px 0px 14px;
 }
-.mypage_info ul li .lab{
+.mypage_info ul li .mypageInfoLabel{
 	font-size: 14px;
 	color: #000;
 	margin-left: 14px;
@@ -236,7 +216,7 @@
     color: #000;
     margin: 5px 0 0 15px;
 }
-.mypage_info .benefit_group{
+.benefit_group{
 	display: table;
     margin-left: 0;
     padding: 2px 0 2px 0;
@@ -246,7 +226,7 @@
     height: 70px;
    	font-size: 14px;
 }
-.mypage_info .benefit_group .benefitInfo{
+.benefitInfo{
 	display: table-cell;
     vertical-align: middle;
     width: 145px;
@@ -265,7 +245,7 @@
 .orderList_wrap{
 	margin-top: 38px;
 }
-.orderList_info{
+.orderList_titleandbtn{
 	overflow: hidden;
 }
 .orderListTitle{
@@ -275,218 +255,218 @@
 	padding-bottom: 15px;
 	margin-bottom: 0px;
 }
-.orderList_wrap .orderList_info p{
+.orderList_titleandbtn p{
 	float: right;
     margin-top: 35px;
     margin-bottom: 0px;
 }
-.orderList_wrap .orderList_info p>a{
+.orderList_titleandbtn p>a{
 	color: #000;
 }
-.orderList_wrap .orderList_info p>a:hover{
+.orderList_titleandbtn p>a:hover{
 	color: #949393;
 }
 .table.orderList_table{
 	border-top: 1px solid #000;
 	border-bottom: 1px solid #000;
 }
-
-
-.myPostingInfo .myPostingTitle{
-	margin: 38px 0 0px 0;
+.table.orderList_table tr td img{
+	width: 50px;
+    height: 50px;
+    background: lightgray;
+    font-size: 10px;
+    margin: 0px;
+}
+.myPosting_wrap{
+	margin-top: 38px;
+}
+.myPosting_titleandbtn{
 	overflow: hidden;
 	border-bottom: 1px solid #000;
 }
-.myPostingInfo .myPostingTitle>h2{
+.myPostingTitle{
 	float: left;
     color: #000;
-    height: 27px;
     font-weight: 500;
-    margin: 0px 0px 15px 0px;
+	padding-bottom: 15px;
+	margin-bottom: 0px;
 }
-.myPostingInfo .myPostingTitle p{
+.myPosting_titleandbtn p{
 	float: right;
-	margin: 15px 0px 13px 0px;
+    margin-top: 35px;
+    margin-bottom: 0px;
 }
-.myPostingInfo .myPostingTitle p>a{
+.myPosting_titleandbtn p>a{
 	color: #000;
 }
-.myPostingInfo .myPostingTitle p>a:hover{
+.myPosting_titleandbtn p>a:hover{
 	color: #949393;
 }
-.myPostingInfo .reviewInfo{
+.myPosting_wrap .reviewList{
 	float: left;
 	width: 50%;
 }
-.myPostingInfo .reviewInfo .onemore2{
-		margin: 0 5px 0 0px;
+.reviewList_wrap{
+	margin: 0 15px 0 0px;
 }
-.myPostingInfo .reviewInfo .reviewTitle{
+.reviewListTitle{
 	margin: 10px 0 10px 0;
 	font-size: 14px;
 }
-
-
-
-.myPostingInfo .qnaInfo{
-	float: right;
-	width: 50%;
-}
-.myPostingInfo .qnaInfo .qnaTitle{
-	margin: 10px 0 10px 0;
-	font-size: 14px;
-}
-
-.myPostingInfo .qnaInfo .onemore{
-	margin: 0 0px 0 5px;
-
-}
-
-
-
-
-/* 
-회원 쿠폰
-#bodyContainer{
-	width: 100%;
-    padding: 8% 8% 2% 8%;
-}
-#bodyContainer .wrapper{
-	width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-}
-.memberInfo{
-	float: left;
-    width: 100%;
-    margin-top: 20px;
-
-}
-.memberTitle>h2{
-	margin: 30px 0px 13px 0px;
-}
-.memberInfo .bxx{
-	float: left;
-    margin-top: 11px;
-    padding: 0px 100px 0px 14px;
-}
-.memberInfo .bxx li .lab{
-	font-size: 14px;
-	color: #000;
-	margin-left: 14px;
-}
-.memberInfo .bxx li .value {
-font-size: 14px;
-    color: #000;
-    margin: 5px 0 0 15px;
-}
-.memberInfo .myInfo{
-	display: table;
-    margin-left: 0;
-    padding: 2px 0 2px 0;
-    min-height: 50px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    height: 70px;
-   	font-size: 14px;
-}
-.memberInfo .myInfo .benefitInfo{
-	display: table-cell;
-    vertical-align: middle;
-    width: 145px;
-    text-align: center;
-    border-right: 1px solid #e7e7e7;
-}
-.myInfoWrap{
-    display: table-cell;
-    vertical-align: middle;
-    padding-left: 20px;
-   	font-size: 14px;
-}
-.edit{
-    clear: both;
-    float: left;
-    margin: 11px 0 0 0;
-}
-.btn-default{
-	font-size: 14px;
-}
-.orderInfo .orderTitle{
-	margin: 38px 0 0px 0;
-	overflow: hidden;
-}
-.orderInfo .orderTitle>h2{
-    color: #000;
-    font-weight: 500;
-    margin: 0px 0px 13px 0px;
-}
-
-.orderInfo .orderTitle p>a{
-	color: #000;
-}
-.orderInfo .orderTitle p>a:hover{
-	color: #949393;
-}
-.table{
-	background-color: #fff;
+.table.reviewList_table{
 	border-top: 1px solid #000;
-	border-bottom: 1px solid #e6e6e6;
-	
-}
-.myPostingInfo .myPostingTitle{
-	margin: 38px 0 0px 0;
-	overflow: hidden;
 	border-bottom: 1px solid #000;
 }
-.myPostingInfo .myPostingTitle>h2{
-	float: left;
-    color: #000;
-    height: 27px;
-    font-weight: 500;
-    margin: 0px 0px 15px 0px;
-}
-.myPostingInfo .myPostingTitle p{
+.qnaList{
 	float: right;
-	margin: 15px 0px 13px 0px;
+	width: 50%;
 }
-.myPostingInfo .myPostingTitle p>a{
+.qnaList_wrap{
+	margin: 0 0px 0 15px;
+}
+.qnaListTitle{
+	margin: 10px 0 10px 0;
+	font-size: 14px;
+}
+.table.qnaList_table{
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+
+/* 회원정보 수정*/
+#memberModifyTitle{
+	padding-bottom: 15px;
+	border-bottom: 1px solid #000;
 	color: #000;
 }
-.myPostingInfo .myPostingTitle p>a:hover{
-	color: #949393;
+.form-horizontal.modify_Form{
+	margin-top: 30px;
 }
-.myPostingInfo .reviewInfo{
-	float: left;
-	width: 50%;
+.form-horizontal.modify_Form .form-group {
+    margin-right: 0px;
+    margin-left: 0px;
 }
-.myPostingInfo .reviewInfo .onemore2{
-		margin: 0 5px 0 0px;
+#modifyPasswordRule{
+	color: #777;
+	font-size: 10pt;
 }
-.myPostingInfo .reviewInfo .reviewTitle{
-	margin: 10px 0 10px 0;
-	font-size: 14px;
+.modify_btn_group {
+    text-align: center;
+    padding: 10px 10px 30px 10px;
+    border-bottom: 1px solid #000;
 }
-.myPostingInfo .qnaInfo{
-	float: right;
-	width: 50%;
-}
-.myPostingInfo .qnaInfo .qnaTitle{
-	margin: 10px 0 10px 0;
-	font-size: 14px;
+.modify_btn_group button{
+	width: 100px;
+	height: 40px;
 }
 
-.myPostingInfo .qnaInfo .onemore{
-	margin: 0 0px 0 5px;
 
+/* 회원 쿠폰  */
+#couponTitle{
+	padding-bottom: 15px;
+	margin-bottom: 0px;
+	color: #000;
 }
-
-.jb-center {
+.table.coupon_table{
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+.coupon_paging {
 	text-align: center;
 }
- */
+.couponForm_wrap{
+	margin-top: 30px;
+}
+.couponForm{
+	margin: 10px auto 7px;
+	border: 1px solid #ccc;
+}
+.couponFormGroup{
+    width: 500px;
+    margin: 0px auto 0px;
+    padding: 27px 0 30px 0;
+}
+.couponFormGroup .col-sm-9{
+	padding-left: 6px;
+    padding-right: 10px;
+}
+.couponForm .couponFormGroup button{
+	color: #fff;
+    background-color: #000;
+    border-color: #ccc;
+}
+.couponForm .form-control{
+	margin-left: 0px;
+}
+
+.couponGuide_wrap{
+	margin-top: 30px;
+}
+.couponGuide{
+	padding: 20px;
+	border: 1px solid #ccc;
+}
+.couponGuide ol{
+    padding: 0px 16px 0px 13px;
+    margin-bottom: 0px;
+}
 
 
+/* 적립금  */
+.mileageTitle{
+	padding-bottom: 15px;
+	border-bottom: 1px solid #000;
+	margin-bottom: 0px;
+	color: #000;
+}
+.mileage_info{
+	border-bottom: 1px solid #000;
+}
+.mileage_info_value{
+	margin-top: 20px;
+	margin-bottom: 20px;	
+}
+.mileage_info_value ul{
+	overflow: hidden;
+}
+.mileage_info_value ul li{
+	list-style: none;
+	float: left;
+    margin: 5px 0;
+    padding: 0 20px 0 27px;
+    width: 50%;
+    height: 20px;
+}
+.mileage_info_value ul strong{
+    float: left;
+    width: 50%;
+    padding: 0 0 0 10px;
+    box-sizing: border-box;
+}
+.mileage_info_value ul span{
+	    float: left;
+    width: 50%;
+    padding: 0 0 0 10px;
+    box-sizing: border-box;
+}
 
-
-
-
+.table.mileage_table{
+	margin-top: 35px;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+.mileage_paging{
+	text-align: center;
+}
+.mileageGuide_wrap{
+	margin-top: 30px;
+}
+.mileageGuide{
+	padding: 20px;
+	border: 1px solid #ccc;
+}
+.mileageGuide ol{
+    padding: 0px 16px 0px 13px;
+    margin-bottom: 0px;
+}

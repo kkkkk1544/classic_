@@ -3,9 +3,9 @@
     
 <div class="member_body">
 	<div class="container">
-		<div class="addr_wrap">
+		<div class="address_wrap">
 			<h2 class="adressTitle">ADRESS LIST</h2>
-			<table class="table">
+			<table class="table address_table">
 				<thead>
 					<tr>
 						<th class="col-sm-1">
@@ -44,7 +44,7 @@
 		<!-- RECENT ADDRESS -->
 		<div class="recentaddr_wrap">
 			<h2 class="adressTitle">RECENT ADDRESS</h2>
-			<table class="table">
+			<table class="table address_table">
 				<thead>
 					<tr>
 						<th class="col-sm-1">
