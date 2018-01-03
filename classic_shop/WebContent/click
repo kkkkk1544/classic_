@@ -25,3 +25,30 @@
  	-- 웬만하면 view 먼저 짜는 걸로 해요~! 
  	
  	-- 부트스트랩, jQuery import 했음
+ 	
+ 	#productDescription>form>table{
+ 		border-top : 1px soild #000;
+ 		border-bottom : 1px so
+ 		padding : 10px 0;
+ 	}
+ 	#productDescription>form>table>tr/th/td
+ 	
+ 	<div class="container">
+ 		<div class="detail">
+ 			상품 사진
+ 		</div>
+ 		<div class="detail">
+ 		상품설명
+ 		<div>
+ 		
+ 		.container .detail{
+ 			display: inline-block
+ 		}
+ 		
+ 	
+ 	<div id="productDescription">
+ 		<form>
+ 			<table>
+ 			</table>
+ 		<form>
+ 	</div>
