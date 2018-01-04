@@ -103,7 +103,7 @@
 									<li><a href="<c:url value='/order/cart/cart.jsp'/>">장바구니</a></li>
 									<li><a href="<c:url value='/order/wish/wish.jsp'/>">위시리스트</a></li>
 									<li><a href="#">주문내역</a></li>
-									<li><a href="#">내가쓴글</a></li>
+									<li><a href="<c:url value='/member/mypage/myposting.jsp'/>">내가쓴글</a></li>
 								</ul>
 							</li>
 							<li>
