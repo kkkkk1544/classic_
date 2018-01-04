@@ -16,6 +16,8 @@
 <link rel="stylesheet" href="<c:url value='/public/css/order.css' />">
 <!-- jQuery ui CSS -->
 <link rel="stylesheet" href="<c:url value='/public/js/jquery-ui/jquery-ui.min.css' />">
+<!-- 개인 JS -->
+<script src="<c:url value='/public/js/comu.js'/>"></script>
 <!-- jQuery lib -->
 <script src='<c:url value="/public/js/jquery/jquery-3.2.1.min.js"/>'></script>
 <script src='<c:url value="/public/js/jquery-ui/jquery-ui.min.js"/>'></script>
@@ -119,10 +121,10 @@
 							</li>
 							<li><a href="<c:url value='/order/list.jsp' />">ORDER</a></li>
 							<li role="presentation" class="dropdown">
-								<a class="dropdown-toggle" href="<c:url value='/comu/notice/list.jsp' />" role="button" aria-expanded="false">COMMUNITY</a>
+								<a class="dropdown-toggle" href="#" role="button" aria-expanded="false">COMMUNITY</a>
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="<c:url value='/comu/notice/list.jsp' />">NOTICE</a></li>
-									<li><a onclick="qnaList()">QNA</a></li>
+									<li><a href="<c:url value='/comu/qna/list.jsp' />">QNA</a></li>
 									<li><a href="<c:url value='/comu/faq/list.jsp' />">FAQ</a></li>
 								</ul>
 							</li>

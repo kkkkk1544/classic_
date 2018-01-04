@@ -1,12 +1,12 @@
 /**
  * 
  */
-
 //QNA LIST
-function qnaList(){
+$(function(){
 	$(document).ready(function(){
 		var setting={
-				url: "<c:url value='/qna.do'/>",
+				//url: "<c:url value='/qna.do'/>",
+				url: "/classic_shop/qna.do",
 				type: "GET",
 				dataType: "json",
 				success: function(data){
@@ -15,7 +15,7 @@ function qnaList(){
 					$(data).each(function(index,item){
 						qna_contents+="<tr>";
 						qna_contents+="<td>"+item.num+"</td>";
-						qna_contents+="<td><a javascript:readQna()"+item.subject+"</a></td>";
+						qna_contents+="<td>"+item.subject+"</td>";
 						qna_contents+="<td>"+item.name+"</td>";
 						qna_contents+="<td>"+item.indate+"</td>";
 						qna_contents+="<td>"+item.count+"</td>";
@@ -26,4 +26,4 @@ function qnaList(){
 			}
 			$.ajax(setting);
 	});
-}
+});

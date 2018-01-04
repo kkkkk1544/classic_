@@ -65,7 +65,5 @@
 		</div>
 	</div>
 </div>
-
-<script src="<c:url value='/public/js/comu.js'/>"></script>
 </body>
 </html> 
