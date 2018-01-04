@@ -27,7 +27,7 @@
 							<div>
 								<ul class="list-group" >
 									<li class="list-group-item"><strong>product Name</strong></li>
-									<li class="list-group-item"><strong>color 검정 size M<strong></strong></li>
+									<li class="list-group-item"><strong>color 검정 size M</strong></li>
 									<li class="list-group-item"><button type="button" class="btn">옵션변경</button></li>
 								</ul>
 							</div>
@@ -104,3 +104,5 @@
 			</ul>
 		</div>
 	</div>
+	<script>	
+	</script>
