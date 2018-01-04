@@ -170,16 +170,44 @@
 <script>
 //$(function(){
 	var productDetailInfo=function(){
-		$(".language-html").html("안녕안녕 여기는 detail info.");
+		$.ajax({
+			url:"#",
+			dataType:"html",
+			type: "GET",
+			success: function(respData, status, jqXHR){
+				$(".language-html").html("안녕안녕 여기는 detail info.");
+			}
+		});
 	};
 	var shopGuide=function(){
-		$(".language-html").html("헬로우 이곳은 샵가이드얌.");
+		$.ajax({
+			url:"#",
+			dataType:"html",
+			type: "GET",
+			success: function(respData, status, jqXHR){
+				$(".language-html").html("헬로우 이곳은 샵가이드얌.");
+			}
+		});
 	};
 	var productReview=function(){
-		$(".language-html").html("요기는 프로덕트 리뷰~~~~예에에에~~~.");
+		$.ajax({
+			url:"#",
+			dataType:"html",
+			type: "GET",
+			success: function(respData, status, jqXHR){
+				$(".language-html").html("요기는 프로덕트 리뷰~~~~예에에에~~~.");
+			}
+		});
 	};
 	var productQna=function(){
-		$(".language-html").html("프롸덕 큐앤에이");
+		$.ajax({
+			url:"#",
+			dataType:"html",
+			type: "GET",
+			success: function(respData, status, jqXHR){
+				$(".language-html").html("프롸덕 큐앤에이");
+			}
+		});
 	};
 //});
 
