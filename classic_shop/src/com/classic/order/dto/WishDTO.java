@@ -5,10 +5,46 @@ public class WishDTO {
 	PRODUCT_NUM              NUMBER(8)
 	MEM_NUM                  NUMBER(8)
 	INDATE                   DATE*/
+	
+	private String productName;
+	private String sizu;
+	private String colour;
+	private int price;
+	private int wishQuantity;
 	private int num;
 	private int productNum;
 	private int memNum;
 	private String indate;
+	public String getProductName() {
+		return productName;
+	}
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+	public String getSizu() {
+		return sizu;
+	}
+	public void setSizu(String sizu) {
+		this.sizu = sizu;
+	}
+	public String getColour() {
+		return colour;
+	}
+	public void setColour(String colour) {
+		this.colour = colour;
+	}
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	public int getWishQuantity() {
+		return wishQuantity;
+	}
+	public void setWishQuantity(int wishQuantity) {
+		this.wishQuantity = wishQuantity;
+	}
 	public int getNum() {
 		return num;
 	}
@@ -35,7 +71,9 @@ public class WishDTO {
 	}
 	@Override
 	public String toString() {
-		return "{ \"num\" : \"" + num + "\", \"productNum\" : \"" + productNum + "\", \"memNum\" : \"" + memNum
-				+ "\", \"indate\" : \"" + indate + "\"}";
+		return "{ \"productName\" : \"" + productName + "\", \"sizu\" : \"" + sizu + "\", \"colour\" : \"" + colour
+				+ "\", \"price\" : \"" + price + "\", \"wishQuantity\" : \"" + wishQuantity + "\", \"num\" : \"" + num
+				+ "\", \"productNum\" : \"" + productNum + "\", \"memNum\" : \"" + memNum + "\", \"indate\" : \""
+				+ indate + "\"}";
 	}
 }
