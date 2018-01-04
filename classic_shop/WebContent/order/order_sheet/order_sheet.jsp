@@ -83,36 +83,36 @@
 		</div>
 		<button class="btn btn-defult" id="selectProductDel">선택 상품 삭제</button>
 		<div id="orderInfo">
-			<p>주문정보 <span class="redRound sec">10</span><span>필수</span></p>
+			<p>주문정보 <span class="redRound">10</span><span>필수</span></p>
 			<table class ="table">
 				<tr>
 					<th>주문하시는  분</th>
-					<td><span class="redRound sec">10</span></td>
+					<td><span class="redRound">10</span></td>
 					<td><input type="text"></td>
 				</tr>
 				<tr>
 					<th>주소</th>
-					<td><span class="redRound sec">10</span></td>
+					<td><span class="redRound">10</span></td>
 					<td><input type="text"><button type="button" class="btn">우편번호</button></td>
 				</tr>
 				<tr>
 					<th></th>
-					<td class="sec"></td>
+					<td class=""></td>
 					<td><input type="text" value="기본주소"></td>
 				</tr>
 				<tr>
 					<th></th>
-					<td class="sec"></td>
+					<td class=""></td>
 					<td><input type="text" value="상세주소"></td>
 				</tr>
 				<tr>
 					<th>일반전화</th>
-					<td><span class="redRound sec">10</span></td>
+					<td><span class="redRound">10</span></td>
 					<td><input type="number"></td>
 				</tr>
 				<tr>
 					<th>휴대전화</th>
-					<td><span class="redRound sec">10</span></td>
+					<td><span class="redRound">10</span></td>
 					<td><input type="number"></td>
 				</tr>
 			</table>
