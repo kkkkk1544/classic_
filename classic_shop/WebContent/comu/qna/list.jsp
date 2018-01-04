@@ -1,6 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="/comu/menu.jsp" %>
+<script>
+$(function(){
+	$(".qna_contents").ready(function(){
+		var setting={
+				url: "<c:url value='/qna.do'/>",
+				type: "GET",
+				dataType: "json",
+				success: function(data){
+					console.log(data);
+					var qna_contents="";
+					$(data).each(function(index,item){
+						qna_contents+="<tr>";
+						qna_contents+="<td>"+item.num+"</td>";
+						qna_contents+="<td><a javascript:readQna()"+item.subject+"</a></td>";
+						qna_contents+="<td>"+item.name+"</td>";
+						qna_contents+="<td>"+item.indate+"</td>";
+						qna_contents+="<td>"+item.count+"</td>";
+						qna_contents+="</tr>";
+					});
+					$(".qna_contents").html(qna_contents);
+				}
+			}
+			$.ajax(setting);
+	});
+});
+</script>
 
 <div class="comu_body">
 	<p class="comu_title">QNA</p>
@@ -56,34 +82,6 @@
 			</form>
 		</div>
 </div>
-
-<script>
-	var loadQnaList = function(){
-		var setting={
-			url: "qna.do",
-			type: "GET",
-			dataType: "json",
-			success: function(data){
-				console.log(data);
-				var qna_contents="";
-				$(data).each(function(index,item){
-					qna_contents+="<tr>";
-					qna_contents+="<td>"+item.num+"</td>";
-					qna_contents+="<td>"+item.subject+"</td>";
-					qna_contents+="<td>"+item.mem_num+"</td>";
-					qna_contents+="<td>"+item.indate+"</td>";
-					qna_contents+="<td>"+item.count+"</td>";
-					qna_contents+="</tr>";
-				});
-				$(".qna_contents").html(qna_contents);
-			}
-		}
-		$.ajax(setting);
-	}
-</script>
-
-
-
 
 
 <!--
