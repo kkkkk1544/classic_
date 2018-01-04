@@ -6,8 +6,9 @@
 		<h2>COMMUNITY</h2>
 			<ul class="nav nav-tabs">
 				<li><a href="<c:url value='/comu/notice/list.jsp' />">NOTICE</a>
-				<li><a href="<c:url value='/qna.do' />">QNA</a></li>
+				<li><a onclick="qnaList(); return false;">QNA</a></li>
 				<li><a href="<c:url value='/comu/faq/list.jsp' />">FAQ</a></li>
 			</ul>
 	</div>
 </div>
+<%-- href="<c:url value='/comu/qna/list.jsp' /> --%>

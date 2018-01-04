@@ -122,7 +122,7 @@
 								<a class="dropdown-toggle" href="<c:url value='/comu/notice/list.jsp' />" role="button" aria-expanded="false">COMMUNITY</a>
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="<c:url value='/comu/notice/list.jsp' />">NOTICE</a></li>
-									<li><a href="<c:url value='/qna.do' />">QNA</a></li>
+									<li><a onclick="qnaList()">QNA</a></li>
 									<li><a href="<c:url value='/comu/faq/list.jsp' />">FAQ</a></li>
 								</ul>
 							</li>
