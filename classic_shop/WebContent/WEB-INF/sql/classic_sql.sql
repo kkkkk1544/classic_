@@ -299,7 +299,6 @@ create table review(
 create sequence img_path_seq start with 1 increment by 1;
 create table img_path(
 	num number(8) constraint img_pk_num primary key,
-	company_num number(8) null constraint img_fk_company_num references company(num),
 	data_num number(8) null constraint img_fk_data_num references product_data(num),
 	guide_num number(8) null constraint img_fk_guide_num references shop_guide(num),
 	icon_num number(8) null constraint img_fk_icon_num references icon(num),
@@ -725,7 +724,7 @@ insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip
 values (paid_seq.nextval,1,1,null,2017110800000002,'미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','항상 감사합니다',sysdate,2,100000,90000,to_date('2017-11-08','yyyy-mm-dd'),0,'김주연');
 
 
-//
+
 insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
 values (paid_seq.nextval,1,1,null,2017112900000002,'송유정',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호',null,null,2,100000,100000,to_date('2017-11-29','yyyy-mm-dd'),0,'박보검');
 insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
@@ -745,7 +744,7 @@ values (paid_seq.nextval,3,1,null,2017122200000123,'유정란',01012341234,11758
 insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
 values (paid_seq.nextval,1,35,null,2017122400000121,'유정',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','크리스마스조심',to_date('2017-12-24','yyyy-mm-dd'),0,100000,1000000,to_date('2017-12-25','yyyy-mm-dd'),1,'유정');
 insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,1,64,null,2017123000000122,'김상우',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','신년조심',to_date('2017-12-30','yyyy-mm-dd'),0,100000,1000000,to_date('2017-12-30','yyyy-mm-dd'),1,'김상우');
+values (paid_seq.nextval,1,52,null,2017123000000122,'김상우',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','신년조심',to_date('2017-12-30','yyyy-mm-dd'),0,100000,1000000,to_date('2017-12-30','yyyy-mm-dd'),1,'김상우');
 
 
 --wish db

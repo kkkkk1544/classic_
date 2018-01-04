@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
- <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" />
-    
+
 
 <div class="product_body">
 	<div id="productTitle">
@@ -15,10 +14,14 @@
 	  </p>
 	</div>
 	
+	<div class="container">
 	<div class="detail_top">
+		<div class="col-md-6">
 		<div class="detail_top_left">
-			<img src="//withyoon.com/web/product/big/201801/7283_shop1_257605.jpg"/>
+			<img src="//withyoon.com/web/product/big/201801/7283_shop1_257605.jpg" class="img-responsive"/>
 		</div>
+		</div>
+		<div class="col-md-6">
 		<div class="detail_top_right">
 			<div class="detail_top_right_top">
 			<hr class="detail_hr">
@@ -88,6 +91,8 @@
 			</div>
 			
 		</div>
+		</div>
+	</div>
 	</div>
 	<div class="product_slide">
 	<!-- http://www.blueb.co.kr/?r=home&c=1/5&uid=3826&mod=preview&iframe=Y 
@@ -149,165 +154,38 @@
 	<a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a> 
 	</div>
 	</div> <!-- 이미지슬라이드  -->
-	<h6 id="product_info"></h6>
-	<div id="" class="bs-example">
-<!-- 	<div id="home" class="bs-example" data-example-id="simple-nav-tabs"> -->
-	    <ul class="nav nav-tabs">
-	      <li role="presentation" class="active"><a href="#product_info">DETAIL INFO</a></li>
-	      <li role="presentation"><a href="#product_shopguide">SHOP GUIDE</a></li>
-	      <li role="presentation"><a href="#product_reviw">REVIEW</a></li>
-	      <li role="presentation"><a href="#product_qna">QNA</a></li>
-	    </ul>
- 	</div>
-	<div class="highlight"><pre><code class="language-html" data-lang="html">
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
-	</code></pre></div>
-	<!-- <div id="profile" class="bs-example" data-example-id="simple-nav-tabs"> -->
-	<h6 id="product_shopguide"></h6>
-	<div id="" class="bs-example">
-	    <ul class="nav nav-tabs">
-	      <li role="presentation"><a href="#product_info">DETAIL INFO</a></li>
-	      <li role="presentation" class="active"><a href="#product_shopguide">SHOP GUIDE</a></li>
-	      <li role="presentation"><a href="#product_review">REVIEW</a></li>
-	      <li role="presentation"><a href="#product_qna">QNA</a></li>
-	    </ul>
- 	</div>
-	<div class="highlight"><pre><code class="language-html" data-lang="html">
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
-	</code></pre></div>
-	<h6 id="product_review"></h6>
-	<div id="" class="bs-example">
-<!-- 	<div id="message" class="bs-example" data-example-id="simple-nav-tabs"> -->
-	    <ul class="nav nav-tabs">
-	      <li role="presentation"><a href="#product_info">DETAIL INFO</a></li>
-	      <li role="presentation"><a href="#product_shopguide">SHOP GUIDE</a></li>
-	      <li role="presentation" class="active"><a href="#product_review">REVIEW</a></li>
-	      <li role="presentation"><a href="#product_qna">QNA</a></li>
-	    </ul>
- 	</div>
-	<div class="highlight"><pre><code class="language-html" data-lang="html">
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
-	</code></pre></div>
+	
 	<h6 id="product_qna"></h6>
 	<div id="" class="bs-example">
 <!-- 	<div id="message" class="bs-example" data-example-id="simple-nav-tabs"> -->
 	    <ul class="nav nav-tabs">
-	      <li role="presentation"><a href="#product_info">DETAIL INFO</a></li>
-	      <li role="presentation"><a href="#product_shopguide">SHOP GUIDE</a></li>
-	      <li role="presentation"><a href="#product_review">REVIEW</a></li>
-	      <li role="presentation" class="active"><a href="#product_qna">QNA</a></li>
+	      <li role="presentation" class="active"><a href="javascript:productDetailInfo()">DETAIL INFO</a></li>
+	      <li role="presentation"><a href="javascript:shopGuide()">SHOP GUIDE</a></li>
+	      <li role="presentation"><a href="javascript:productReview()">REVIEW</a></li>
+	      <li role="presentation"><a href="javascript:productQna()">QNA</a></li>
 	    </ul>
  	</div>
-	<div class="highlight"><pre><code class="language-html" data-lang="html">
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
- 		여기에다가 내용입력 
+	<div class="highlight"><pre><code id="productDetailTest" class="language-html" data-lang="html">초기내용
 	</code></pre></div>
+<script>
+//$(function(){
+	var productDetailInfo=function(){
+		$(".language-html").html("안녕안녕 여기는 detail info.");
+	};
+	var shopGuide=function(){
+		$(".language-html").html("헬로우 이곳은 샵가이드얌.");
+	};
+	var productReview=function(){
+		$(".language-html").html("요기는 프로덕트 리뷰~~~~예에에에~~~.");
+	};
+	var productQna=function(){
+		$(".language-html").html("프롸덕 큐앤에이");
+	};
+//});
+
+	
+
+</script>
 
 <a class="back-to-top" href="#top">
 	<button>Top</button>
