@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <body>
 	<div class="container" id="cartMainDiv">
-		<h2 class="text-left">CART</h2>
+		<h2 class="text-left" id="cartName">CART</h2>
 		<table class="table" id="cartTable">
 			<tbody id="cartTitle">
 				<tr>
@@ -23,12 +22,12 @@
 					<td id ="cartDetailList">
 						<div id="cartDetailListDiv">
 							<div>
-								<p>이미지임</p>
+								<p><a href="#">이미지임</a></p>
 							</div>
 							<div>
 								<ul class="list-group" >
-									<li class="list-group-item"><strong>product Name</strong></li>
-									<li class="list-group-item"><strong>color 검정 size M<strong></strong></li>
+									<li class="list-group-item"><strong><a href="#">product Name</a></strong></li>
+									<li class="list-group-item"><strong><a href="#">color 검정 size M</a></strong></li>
 									<li class="list-group-item"><button type="button" class="btn">옵션변경</button></li>
 								</ul>
 							</div>
@@ -38,7 +37,7 @@
 					<td>
 						<div id="productQuantity">
 							<div>
-								<input type="number" value="1">
+								<input type="number" value="1" min="1">
 							</div>
 							<div>
 								<button class="btn" >변경</button>
@@ -49,10 +48,10 @@
 					<td>0원</td>
 					<td>100000원</td>
 					<td>
-						<div class="btn-group-vertical" id="cartListBtn">
-							<button type="button" class="btn btn-primary">주문하기</button>
-							<button type="button" class="btn btn-primary">WISH LIST 등록</button>
-							<button type="button" class="btn btn-primary">삭제</button>
+						<div class="btn-group" id="cartListBtn">
+							<button type="button" class="btn" >주문하기</button>
+							<button type="button" class="btn">WISH LIST 등록</button>
+							<button type="button" class="btn">삭제</button>
 						</div>
 					</td>
 				</tr>
@@ -61,12 +60,12 @@
 					<td id="cartDetailList2">
 						<div id="cartDetailListDiv2">
 							<div>
-								<p>이미지임</p>
+								<p><a href="#">이미지임</a></p>
 							</div>
 							<div>
 								<ul class="list-group" >
-									<li class="list-group-item"><strong>product Name</strong></li>
-									<li class="list-group-item"><strong>color 검정 size M</strong></li>
+									<li class="list-group-item"><strong><a href="#">product Name</a></strong></li>
+									<li class="list-group-item"><strong><a href="#">color 검정 size M</a></strong></li>
 									<li class="list-group-item"><button type="button" class="btn">옵션변경</button></li>
 								</ul>
 							</div>
@@ -76,7 +75,7 @@
 					<td>
 						<div id="productQuantity2">
 							<div>
-								<input type="number" value="1">
+								<input type="number" value="1" min="1">
 							</div>
 							<div>
 								<button class="btn" >변경</button>
@@ -87,20 +86,20 @@
 					<td>0원</td>
 					<td>100000원</td>
 					<td>
-						<div class="btn-group-vertical" id="cartListBtn2">
-							<button type="button" class="btn btn-primary">주문하기</button>
-							<button type="button" class="btn btn-primary">장바구니 등록</button>
-							<button type="button" class="btn btn-primary">삭제</button>
+						<div class="btn-group" id="cartListBtn2">
+							<button type="button" class="btn">주문하기</button>
+							<button type="button" class="btn">장바구니 등록</button>
+							<button type="button" class="btn">삭제</button>
 						</div>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 		<div class="btn-group" id="cartCRUDBtn">
-			<button type="button" class="btn btn-primary">전체삭제</button>
-			<button type="button" class="btn btn-primary">선택주문</button>
-			<button type="button" class="btn btn-primary">선택삭제</button>
-			<button type="button" class="btn btn-primary">선택한 상품을<br> 위시리스트에 등록</button>
+			<button type="button" class="btn">전체삭제</button>
+			<button type="button" class="btn">선택주문</button>
+			<button type="button" class="btn">선택삭제</button>
+			<button type="button" class="btn">선택한 상품을<br> 위시리스트에 등록</button>
 		</div>
 		<div>
 			<table class="table table-bordered" id="AllPriceTab">
@@ -116,9 +115,9 @@
 				</tr>
 			</table>
 		</div>
-		<div class="btn-group" id="paidUpdateBtn">
-			<button type="button" class="btn btn-primary"><strong>전체 상품 주문</strong></button>
-			<button type="button" class="btn btn-primary"><strong>선택 상품 주문</strong></button>
+		<div id="paidUpdateBtn">
+			<button type="button" class="btn"><strong>전체 상품 주문</strong></button>
+			<button type="button" class="btn"><strong>선택 상품 주문</strong></button>
 		</div>
 		<div id="cartInfo">
 			<p>장바구니 안내문</p>
