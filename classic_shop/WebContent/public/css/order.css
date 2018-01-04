@@ -44,6 +44,10 @@ font-size: 10pt;
 #listPage{
 text-align: center;
 padding: 20px 20px;
+font-size: 10pt;
+} 
+.order_date_input{
+padding: 5px 5px;
 }
 .pagination{
 margin: 0 auto;
@@ -61,7 +65,7 @@ margin: 50px 50px;
 	width:80%!important;
 	margin-right: auto;
 	margin-left: auto;
-	margin-top: 80px;
+	margin-top: 200px;
 }  
 #cartTable{
 	width:100%;
@@ -90,28 +94,25 @@ margin: 50px 50px;
 	height: 104px;
 	vertical-align: middle;
 }
-/* /* h2 tag-name don't use plz */
-/* h2{
+#cartName{
 	border-bottom-style: solid;
 	height: 40px;
-} */
+} 
 #cartListBtn button{
-	background: #CCC;
-	color: black;
 	margin: 2px;
 	border: none;
 	border-radius: 4px;
 	height: 35px;
 	font-size: 10px;
+	width:100%;
 }
 #cartListBtn2 button{
-	background: #CCC;
-	color: black;
 	margin: 2px;
 	border: none;
 	border-radius: 4px;
 	height: 35px;
 	font-size: 10px;
+	width:100%;
 }
 #cartDetailList{
 	text-align: left!important;
@@ -199,6 +200,153 @@ margin: 50px 50px;
 	background: #ccc;
 }
 #cartCRUDBtn button{
+	margin: 2px;
+	border-radius: 4px;
+	height :35px;
+	font-size: 12px;
+}
+#cartCRUDBtn button:last-child{
+	font-size: 12px;
+	padding-top: 0px;
+}
+#AllPriceTab{
+	margin-top: 25px;
+}
+#AllPriceTab th, #AllPriceTab td{
+	text-align: center;
+	font-size: 14px;
+}
+#paidUpdateBtn button{
+	font-size: 14px;
+	margin:2px;
+	border-radius: 4px;
+	width:auto;
+}
+#cartInfo p{
+	margin-top: 25px;
+	height: 200px;
+	text-align: center;
+	fontsiz:14px;
+	background: #CCC;
+}
+/*wist-list css*/
+#mainDiv{ 
+	width:80%!important;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 200px;
+}  
+#wishTable{
+	width:100%;
+	border-bottom: hiddien;
+	margin-bottom: 5px;
+}
+#wishTitle{
+	border-top:hidden;
+	border-bottom: 1px solid black!important;
+}
+#wishTitle th{
+	font-size: 14px;
+	text-align: center;
+}
+#wishContents{
+	border-bottom: 1px solid #000;
+}
+#wishContents td{
+	font-size: 14px;
+	text-align: center;
+	vertical-align: middle;
+}
+#wishContents p{
+	background:#ccc;
+	width: 104px;
+	height: 104px;
+	vertical-align: middle;
+}
+#wishName{
+	border-bottom-style: solid;
+	height: 40px;
+}
+#buttonGroup button{
+	background: #CCC;
+	color: black;
+	margin: 2px;
+	border: none;
+	border-radius: 4px;
+	height: 35px;
+	font-size: 10px;
+}
+#buttonGroup2 button{
+	background: #CCC;
+	color: black;
+	margin: 2px;
+	border: none;
+	border-radius: 4px;
+	height: 35px;
+	font-size: 10px;
+}
+#infoList{
+	text-align: left!important;
+}
+#infoListDiv{
+	display: inline-block;
+	margin: 0px;
+	text-align: left;
+}
+#infoListDiv div{
+	float:left;
+	margin-bottom: 5px;
+	text-align: left;
+}
+#infoListDiv p{
+	margin-bottom: 0px;
+}
+#infoListDiv ul{
+	margin-bottom: 0px;
+	font-size: 10px;
+	height: 104px;
+}
+#infoListDiv li {
+	height: auto;
+	border: hidden;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+#infoListDiv li button{
+	font-size: 10px;
+	background: #ccc;
+}
+#infoList2{
+	text-align: left!important;
+}
+#infoListDiv2{
+	display: inline-block;
+	margin: 0px;
+}
+#infoListDiv2 div{
+	float:left;
+	margin-bottom: 5px;
+}
+#infoListDiv2 p{
+	margin-bottom: 0px;
+}
+#infoListDiv2 ul{
+	margin-bottom: 0px;
+	font-size: 10px;
+	text-align: left;
+	height: 104px;
+}
+#infoListDiv2 li {
+	height: auto;
+	border: hidden;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+#infoListDiv2 li button{
+	font-size: 10px;
+	background: #ccc;
+}
+#wishCRUDBtn button{
 	background: #CCC;
 	color: black;
 	margin: 2px;
@@ -207,29 +355,222 @@ margin: 50px 50px;
 	height :35px;
 	font-size: 10px;
 }
-#AllPriceTab{
-	margin-top: 25px;
+#allSelectBtn{
+	background: #ccc;
+	color: black;
+	height: 35px;
+	font-size: 10px;
+	margin-right: 6px;	
 }
-#AllPriceTab th,td{
+#pagingBtn{
 	text-align: center;
-	font-size: 14px;
 }
-#paidUpdateBtn{
-}
-#paidUpdateBtn button{
-	background: #CCC;
+#pagingBtn ul li a{
 	color: #000;
-	font-size: 14px;
 	border: hidden;
-	margin:2px;
-	border-radius: 4px;
 }
-#cartInfo p{
-	margin-top: 25px;
-	height: 200px;
+/* order-sheet */
+#orderMainDiv{
+	width:80%!important;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 200px; 
+}
+#orderName{
+	border-bottom-style: solid;
+	height: 40px;
+}
+#benefitInfo{
+	border-top: hidden;
+	border-bottom: solid;
+}
+#benefitInfo th{
 	text-align: center;
-	fontsiz:14px;
+	vertical-align: middle;
+}
+#benefitInfo div p{
+	text-align: left;
+}
+#benefitInfo div p span{
+	font-weight: bold;
+}
+#orderTitle th{
+	font-size: 14px;
+	text-align: center;
+	border-top: solid;
+}
+#orderContents{
+	border-bottom: solid;
+}
+#orderContents td{
+	font-size: 14px;
+	text-align: center;
+	vertical-align: middle;
+}
+#orderContents p{
+	background:#ccc;
+	width: 104px;
+	height: 104px;
+	vertical-align: middle;
+}
+#orderDetailListDiv div{
+	float:left;
+	margin-bottom: 5px;
+	text-align: left;
+}
+#orderDetailListDiv li {
+	height: auto;
+	border: hidden;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+#orderDetailListDiv2 div{
+	float:left;
+	margin-bottom: 5px;
+	text-align: left;
+}
+#orderDetailListDiv2 li {
+	height: auto;
+	border: hidden;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+#orderInfo table{
+	border-top: hidden;
+	border-bottom: hidden;
+}
+#orderInfo table {
+	width: 20px;
+}
+#paymentInfo{
+	border-bottom: solid;
+	width:auto;
+	height: auto;
+}
+#paymentInfo p:first-child{
+	float: left;
+	color:red;
+	font-size: 10px;
+}
+#paymentInfo p:last-child {
+	float:right;
+	font-size: 14px;
+	margin-right: 8px;
+}
+#paymentInfo p:last-child span{
+	font-weight: bolder;
+}
+#selectProductDel{
+	background: #ccc;
+	color:#000;
+	border: hidden;
+	height: 40px;
+}
+#orderInfo .table{
+	width:100%;
+}
+#orderInfo>p{
+	border-bottom: solid;
+	margin-top: 20px;
+	font-size: 14px;
+	font-weight: bolder;
+}
+#adressChoiceBtn{
+	text-align: center;
+	vertical-align: middle;
+}
+#adressChoiceBtn div,#adressChoiceBtn button{
+	vertical-align: middle;
+}
+.orderTab{
+	width:100%;
+}
+.tabFirst{
+	width:10%;
+}
+.tabSecond{
+	width:5%;
+}
+.tabThird{
+	width:85%;
+	text-align: left;
+}
+#delivInfo table{
+	border-top: hidden;
+	border-bottom: hidden;
+} 
+#delivInfo table td{
+	text-align: left;
+}
+#delivInfo table tr:last-child{
+	width:85%;
+	text-align: left;
+}
+#payAmount p:first-child{
+	border-bottom: solid;
+	margin-top: 20px;
+	font-size: 14px;
+	font-weight: bolder;
+}
+#payAmount {
+	border-top:hidden;
+	border-bottem:hidden;
+}
+#payAmount table:last-child {
+	border-top: hidden;
+	border-bottom: hidden;
+}
+#payAmount table th{
+	width: 10%;
+}
+#payAmount table td{
+	text-align: left;
+}
+#payPoint td input{
+	float: left;
+}
+.redRound {
+	width:16px;
+	height:16px;
+	background: red;
+	border-radius: 10px;
+	color:red;
+	font-size: 8px;
+	vertical-align: middle;
+}
+#delivInfo>p{
+	border-bottom: solid;
+	margin-top: 20px;
+	font-size: 14px;
+	font-weight: bolder;
+}
+#methodPayDetail{
+	float: left;
+}
+#payName {
+	border-bottom: solid;
+	margin-top: 20px;
+	font-size: 14px;
+	font-weight: bolder;
+}
+#methodPay{
+	height: 250px;
+}
+#payBank label{
+	margin: 10px 0px;
+}
+#finalAmount{
+	text-align: right;
+	border-bottom:solid!impoetant;
+}
+#finalAmount h2{
+	color: red;
+	font-weight: bold;	
+}
+#orderInfoText p{
+	text-align: center;
 	background: #CCC;
+	height: 200px;
 }
 #orderdetailTitle{
 border-bottom:solid 1px black;
@@ -245,4 +586,3 @@ padding-bottom: 30px;
 #productInfo{
 padding-bottom: 30px;
 }
-

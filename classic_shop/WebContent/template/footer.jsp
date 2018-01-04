@@ -65,9 +65,5 @@
 		</div>
 	</div>
 </div>
-
-<!-- 부트스트랩 설정(건들지마세요) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="public/bootstrap/js/bootstrap.min.js"></script> 	
 </body>
 </html> 

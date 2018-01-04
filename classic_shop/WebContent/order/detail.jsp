@@ -78,7 +78,7 @@
 					<th>우편번호</th>
 					<th>기본주소</th>
 					<th>상세주소</th>
-					
+					<th>배송메모</th>
 				</tr>
 				<tr>
 					<td>name</td> <!--  input으로 받은 값?? -->
@@ -86,7 +86,7 @@
 					<td>zip_code</td>
 					<td>base_addr</td>
 					<td>detail_addr</td>
-					
+					<td>paid_memo</td>
 				</tr>
 			</table>
 		</div>
