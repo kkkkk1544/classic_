@@ -210,7 +210,7 @@ margin: 50px 50px;
 #AllPriceTab{
 	margin-top: 25px;
 }
-#AllPriceTab th,td{
+#AllPriceTab th,#AllPriceTab td{
 	text-align: center;
 	font-size: 14px;
 }
