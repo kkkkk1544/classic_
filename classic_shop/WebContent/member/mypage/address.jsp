@@ -20,7 +20,7 @@
 						<th class="col-sm-1">상태</th>
 					</tr>
 				</thead>
-				<tbody class="one">
+				<tbody>
 					<tr>
 						<td>
 							<label>

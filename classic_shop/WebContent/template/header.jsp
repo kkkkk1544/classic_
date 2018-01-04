@@ -4,19 +4,25 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<!-- 부트스트랩, jQuery, CSS 설정(건들지마세요)-->
+<!-- 부트스트랩 lib -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="<c:url value='/public/bootstrap/css/bootstrap.css' />">
-<script src="public/js/jquery/jquery-3.2.1.min.js"></script>
-<!-- kakao 지도 api -->
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9634cbc392b8b80779d4f419ee72bf3a"></script>
-<!-- 개인 스크립트 파일 -->
+<!-- 개인 lib -->
 <link rel="stylesheet" href="<c:url value='/public/css/common.css' />">
 <link rel="stylesheet" href="<c:url value='/public/css/comu.css' />">
 <link rel="stylesheet" href="<c:url value='/public/css/product.css' />">
 <link rel="stylesheet" href="<c:url value='/public/css/member.css' />">
 <link rel="stylesheet" href="<c:url value='/public/css/order.css' />">
+<!-- jQuery ui CSS -->
+<link rel="stylesheet" href="<c:url value='/public/js/jquery-ui/jquery-ui.min.css' />">
+<!-- jQuery lib -->
+<script src='<c:url value="/public/js/jquery/jquery-3.2.1.min.js"/>'></script>
+<script src='<c:url value="/public/js/jquery-ui/jquery-ui.min.js"/>'></script>
+<!-- 부트스트랩 lib -->
+<script src='<c:url value="/public/bootstrap/js/bootstrap.min.js"/>'></script> 
+<!-- kakao 지도 api -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9634cbc392b8b80779d4f419ee72bf3a"></script>
 <title>CLASSIC</title>
 </head>
 <body>
@@ -103,7 +109,7 @@
 									<li><a href="<c:url value='/order/cart/cart.jsp'/>">장바구니</a></li>
 									<li><a href="<c:url value='/order/wish/wish.jsp'/>">위시리스트</a></li>
 									<li><a href="#">주문내역</a></li>
-									<li><a href="#">내가쓴글</a></li>
+									<li><a href="<c:url value='/member/mypage/myposting.jsp'/>">내가쓴글</a></li>
 								</ul>
 							</li>
 							<li>
@@ -116,7 +122,7 @@
 								<a class="dropdown-toggle" href="<c:url value='/comu/notice/list.jsp' />" role="button" aria-expanded="false">COMMUNITY</a>
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="<c:url value='/comu/notice/list.jsp' />">NOTICE</a></li>
-									<li><a href="<c:url value='/comu/qna/list.jsp' />">QNA</a></li>
+									<li><a onclick="qnaList()">QNA</a></li>
 									<li><a href="<c:url value='/comu/faq/list.jsp' />">FAQ</a></li>
 								</ul>
 							</li>

@@ -7,24 +7,24 @@
 		<div class="mypage_wrap">
 			<div class="mypage_info">
 				<h2 class="mypageTitle">MY PAGE</h2>
-					<ul>
-						<li> <span class="mypageInfoLabel">회원등급</span>
-							<div class="value"><strong>Lv1</strong></div>
-						</li>
-						<li> <span class="mypageInfoLabel">적립금</span>
-							<div class="value"><strong>0원</strong></div>
-						</li>
-						<li> <span class="mypageInfoLabel">쿠폰</span>
-							<div class="value"><strong>0장</strong></div>
-						</li>
-						<li> <span class="mypageInfoLabel">구매이력</span>
-							<div class="value"><strong>0건</strong></div>
-						</li>
-					</ul>
-					<div class="benefit_group">
-						<div class="benefitInfo">회원님의 혜택정보</div>
-						<div class="benefitprint">혜택 정보 출력</div>
-					</div>
+				<ul>
+					<li> <span class="mypageInfoLabel">회원등급</span>
+						<div class="value"><strong>Lv1</strong></div>
+					</li>
+					<li> <span class="mypageInfoLabel">적립금</span>
+						<div class="value"><strong>0원</strong></div>
+					</li>
+					<li> <span class="mypageInfoLabel">쿠폰</span>
+						<div class="value"><strong>0장</strong></div>
+					</li>
+					<li> <span class="mypageInfoLabel">구매이력</span>
+						<div class="value"><strong>0건</strong></div>
+					</li>
+				</ul>
+				<div class="benefit_group">
+					<div class="benefitInfo">회원님의 혜택정보</div>
+					<div class="benefitprint">혜택 정보 출력</div>
+				</div>
 			</div>
 			<div class="mypage_btn_group">
 				<button class="btn btn-default" type="button">회원정보 수정</button>

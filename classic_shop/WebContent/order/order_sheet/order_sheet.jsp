@@ -1,124 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>CLASSIC</title>
-<link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<style>
-#orderMainDiv{
-	width:80%!important;
-	margin-right: auto;
-	margin-left: auto;
-	margin-top: 80px; 
-}
-h2{
-	border-bottom-style: solid;
-	height: 40px;
-}
-#benefitInfo{
-	border-top: hidden;
-	border-bottom: solid;
-}
-#benefitInfo th{
-	text-align: center;
-	vertical-align: middle;
-}
-#benefitInfo div p span{
-	font-weight: bold;
-}
-#orderTitle th{
-	font-size: 14px;
-	text-align: center;
-	border-top: solid;
-}
-#orderContents{
-	border-bottom: solid;
-}
-#orderContents td{
-	font-size: 14px;
-	text-align: center;
-	vertical-align: middle;
-}
-#orderContents p{
-	background:#ccc;
-	width: 104px;
-	height: 104px;
-	vertical-align: middle;
-}
-#orderDetailListDiv div{
-	float:left;
-	margin-bottom: 5px;
-	text-align: left;
-}
-#orderDetailListDiv li {
-	height: auto;
-	border: hidden;
-	padding-top: 8px;
-	padding-bottom: 8px;
-}
-#orderDetailListDiv2 div{
-	float:left;
-	margin-bottom: 5px;
-	text-align: left;
-}
-#orderDetailListDiv2 li {
-	height: auto;
-	border: hidden;
-	padding-top: 8px;
-	padding-bottom: 8px;
-}
-#paymentInfo{
-	border-bottom: solid;
-	width:auto;
-	height: auto;
-}
-#paymentInfo p:first-child{
-	float: left;
-	color:red;
-	font-size: 10px;
-}
-#paymentInfo p:last-child {
-	float:right;
-	font-size: 14px;
-	margin-right: 8px;
-}
-#paymentInfo p:last-child span{
-	font-weight: bolder;
-}
-#selectProductDel{
-	background: #ccc;
-	color:#000;
-	border: hidden;
-	height: 40px;
-}
-#orderInfo>p{
-	border-bottom: solid;
-	margin-top: 20px;
-	font-size: 14px;
-	font-weight: bolder;
-}
-.redRound {
-	width:16px;
-	height:16px;
-	background: red;
-	border-radius: 10px;
-	color:red;
-	font-size: 10px;
-	vertical-align: middle;
-}
-#delivInfo>p{
-	border-bottom: solid;
-	margin-top: 20px;
-	font-size: 14px;
-	font-weight: bolder;
-}
-</style>
 <body>
 	<div class="container" id="orderMainDiv">
-		<h2>주문서</h2>
+		<h2 id="orderName">주문서</h2>
 		<table class="table" id="benefitInfo">
 			<tr>
 				<th width="10%">혜택정보</th>
@@ -152,12 +36,12 @@ h2{
 					<td id ="orderDetailList">
 						<div id="orderDetailListDiv">
 							<div>
-								<p>이미지임</p>
+								<p><a href="#">이미지임</a></p>
 							</div>
 							<div>
 								<ul class="list-group" >
-									<li class="list-group-item"><strong>product Name</strong></li>
-									<li class="list-group-item"><strong>color 검정 size M<strong></strong></li>
+									<li class="list-group-item"><strong><a href="#">product Name</a></strong></li>
+									<li class="list-group-item"><strong><a href="#">color 검정 size M</a></strong></li>
 								</ul>
 							</div>
 						</div>
@@ -174,12 +58,12 @@ h2{
 					<td id ="orderDetailList2">
 						<div id="orderDetailListDiv2">
 							<div>
-								<p>이미지임</p>
+								<p><a href="#">이미지임</a></p>
 							</div>
 							<div>
 								<ul class="list-group" >
-									<li class="list-group-item"><strong>product Name</strong></li>
-									<li class="list-group-item"><strong>color 검정 size M<strong></strong></li>
+									<li class="list-group-item"><strong><a href="#">product Name</a></strong></li>
+									<li class="list-group-item"><strong><a href="#">color 검정 size M</a></strong></li>
 								</ul>
 							</div>
 						</div>
@@ -199,37 +83,37 @@ h2{
 		</div>
 		<button class="btn btn-defult" id="selectProductDel">선택 상품 삭제</button>
 		<div id="orderInfo">
-			<p>주문정보     <span class="redRound">10</span><span>필수</span></p>
-			<table class ="table">
+			<p>주문정보 <span class="redRound">10</span><span>필수</span></p>
+			<table class ="table orderTab">
 				<tr>
-					<th>주문하시는  분</th>
-					<td><span class="redRound">10</span></td>
-					<td><input type="text"></td>
+					<th class="tabFirst">주문하시는  분</th>
+					<td class="tabSecond "><span class="redRound">10</span></td>
+					<td class="tabThird" ><input type="text"></td>
 				</tr>
 				<tr>
-					<th>주소</th>
-					<td><span class="redRound">10</span></td>
-					<td><input type="text"><button type="button" class="btn">우편번호</button></td>
+					<th class="tabFirst">주소</th>
+					<td class="tabSecond"><span class="redRound">10</span></td>
+					<td class="tabThird" ><input type="text"><button type="button" class="btn" onclick='javascript:window.open()'>우편번호</button></td>
 				</tr>
 				<tr>
-					<th></th>
-					<td></td>
-					<td><input type="text" value="기본주소"></td>
+					<th class="tabFirst"></th>
+					<td class="tabSecond"></td>
+					<td class="tabThird" ><input type="text" value="기본주소"></td>
 				</tr>
 				<tr>
-					<th></th>
-					<td></td>
-					<td><input type="text" value="상세주소"></td>
+					<th class="tabFirst"></th>
+					<td class="tabSecond"></td>
+					<td class="tabThird" ><input type="text" value="상세주소"></td>
 				</tr>
 				<tr>
-					<th>일반전화</th>
-					<td><span class="redRound">10</span></td>
-					<td><input type="number"></td>
+					<th class="tabFirst">일반전화</th>
+					<td class="tabSecond"><span class="redRound">10</span></td>
+					<td class="tabThird" ><input type="number"></td>
 				</tr>
 				<tr>
-					<th>휴대전화</th>
-					<td><span class="redRound">10</span></td>
-					<td><input type="number"></td>
+					<th class="orderTab tabFirst">휴대전화</th>
+					<td class="tabSecond"><span class="redRound sec">10</span></td>
+					<td class="tabThird"><input type="number"></td>
 				</tr>
 			</table>
 		</div>
@@ -237,43 +121,127 @@ h2{
 			<p>배송정보     <span class="redRound">10</span><span>필수</span></p>
 			<table class ="table">
 				<tr>
-					<th>배송지선택</th>
-					
+					<th class="tabFirst">배송지선택</th>
+					<td class="tabSecond"></td>
+					<td class="tabThird" id="adressChoiceBtn">
+						<div class="radio">
+							<label><input type="radio" name="optraio" >주문자 정보와 동일</label>
+						</div>
+						<div class="radio">
+							<label><input type="radio" name="optraio" checked>새로운 배송지</label>
+						</div>
+						<button type="button" onclick='javascript:window.open()'>주소록보기</button>
+					</td>
 				</tr>
 				<tr>
-					<th>주문하시는  분</th>
-					<td><span class="redRound">10</span></td>
-					<td><input type="text"></td>
+					<th class="tabFirst">주문하시는  분</th>
+					<td class="tabSecond"><span class="redRound">10</span></td>
+					<td class="tabThird"><input type="text"></td>
 				</tr>
 				<tr>
-					<th>주소</th>
-					<td><span class="redRound">10</span></td>
-					<td><input type="text"><button type="button" class="btn">우편번호</button></td>
+					<th class="tabFirst">주소</th>
+					<td class="tabSecond"><span class="redRound">10</span></td>
+					<td class="tabThird" ><input type="text"><button type="button" class="btn" onclick='javascript:window.open()'>우편번호</button></td>
 				</tr>
 				<tr>
-					<th></th>
-					<td></td>
-					<td><input type="text" value="기본주소"></td>
+					<th class="tabFirst"></th>
+					<td class="tabSecond"></td>
+					<td class="tabThird" ><input type="text" value="기본주소"></td>
 				</tr>
 				<tr>
-					<th></th>
-					<td></td>
-					<td><input type="text" value="상세주소"></td>
+					<th class="tabFirst"></th>
+					<td class="tabSecond"></td>
+					<td class="tabThird" ><input type="text" value="상세주소"></td>
 				</tr>
 				<tr>
-					<th>일반전화</th>
-					<td><span class="redRound">10</span></td>
-					<td><input type="number"></td>
+					<th class="tabFirst">일반전화</th>
+					<td class="tabSecond"><span class="redRound">10</span></td>
+					<td class="tabThird" ><input type="number"></td>
 				</tr>
 				<tr>
-					<th>휴대전화</th>
-					<td><span class="redRound">10</span></td>
-					<td><input type="number"></td>
+					<th class="tabFirst">휴대전화</th>
+					<td class="tabSecond"><span class="redRound">10</span></td>
+					<td class="tabThird" ><input type="number"></td>
+				</tr>
+				<tr>
+					<th class="delivTab tabFirst">배송메세지</th>
+					<td class="tabSecond"></td>
+					<td class="tabThird" >
+						<div class="form-group">
+							<textarea class="form-control" rows="5" id="delivComent"></textarea>
+							<p>배송 메세지란에는 배송시 참고 할 사항이 있으면 적어주세요.</p>
+						</div>
+					</td>
 				</tr>
 			</table>
 		</div>
+		<div id="payAmount">
+			<p>결제예정금액</p>
+			<table class="table table-bordered">
+				<tr>
+					<th>총 주문금액</th>
+					<th>총할인+부가결제금액</th>
+					<th>총 결제 예정금액</th>
+				</tr>
+				<tr>
+					<td>200,000원</td>
+					<td>-0 원</td>
+					<td>200,000원</td>
+				</tr>
+			</table>
+			<table class="table">
+				<tr>
+					<th>총 할인금액</th>
+					<td><strong>0원</strong></td>
+				</tr>
+				<tr>
+					<th>총 부가결제금액</th>
+					<td><strong>0원</strong></td>
+				</tr>
+				<tr id="payPoint">
+					<th>적립금</th>
+					<td><input type="number"><p>원 <span>(총 사용 가능 적립금: 3000)</span></p></td>
+				</tr>
+				<tr>
+					<th>쿠폰사용</th>
+					<td>
+						<select>
+							<option>회원가입 기념 쿠폰</option>
+							<option>생일기념 할인 쿠폰</option>
+							<option>신년기념 할인 쿠폰</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="methodPay">
+			<p id="payName">결제수단</p>
+			<div id="methodPayDetail">
+				<div class="radio">
+					<label><input type="radio" name="optraio" checked>무통장입금</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="optraio">신용카드</label>
+				</div>
+				<div id="payBank">
+					<label>입금자명 : <input type="text"></label><br>
+					<label>입금은행: 
+						<select>
+								<option value="1">국민(241587-51-17452)</option>
+								<option value="2">하나(899631-158-2564)</option>
+								<option value="3">신한(62583-8550-8874)</option>
+							</select>
+					</label>
+				</div>
+			</div>
+			<div id="finalAmount">
+				<p><span>무통장입금</span>최종 결제 금액</p>
+				<h2>200,000원</h2>
+				<p><input type="checkbox" value="true">결제 정보를 확인하였으며, 구매 진행에 동의 합니다.</p>
+				<button type="button" class="btn btn-primary btn-lg">결제하기</button>
+			</div>
+		</div>
+		<div id="orderInfoText">
+			<p><strong>주문<br>이용 안내 공간</strong></p>
+		</div>
 	</div>
-<script src="/public/js/jquery/jquery-3.2.1.min.js"></script>
-<script src="/public/bootstrap/js/bootstrap.min.js"></script>
-</body>
-</html>
