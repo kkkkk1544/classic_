@@ -9,20 +9,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.classic.comu.dto.QnaDTO;
-import com.classic.comu.service.QnaService;
-import com.classic.comu.serviceImp.QnaServiceImp;
+import com.classic.comu.dto.NoticeDTO;
+import com.classic.comu.serviceImp.NoticeServiceImp;
 
-
-@WebServlet("/qna.do")
-public class QnaJSON extends HttpServlet{
-	
+@WebServlet("/notice.do")
+public class NoticeJSON extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
-		List<QnaDTO> qnaList = new QnaServiceImp().readQna();
+		List<NoticeDTO> noticeList = new NoticeServiceImp().readNotice();
 		resp.setContentType("application/json");
 		resp.setCharacterEncoding("UTF-8");
-		resp.getWriter().append(qnaList.toString());
+		resp.getWriter().append(noticeList.toString());
 	}
 }

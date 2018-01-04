@@ -11,7 +11,39 @@ import com.classic.comu.dto.NoticeDTO;
 
 
 public class NoticeDAOImp implements NoticeDAO{
+	
+	private Connection conn;
+	public NoticeDAOImp(Connection conn) {
+		this.conn = conn;
+	}
+	
 	@Override
+	public List<NoticeDTO> selectNotice() throws Exception {
+		List<NoticeDTO> noticeList = new ArrayList<NoticeDTO>();
+		String sql = "SELECT n.num, m.id as name, n.title, n.count, n.indate"
+				+ " FROM notice n, member m"
+				+ " WHERE n.mem_num=m.num"
+				+ " ORDER BY n.num DESC";
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		pstmt = conn.prepareStatement(sql);
+		rs = pstmt.executeQuery();
+		while(rs.next()) {
+			NoticeDTO noticeDTO = new NoticeDTO();
+			noticeDTO.setNum(rs.getInt("num"));
+			noticeDTO.setName(rs.getString("name"));
+			noticeDTO.setTitle(rs.getString("title"));
+			noticeDTO.setCount(rs.getInt("count"));
+			noticeDTO.setIndate(rs.getDate("indate"));
+			noticeList.add(noticeDTO);
+		}
+		return noticeList;
+	}
+	
+	
+	
+//유정이가 전에 해놓은 거
+/*	@Override
 	public List<NoticeDTO> select(Connection conn) throws Exception {
 		List<NoticeDTO> deptList = new ArrayList<NoticeDTO>();  //list 배열을 효율적으로 하는거!!일단이러케
 		String sql="select * from notice"; //
@@ -47,6 +79,6 @@ public class NoticeDAOImp implements NoticeDAO{
 			notice.setDate(rs.getDate("indate"));
 		}
 		return notice;
-	}
+	}*/
 
 }

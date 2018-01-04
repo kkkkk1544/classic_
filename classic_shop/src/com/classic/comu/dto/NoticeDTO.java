@@ -10,6 +10,8 @@ public class NoticeDTO {
 	private String content;
 	private int count;
 	private Date indate;
+	
+	private String name;
 
 	public int getNum() {
 		return num;
@@ -26,7 +28,7 @@ public class NoticeDTO {
 	public String getTitle() {
 		return title;
 	}
-	public void setTitle(String loc) {
+	public void setTitle(String title) {
 		this.title = title;
 	}
 	public String getContent() {
@@ -41,15 +43,22 @@ public class NoticeDTO {
 	public void setCount(int count) {
 		this.count = count;
 	}
-	public Date getDate() {
+	public Date getIndate() {
 		return indate;
 	}
-	public void setDate(Date indate) {
+	public void setIndate(Date indate) {
 		this.indate = indate;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	@Override
 	public String toString() {
-		return "NoticeDTO [num=" + num + ", mem_num=" + mem_num + ", title=" + title + ", content=" + content + ", indate=" + indate + "]";
+		return "{\"num\" : \"" + num + "\", \"mem_num\" : \"" + mem_num + "\", \"title\" : \"" + title
+				+ "\", \"content\" : \"" + content + "\", \"count\" : \"" + count + "\", \"indate\" : \"" + indate
+				+ "\", \"name\" : \"" + name + "\"}";
 	}
-	
 }

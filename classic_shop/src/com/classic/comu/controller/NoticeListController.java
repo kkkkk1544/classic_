@@ -16,7 +16,8 @@ import com.classic.comu.daoImp.NoticeDAOImp;
 import com.classic.comu.dto.NoticeDTO;
 import com.classic.util.ClassicDBConnection;
 
-
+//유정이가 전에 해놨던 거(NoticeJSON 안에 doGet 메소드 내용이랑 동일함)
+/*
 @WebServlet("/notice/list.do")
 public class NoticeListController extends HttpServlet{
 	@Override
@@ -33,8 +34,9 @@ public class NoticeListController extends HttpServlet{
 			ClassicDBConnection.close(null, null, conn);
 		}
 		req.setAttribute("noticeList", noticeList);
-		req.getRequestDispatcher("/notice/list.jsp").forward(req, resp);
+		req.getRequestDispatcher("/comu/community.jsp").forward(req, resp);
 		
 		
 		}
 	}
+*/

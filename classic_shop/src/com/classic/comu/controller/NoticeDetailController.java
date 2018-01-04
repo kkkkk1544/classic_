@@ -15,7 +15,7 @@ import com.classic.comu.dto.NoticeDTO;
 import com.classic.util.ClassicDBConnection;
 
 
-@WebServlet("/notice/detail.do")
+/*@WebServlet("/notice/detail.do")
 public class NoticeDetailController extends HttpServlet{
 @Override
 protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -38,5 +38,5 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
 	}
 	
 }
-}
+}*/
 
