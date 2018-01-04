@@ -1,8 +1,14 @@
 @charset "UTF-8";
 
+/* 二쇰Ц �궡�뿭(list) CSS */
 .order_list_body{
 padding: 50px 50px;
 margin: 50px 50px;
+font-size: 10px;
+}
+#orderlistTitle{
+border-bottom:solid 1px black;
+padding-bottom: 15px;
 }
 #serchContents{
 text-align: center;
@@ -11,19 +17,13 @@ text-align: center;
 margin:0 auto;
 padding:30px 30px 30px 30px;
 }
-#listPage{
-text-align: center;
-padding: 20px 20px;
-}
-.pagination{
-margin: 0 auto;
-}
 .serchBtn{
 padding: 0 10px 10px 10px;
 }
 .serchBtn>button{
 padding-right: 10px;
 }
+
 .listTable{
 width:100%;
 }
@@ -31,35 +31,36 @@ width:100%;
 width: 50px;
 height: 50px;
 background: lightgray;
-font-size: 10px;
 }
-
-.listTitle{
+.tableTitle{
 border-top:solid 1px black;
 border-bottom:solid 1px black;
 }
-
-#listTitle{
-border-bottom:solid 1px black;
-padding-bottom: 15px;
+#list tr,#list td,#list th{
+padding: 20px 20px;
+font-size: 10pt;
 }
 
-tr,td,th{
+#listPage{
+text-align: center;
 padding: 20px 20px;
 font-size: 10pt;
 } 
 .order_date_input{
 padding: 5px 5px;
 }
+.pagination{
+margin: 0 auto;
+}
 
 
-/* 주문 상세(detail) CSS */
+/* 二쇰Ц �긽�꽭(detail) CSS */
 .order_detail_body{
 padding: 50px 50px;
 margin: 50px 50px;
 }
 
-/* 장바구니 CSS*/
+/* �옣諛붽뎄�땲 CSS*/
 #cartMainDiv{ 
 	width:80%!important;
 	margin-right: auto;
@@ -96,24 +97,22 @@ margin: 50px 50px;
 #cartName{
 	border-bottom-style: solid;
 	height: 40px;
-}
+} 
 #cartListBtn button{
-	background: #CCC;
-	color: black;
 	margin: 2px;
 	border: none;
 	border-radius: 4px;
 	height: 35px;
 	font-size: 10px;
+	width:100%;
 }
 #cartListBtn2 button{
-	background: #CCC;
-	color: black;
 	margin: 2px;
 	border: none;
 	border-radius: 4px;
 	height: 35px;
 	font-size: 10px;
+	width:100%;
 }
 #cartDetailList{
 	text-align: left!important;
@@ -201,28 +200,27 @@ margin: 50px 50px;
 	background: #ccc;
 }
 #cartCRUDBtn button{
-	background: #CCC;
-	color: black;
 	margin: 2px;
-	border: none;
 	border-radius: 4px;
 	height :35px;
-	font-size: 10px;
+	font-size: 12px;
+}
+#cartCRUDBtn button:last-child{
+	font-size: 12px;
+	padding-top: 0px;
 }
 #AllPriceTab{
 	margin-top: 25px;
 }
-#AllPriceTab th,td{
+#AllPriceTab th, #AllPriceTab td{
 	text-align: center;
 	font-size: 14px;
 }
 #paidUpdateBtn button{
-	background: #CCC;
-	color: #000;
 	font-size: 14px;
-	border: hidden;
 	margin:2px;
 	border-radius: 4px;
+	width:auto;
 }
 #cartInfo p{
 	margin-top: 25px;
@@ -468,16 +466,69 @@ margin: 50px 50px;
 	border: hidden;
 	height: 40px;
 }
+#orderInfo .table{
+	width:100%;
+}
 #orderInfo>p{
 	border-bottom: solid;
 	margin-top: 20px;
 	font-size: 14px;
 	font-weight: bolder;
 }
-#orderInfo{
-	background:#ccc;
+#adressChoiceBtn{
+	text-align: center;
+	vertical-align: middle;
 }
-
+#adressChoiceBtn div,#adressChoiceBtn button{
+	vertical-align: middle;
+}
+.orderTab{
+	width:100%;
+}
+.tabFirst{
+	width:10%;
+}
+.tabSecond{
+	width:5%;
+}
+.tabThird{
+	width:85%;
+	text-align: left;
+}
+#delivInfo table{
+	border-top: hidden;
+	border-bottom: hidden;
+} 
+#delivInfo table td{
+	text-align: left;
+}
+#delivInfo table tr:last-child{
+	width:85%;
+	text-align: left;
+}
+#payAmount p:first-child{
+	border-bottom: solid;
+	margin-top: 20px;
+	font-size: 14px;
+	font-weight: bolder;
+}
+#payAmount {
+	border-top:hidden;
+	border-bottem:hidden;
+}
+#payAmount table:last-child {
+	border-top: hidden;
+	border-bottom: hidden;
+}
+#payAmount table th{
+	width: 10%;
+}
+#payAmount table td{
+	text-align: left;
+}
+#payPoint td input{
+	float: left;
+}
 .redRound {
 	width:16px;
 	height:16px;
@@ -493,16 +544,20 @@ margin: 50px 50px;
 	font-size: 14px;
 	font-weight: bolder;
 }
-#orderInfo table th{
-	width: 15%;
-	padding-right: 0px;
-}
-#orderInfo table td{
-    padding-left: 0px;
-    padding-right: 0px;
-}
 #methodPayDetail{
 	float: left;
+}
+#payName {
+	border-bottom: solid;
+	margin-top: 20px;
+	font-size: 14px;
+	font-weight: bolder;
+}
+#methodPay{
+	height: 250px;
+}
+#payBank label{
+	margin: 10px 0px;
 }
 #finalAmount{
 	text-align: right;
@@ -513,7 +568,22 @@ margin: 50px 50px;
 	font-weight: bold;	
 }
 #orderInfoText p{
-	background: #CCC;
 	text-align: center;
+	background: #CCC;
 	height: 200px;
 }
+#orderdetailTitle{
+border-bottom:solid 1px black;
+padding-bottom: 15px;
+}
+#orderNum{
+padding-top:20px;
+padding-bottom: 20px;
+}
+#totalPayment{
+padding-bottom: 30px;
+}
+#productInfo{
+padding-bottom: 30px;
+}
+>>>>>>> origin

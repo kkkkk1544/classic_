@@ -25,3 +25,48 @@
  	-- 웬만하면 view 먼저 짜는 걸로 해요~! 
  	
  	-- 부트스트랩, jQuery import 했음
+ 	
+ 	#productDescription>form>table{
+ 		border-top : 1px soild #000;
+ 		border-bottom : 1px so
+ 		padding : 10px 0;
+ 	}
+ 	#productDescription>form>table>tr/th/td
+ 	
+ 	<div class="container">
+ 		<div class="detail">
+ 			상품 사진
+ 		</div>
+ 		<div class="detail">
+ 		상품설명
+ 		<div>
+ 		
+ 		.container .detail{
+ 			display: inline-block
+ 		}
+ 		
+ 	
+ 	<div id="productDescription">
+ 		<form>
+ 			<table>
+ 			</table>
+ 		<form>
+ 	</div>
+ 	
+ 	
+ 	
+ 	<!-- 
+	제이쿼리 ui 위젯을 사용하려면 js보다 먼저 css가 로드 돼야 한다.
+	제이쿼리 ui는 제이쿼리를 이용하기 때문에 제이쿼리 lib가 꼭 먼저 로드 돼야 한다.
+	모든 프론트엔드 라이브러리는 제이쿼리를 사용하기 때문에 제이쿼리보다 밑에 둔다.
+	개발자가 참조시키는 라이브러리는 모든 라이브러리 보다 밑에 둬야한다.
+	
+	1. element CSS
+	2. header CSS
+	3. link CSS
+	4. Browser CSS
+	5. jQuery
+	6. jQuery ui
+	7. 기타 api
+	
+ -->

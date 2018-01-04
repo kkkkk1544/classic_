@@ -4,11 +4,10 @@
 <!-- div 추가 (orderDetail.css 삭제하고 order.css에 추가)-->
 <div class="order_detail_body">
 	<div id="mainTitle">    
-		<h2 id="listTitle">ORDER DETAIL</h2>
-		<hr style="border:solid 2px black">
+		<h2 id="orderdetailTitle">ORDER DETAIL</h2>
 	</div>
 	<div id="orderNum">
-		<h4>주문번호 : <a href="#">order_num</a></h4>
+		<h4><strong>주문번호 : order_num</strong></h4>
 	</div>
 	<div id="paidInfo">
 		<div class="panel panel-default">
@@ -31,7 +30,7 @@
 				</tr>
 			</table>
 		</div>
-		<h4>총 결제금액: payment</h4>
+		<h4 id="totalPayment">총 결제금액: payment</h4>
 	</div>
 	<div id="productInfo">
 		<div class="panel panel-default">
@@ -79,7 +78,7 @@
 					<th>우편번호</th>
 					<th>기본주소</th>
 					<th>상세주소</th>
-					
+					<th>배송메모</th>
 				</tr>
 				<tr>
 					<td>name</td> <!--  input으로 받은 값?? -->
@@ -87,7 +86,7 @@
 					<td>zip_code</td>
 					<td>base_addr</td>
 					<td>detail_addr</td>
-					
+					<td>paid_memo</td>
 				</tr>
 			</table>
 		</div>

@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="/comu/menu.jsp" %>
 
 <div class="comu_body">
 	<p class="comu_title">QNA</p>
@@ -16,20 +15,6 @@
 					</tr>
 				</tbody>
 				<tbody class="qna_contents">
-					<tr>
-						<td>1</td>
-						<td><a href="<c:url value='/comu/qna/read.jsp' />">배송 문의</a></td>
-						<td>testMember</td>
-						<td>2017-12-30</td>
-						<td>0</td>
-					<tr>
-					<tr>
-						<td>1</td>
-						<td><a href="javascript:window.open('securePassword.html','_blank','top=300 left=300 width=300 height=300')">배송 문의(비밀글)</a></td>
-						<td>testMember</td>
-						<td>2017-12-30</td>
-						<td>0</td>
-					<tr>
 				</tbody>
 			</table>
 		</div>
@@ -70,7 +55,6 @@
 			</form>
 		</div>
 </div>
-
 <!--
 1. 리스트에서 글을 누른다.
 2. 비밀글인지, 공개글인지 검사.

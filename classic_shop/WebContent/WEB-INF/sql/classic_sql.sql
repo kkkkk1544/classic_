@@ -215,7 +215,7 @@ create table paid(
 	mem_num number(8) constraint paid_fk_mem_num references member(num),
 	product_num number(8) constraint paid_fk_product_num references product(num),
 	coupon_num number(8) null constraint paid_fk_coupon_num references coupon(num),
-	order_num number(8) UNIQUE,
+	order_num number(8) not null,
 	name varchar2(10) not null,
 	phone number(11) not null,
 	zip_code varchar2(21) not null,
@@ -299,7 +299,6 @@ create table review(
 create sequence img_path_seq start with 1 increment by 1;
 create table img_path(
 	num number(8) constraint img_pk_num primary key,
-	company_num number(8) null constraint img_fk_company_num references company(num),
 	data_num number(8) null constraint img_fk_data_num references product_data(num),
 	guide_num number(8) null constraint img_fk_guide_num references shop_guide(num),
 	icon_num number(8) null constraint img_fk_icon_num references icon(num),
@@ -702,30 +701,28 @@ conn classic_admin/admin1234
 
 -- 주문 db
 insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,1,1,null,2017110812345678,'김경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','벨고장났어요',sysdate,2,100000,90000,to_date('2017-11-08','yyyy-mm-dd'),0,'김경미');
+values (paid_seq.nextval,1,1,null,2017110812345678,'김경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','벨고장났어요',to_date('2017-11-09','yyyy-mm-dd'),0,100000,90000,to_date('2017-11-08','yyyy-mm-dd'),1,'김경미');
 insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,1,1,null,2017112900000001,'박경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','배송 전 연락 부탁드려요',sysdate,2,100000,90000,to_date('2017-11-29','yyyy-mm-dd'),0,'함혜진');
+values (paid_seq.nextval,1,1,null,2017112900000001,'박경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','배송 전 연락 부탁드려요',null,0,100000,90000,to_date('2017-11-29','yyyy-mm-dd'),0,'함혜진');
 insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,1,1,null,2017120800000001,'최경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','부재 시 문 앞에 두고 가주세요',sysdate,2,100000,90000,to_date('2017-12-08','yyyy-mm-dd'),0,'최경미');
+values (paid_seq.nextval,1,1,null,2017120800000001,'최경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','부재 시 문 앞에 두고 가주세요',to_date('2017-12-08','yyyy-mm-dd'),0,100000,90000,to_date('2017-12-08','yyyy-mm-dd'),1,'최경미'); 
 insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,1,1,null,2017111800000001,'이경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','부재 시 경비실에 맡겨주세요',sysdate,2,100000,90000,to_date('2017-11-18','yyyy-mm-dd'),0,'이경미');
+values (paid_seq.nextval,1,1,null,2017111800000001,'이경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','부재 시 경비실에 맡겨주세요',to_date('2017-11-19','yyyy-mm-dd'),0,100000,90000,to_date('2017-11-18','yyyy-mm-dd'),2,'이경미');
 insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,1,1,null,2017123000000001,'강경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호',null,sysdate,2,100000,90000,to_date('2017-12-30','yyyy-mm-dd'),0,'송유정');
+values (paid_seq.nextval,1,1,null,2017123000000001,'강경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호',null,null,0,100000,90000,to_date('2017-12-30','yyyy-mm-dd'),0,'송유정');
 insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,1,1,null,2017101900000001,'유경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','도착하셔서 연락 부탁드립니다',sysdate,2,100000,90000,to_date('2017-10-19','yyyy-mm-dd'),0,'유경미');
+values (paid_seq.nextval,1,1,null,2017101900000001,'유경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','도착하셔서 연락 부탁드립니다',to_date('2017-10-20','yyyy-mm-dd'),0,100000,90000,to_date('2017-10-19','yyyy-mm-dd'),2,'유경미');
 insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,1,1,null,2017112400000011,'곽경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호',null,sysdate,2,100000,90000,to_date('2017-11-24','yyyy-mm-dd'),0,'곽경미');
+values (paid_seq.nextval,1,1,null,2017112400000011,'곽경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호',null,null,0,100000,90000,to_date('2017-11-24','yyyy-mm-dd'),0,'곽경미');
 insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,1,1,null,2017122800000011,'함경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','잘 부탁드립니다.',sysdate,2,100000,90000,to_date('2017-12-28','yyyy-mm-dd'),0,'곽은경');
+values (paid_seq.nextval,1,1,null,2017122800000011,'함경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','잘 부탁드립니다.',to_date('2017-12-29','yyyy-mm-dd'),0,100000,90000,to_date('2017-12-28','yyyy-mm-dd'),1,'곽은경');
 insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,1,1,null,2017082900000011,'송경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','감사합니다.',sysdate,2,100000,90000,to_date('2017-08-29','yyyy-mm-dd'),0,'송경미');
+values (paid_seq.nextval,1,1,null,2017082900000011,'송경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','감사합니다.',to_date('2017-08-29','yyyy-mm-dd'),0,100000,90000,to_date('2017-08-29','yyyy-mm-dd'),1,'송경미');
 insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,1,1,null,2018010100000011,'경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','출입문 앞에서 연락 부탁드려요',sysdate,2,100000,90000,to_date('2018-01-01','yyyy-mm-dd'),0,'유반니');
+values (paid_seq.nextval,1,1,null,2018010100000011,'경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','출입문 앞에서 연락 부탁드려요',null,0,100000,90000,to_date('2018-01-01','yyyy-mm-dd'),0,'유반니');
 insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,1,1,null,2017110800000002,'미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','항상 감사합니다',sysdate,2,100000,90000,to_date('2017-11-08','yyyy-mm-dd'),0,'김주연');
+values (paid_seq.nextval,1,1,null,2017110800000002,'미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','항상 감사합니다',to_date('2017-11-08','yyyy-mm-dd'),0,100000,90000,to_date('2017-11-08','yyyy-mm-dd'),1,'김주연');
 
-
-//
 insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
 values (paid_seq.nextval,1,1,null,2017112900000002,'송유정',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호',null,null,2,100000,100000,to_date('2017-11-29','yyyy-mm-dd'),0,'박보검');
 insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
@@ -745,7 +742,7 @@ values (paid_seq.nextval,3,1,null,2017122200000123,'유정란',01012341234,11758
 insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
 values (paid_seq.nextval,1,35,null,2017122400000121,'유정',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','크리스마스조심',to_date('2017-12-24','yyyy-mm-dd'),0,100000,1000000,to_date('2017-12-25','yyyy-mm-dd'),1,'유정');
 insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,1,64,null,2017123000000122,'김상우',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','신년조심',to_date('2017-12-30','yyyy-mm-dd'),0,100000,1000000,to_date('2017-12-30','yyyy-mm-dd'),1,'김상우');
+values (paid_seq.nextval,1,52,null,2017123000000122,'김상우',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','신년조심',to_date('2017-12-30','yyyy-mm-dd'),0,100000,1000000,to_date('2017-12-30','yyyy-mm-dd'),1,'김상우');
 
 
 --wish db
@@ -761,5 +758,8 @@ INSERT INTO review VALUES(review_seq.nextval, 1, 1, '치수', '내용', 4, sysda
 INSERT INTO review VALUES(review_seq.nextval, 1, 1, '치수', '내용', 5, sysdate);
 INSERT INTO review VALUES(review_seq.nextval, 1, 1, '치수', '내용', 5, sysdate);
 
+--마일리지
+INSERT INTO mileage VALUES(mileage_seq.nextval,1,1,null,200000,sysdate,2);
 -- bank, delivery, trade, refund, cancel, mileage, img_path TEST DATA 없음
 -- 수정사항: 주문테이블(paid) 주문번호에 uk 빼야함니다!!
+-- 주문디비 다 수정함!! 
