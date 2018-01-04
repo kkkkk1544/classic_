@@ -146,10 +146,443 @@
 }
 
 
+/* 배송주소록 */
+.adressTitle{
+	padding-bottom: 15px;
+	margin-bottom: 0px;
+	color: #000;
+}
+.orderTitle{
+	margin: 38px 0 0px 0;
+	overflow: hidden;
+	padding-top: 100px;
+	color: #000;
+}
+.address_wrap{
+	border-bottom: 1px solid #c5b4b4e6;
+    padding-bottom: 40px;
+}
+.recentaddr_wrap{
+	border-bottom: 1px solid #c5b4b4e6;
+	padding-bottom: 40px;
+	padding-top: 40px;
+}
+.recentaddr_wrap .table{	
+	border-top: none;
+	border-bottom: 1px solid #e6e6e6;
+}
+.table.address_table{
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+.table.address_table label{
+	margin-bottom: 0px;
+}
 
 
+/* 마이페이지 */
+.mypageTitle{
+	padding-bottom: 15px;
+	border-bottom: 1px solid #000;
+	margin-bottom: 0px;
+	color: #000;
+}
+.mypage_info{
+    border-bottom: 1px solid #000;
+    margin-bottom: 20px;
+}
+.mypage_info li{
+	float: left;
+    min-width: 68px;
+    background: #fff;
+    padding: 9px 16px 9px 0;
+    list-style-type: none;
+}
+.mypage_info>ul{
+	float: left;
+    margin-top: 11px;
+    padding: 0px 100px 0px 14px;
+}
+.mypage_info ul li .mypageInfoLabel{
+	font-size: 14px;
+	color: #000;
+	margin-left: 14px;
+}
+.mypage_info li .value {
+	font-size: 14px;
+    color: #000;
+    margin: 5px 0 0 15px;
+}
+.benefit_group{
+	display: table;
+    margin-left: 0;
+    padding: 2px 0 2px 0;
+    min-height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 70px;
+   	font-size: 14px;
+}
+.benefitInfo{
+	display: table-cell;
+    vertical-align: middle;
+    width: 145px;
+    text-align: center;
+    border-right: 1px solid #e7e7e7;
+}
+.benefitprint{
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 20px;
+   	font-size: 14px;
+}
+
+.orderList_wrap{
+	margin-top: 38px;
+}
+.orderList_titleandbtn{
+	overflow: hidden;
+}
+.orderListTitle{
+    float: left;
+    color: #000;
+    font-weight: 500;
+	padding-bottom: 15px;
+	margin-bottom: 0px;
+}
+.orderList_titleandbtn p{
+	float: right;
+    margin-top: 35px;
+    margin-bottom: 0px;
+}
+.orderList_titleandbtn p>a{
+	color: #000;
+}
+.orderList_titleandbtn p>a:hover{
+	color: #949393;
+}
+.table.orderList_table{
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+.table.orderList_table tr td img{
+	width: 50px;
+    height: 50px;
+    background: lightgray;
+    font-size: 10px;
+    margin: 0px;
+}
+.myPosting_wrap{
+	margin-top: 38px;
+}
+.myPosting_titleandbtn{
+	overflow: hidden;
+	border-bottom: 1px solid #000;
+}
+.myPostingTitle{
+	float: left;
+    color: #000;
+    font-weight: 500;
+	padding-bottom: 15px;
+	margin-bottom: 0px;
+}
+.myPosting_titleandbtn p{
+	float: right;
+    margin-top: 35px;
+    margin-bottom: 0px;
+}
+.myPosting_titleandbtn p>a{
+	color: #000;
+}
+.myPosting_titleandbtn p>a:hover{
+	color: #949393;
+}
+.myPosting_wrap .reviewList{
+	float: left;
+	width: 50%;
+}
+.reviewList_wrap{
+	margin: 0 15px 0 0px;
+}
+.reviewListTitle{
+	margin: 10px 0 10px 0;
+	font-size: 14px;
+}
+.table.reviewList_table{
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+.qnaList{
+	float: right;
+	width: 50%;
+}
+.qnaList_wrap{
+	margin: 0 0px 0 15px;
+}
+.qnaListTitle{
+	margin: 10px 0 10px 0;
+	font-size: 14px;
+}
+.table.qnaList_table{
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
 
 
+/* 회원정보 수정*/
+#memberModifyTitle{
+	padding-bottom: 15px;
+	border-bottom: 1px solid #000;
+	color: #000;
+}
+.form-horizontal.modify_Form{
+	margin-top: 30px;
+}
+.form-horizontal.modify_Form .form-group {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+#modifyPasswordRule{
+	color: #777;
+	font-size: 10pt;
+}
+.modify_btn_group {
+    text-align: center;
+    padding: 10px 10px 30px 10px;
+    border-bottom: 1px solid #000;
+}
+.modify_btn_group button{
+	width: 100px;
+	height: 40px;
+}
 
 
+/* 회원 쿠폰  */
+#couponTitle{
+	padding-bottom: 15px;
+	margin-bottom: 0px;
+	color: #000;
+}
+.table.coupon_table{
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+.coupon_paging {
+	text-align: center;
+}
+.couponForm_wrap{
+	margin-top: 30px;
+}
+.couponForm{
+	margin: 10px auto 7px;
+	border: 1px solid #ccc;
+}
+.couponFormGroup{
+    width: 500px;
+    margin: 0px auto 0px;
+    padding: 27px 0 30px 0;
+}
+.couponFormGroup .col-sm-9{
+	padding-left: 6px;
+    padding-right: 10px;
+}
+.couponForm .couponFormGroup button{
+	color: #fff;
+    background-color: #000;
+    border-color: #ccc;
+}
+.couponForm .form-control{
+	margin-left: 0px;
+}
 
+.couponGuide_wrap{
+	margin-top: 30px;
+}
+.couponGuide{
+	padding: 20px;
+	border: 1px solid #ccc;
+}
+.couponGuide ol{
+    padding: 0px 16px 0px 13px;
+    margin-bottom: 0px;
+}
+
+
+/* 적립금  */
+.mileageTitle{
+	padding-bottom: 15px;
+	border-bottom: 1px solid #000;
+	margin-bottom: 0px;
+	color: #000;
+}
+.mileage_info{
+	border-bottom: 1px solid #000;
+}
+.mileage_info_value{
+	margin-top: 20px;
+	margin-bottom: 20px;	
+}
+.mileage_info_value ul{
+	overflow: hidden;
+}
+.mileage_info_value ul li{
+	list-style: none;
+	float: left;
+    margin: 5px 0;
+    padding: 0 20px 0 27px;
+    width: 50%;
+    height: 20px;
+}
+.mileage_info_value ul strong{
+    float: left;
+    width: 50%;
+    padding: 0 0 0 10px;
+    box-sizing: border-box;
+}
+.mileage_info_value ul span{
+	    float: left;
+    width: 50%;
+    padding: 0 0 0 10px;
+    box-sizing: border-box;
+}
+
+.table.mileage_table{
+	margin-top: 35px;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+.mileage_paging{
+	text-align: center;
+}
+.mileageGuide_wrap{
+	margin-top: 30px;
+}
+.mileageGuide{
+	padding: 20px;
+	border: 1px solid #ccc;
+}
+.mileageGuide ol{
+    padding: 0px 16px 0px 13px;
+    margin-bottom: 0px;
+}
+
+
+/* 내가 쓴 글 */
+.myQna_wrap{
+	border-bottom: 1px solid #c5b4b4e6;
+    padding-bottom: 40px;
+}
+.myQnaTitle{
+	padding-bottom: 15px;
+	margin-bottom: 0px;
+	color: #000;
+}
+.table.myQna_table{
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+.table.myQna_table label{
+	margin-bottom: 0px;
+}
+.myReview_wrap{
+	border-bottom: 1px solid #c5b4b4e6;
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+.myReviewTitle{
+	padding-bottom: 15px;
+	border-bottom: 1px solid #000;
+	margin-bottom: 0px;
+	color: #000;
+}
+.myReview_top_menu{
+	position: relative;
+    border: 1px solid #e1e1e1;
+    margin-top: 18px;
+    margin-bottom: 33px;
+    height: 51px;
+    box-sizing: content-box;
+}
+.top_menu_left{
+	transition: padding-right 0.3s;
+	padding-right: 450px;
+    height: 51px;
+    line-height: 51px;
+}
+
+.top_menu_left:after {
+     clear: both;
+     content: ".";
+     display: block;
+     font-size: 0;
+     height: 0;
+     line-height: 0;
+     visibility: hidden;
+}
+.top_menu_left li{
+    padding: 10px 20px;
+    line-height: 31px;
+    max-width: 100%;
+    font-size: 13px;
+    border-left: 0;
+    display: inline-block;
+    height: 51px;
+    float: left;
+    list-style-type: none;
+}
+.top_menu_left .top_menu_text{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.top_menu_two{
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 51px;
+    line-height: 51px;
+}
+.top_menu_two:after {
+    clear: both;
+    content: ".";
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}
+.top_menu_li{
+	display: inline-block;
+    height: 51px;
+    border-left: 1px solid #e1e1e1;
+    float: left;
+    list-style-type: none;
+}
+.top_menu_li.li_one{
+	padding: 0;
+    width: 145px;
+}
+.top_menu_li.li_two{
+	padding: 0;
+    position: relative;
+}
+.top_menu_two a{
+	color: #b7b7b7;
+    cursor: pointer;
+    line-height: 51px;
+    display: block;
+    text-align: center;
+    font-size: 13px;
+    text-decoration: none;
+}
+.form-control.searchInput{
+	display: inline-block;
+    font-size: 12px;
+    vertical-align: middle;
+    transition: width 0.3s;
+    margin-left: 10px;
+}
+.top_menu_icon .btn{
+	margin-right: 10px;
+}

@@ -70,4 +70,6 @@
 	border-radius: 4px;
 }
 
-
+.qna_contents td{
+	text-align: left;
+}
