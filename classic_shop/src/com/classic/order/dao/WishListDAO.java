@@ -5,6 +5,6 @@ import java.util.List;
 
 import com.classic.order.dto.WishDTO;
 
-public interface WistListDAO {
+public interface WishListDAO {
 	public List<WishDTO> selectWish (Connection conn,int mem_num) throws Exception; 
 }
