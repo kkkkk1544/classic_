@@ -118,6 +118,7 @@ var readQna = function(num){
 	$.ajax(setting);
 }
 
+//qna 글 제목 설정
 var qnaSubjectCheck = function(subject) {
 	if(subject==5){
 		$("#subjectMsg").html('<td>d</td>');
@@ -126,11 +127,74 @@ var qnaSubjectCheck = function(subject) {
 	}
 }
 
-var modifyQna = function(num){
-}
+//qnaModify
+/*var modifyQna = function(qnaPutForm){
+	var urlSet = "qna/ajax.do";
+	var method = "PUT";
+	var num = qnaPutForm.num.value;
+	var subject = qnaPutForm.subject.value;
+	var content = qnaPutForm.content.value;
+	var secure = qnaPutForm.secure.value;
+	var pwd = qnaPutForm.pwd.value;
+	var http = new XMLHttpRequest();
+	var url = urlSet+"?num="+num+"&subject="+subject+"&content="+content+"&secure="+secure+"&pwd="+pwd;
+	http.open(method, url, true);
+	http.onreadystatechange = function(){
+		if(this.readyState==4 && this.status==200){
+			var modifyVal = JSON.parse(this.responseText)["modify"];
+			if(modifyVal){
+				alert("수정 성공");
+			} else {
+				alert("수정 실패");
+			}
+		}
+	}
+	http.send();
+}*/
 
-var removeQna = function(num){
-	console.log(num);
-}
-
+/*//qnaDelete
+ 	var removeQna = function(num){
+ 		var setting={
+ 				url: "/classic_shop/qna/ajax.do="+num,
+ 				type: "DELETE",
+ 				dataType: "json",
+ 				success: function(data){
+ 					if(data["remove"]){
+ 						alert("삭제 성공");
+ 					} else{
+ 						alert("ㅠㅠ")
+ 					}
+ 				}
+ 		}
+ 		$.ajax(setting);
+ 	}*/
+ 	
+/*//qnaInsert
+var registerQna = function(registerForm){
+	var url = "qna/ajax.do";
+	var method = "POST";
+	var num = registerForm.num.value;
+	var subject = registerForm.subject.value;
+	var content = registerForm.content.value;
+	var secure = registerForm.secure.value;
+	var pwd = registerForm.pwd.value;
+	
+	var data = "num="+num+"&subject="+subject+"&content="+content+"&secure="+secure+"&pwd="+pwd;
+	
+	var http = new XMLHttpRequest();
+	http.open(method, url, true);
+	http.onreadystatechange = function(){
+		if(this.readyState==4 && this.status==200){
+			var register = JSON.parse(this.response)["register"];
+			if(register){
+				alert("성공");
+			}else{
+				alert("실패");
+			}
+		}
+	}
+	
+	http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	http.send(data);
+}*/
 
