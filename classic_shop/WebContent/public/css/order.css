@@ -236,14 +236,18 @@ margin: 50px 50px;
 	margin-left: auto;
 	margin-top: 200px;
 }  
+#wishName{
+	border-bottom-style: solid;
+	height: 40px;
+}
 #wishTable{
 	width:100%;
-	border-bottom: hiddien;
+	border-bottom: solid;
 	margin-bottom: 5px;
 }
 #wishTitle{
 	border-top:hidden;
-	border-bottom: 1px solid black!important;
+	border-bottom: 1px solid black;
 }
 #wishTitle th{
 	font-size: 14px;
@@ -257,110 +261,40 @@ margin: 50px 50px;
 	text-align: center;
 	vertical-align: middle;
 }
+#wishContents div{
+	width:auto;
+	float:left;
+}
 #wishContents p{
 	background:#ccc;
 	width: 104px;
 	height: 104px;
 	vertical-align: middle;
 }
-#wishName{
-	border-bottom-style: solid;
-	height: 40px;
-}
-#buttonGroup button{
-	background: #CCC;
-	color: black;
-	margin: 2px;
-	border: none;
-	border-radius: 4px;
-	height: 35px;
-	font-size: 10px;
-}
-#buttonGroup2 button{
-	background: #CCC;
-	color: black;
-	margin: 2px;
-	border: none;
-	border-radius: 4px;
-	height: 35px;
-	font-size: 10px;
-}
-#infoList{
-	text-align: left!important;
-}
-#infoListDiv{
-	display: inline-block;
-	margin: 0px;
-	text-align: left;
-}
-#infoListDiv div{
-	float:left;
-	margin-bottom: 5px;
-	text-align: left;
-}
-#infoListDiv p{
-	margin-bottom: 0px;
-}
-#infoListDiv ul{
-	margin-bottom: 0px;
-	font-size: 10px;
-	height: 104px;
-}
-#infoListDiv li {
-	height: auto;
+.list-group li{
 	border: hidden;
-	padding-top: 8px;
-	padding-bottom: 8px;
-}
-#infoListDiv li button{
-	font-size: 10px;
-	background: #ccc;
-}
-#infoList2{
-	text-align: left!important;
-}
-#infoListDiv2{
-	display: inline-block;
-	margin: 0px;
-}
-#infoListDiv2 div{
-	float:left;
-	margin-bottom: 5px;
-}
-#infoListDiv2 p{
-	margin-bottom: 0px;
-}
-#infoListDiv2 ul{
-	margin-bottom: 0px;
-	font-size: 10px;
 	text-align: left;
-	height: 104px;
+	height: 33.3px;
+	vertical-align: middle;
 }
-#infoListDiv2 li {
-	height: auto;
-	border: hidden;
-	padding-top: 8px;
-	padding-bottom: 8px;
-}
-#infoListDiv2 li button{
-	font-size: 10px;
-	background: #ccc;
+.buttonGroup button{
+	width:114px;
+	height:34px;
+	margin: 2px;
+	font-size: 14px;
 }
 #wishCRUDBtn button{
-	background: #CCC;
-	color: black;
+	height:34px;
 	margin: 2px;
-	border: none;
-	border-radius: 4px;
-	height :35px;
-	font-size: 10px;
+	font-size: 14px;
 }
-#allSelectBtn{
-	background: #ccc;
-	color: black;
-	height: 35px;
-	font-size: 10px;
-	margin-right: 6px;	
+#wishCRUDBtn button:last-child{
+	margin-right: 11px
+}
+#moveCartBtn{
+	font-size: 12px!important;
+	padding-top: 0px;
+	padding-bottom: 0px;
 }
 #pagingBtn{
 	text-align: center;
@@ -369,6 +303,17 @@ margin: 50px 50px;
 	color: #000;
 	border: hidden;
 }
+
+
+
+
+
+
+
+
+
+
+
 /* order-sheet */
 #orderMainDiv{
 	width:80%!important;
