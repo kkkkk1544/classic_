@@ -1,6 +1,6 @@
 package com.classic.common.dto;
 
-public class Img_pathDTO {
+public class ImgPathDTO {
 
 	/*
 		이름          			널?       		유형            

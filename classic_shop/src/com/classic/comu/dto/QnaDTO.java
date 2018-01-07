@@ -27,7 +27,8 @@ public class QnaDTO {
 	private Date indate;
 	
 	private String name;
-	
+	private int img_num;
+	private String img_name;
 	public int getNum() {
 		return num;
 	}
@@ -76,13 +77,29 @@ public class QnaDTO {
 	public void setIndate(Date indate) {
 		this.indate = indate;
 	}
+	public String getName() {
+		return name;
+	}
 	public void setName(String name) {
 		this.name = name;
 	}
+	public int getImg_num() {
+		return img_num;
+	}
+	public void setImg_num(int img_num) {
+		this.img_num = img_num;
+	}
+	public String getImg_name() {
+		return img_name;
+	}
+	public void setImg_name(String img_name) {
+		this.img_name = img_name;
+	}
 	@Override
 	public String toString() {
-		return "{\"num\" : \"" + num + "\", \"mem_num\" : \"" + mem_num + "\", \"subject\" : \"" + subject
-				+ "\", \"content\" : \"" + content + "\", \"count\" : \"" + count + "\", \"secure\" : \"" + secure
-				+ "\", \"pwd\" : \"" + pwd + "\", \"indate\" : \"" + indate + "\", \"name\" : \"" + name + "\"}";
+		return "{\"num\":\"" + num + "\", \"mem_num\":\"" + mem_num + "\", \"subject\":\"" + subject
+				+ "\", \"content\":\"" + content + "\", \"count\":\"" + count + "\", \"secure\":\"" + secure
+				+ "\", \"pwd\":\"" + pwd + "\", \"indate\":\"" + indate + "\", \"name\":\"" + name
+				+ "\", \"img_num\":\"" + img_num + "\", \"img_name\":\"" + img_name + "\"} ";
 	}
 }

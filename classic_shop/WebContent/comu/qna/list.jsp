@@ -7,11 +7,11 @@
 			<table class="table table-hover">
 				<tbody class="qna_title">
 					<tr>
-						<th>No.</th>
-						<th>SUBJECT</th>
-						<th>NAME</th>
-						<th>DATE</th>
-						<th>VIEW</th>
+						<th class='col-sm-1'>No.</th>
+						<th class='col-sm-6' style="text-align: left;">SUBJECT</th>
+						<th class='col-sm-1'>NAME</th>
+						<th class='col-sm-1'>DATE</th>
+						<th class='col-sm-1'>VIEW</th>
 					</tr>
 				</tbody>
 				<tbody class="qna_contents">

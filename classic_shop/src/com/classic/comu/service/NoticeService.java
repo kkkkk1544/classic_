@@ -7,4 +7,5 @@ import com.classic.comu.dto.NoticeDTO;
 public interface NoticeService {
 	
 	public List<NoticeDTO> readNotice();
+	public NoticeDTO readNotice(int num);
 }

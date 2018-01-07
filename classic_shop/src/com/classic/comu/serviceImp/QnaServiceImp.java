@@ -4,6 +4,10 @@ import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.classic.common.dao.ImgPathDAO;
+import com.classic.common.daoImp.ImgPathDAOImp;
+import com.classic.common.dto.ImgPathDTO;
+import com.classic.comu.dao.QnaDAO;
 import com.classic.comu.daoImp.QnaDAOImp;
 import com.classic.comu.dto.QnaDTO;
 import com.classic.comu.service.QnaService;
@@ -43,20 +47,75 @@ public class QnaServiceImp implements QnaService{
 
 	@Override
 	public boolean registerQna(QnaDTO qnaDTO) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean register = false;
+		try {
+			conn = ClassicDBConnection.getConnection();
+			conn.setAutoCommit(false);
+			conn.commit();
+			int insert = new QnaDAOImp(conn).insertQna(qnaDTO);
+			if(insert==1) {
+				register = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			try {
+				conn.rollback();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		} finally {
+			ClassicDBConnection.close(conn);
+		}
+		
+		return register;
 	}
 
 	@Override
 	public boolean modifyQna(QnaDTO qnaDTO) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean modify = false;
+		try {
+			conn = ClassicDBConnection.getConnection();
+			conn.setAutoCommit(false);
+			conn.commit();
+			int update = new QnaDAOImp(conn).updateQna(qnaDTO);
+			if(update==1) {
+				modify = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			try {
+				conn.rollback();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		} finally {
+			ClassicDBConnection.close(conn);
+		}
+		return modify;
 	}
 
 	@Override
 	public boolean removeQna(int num) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean remove = false;
+		try {
+			conn = ClassicDBConnection.getConnection();
+			conn.setAutoCommit(false);
+			conn.commit();
+			int qnaDel = new QnaDAOImp(conn).deleteQna(num);
+			if(qnaDel==1) {
+				remove = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			try {
+				conn.rollback();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		} finally {
+			ClassicDBConnection.close(conn);
+		}
+		return remove;
 	}
 
 	@Override
