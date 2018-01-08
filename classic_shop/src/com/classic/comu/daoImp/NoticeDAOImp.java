@@ -39,6 +39,30 @@ public class NoticeDAOImp implements NoticeDAO{
 		}
 		return noticeList;
 	}
+
+	@Override
+	public NoticeDTO selectNotice(int num) throws Exception {
+		NoticeDTO noticeDTO = null;
+		String sql = "SELECT n.num, n.title, n.content, m.id as name, n.indate, n.count"
+				+ " FROM notice n, member m"
+				+ " WHERE n.mem_num=m.num"
+				+ " AND n.num=?";
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, num);
+		rs = pstmt.executeQuery();
+		while(rs.next()) {
+			noticeDTO = new NoticeDTO();
+			noticeDTO.setNum(rs.getInt("num"));
+			noticeDTO.setName(rs.getString("name"));
+			noticeDTO.setTitle(rs.getString("title"));
+			noticeDTO.setCount(rs.getInt("count"));
+			noticeDTO.setIndate(rs.getDate("indate"));
+			noticeDTO.setContent(rs.getString("content"));
+		}
+		return noticeDTO;
+	}
 	
 	
 	

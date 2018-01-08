@@ -27,4 +27,18 @@ public class NoticeServiceImp implements NoticeService{
 		return noticeList;
 	}
 
+	@Override
+	public NoticeDTO readNotice(int num) {
+		NoticeDTO noticeDTO = null;
+		try {
+			conn = ClassicDBConnection.getConnection();
+			noticeDTO = new NoticeDAOImp(conn).selectNotice(num);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			ClassicDBConnection.close(conn);
+		}
+		return noticeDTO;
+	}
+
 }

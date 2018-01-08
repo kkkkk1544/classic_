@@ -8,6 +8,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="<c:url value='/public/bootstrap/css/bootstrap.css' />">
+<!-- Google Login -->
+<meta name="google-signin-scope" content="profile email">
+<meta name="google-signin-client_id" content="785211237752-m7ipg6nvj45vdhjoc3i2di29u5g4m4qj.apps.googleusercontent.com">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 <!-- 개인 lib -->
 <link rel="stylesheet" href="<c:url value='/public/css/common.css' />">
 <link rel="stylesheet" href="<c:url value='/public/css/comu.css' />">
@@ -22,6 +26,12 @@
 <title>CLASSIC</title>
 </head>
 <body>
+<script>
+	if("${msg}"!=""){
+		alert("${msg}");	
+	}
+</script>
+<c:remove var="msg"/>
 	<header>
 		<nav class="navbar navbar-default navbar-fixed-top" style="background-color: #ffffff;">
 			<div class="container">
@@ -81,17 +91,17 @@
 						<ul class="nav nav-pills">
 							<!--로그인 -->
 							<c:choose>
-								<c:when test="${loginMem.grade>=0}">
+								<c:when test="${loginMem ne null}">
 										<c:if test="${loginMem.grade==0}">
 											<li><a href="#"><strong style="color: navy;">관리자 페이지 이동</strong></a></li>
 										</c:if>
-									<li><a><strong>${loginMem.id}님 접속</strong></a></li>
+									<li><a><strong style="color: #000;">${loginMem.id} 님 접속</strong></a></li>
 									<li><a href="<c:url value='/logout.do' />">LOGOUT</a></li>
 								</c:when>
 								<c:otherwise>
-									<li><a href="<c:url value='/member/login.jsp' />">LOGIN</a></li>
+									<li><a href="<c:url value='/login.do' />">LOGIN</a></li>
 									<li>
-										<a href="<c:url value='/member/join.jsp' />">JOIN US</a>
+										<a href="<c:url value='/signup.do' />">JOIN US</a>
 									</li>
 								</c:otherwise>
 							</c:choose>
@@ -115,11 +125,11 @@
 							</li>
 							<li><a href="<c:url value='/order/list.jsp' />">ORDER</a></li>
 							<li role="presentation" class="dropdown">
-								<a class="dropdown-toggle" href="<c:url value='/community.do' />" role="button" aria-expanded="false">COMMUNITY</a>
+								<a class="dropdown-toggle" href="<c:url value='/community/notice.do' />" role="button" aria-expanded="false">COMMUNITY</a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="javascript:noticeList()">NOTICE</a></li>
-									<li><a href="javascript:qnaList()">QNA</a></li>
-									<li><a href="javascript:faqList()">FAQ</a></li>
+									<li><a href="<c:url value='/community/notice.do' />">NOTICE</a></li>
+									<li><a href="<c:url value='/community/qna.do' />">QNA</a></li>
+									<li><a href="<c:url value='/community/faq.do' />">FAQ</a></li>
 								</ul>
 							</li>
 							<li role="presentation" class="dropdown">

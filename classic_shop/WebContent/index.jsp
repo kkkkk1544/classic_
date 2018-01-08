@@ -2,15 +2,15 @@
     pageEncoding="UTF-8"%>
 
 <!-- 이미지 슬라이드 CSS -->
-<style>
+<!-- <style>
 	/* Make the image fully responsive */
 	.carousel-inner img {
 	    width: 100%;
 	    height: 15%;
 	}
-</style>
+</style> -->
 <!-- 이미지 슬라이드 -->
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<%-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 	<ol class="carousel-indicators">
 		<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
 		<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -35,7 +35,7 @@
 		<span class="carousel-control-next-icon" aria-hidden="true"></span>
 		<span class="sr-only">Next</span>
 	</a>
-</div>
+</div> --%>
 <!-- 상품 진열 -->
 <div class="container">
 	<!-- NEW ITEMS -->
@@ -58,7 +58,15 @@
 		1. 메인 이미지 슬라이드
 		2. 새 창 디자인(비밀번호 입력)
 		3. 네비게이션 三
-		4. 자물쇠, 카메라, +, - 아이콘 추가
+		4. +, - 아이콘 추가 (3)
 		5. 버튼 위치 마무리
 		6. 이메일 인증 api
+		7. notice 카메라 아이콘
+		8. qna 등록/수정/삭제 (2) --등록/수정(json) / 삭제(ajax)
+		9. banner (ajax)
+		10. join
+			-- email check (ajax) -- 중복 이메일 X
+		11. footer map
+		12. product search
+			-- search input (ajax)
  -->

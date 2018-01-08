@@ -6,7 +6,7 @@
 		<h2 id="memberJoinTitle">MEMBER SIGN UP</h2>
 		<small style="color: red; float: right;">*필수</small>
 		<!-- 회원가입 폼 -->
-		<form name="joinForm">
+		<form name="joinForm" method="post" action="/join.do">
 			<div class="join_body">
 				<div class="table-responsive">
 					<table class="table">
@@ -15,10 +15,9 @@
 							<td>
 								<div class="form-group">
 									<div class="col-xs-6">
-										<input type="text" name="id" value="" placeHolder="ID" class="form-control">
+										<input type="text" name="id" placeHolder="ID" class="form-control" id="memIdInput" maxlength="12">
 									</div>
-									<span id="checkIdMsg">아이디는 영문, 숫자만 사용 가능합니다(4~16자).</span>
-									<input type="hidden" name="checkId" value="0">					
+									<span id="checkIdMsg">영문/숫자/_가 조합된 아이디만 사용 가능합니다(4~12자).</span>
 								</div>
 							</td>
 						</tr>
@@ -27,9 +26,8 @@
 							<td>
 								<div class="form-group">
 									<div class="col-xs-6">
-										<input type="password" name="pwdKey" value="" placeHolder="Password" class="form-control">
+										<input type="password" name="pwd" id="memPwInput" placeHolder="Password" class="form-control" maxlength="12">
 									</div>
-									<span id="checkPwNotice">비밀번호는 영문, 숫자, 특수문자만 사용 가능합니다.</span>
 								</div>
 							</td>
 						</tr>
@@ -38,10 +36,9 @@
 							<td>
 								<div class="form-group">
 									<div class="col-xs-6">
-										<input type="password" name="pwd" value="" placeHolder="Password Check" class="form-control">
+										<input type="password" name="pw" id="memPwCheck" placeHolder="Password Check" class="form-control" maxlength="12">
 									</div>
-									<span id="checkPwdMsg">JSON</span>
-									<input type="hidden" name="checkPwd" value="0">
+									<span id="checkPwMsg">비밀번호는 영문, 숫자, 특수문자만 사용 가능합니다(4~12자).</span>
 								</div>
 							</td>
 						</tr>
@@ -50,7 +47,7 @@
 							<td>
 								<div class="form-group">
 									<div class="col-xs-6">
-										<input type="text" name="phone" value="" placeHolder="PHONE" class="form-control">
+										<input type="text" name="phone" placeHolder="PHONE" class="form-control">
 									</div>
 								</div>
 							</td>
@@ -60,10 +57,9 @@
 							<td>
 								<div class="form-group">
 									<div class="col-xs-6">
-										<input type="text" name="mail" value="" placeHolder="E-MAIL" class="form-control">
+										<input type="text" name="mail" id="memEmailInput" placeHolder="E-MAIL" class="form-control">
 									</div>
 									<span id="checkEmailMsg">이메일을 기입하지 않을 시 가입에 제한이 있을 수 있습니다.</span>
-									<input type="hidden" name="checkEmail" value="0">	
 								</div>
 							</td>
 						</tr>
@@ -152,8 +148,8 @@
 			</div>
 			<!-- 회원가입 버튼 -->
 			<div class="join_btn_group">
-				<button type="submit" class="btn btn-default">가입</button>
-				<button type="reset" class="btn btn-default" onclick="location.href='<c:url value='/index.jsp'/>'">취소</button>
+				<button type="button" class="btn btn-default" onclick="joinJson(this.form)">가입</button>
+				<button type="button" class="btn btn-default" onclick="joinCancelBtn()">취소</button>
 			</div>
 		</form>
 	</div>

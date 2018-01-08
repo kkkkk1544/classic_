@@ -12,5 +12,6 @@ public interface NoticeDAO {
 */	
 	
 	public List<NoticeDTO> selectNotice() throws Exception; //notice list
+	public NoticeDTO selectNotice(int num) throws Exception;
 	
 }
