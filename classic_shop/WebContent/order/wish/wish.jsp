@@ -7,7 +7,6 @@
 <body>
 	<div class="container" id="mainDiv">
 		<h2 class="text-left" id="wishName">WISH LIST</h2>
-		<form action="">
 		<table class="table" id="wishTable">
 			<thead id="wishTitle">
 				<tr>
@@ -24,7 +23,7 @@
 			<tbody id="wishContents">
 				<c:forEach var="wish" items="${wishList}">
 					<tr>
-						<td><input type="checkbox" value="${wish.productNum}"></td>
+						<td><input type="checkbox" value="${wish.productNum} name="productNum" class="checkWish"></td>
 						<td class="infoList">
 							<div class="infoListDiv">
 								<div>
@@ -159,11 +158,10 @@
 			<button type="button" class="btn btn-default" onclick="allWishDel(5)">전체삭제</button>
 			<!-- ~~~~~~~~~~~~~~~mem_num으로 바꿔야댐~~~~~~~~`~~~~~~~~~~~~-->
 			<button type="button" class="btn btn-default">선택주문</button>
-			<button type="button" class="btn btn-default"  onclick="delWishSelected()">선택삭제</button>
+			<button type="button" class="btn btn-default"  onclick="delWishSelected(5)">선택삭제</button>
 			<button type="button" class="btn btn-default" id="moveCartBtn">선택한 상품을<br> 장바구니에 등록</button>
 			<button class="btn btn-default pull-right">전체상품 주문</button>
 		</div>
-		</form>
 		<div id="pagingBtn">
 			<ul class="pagination">
 				<li>
@@ -185,17 +183,16 @@
 		</div>
 	</div>
 <script>
-var url="wishlist.do";
-console.log(${wishList});
+$(function(){
 var allWishDel = function(mem_num){
-	var url = this.url+"?num="+mem_num;
+	var url ="http://localhost:9999/classic_shop/order/wishlist.do?num="+mem_num;
 	var method="DELETE";
 	var http = new XMLHttpRequest();
 	http.onreadystatechange=function(){
-		if(this.readyStatus==4 && this.status==200){
+		if(this.readyState==4 && this.status==200){
 			var delete_json = JSON.parse(this.response);
 			console.log(delete_json["delete"]);
-			if(dele_json["delete"]){
+			if(delete_json["delete"]){
 				alert("삭제되었습니다.");
 			}else{
 				alert("삭제실패");
@@ -205,6 +202,10 @@ var allWishDel = function(mem_num){
 	http.open(method,url,true);
 	http.send();
 }
-var delWishSelected =function(product_num){
+var delWishSelected =function(mem_num){
+	console.log("띠링");	
+	var productValue = documents.getClassName("checkWish").value;
+	console.log(productValue);
 }
+});
 </script>
