@@ -33,10 +33,14 @@ public class WIshListController extends HttpServlet{
 			ClassicDBConnection.close(null,null,conn);
 		}
 		if(wishList==null) {
+			System.out.println(req.getPathInfo());
+			System.out.println(req.getContextPath()+"/order/wish/wish.jsp");
 			resp.sendRedirect(req.getContextPath()+"/order/wish/wish.jsp");
 		} else {
+			System.out.println(req.getPathInfo());
 			req.getSession().setAttribute("wishList", wishList);
-			req.getRequestDispatcher("/order/wish/wish.jsp").forward(req, resp);
+			System.out.println(req.getContextPath()+"/order/wish/wish.jsp");
+			req.getRequestDispatcher(req.getContextPath()+"/order/wish/wish.jsp").forward(req, resp);
 			
 		}
 	}
