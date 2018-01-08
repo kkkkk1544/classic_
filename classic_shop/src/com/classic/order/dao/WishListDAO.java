@@ -6,6 +6,6 @@ import java.util.List;
 import com.classic.order.dto.WishDTO;
 
 public interface WishListDAO {
-	public List<WishDTO> selectWish (Connection conn,int mem_num) throws Exception;
-	public int allWishDel (Connection conn, int mem_num) throws Exception;
+	public List<WishDTO> selectWish (int mem_num) throws Exception;
+	public int allWishDel (int mem_num) throws Exception;
 }

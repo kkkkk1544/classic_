@@ -22,8 +22,12 @@ public class WishListDAOImp implements WishListDAO{
 			e.printStackTrace();
 		}
 	}*/
+	private Connection conn;
+	public WishListDAOImp(Connection conn) {
+		this.conn = conn;
+	}
 	@Override
-	public List<WishDTO> selectWish(Connection conn, int mem_num) throws Exception {
+	public List<WishDTO> selectWish(int mem_num) throws Exception {
 		List<WishDTO> wishList =new ArrayList<WishDTO>();
 		String sql ="select (select name from product where num=w.product_num) as product_name, "
 				+ "(select num from product where num=w.product_num) as product_num ,"
@@ -51,7 +55,7 @@ public class WishListDAOImp implements WishListDAO{
 	}
 
 	@Override
-	public int allWishDel(Connection conn, int mem_num) throws Exception {
+	public int allWishDel(int mem_num) throws Exception {
 		int delete = 0;
 		String sql = "delete from wish where mem_num=?";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
