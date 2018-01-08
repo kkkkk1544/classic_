@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="/comu/menu.jsp" %>
 
 <div class="comu_body">
 	<p class="comu_title">QNA</p>
@@ -8,11 +7,11 @@
 			<table class="table table-hover">
 				<tbody class="qna_title">
 					<tr>
-						<th>No.</th>
-						<th>SUBJECT</th>
-						<th>NAME</th>
-						<th>DATE</th>
-						<th>VIEW</th>
+						<th class='col-sm-1'>No.</th>
+						<th class='col-sm-6' style="text-align: left;">SUBJECT</th>
+						<th class='col-sm-1'>NAME</th>
+						<th class='col-sm-1'>DATE</th>
+						<th class='col-sm-1'>VIEW</th>
 					</tr>
 				</tbody>
 				<tbody class="qna_contents">
@@ -56,32 +55,6 @@
 			</form>
 		</div>
 </div>
-<!-- <script>
-function qnaList(){
-	$(".qna_contents").ready(function(){
-		var setting={
-				url: "<c:url value='/qna.do'/>",
-				type: "GET",
-				dataType: "json",
-				success: function(data){
-					console.log(data);
-					var qna_contents="";
-					$(data).each(function(index,item){
-						qna_contents+="<tr>";
-						qna_contents+="<td>"+item.num+"</td>";
-						qna_contents+="<td><a javascript:readQna()"+item.subject+"</a></td>";
-						qna_contents+="<td>"+item.name+"</td>";
-						qna_contents+="<td>"+item.indate+"</td>";
-						qna_contents+="<td>"+item.count+"</td>";
-						qna_contents+="</tr>";
-					});
-					$(".qna_contents").html(qna_contents);
-				}
-			}
-			$.ajax(setting);
-	});
-}
-</script> -->
 <!--
 1. 리스트에서 글을 누른다.
 2. 비밀글인지, 공개글인지 검사.

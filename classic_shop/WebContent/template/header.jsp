@@ -19,10 +19,6 @@
 <!-- jQuery lib -->
 <script src='<c:url value="/public/js/jquery/jquery-3.2.1.min.js"/>'></script>
 <script src='<c:url value="/public/js/jquery-ui/jquery-ui.min.js"/>'></script>
-<!-- 부트스트랩 lib -->
-<script src='<c:url value="/public/bootstrap/js/bootstrap.min.js"/>'></script> 
-<!-- kakao 지도 api -->
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9634cbc392b8b80779d4f419ee72bf3a"></script>
 <title>CLASSIC</title>
 </head>
 <body>
@@ -85,17 +81,17 @@
 						<ul class="nav nav-pills">
 							<!--로그인 -->
 							<c:choose>
-								<c:when test="${loginMem.grade>=0}">
+								<c:when test="${loginMem ne null}">
 										<c:if test="${loginMem.grade==0}">
 											<li><a href="#"><strong style="color: navy;">관리자 페이지 이동</strong></a></li>
 										</c:if>
-									<li><a><strong>${loginMem.id}님 접속</strong></a></li>
+									<li><a><strong>${loginMem.id} 님 접속</strong></a></li>
 									<li><a href="<c:url value='/logout.do' />">LOGOUT</a></li>
 								</c:when>
 								<c:otherwise>
-									<li><a href="<c:url value='/member/login.jsp' />">LOGIN</a></li>
+									<li><a href="<c:url value='/login.do' />">LOGIN</a></li>
 									<li>
-										<a href="<c:url value='/member/join.jsp' />">JOIN US</a>
+										<a href="<c:url value='/signup.do' />">JOIN US</a>
 									</li>
 								</c:otherwise>
 							</c:choose>
@@ -119,11 +115,11 @@
 							</li>
 							<li><a href="<c:url value='/order/list.jsp' />">ORDER</a></li>
 							<li role="presentation" class="dropdown">
-								<a class="dropdown-toggle" href="<c:url value='/comu/notice/list.jsp' />" role="button" aria-expanded="false">COMMUNITY</a>
+								<a class="dropdown-toggle" href="<c:url value='/community/notice.do' />" role="button" aria-expanded="false">COMMUNITY</a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="<c:url value='/comu/notice/list.jsp' />">NOTICE</a></li>
-									<li><a onclick="qnaList()">QNA</a></li>
-									<li><a href="<c:url value='/comu/faq/list.jsp' />">FAQ</a></li>
+									<li><a href="<c:url value='/community/notice.do' />">NOTICE</a></li>
+									<li><a href="<c:url value='/community/qna.do' />">QNA</a></li>
+									<li><a href="<c:url value='/community/faq.do' />">FAQ</a></li>
 								</ul>
 							</li>
 							<li role="presentation" class="dropdown">

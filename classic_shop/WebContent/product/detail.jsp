@@ -6,7 +6,7 @@
 <script>
 
 $(function(){
-	console.log(window.location.);
+	console.log(window.location.search(1));
 	
 	$.ajax({
 		

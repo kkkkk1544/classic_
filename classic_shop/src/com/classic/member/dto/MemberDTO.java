@@ -23,6 +23,7 @@ public class MemberDTO {
 	private String mail;
 	private int grade;
 	private Date indate;
+	
 	public int getNum() {
 		return num;
 	}
@@ -67,7 +68,9 @@ public class MemberDTO {
 	}
 	@Override
 	public String toString() {
-		return "MemberDTO [num=" + num + ", id=" + id + ", pw=" + pw + ", phone=" + phone + ", mail=" + mail
-				+ ", grade=" + grade + ", indate=" + indate + "]";
+		return "{\"num\":\"" + num + "\", \"id\":\"" + id + "\", \"pw\":\"" + pw + "\", \"phone\":\"" + phone
+				+ "\", \"mail\":\"" + mail + "\", \"grade\":\"" + grade + "\", \"indate\":\"" + indate + "\"} ";
 	}
+	
+	
 }
