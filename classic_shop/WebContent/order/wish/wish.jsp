@@ -5,10 +5,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <body>
-	<% List<WishDTO> wishList = null;
-	if(request.getSession().getAttribute("wishList")!=null){
-		wishList = (List<WishDTO>)request.getSession().getAttribute("wishList");
-	}%>
 	<div class="container" id="mainDiv">
 		<h2 class="text-left" id="wishName">WISH LIST</h2>
 		<form action="">
@@ -26,7 +22,98 @@
 				</tr>
 			</thead>
 			<tbody id="wishContents">
-			<%if(wishList==null){ %>
+				<c:forEach var="wish" items="${wishList}">
+					<tr>
+						<td><input type="checkbox" value="${wish.productNum}"></td>
+						<td class="infoList">
+							<div class="infoListDiv">
+								<div>
+									<p><a>이미지임</a></p>
+								</div>
+							</div>
+							<div>
+								<ul class="list-group">
+									<li class="list-group-item"><strong><a>${wish.productName}</a></strong></li>
+									<li class="list-group-item"><strong>color ${wish.colour} size ${wish.sizu}</strong></li>
+									<li class="list-group-item"><button type="button" class="btn btn-default">옵션변경</button></li> <!--  onclick구현 -->
+								</ul>
+							</div>
+						</td>
+						<td>${wish.price}원</td>
+						<td>${wish.wishQuantity}개</td>
+						<td>${wish.productNum*wish.wishQuantity*0.02}</td>
+						<c:choose>
+							<c:when test="${wish.price>50000}">
+								<td>무료</td>
+								<td>${wish.price*wish.wishQuantity}원</td>
+							</c:when>
+							<c:when test="${wish.price<50000}">
+								<td>2500원</td>
+								<td>${wish.price*wish.wishQuantity+2500}원</td>
+							</c:when>
+						</c:choose>
+						<td>
+							<div class="buttonGroup">
+								<button type="button" class="btn btn-default">주문하기</button>
+								<button type="button" class="btn btn-default">장바구니 등록</button>
+								<button type="button" class="btn btn-default">삭제</button>
+							</div>
+						</td>
+					</tr>
+				</c:forEach>
+<%-- 			<c:choose>
+				<c:when test="${wishList!=null}">
+					<c:forEach var="wish" items="${wishList}">
+					<tr>
+					<!-- var == 내가 설정하는 이름 즉, 내가 ${이 안에서 쓰는 변수이름} -->
+					<!-- items == 내가 컨트롤러에서 setAtt~("wishList", wishDTO) 이렇게 설정한 이름 -->
+						<!-- wishList에 뭐가 있을 때 -->
+						<td><input type="checkbox" value="${wish.productNum}"></td>		
+						<td class ="infoList">
+						<div class="infoListDiv">
+							<div>
+								<p><a>이미지임</a></p>
+							</div>
+							<div>
+								<ul class="list-group" >
+									<li class="list-group-item"><strong><a>${wish.productName}</a></strong></li>
+									<li class="list-group-item"><strong>color ${wish.colour} size ${wish.sizu} %></strong></li>
+									<li class="list-group-item"><button type="button" class="btn btn-default">옵션변경</button></li> <!--  onclick구현 -->
+								</ul>
+							</div>
+						</div>
+					</td>
+					<td>${wish.price}원</td>
+					<td>${wish.wishQuantity}개</td>
+					<td>(${wish.productNum}*${wish.wishQuantity*0.02}</td>
+					<c:choose>
+						<c:when test="${wish.price>50000}">
+							<td>무료</td>
+							<td>${wish.price*wish.wishQuantity}원</td>
+						</c:when>
+						<c:when test="${wish.price<50000}">
+							<td>2500원</td>
+							<td>${wish.price*wish.wishQuantity+2500}원</td>
+						</c:when>
+					</c:choose>
+					<td>
+						<div class="buttonGroup">
+							<button type="button" class="btn btn-default">주문하기</button>
+							<button type="button" class="btn btn-default">장바구니 등록</button>
+							<button type="button" class="btn btn-default">삭제</button>
+						</div>
+					</td>
+				</tr>
+					</c:forEach>
+				</c:when>
+				<c:otherwise>
+					<!-- wishList에 아무것도 없을 때 -->
+					<tr>
+						<td colspan="8">wish list가 비었습니다.<td>
+					</tr>
+				</c:otherwise>
+			</c:choose> --%>
+			<%-- <%if(wishList==null){ %>
 				<td colspan="8">wish list가 비었습니다.<td>
 			<%} else { 
 				 for(int i = 0; i<wishList.size(); i++){ %>
@@ -65,7 +152,7 @@
 					</td>
 				</tr>
 				<%} 
-				}%>
+				}%> --%>
 			</tbody>
 		</table>
 		<div id="wishCRUDBtn">
@@ -99,7 +186,7 @@
 	</div>
 <script>
 var url="wishlist.do";
-	
+console.log(${wishList});
 var allWishDel = function(mem_num){
 	var url = this.url+"?num="+mem_num;
 	var method="DELETE";
