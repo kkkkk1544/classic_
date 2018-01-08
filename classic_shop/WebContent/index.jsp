@@ -2,15 +2,15 @@
     pageEncoding="UTF-8"%>
 
 <!-- 이미지 슬라이드 CSS -->
-<style>
+<!-- <style>
 	/* Make the image fully responsive */
 	.carousel-inner img {
 	    width: 100%;
 	    height: 15%;
 	}
-</style>
+</style> -->
 <!-- 이미지 슬라이드 -->
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<%-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 	<ol class="carousel-indicators">
 		<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
 		<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -35,7 +35,7 @@
 		<span class="carousel-control-next-icon" aria-hidden="true"></span>
 		<span class="sr-only">Next</span>
 	</a>
-</div>
+</div> --%>
 <!-- 상품 진열 -->
 <div class="container">
 	<!-- NEW ITEMS -->
@@ -64,11 +64,8 @@
 		7. notice 카메라 아이콘
 		8. qna 등록/수정/삭제 (2) --등록/수정(json) / 삭제(ajax)
 		9. banner (ajax)
-		10. join (1) -- 기능 구현 O 유효성 검사 및 alert (X)
-			-- id 중복(ajax) -- 4~12자, 첫글자 소문자, 영문/숫자/_ 만 사용 가능
-			-- pw check (ajax) -- 4~12자, 영문/숫자/특문만 사용 가능 / 비밀번호 일치
+		10. join
 			-- email check (ajax) -- 중복 이메일 X
-			-- 이용 약관 check (ajax)
 		11. footer map
 		12. product search
 			-- search input (ajax)

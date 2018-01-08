@@ -26,7 +26,7 @@
 							<td>
 								<div class="form-group">
 									<div class="col-xs-6">
-										<input type="password" name="pwd" placeHolder="Password" class="form-control" maxlength="12">
+										<input type="password" name="pwd" id="memPwInput" placeHolder="Password" class="form-control" maxlength="12">
 									</div>
 								</div>
 							</td>
@@ -36,7 +36,7 @@
 							<td>
 								<div class="form-group">
 									<div class="col-xs-6">
-										<input type="password" name="pw" placeHolder="Password Check" class="form-control" maxlength="12">
+										<input type="password" name="pw" id="memPwCheck" placeHolder="Password Check" class="form-control" maxlength="12">
 									</div>
 									<span id="checkPwMsg">비밀번호는 영문, 숫자, 특수문자만 사용 가능합니다(4~12자).</span>
 								</div>
@@ -141,7 +141,7 @@
 			<div class="user_agree_check">
 				<p>
 					<span>
-						<input type="checkbox" id="userAgreeAllCheck" value="0">
+						<input type="checkbox" id="userAgreeAllCheck">
 					</span>
 					<label>이용 약관 및 개인정보 수집 및 이용에 모두 동의합니다.</label>
 				</p>

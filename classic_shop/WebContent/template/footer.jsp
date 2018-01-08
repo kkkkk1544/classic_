@@ -70,6 +70,8 @@
 <script src='<c:url value="/public/bootstrap/js/bootstrap.min.js"/>'></script> 
 <!-- kakao 지도 api -->
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9634cbc392b8b80779d4f419ee72bf3a"></script>
+<!-- Jssor 이미지 슬라이드 -->
+<script src="js/jssor.slider-26.8.0.min.js" type="text/javascript"></script>
 <!-- 개인 JS -->
 <script src="<c:url value='/public/js/comu.js'/>"></script>
 <script src="<c:url value='/public/js/member.js'/>"></script>
