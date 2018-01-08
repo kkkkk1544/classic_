@@ -8,10 +8,9 @@ import java.util.List;
 
 import com.classic.order.dao.WishListDAO;
 import com.classic.order.dto.WishDTO;
-import com.classic.util.ClassicDBConnection;
 
 public class WishListDAOImp implements WishListDAO{
-	/*test용
+	/*test�슜
 	 * public static void main(String[] args) {
 		try {
 			Connection conn = ClassicDBConnection.getConnection();
@@ -27,6 +26,7 @@ public class WishListDAOImp implements WishListDAO{
 	public List<WishDTO> selectWish(Connection conn, int mem_num) throws Exception {
 		List<WishDTO> wishList =new ArrayList<WishDTO>();
 		String sql ="select (select name from product where num=w.product_num) as product_name, "
+				+ "(select num from product where num=w.product_num) as product_num ,"
 				+ "(select sizu from product where num=w.product_num) as sizu, "
 				+ "(select name from colour where product_num=w.product_num) as colour, "
 				+ "count(w.product_num) as count, "
@@ -40,6 +40,7 @@ public class WishListDAOImp implements WishListDAO{
 		while(rs.next()) {
 			WishDTO wish = new WishDTO();
 			wish.setProductName(rs.getString("product_name"));
+			wish.setProductNum(rs.getInt("product_num"));
 			wish.setSizu(rs.getString("sizu"));
 			wish.setColour(rs.getString("colour"));
 			wish.setWishQuantity(rs.getInt("count"));
@@ -47,6 +48,16 @@ public class WishListDAOImp implements WishListDAO{
 			wishList.add(wish);
 		}
 		return wishList;
+	}
+
+	@Override
+	public int allWishDel(Connection conn, int mem_num) throws Exception {
+		int delete = 0;
+		String sql = "delete from wish where mem_num=?";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, mem_num);
+		delete = pstmt.executeUpdate();
+		return delete;
 	}
 	
 }
