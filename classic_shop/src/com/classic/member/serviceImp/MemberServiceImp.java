@@ -43,14 +43,15 @@ public class MemberServiceImp implements MemberService{
 	@Override
 	public boolean registerMember(MemberDTO memDTO) {
 		boolean register = false;
+		System.out.println("seri memDTO : "+memDTO);
 		try {
 			conn = ClassicDBConnection.getConnection();
 			conn.setAutoCommit(false);
 			conn.commit();
-			MemberDAO memDAO = new MemberDAOImp(conn);
-			int insert = memDAO.memberInsert(memDTO);
+			int insert = new MemberDAOImp(conn).memberInsert(memDTO);
+			System.out.println("service memDTO : "+memDTO);
 			if(insert==1) {
-				memDTO = memDAO.memberSelect(memDTO.getId());
+				register = true;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -62,6 +63,7 @@ public class MemberServiceImp implements MemberService{
 		} finally {
 			ClassicDBConnection.close(conn);
 		}
+		System.out.println("regiFlag"+register);
 		return register;
 	}
 //주연 끝

@@ -1,4 +1,5 @@
 package com.classic.common.serviceImp;
 
-public class TestClass {
+public class ImgPathServiceImp {
+
 }
