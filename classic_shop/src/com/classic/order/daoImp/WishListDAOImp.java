@@ -55,11 +55,24 @@ public class WishListDAOImp implements WishListDAO{
 	}
 
 	@Override
-	public int allWishDel(int mem_num) throws Exception {
+	public int WishDel(int mem_num) throws Exception {
+	//전체삭제
 		int delete = 0;
 		String sql = "delete from wish where mem_num=?";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, mem_num);
+		delete = pstmt.executeUpdate();
+		return delete;
+	}
+	
+	@Override
+	public int WishDel(int mem_num,int product_num) throws Exception {
+	//선택된 wishList만 삭제
+		int delete = 0;
+		String sql="delete from wish where mem_num = ? and product_num = ? ";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, mem_num);
+		pstmt.setInt(2, product_num);
 		delete = pstmt.executeUpdate();
 		return delete;
 	}

@@ -33,8 +33,7 @@ public class WIshListController extends HttpServlet{
 		} finally {
 			ClassicDBConnection.close(null,null,conn);
 		}
-		System.out.println("wishList:"+wishList.toString());
-		if(wishList==null) {
+		if(wishList.isEmpty()) {
 			resp.sendRedirect(req.getContextPath()+"/order/wish/wish.jsp");
 		} else {
 			req.getSession().setAttribute("wishList", wishList);
@@ -43,8 +42,6 @@ public class WIshListController extends HttpServlet{
 	}
 	@Override
 	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		resp.setCharacterEncoding("utf-8");
-		resp.setContentType("application/json");
 		String strMemNum = req.getParameter("num");
 		Connection conn = null;
 		WishListDAO wish = null;
@@ -52,12 +49,19 @@ public class WIshListController extends HttpServlet{
 		try {
 			conn = ClassicDBConnection.getConnection();
 			wish  = new WishListDAOImp(conn);
-			delete = wish.allWishDel(Integer.parseInt(strMemNum));
+			delete = wish.WishDel(Integer.parseInt(strMemNum));
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			ClassicDBConnection.close(null, null, conn);
 		}
+		resp.setContentType("application/json");
+		resp.setCharacterEncoding("utf-8");
+		System.out.println(delete);
 		resp.getWriter().append("{\"delete\":"+delete+"}");
+	}
+	@Override
+	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
 	}
 }
