@@ -61,13 +61,15 @@ var qnaListBtn = function(){
 }
 
 //qnaSecureCheck
-var qnaSecureOpen = function(secure){
-	if(secure==1){
-		window.open('/classic_shop/comu/qna/securePassword.html','_blank','width=350 height=200');
-	}else{
-		readQna();
+$(function(){
+	var qnaSecureOpen = function(secure){
+		if(secure==1){
+			window.open('/classic_shop/comu/qna/securePassword.html','_blank','width=350 height=200');
+		}else{
+			readQna();
+		}
 	}
-}
+});
 
 //readQna
 var readQna = function(num){
@@ -77,20 +79,13 @@ var readQna = function(num){
 			dataType: "json",
 			success: function(data){
 				console.log(data);
-				$("#qna_read table").hide();
-				$(".comu_paging").hide();
-				$(".qna_search").hide();
-				$(".comu_insert_btn").hide();
-				//$(".qna_list_btn").show();
-				//$(".qna_btn_group").show();
-				//$(".qna_reply_form").show();
 				var qna_contents="";
 				$(data).each(function(index, item){
 					qna_contents+="<table class='table table-condensed'>";
 					qna_contents+="<tbody class='qna_title'>";
 					qna_contents+="<tr>";
 					qna_contents+="<th>SUBJECT</th>";
-					qna_contents+="<td id='subjectMsg'>"+item.subject+"</td>";
+					qna_contents+="<td id='subjectMsg'>"+qnaSubjectCheck(item.subject)+"</td>";
 					qna_contents+="<th>NAME</th>";
 					qna_contents+="<td>"+item.name+"</td>";
 					qna_contents+="</tr>";
@@ -109,11 +104,19 @@ var readQna = function(num){
 					qna_contents+="</table>";
 				});
 				$("#qna_read").html(qna_contents);
+				$("#qna_read table").hide();
+				$(".comu_paging").hide();
+				$(".qna_search").hide();
+				$(".comu_insert_btn").hide();
+				$(".qna_list_btn").show();
+				$(".qna_btn_group").show();
+				$(".qna_reply_form").show();
+			/*	
 				var $div = $("<div class='qna_list_btn'></div>");
 				$('#qna_read').after($div);
 				$("<button type='button' class='btn btn-default' onclick='qnaListBtn()' id='listTest'>목록</button>").appendTo(".qna_list_btn");
 				$("<button type='button' class='btn btn-default' onclick='modifyQna("+data.num+")' id='modiTest'>수정</button>").after("#listTest");
-				$("<button type='button' class='btn btn-default' onclick='removeQna("+data.num+")'>삭제</button>").after("#modiTest");
+				$("<button type='button' class='btn btn-default' onclick='removeQna("+data.num+")'>삭제</button>").after("#modiTest");*/
 			}
 	}
 	$.ajax(setting);
@@ -123,11 +126,15 @@ var readQna = function(num){
 //qna 글 제목 설정
 var qnaSubjectCheck = function(subject) {
 	if(subject==5){
-		$("#subjectMsg").html('<td>d</td>');
+		$("#subjectMsg").html("asd");
 	} else{
-		$("#subjectMsg").html("<td>dddd</td>");
+		$("#subjectMsg").html("d");
 	}
 }
+
+	var modifyQna = function(){
+		location.href = "/classic_shop/comu/qna/modify.jsp";
+	}
 
 //qnaModify
 /*var modifyQna = function(qnaPutForm){
