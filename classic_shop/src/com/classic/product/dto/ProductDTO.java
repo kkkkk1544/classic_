@@ -1,5 +1,6 @@
 package com.classic.product.dto;
 
+import java.sql.ResultSet;
 import java.util.Date;
 
 public class ProductDTO {
@@ -8,7 +9,7 @@ public class ProductDTO {
 		이름        					널?       		유형             
 		--------- 				-------- 	-------------- 
 		NUM       				NOT NULL 	NUMBER(8)      
-		CODE               						VARCHAR2(16)   
+		CODE               					VARCHAR2(16)   
 		CATE_NUM           					NUMBER(8)      
 		NAME      				NOT NULL 	VARCHAR2(30)   
 		SUB_INFO  				NOT NULL 	VARCHAR2(300)  
@@ -36,7 +37,7 @@ public class ProductDTO {
 	private String main_info;
 	private int price;
 	private int buy_price;
-	private String iszu;
+	private String sizu;
 	private int total_pcs;
 	private int guide_num;
 	private int data_num;
@@ -44,7 +45,7 @@ public class ProductDTO {
 	private int out_ox;
 	private Date indate;
 	private int sale;
-	private int out_time;
+	private Date out_time;
 	public int getNum() {
 		return num;
 	}
@@ -93,11 +94,11 @@ public class ProductDTO {
 	public void setBuy_price(int buy_price) {
 		this.buy_price = buy_price;
 	}
-	public String getIszu() {
-		return iszu;
+	public String getSizu() {
+		return sizu;
 	}
-	public void setIszu(String iszu) {
-		this.iszu = iszu;
+	public void setSizu(String sizu) {
+		this.sizu = sizu;
 	}
 	public int getTotal_pcs() {
 		return total_pcs;
@@ -141,12 +142,42 @@ public class ProductDTO {
 	public void setSale(int sale) {
 		this.sale = sale;
 	}
-	public int getOut_time() {
+	public Date getOut_time() {
 		return out_time;
 	}
-	public void setOut_time(int out_time) {
+	public void setOut_time(Date out_time) {
 		this.out_time = out_time;
 	}
 	
-
+	public void setSelect(ResultSet rs) throws Exception{	
+		this.setBuy_price(rs.getInt("buy_price"));
+		this.setCate_num(rs.getInt("cate_num"));
+		this.setCode(rs.getString("code"));
+		this.setData_num(rs.getInt("data_num"));
+		this.setGuide_num(rs.getInt("guide_num"));
+		this.setIndate(rs.getDate("indate"));
+		this.setMain_info(rs.getString("main_info"));
+		this.setSizu(rs.getString("sizu"));
+		this.setName(rs.getString("name"));
+		this.setNum(rs.getInt("num"));
+		this.setOut_ox(rs.getInt("out_ox"));
+		this.setOut_time(rs.getDate("out_time"));
+		this.setPrice(rs.getInt("price"));
+		this.setSale(rs.getInt("sale"));
+		this.setSell_ox(rs.getInt("sell_ox"));
+		this.setSub_info(rs.getString("sub_info"));
+		this.setTotal_pcs(rs.getInt("total_pcs"));	
+	}
+	@Override
+	public String toString() {
+		return "{\"num\":\"" + num + "\", \"code\":\"" + code + "\", \"cate_num\":\"" + cate_num
+				+ "\", \"name\":\"" + name + "\", \"sub_info\":\"" + sub_info + "\", \"main_info\":\""
+				+ main_info + "\", \"price\":\"" + price + "\", \"buy_price\":\"" + buy_price
+				+ "\", \"sizu\":\"" + sizu + "\", \"total_pcs\":\"" + total_pcs + "\", \"guide_num\":\""
+				+ guide_num + "\", \"data_num\":\"" + data_num + "\", \"sell_ox\":\"" + sell_ox
+				+ "\", \"out_ox\":\"" + out_ox + "\", \"indate\":\"" + indate + "\", \"sale\":\"" + sale
+				+ "\", \"out_time\":\"" + out_time + "\"}";
+	}
+	
+	
 }

@@ -6,8 +6,7 @@
 <script>
 
 $(function(){
-	console.log(window.location.search(1));
-	
+	console.log(${productDetail});
 	$.ajax({
 		
 	
@@ -17,6 +16,7 @@ $(function(){
 });//ready
 </script>
 <div class="product_body">
+	
 	<p class="-detail-spec-description displaynone">
 		<input id="productNum" desc="상품번호" type="text" value="">
 		<input id="productName" desc="상품이름" type="text" value="">
@@ -46,19 +46,19 @@ $(function(){
 		<div class="detail_top_right">
 			<div class="detail_top_right_top">
 			<hr class="detail_hr">
-			<h3>Product Name</h3>
-			<p class="detail_top_right_description_one">product description Line1</p>
-			<p class="detail_top_right_description_two">product description Line2</p>
+			<h3>${productDetail.name}<%-- <c:forEach var="detail" items="${productDetail}">${detail.name}</c:forEach> --%></h3>
+			<p class="detail_top_right_description_one">${productDetail.main_info}</p><!-- product description Line1 -->
+			<p class="detail_top_right_description_two">${productDetail.sub_info}</p><!-- product description Line2 -->
 			</div>
 			<div class="detail_top_right_middle">
 			<table>
 				<tr>
 					<th>Price</th>
-					<td>100,000</td>
+					<td>${productDetail.price}</td>
 				</tr>
 				<tr>
 					<th>마일리지</th>
-					<td>1,000원(1%)</td>
+					<td>${productDetail.price*0.01}원(1%)</td>
 				</tr>
 			</table>
 			</div>
@@ -76,7 +76,7 @@ $(function(){
 					</tr>
 					<tr>
 						<th>Size</th>
-						<td><select></select></td>
+						<td><select>${productDetail.sizu}</select></td>
 					</tr>
 				</table>
 				<hr>

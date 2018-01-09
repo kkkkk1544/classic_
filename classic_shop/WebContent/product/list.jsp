@@ -17,7 +17,7 @@
 	<div class="row">
 		<div class="col-sm-6 col-md-4">
 			<div class="thumbnail">
-			<a href="<c:url value='/product/detail.jsp?num=1' />">
+			<a href="<c:url value='/product/detail.do?num=1' />">
 			<img data-src="holder.js/100%x200" alt="400x400" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzE5IiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMxOSAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxkZWZzLz48cmVjdCB3aWR0aD0iMzE5IiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjEyMC41NzAzMTI1IiB5PSIxMDAiIHN0eWxlPSJmaWxsOiNBQUFBQUE7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LWZhbWlseTpBcmlhbCwgSGVsdmV0aWNhLCBPcGVuIFNhbnMsIHNhbnMtc2VyaWYsIG1vbm9zcGFjZTtmb250LXNpemU6MTVwdDtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsIj4zMTl4MjAwPC90ZXh0PjwvZz48L3N2Zz4=" data-holder-rendered="true" style="height: 400px; width: 400px; display: block;">
 			</a>
 			
@@ -43,14 +43,14 @@
     
 </div>
 <script>
-
-	
+$(function(){
 	
 	$.ajax({
-		url:"<c:url value='/productList.do'/>",
+		url:"<c:url value='list.do'/>",
 		type:"GET",
 		dataType:"json",
 		success:function(data){
+			console.log(data);
 			var contents="";
 			$(data).each(function(index, item){
 				var thum
@@ -58,11 +58,11 @@
 					var thum="";
 					thum+="<div class='col-sm-6 col-md-4 border-0 border-white'>";
 					thum+="<div class='thumbnail'>";
-					thum+="<a href=\"<c:url value='/product/detail.jsp?num="+item.num+"'/>\"";
+					thum+="<a href=\"<c:url value='/product/detail.do?num="+item.num+"'/>\"";
 					thum+="<img data-src='' data-holder-rendered='true' style='height: 400px; width: 400px; display: block;'></a>";
 					thum+="<div class='product_caption'>";
 					/*  */
-					thum+="<a href=\"<c:url value='/product/detail.jsp?num="+item.num+"'/>\"";
+					thum+="<a href=\"<c:url value='/product/detail.do?num="+item.num+"'/>\"";
 					thum+="<span>"+item.name+"</span></a>";
 					thum+="<span style='display: inline-block; width:10px; height:10px; background-color:red;'></span> <span style='display: inline-block; width:10px; height:10px; background-color:blue;'></span>";
 				
@@ -81,6 +81,7 @@
 
 
 
+});//ready
 </script>
   
   <!-- /.bs-example -->

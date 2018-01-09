@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/productList.do")
-public class List extends HttpServlet {
+@WebServlet("/product/list.do")
+public class ProductList extends HttpServlet {
 	//!!!나중에 ctroller, dto, dao, servie... 분리 해서 만들거임! 참고할 사람은 이거 참고하지마세요
 
 	@Override
@@ -65,8 +65,8 @@ public class List extends HttpServlet {
 		products.append("]");
 		System.out.println(products);
 		
-		resp.setContentType("application/json");
 		resp.setCharacterEncoding("UTF-8");
+		resp.setContentType("application/json");
 		resp.getWriter().append(products.toString());
 		
 	}
