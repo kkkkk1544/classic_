@@ -256,6 +256,10 @@ margin: 50px 50px;
 #wishContents{
 	border-bottom: 1px solid #000;
 }
+#emptyTableData{
+	height: 134px;
+	font-size: 14px;
+}
 #wishContents td{
 	font-size: 14px;
 	text-align: center;
@@ -277,7 +281,7 @@ margin: 50px 50px;
 	height: 33.3px;
 	vertical-align: middle;
 }
-.buttonGroup button{
+.buttonGroup button, .buttonGroup a{
 	width:114px;
 	height:34px;
 	margin: 2px;

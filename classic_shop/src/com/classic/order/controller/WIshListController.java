@@ -34,34 +34,12 @@ public class WIshListController extends HttpServlet{
 			ClassicDBConnection.close(null,null,conn);
 		}
 		if(wishList.isEmpty()) {
-			resp.sendRedirect(req.getContextPath()+"/order/wish/wish.jsp");
+			req.getSession().setAttribute("wishList", null);
+			req.getRequestDispatcher("/order/wish/wish.jsp").forward(req, resp);
 		} else {
 			req.getSession().setAttribute("wishList", wishList);
 			req.getRequestDispatcher("/order/wish/wish.jsp").forward(req, resp);
 		}
 	}
-	@Override
-	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String strMemNum = req.getParameter("num");
-		Connection conn = null;
-		WishListDAO wish = null;
-		int delete = 0;
-		try {
-			conn = ClassicDBConnection.getConnection();
-			wish  = new WishListDAOImp(conn);
-			delete = wish.WishDel(Integer.parseInt(strMemNum));
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			ClassicDBConnection.close(null, null, conn);
-		}
-		resp.setContentType("application/json");
-		resp.setCharacterEncoding("utf-8");
-		System.out.println(delete);
-		resp.getWriter().append("{\"delete\":"+delete+"}");
-	}
-	@Override
-	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-	}
+	
 }

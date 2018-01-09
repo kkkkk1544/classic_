@@ -10,7 +10,7 @@
 		<table class="table" id="wishTable">
 			<thead id="wishTitle">
 				<tr>
-					<th width="5%"><input type="checkbox"></th>
+					<th width="5%"><input type="checkbox" id="allCheck"></th>
 					<th width="35%">상품정보</th>
 					<th width="10%">판매가</th>
 					<th width="10%">수량</th>
@@ -21,45 +21,55 @@
 				</tr>
 			</thead>
 			<tbody id="wishContents">
-				<c:forEach var="wish" items="${wishList}">
-					<tr>
-						<td><input type="checkbox" value="${wish.productNum} name="productNum" class="checkWish"></td>
-						<td class="infoList">
-							<div class="infoListDiv">
-								<div>
-									<p><a>이미지임</a></p>
+			<c:choose>
+				<c:when test="${wishList!=null}">
+					<c:forEach var="wish" items="${wishList}">
+						<tr>
+							<td><input type="checkbox" value="${wish.productNum}" class="checkWish"></td>
+							<td class="infoList">
+								<div class="infoListDiv">
+									<div>
+										<p><a>이미지임</a></p>
+									</div>
 								</div>
-							</div>
-							<div>
-								<ul class="list-group">
-									<li class="list-group-item"><strong><a>${wish.productName}</a></strong></li>
-									<li class="list-group-item"><strong>color ${wish.colour} size ${wish.sizu}</strong></li>
-									<li class="list-group-item"><button type="button" class="btn btn-default">옵션변경</button></li> <!--  onclick구현 -->
-								</ul>
-							</div>
-						</td>
-						<td>${wish.price}원</td>
-						<td>${wish.wishQuantity}개</td>
-						<td>${wish.productNum*wish.wishQuantity*0.02}</td>
-						<c:choose>
-							<c:when test="${wish.price>50000}">
-								<td>무료</td>
-								<td>${wish.price*wish.wishQuantity}원</td>
-							</c:when>
-							<c:when test="${wish.price<50000}">
-								<td>2500원</td>
-								<td>${wish.price*wish.wishQuantity+2500}원</td>
-							</c:when>
-						</c:choose>
-						<td>
-							<div class="buttonGroup">
-								<button type="button" class="btn btn-default">주문하기</button>
-								<button type="button" class="btn btn-default">장바구니 등록</button>
-								<button type="button" class="btn btn-default">삭제</button>
-							</div>
-						</td>
+								<div>
+									<ul class="list-group">
+										<li class="list-group-item"><strong><a>${wish.productName}</a></strong></li>
+										<li class="list-group-item"><strong>color ${wish.colour} size ${wish.sizu}</strong></li>
+										<li class="list-group-item"><button type="button" class="btn btn-default">옵션변경</button></li> <!--  onclick구현 -->
+									</ul>
+								</div>
+							</td>
+							<td>${wish.price}원</td>
+							<td>${wish.wishQuantity}개</td>
+							<fmt:parseNumber var="percent" value="${((wish.price*wish.wishQuantity)*0.02)}" integerOnly="true" />
+							<td>${percent}</td>
+							<c:choose>
+								<c:when test="${wish.price>50000}">
+									<td>무료</td>
+									<td>${wish.price*wish.wishQuantity}원</td>
+								</c:when>
+								<c:when test="${wish.price<50000}">
+									<td>2500원</td>
+									<td>${wish.price*wish.wishQuantity+2500}원</td>
+								</c:when>
+							</c:choose>
+							<td>
+								<div class="buttonGroup">
+									<a class="btn btn-default" href="">주문하기</a>
+									<button type="button" class="btn btn-default">장바구니 등록</button>
+									<button type="button" class="btn btn-default" onclick="pickWishDel(22,${wish.productNum})">삭제</button>
+								</div>
+							</td>
+						</tr>
+					</c:forEach>
+				</c:when>
+				<c:otherwise>
+					<tr>
+						<td colspan="8" id="emptyTableData">wish list가 비었습니다.<td>
 					</tr>
-				</c:forEach>
+				</c:otherwise>
+			</c:choose>
 <%-- 			<c:choose>
 				<c:when test="${wishList!=null}">
 					<c:forEach var="wish" items="${wishList}">
@@ -155,10 +165,10 @@
 			</tbody>
 		</table>
 		<div id="wishCRUDBtn">
-			<button type="button" class="btn btn-default" onclick="allWishDel(5)">전체삭제</button>
+			<button type="button" class="btn btn-default" onclick="allWishDel(22)">전체삭제</button>
 			<!-- ~~~~~~~~~~~~~~~mem_num으로 바꿔야댐~~~~~~~~`~~~~~~~~~~~~-->
 			<button type="button" class="btn btn-default">선택주문</button>
-			<button type="button" class="btn btn-default"  onclick="delWishSelected(5)">선택삭제</button>
+			<button type="button" class="btn btn-default"  onclick="delWishSelected(22)">선택삭제</button>
 			<button type="button" class="btn btn-default" id="moveCartBtn">선택한 상품을<br> 장바구니에 등록</button>
 			<button class="btn btn-default pull-right">전체상품 주문</button>
 		</div>
@@ -183,14 +193,74 @@
 		</div>
 	</div>
 <script>
-$(function(){
+$("#allCheck").click(function(){
+	if(this.checked){
+		$('input:checkbox[class*="checkWish"]').each(function(){
+			this.checked = true;
+		});
+	} else {
+		$('input:checkbox[class*="checkWish"]').each(function(){
+			this.checked = false;
+		});
+	}	
+});
+
+var delWishSelected=function(mem_num){
+	if(${wishList!=null}){
+		var url ="http://localhost:9999/classic_shop/order/delwish.do?num="+mem_num+"&product_num=";
+		var method="GET";
+		var http = new XMLHttpRequest();
+		$('input:checkbox[class*="checkWish"]').each(function(){
+			if(this.checked){
+				url+=this.value+"_";
+			}		
+		});
+		url=url.substr(0, url.length-1);
+		http.onreadystatechange=function(){
+			if(this.readyState==4 && this.status==200){
+				var delete_json = JSON.parse(this.response);
+				if(delete_json["delete"]){
+					alert("삭제되었습니다.");
+				}else{
+					alert("삭제실패");
+				}
+			}
+		}
+		http.open(method,url,true);
+		http.send();
+	} else {
+		alert("wish list가 비었습니다.");
+	}
+}
 var allWishDel = function(mem_num){
-	var url ="http://localhost:9999/classic_shop/order/wishlist.do?num="+mem_num;
-	var method="DELETE";
+	if(${wishList!=null}){
+		var url ="http://localhost:9999/classic_shop/order/delwish.do?num="+mem_num;
+		var method="DELETE";
+		var http = new XMLHttpRequest();
+		http.onreadystatechange=function(){
+			if(this.readyState==4 && this.status==200){
+				var delete_json = JSON.parse(this.response);
+				if(delete_json["delete"]){
+					alert("삭제되었습니다.");
+				}else{
+					alert("삭제실패");
+				}
+			}
+		}
+		http.open(method,url,true);
+		http.send();
+	} else {
+		alert("wish list가 비었습니다.");
+	}
+}
+var pickWishDel = function(mem_num,product_num){
+	var url ="http://localhost:9999/classic_shop/order/delwish.do?num="+mem_num+"&product_num="+product_num;
+	var method= "PUT";
 	var http = new XMLHttpRequest();
+	console.log
 	http.onreadystatechange=function(){
 		if(this.readyState==4 && this.status==200){
-			var delete_json = JSON.parse(this.response);
+			var delete_json = JSON.parse(this.response);	
 			console.log(delete_json["delete"]);
 			if(delete_json["delete"]){
 				alert("삭제되었습니다.");
@@ -202,10 +272,4 @@ var allWishDel = function(mem_num){
 	http.open(method,url,true);
 	http.send();
 }
-var delWishSelected =function(mem_num){
-	console.log("띠링");	
-	var productValue = documents.getClassName("checkWish").value;
-	console.log(productValue);
-}
-});
 </script>
