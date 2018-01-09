@@ -19,7 +19,7 @@ public class MemberDAOImp implements MemberDAO{
 	@Override
 	public MemberDTO memberSelect(String id, String pw) throws Exception{
 		MemberDTO memDTO = null;
-		String sql = "SELECT num, grade FROM member WHERE id=? AND pw=?";
+		String sql = "SELECT num, id, grade FROM member WHERE id=? AND pw=?";
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		pstmt = conn.prepareStatement(sql);
@@ -29,6 +29,7 @@ public class MemberDAOImp implements MemberDAO{
 		if(rs.next()) {
 			memDTO = new MemberDTO();
 			memDTO.setNum(rs.getInt("num"));
+			memDTO.setId(rs.getString("id"));
 			memDTO.setGrade(rs.getInt("grade"));
 		}
 		return memDTO;
@@ -68,8 +69,23 @@ public class MemberDAOImp implements MemberDAO{
 		pstmt.setString(3, memDTO.getPhone());
 		pstmt.setString(4, memDTO.getMail());
 		insert = pstmt.executeUpdate();
-		System.out.println("memDAO : "+memDTO);
 		return insert;
+	}
+
+	@Override
+	public MemberDTO selectMail(String mail) throws Exception {
+		MemberDTO memDTO = null;
+		String sql = "SELECT num FROM member WHERE mail=?";
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, mail);
+		rs = pstmt.executeQuery();
+		if(rs.next()) {
+			memDTO = new MemberDTO();
+			memDTO.setNum(rs.getInt("num"));
+		}
+		return memDTO;
 	}
 //주연 끝	
 

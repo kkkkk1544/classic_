@@ -11,22 +11,22 @@ import javax.servlet.http.HttpServletResponse;
 import com.classic.member.dto.MemberDTO;
 import com.classic.member.serviceImp.MemberServiceImp;
 
-@WebServlet("/signup/checkId.do")
-public class MemberCheckIdJSON extends HttpServlet{
+@WebServlet("/signup/checkMail.do")
+public class MemberCheckMailJSON extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String id = req.getParameter("id");
-		boolean checkIdMsg = false;
-		if(id!=null && id.trim()!="") {
-			MemberDTO memDTO = new MemberServiceImp().readMember(id);
+		String mail = req.getParameter("mail");
+		boolean checkEmailMsg = false;
+		if(mail!=null && mail.trim()!="") {
+			MemberDTO memDTO = new MemberServiceImp().checkMail(mail);
 			if(memDTO==null) {
-				checkIdMsg = true;
+				checkEmailMsg = true;
 			}
 		} else {
-			checkIdMsg = true;
+			checkEmailMsg = true;
 		}
 		resp.setCharacterEncoding("UTF-8");
 		resp.setContentType("application/json");
-		resp.getWriter().append("{\"checkIdMsg\":"+checkIdMsg+"}");
+		resp.getWriter().append("{\"checkEmailMsg\":"+checkEmailMsg+"}");
 	}
 }

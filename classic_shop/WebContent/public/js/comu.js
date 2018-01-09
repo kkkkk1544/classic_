@@ -7,6 +7,7 @@ $( function() {
     collapsible: true
   });
 });
+
 //Notice List
 var noticeListBtn = function(){
 	location.href="/classic_shop/community/notice.do";
@@ -86,10 +87,10 @@ var readQna = function(num){
 				var qna_contents="";
 				$(data).each(function(index, item){
 					qna_contents+="<table class='table table-condensed'>";
-					qna_contents+="<tbody class='notice_read_title'>";
+					qna_contents+="<tbody class='qna_title'>";
 					qna_contents+="<tr>";
 					qna_contents+="<th>SUBJECT</th>";
-					qna_contents+="<td id='subjectMsg'>"+qnaSubjectCheck(item.subject)+"</td>";
+					qna_contents+="<td id='subjectMsg'>"+item.subject+"</td>";
 					qna_contents+="<th>NAME</th>";
 					qna_contents+="<td>"+item.name+"</td>";
 					qna_contents+="</tr>";
@@ -102,7 +103,7 @@ var readQna = function(num){
 					qna_contents+="</tbody>";
 					qna_contents+="</table>";
 					qna_contents+="<table class='table table-bordered'>";
-					qna_contents+="<tbody class='notice_read_contents'>";
+					qna_contents+="<tbody class='qna_contents'>";
 					qna_contents+="<td>"+item.content+"</td>";
 					qna_contents+="</tbody>";
 					qna_contents+="</table>";
@@ -117,6 +118,7 @@ var readQna = function(num){
 	}
 	$.ajax(setting);
 }
+
 
 //qna 글 제목 설정
 var qnaSubjectCheck = function(subject) {

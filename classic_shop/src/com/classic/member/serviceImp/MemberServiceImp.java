@@ -49,7 +49,6 @@ public class MemberServiceImp implements MemberService{
 			conn.setAutoCommit(false);
 			conn.commit();
 			int insert = new MemberDAOImp(conn).memberInsert(memDTO);
-			System.out.println("service memDTO : "+memDTO);
 			if(insert==1) {
 				register = true;
 			}
@@ -63,8 +62,21 @@ public class MemberServiceImp implements MemberService{
 		} finally {
 			ClassicDBConnection.close(conn);
 		}
-		System.out.println("regiFlag"+register);
 		return register;
+	}
+
+	@Override
+	public MemberDTO checkMail(String mail) {
+		MemberDTO memDTO = null;
+		try {
+			conn = ClassicDBConnection.getConnection();
+			memDTO = new MemberDAOImp(conn).selectMail(mail);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			ClassicDBConnection.close(conn);
+		}
+		return memDTO;
 	}
 //주연 끝
 

@@ -19,18 +19,16 @@ public class MemberJoinJSON extends HttpServlet {
 		String pw = req.getParameter("pw");
 		String phone = req.getParameter("phone");
 		String mail = req.getParameter("mail");
-		System.out.println("memjoin string : "+id+"/"+pw+"/"+phone+"/"+mail+"/");
 		MemberDTO memDTO = new MemberDTO();
 		memDTO.setId(id);
 		memDTO.setPw(pw);
 		memDTO.setPhone(phone);
 		memDTO.setMail(mail);
-		System.out.println("memjoin dto: " + memDTO);
 		boolean register = false;
 		register = new MemberServiceImp().registerMember(memDTO);
 		resp.setCharacterEncoding("UTF-8");
 		resp.setContentType("application/json");
-		resp.getWriter().append("{\"register\":"+register+"}");
+		resp.getWriter().append("{\"register\":\""+register+"\"}");
 	}
 
 }
