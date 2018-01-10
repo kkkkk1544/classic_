@@ -27,7 +27,7 @@
 			</thead>
 			<tbody id="wishContents">
 			<c:choose>
-				<c:when test="${wishList}">
+				<c:when test="${(fn:length(wishList))!=0}">
 					<c:forEach var="wish" items="${wishList}">
 						<tr>
 							<td><input type="checkbox" value="${wish.productNum}" class="checkWish"></td>
@@ -63,7 +63,7 @@
 								<div class="buttonGroup">
 									<button type="button" class="btn btn-default" id="partOrder">주문하기</button>									
 									<button type="button" class="btn btn-default">장바구니 등록</button>
-									<button type="button" class="btn btn-default" onclick="pickWishDel(22,${wish.productNum})">삭제</button>
+									<button type="button" class="btn btn-default" onclick="pickWishDel(${param.num},${wish.productNum})">삭제</button>
 								</div>
 							</td>
 						</tr>
@@ -170,10 +170,10 @@
 			</tbody>
 		</table>
 		<div id="wishCRUDBtn">
-			<button type="button" class="btn btn-default" onclick="allWishDel(22)">전체삭제</button>
+			<button type="button" class="btn btn-default" onclick="allWishDel(${param.num})">전체삭제</button>
 			<!-- ~~~~~~~~~~~~~~~mem_num으로 바꿔야댐~~~~~~~~`~~~~~~~~~~~~-->
 			<button type="button" class="btn btn-default" >선택주문</button>
-			<button type="button" class="btn btn-default"  onclick="delWishSelected(22)">선택삭제</button>
+			<button type="button" class="btn btn-default"  onclick="delWishSelected(${param.num})">선택삭제</button>
 			<button type="button" class="btn btn-default" id="moveCartBtn">선택한 상품을<br> 장바구니에 등록</button>
 			<button class="btn btn-default pull-right">전체상품 주문</button>
 		</div>
@@ -199,6 +199,7 @@
 	</div>
 <script>
 $("#partOrder").click(function(){
+	url="http://localhost:9999/classic_shop/order/order_sheet/order_sheet.jsp";
 	
 });
 $("#allCheck").click(function(){
@@ -214,7 +215,7 @@ $("#allCheck").click(function(){
 });
 
 var delWishSelected=function(mem_num){
-	if(${wishList!=null}){
+	if(${(fn:length(wishList))!=0}){
 		var url ="http://localhost:9999/classic_shop/order/delwish.do?num="+mem_num+"&product_num=";
 		var method="GET";
 		var http = new XMLHttpRequest();
@@ -229,6 +230,7 @@ var delWishSelected=function(mem_num){
 				var delete_json = JSON.parse(this.response);
 				if(delete_json["delete"]){
 					alert("삭제되었습니다.");
+					location.reload();
 				}else{
 					alert("삭제실패");
 				}
@@ -241,7 +243,7 @@ var delWishSelected=function(mem_num){
 	}
 }
 var allWishDel = function(mem_num){
-	if(${wishList!=null}){
+	if(${(fn:length(wishList))!=0}){
 		var url ="http://localhost:9999/classic_shop/order/delwish.do?num="+mem_num;
 		var method="DELETE";
 		var http = new XMLHttpRequest();
@@ -272,6 +274,7 @@ var pickWishDel = function(mem_num,product_num){
 			console.log(delete_json["delete"]);
 			if(delete_json["delete"]){
 				alert("삭제되었습니다.");
+				location.reload();
 			}else{
 				alert("삭제실패");
 			}
