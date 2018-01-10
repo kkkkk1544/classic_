@@ -231,6 +231,9 @@ create table paid(
 	deposit_name varchar2(10) not null,
 	cancel_start date,
 	cancel_end date
+	product_num number(8) constraint paid_fk_product_num references product(num),
+	colou
+	
 );
 
 create sequence delivery_seq start with 1 increment by 1;
