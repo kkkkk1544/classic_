@@ -31,7 +31,7 @@
 }
 
 .qna_btn_group{
-	margin-left: 85%;
+	margin-left: 90%;
 	margin-bottom: 3%;
 }
 
@@ -73,3 +73,41 @@
 .qna_contents td{
 	text-align: left;
 }
+
+.comu_title_a{
+	text-decoration: none;
+	color: #000;
+}
+
+.comu_title_a:hover {
+	color: #777;
+}
+
+.comu_body table th, .comu_body table td{
+	text-align: center;
+}
+
+.comu_menu>.container>h2{
+	border-bottom: 1px solid #000;
+	padding-bottom: 15px;
+}
+
+.qna_contents .glyphicon-camera{
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #777777b5;
+}
+
+.qna_contents .glyphicon-lock{
+	color: #e69d12d1;
+}
+
+.qna_contents a{
+	text-decoration: none;
+	color: #000;
+}
+
+.qna_contents a:hover {
+	color: #ccc;
+}
+

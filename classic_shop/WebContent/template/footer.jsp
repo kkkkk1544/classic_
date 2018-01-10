@@ -65,5 +65,11 @@
 		</div>
 	</div>
 </div>
+
+<!-- 부트스트랩 lib -->
+<script src='<c:url value="/public/bootstrap/js/bootstrap.min.js"/>'></script> 
+<!-- 개인 JS -->
+<script src="<c:url value='/public/js/comu.js'/>"></script>
+<script src="<c:url value='/public/js/member.js'/>"></script>
 </body>
 </html> 

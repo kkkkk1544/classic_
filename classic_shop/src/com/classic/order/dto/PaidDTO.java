@@ -147,14 +147,15 @@ public class PaidDTO {
 	}
 	@Override
 	public String toString() {
-		return "{ \"num\" : \"" + num + "\", \"memNum\" : \"" + memNum + "\", \"productNum\" : \"" + productNum
-				+ "\", \"couponNum\" : \"" + couponNum + "\", \"orderNum\" : \"" + orderNum + "\", \"name\" : \"" + name
-				+ "\", \"phone\" : \"" + phone + "\", \"zipCode\" : \"" + zipCode + "\", \"baseAddr\" : \"" + baseAddr
-				+ "\", \"detailAddr\" : \"" + detailAddr + "\", \"memo\" : \"" + memo + "\", \"paidDate\" : \""
-				+ paidDate + "\", \"payWith\" : \"" + payWith + "\", \"orderMoney\" : \"" + orderMoney
-				+ "\", \"payment\" : \"" + payment + "\", \"orderDate\" : \"" + orderDate + "\", \"orderState\" : \""
-				+ orderState + "\", \"depositName\" : \"" + depositName + "\"}";
+		return "{ \"num\":\"" + num + "\", \"memNum\":\"" + memNum + "\", \"productNum\":\"" + productNum
+				+ "\", \"couponNum\":\"" + couponNum + "\", \"orderNum\":\"" + orderNum + "\", \"name\":\"" + name
+				+ "\", \"phone\":\"" + phone + "\", \"zipCode\":\"" + zipCode + "\", \"baseAddr\":\"" + baseAddr
+				+ "\", \"detailAddr\":\"" + detailAddr + "\", \"memo\":\"" + memo + "\", \"paidDate\":\"" + paidDate
+				+ "\", \"payWith\":\"" + payWith + "\", \"orderMoney\":\"" + orderMoney + "\", \"payment\":\"" + payment
+				+ "\", \"orderDate\":\"" + orderDate + "\", \"orderState\":\"" + orderState + "\", \"depositName\":\""
+				+ depositName + "\"}";
 	}
+	
 	
 	
 	

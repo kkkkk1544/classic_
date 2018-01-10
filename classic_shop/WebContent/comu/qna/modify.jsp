@@ -1,18 +1,36 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="/comu/menu.jsp" %>
-
+<!-- COMMUNITY MENU -->
+<div class="comu_menu">
+	<div class="container">
+		<h2>COMMUNITY</h2>
+			<ul class="nav nav-tabs">
+				<li><a href="<c:url value='/community/notice.do' />">NOTICE</a></li>
+				<li><a href="<c:url value='/community/qna.do' />">QNA</a></li>
+				<li><a href="<c:url value='/community/faq.do' />">FAQ</a></li>
+			</ul>
+	</div>
+</div>
 <div class="comu_body">
 	<div class="container">
 		<p class="comu_title">QNA</p>
 		<!-- QNA 수정 -->
-		<form name="qnaModifyForm">
+		<form name="qnaModifyForm" action="<c:url value='/community/qna/modify.do'/>" method="post">
 			<!-- SUBJECT 선택 -->	
 			<div class="form-group">
 				<label id="subjectField">SUBJECT</label>
 				<span class="form-inline">
 					<select name="subjectField" class="form-control" id="optionField">
-						<option value="">선택</option>
+						<option value="">
+							<c:choose>
+								<c:when test="${qnaModify.subject==0}">상품 문의</c:when>
+								<c:when test="${qnaModify.subject==1}">배송 문의</c:when>
+								<c:when test="${qnaModify.subject==2}">배송 전 변경</c:when>
+								<c:when test="${qnaModify.subject==3}">입금 문의</c:when>
+								<c:when test="${qnaModify.subject==4}">교환/환불 문의</c:when>
+								<c:when test="${qnaModify.subject==5}">기타 문의</c:when>
+							</c:choose>
+						</option>
 						<option value="0">상품 문의</option>
 						<option value="1">배송 문의</option>
 						<option value="2">배송 전 변경</option>
@@ -24,7 +42,7 @@
 			</div>
 			<!-- QNA 글 내용 -->
 			<div class="form-group">
-				<textarea class="form-control" rows="20" name="qnaContents"></textarea>
+				<textarea class="form-control" rows="20" name="qnaContents">${qnaModify.content}</textarea>
 			</div>
 			<!-- QNA 첨부파일 및 옵션 -->
 			<div class="qna_option">
@@ -44,8 +62,8 @@
 			</div>
 			<!-- QNA 버튼 -->
 			<div class="qna_btn_group">
-				<button type="submit" class="btn btn-default btn-lg">수정</button>
-				<button type="reset" class="btn btn-default btn-lg" onclick="location.href='<c:url value='/comu/qna/list.jsp'/>'">취소</button>
+				<button type="button" class="btn btn-default btn-lg" onclick="modifyQna()">수정</button>
+				<button type="button" class="btn btn-default btn-lg" onclick="qnaListBtn()">취소</button>
 			</div>
 		</form>
 	</div>
