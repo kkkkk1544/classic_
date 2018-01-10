@@ -140,10 +140,10 @@
 			</div>
 			<div class="user_agree_check">
 				<p>
-					<span>
+					<!-- <span>
 						<input type="checkbox" id="userAgreeAllCheck">
-					</span>
-					<label>이용 약관 및 개인정보 수집 및 이용에 모두 동의합니다.</label>
+					</span> -->
+					<label for="userAgreeAllCheck"><span><input type="checkbox" id="userAgreeAllCheck"></span>이용 약관 및 개인정보 수집 및 이용에 모두 동의합니다.</label>
 				</p>
 			</div>
 			<!-- 회원가입 버튼 -->

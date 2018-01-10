@@ -7,12 +7,13 @@ public class PagingDTO {
 	private String pageNum_str; //◀[1][2][3][4][5]▶ 현재 페이지 번호(문자열)
 	private int pageNum; //현재 페이지 번호(정수)
 	private int pageBlock; //페이징 블럭 수◀[1][2][3][4][5]▶ --> [1] 얘가 블럭 한 개
-	private int pageCount; //페이징 블럭 전체 수 ◀[1][2][3][4][5] --> 5개
+	private int pageCount; //페이징 블럭 전체 수 ◀[1][2][3][4][5]...[10] --> 10개
 	private int rowNum; //페이지당 보여줄 게시물 수
 	private int startRowNum; //한 페이지에 보이는 게시물의 첫번호
 	private int endRowNum; //한 페이지에 보이는 게시물의 끝번호
 	private int startPage; //시작 페이지 ◀[1][2][3][4][5]▶ --> [1]
-	private int endPage; //끝 페이지 ◀[1][2][3][4][5]▶ --> [...] ([5](X))
+	private int endPage; //끝 페이지 ◀[1][2][3][4][5]...[10]▶ --> [10]
+	
 	public String getKeyword() {
 		return keyword;
 	}
@@ -48,6 +49,7 @@ public class PagingDTO {
 	}
 	public void setPageBlock(int pageBlock) {
 		this.pageBlock = pageBlock;
+		this.pageBlock = 5;
 	}
 	public int getPageCount() {
 		return pageCount;
@@ -60,6 +62,7 @@ public class PagingDTO {
 	}
 	public void setRowNum(int rowNum) {
 		this.rowNum = rowNum;
+		this.rowNum = 10;
 	}
 	public int getStartRowNum() {
 		return startRowNum;

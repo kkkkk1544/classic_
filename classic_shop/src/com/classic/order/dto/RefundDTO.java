@@ -1,6 +1,18 @@
 package com.classic.order.dto;
 
 public class RefundDTO {
+	/*Name                    Null?    Type
+	----------------------- -------- -------------
+	NUM                     NOT NULL NUMBER(8)
+	PAID_NUM                         NUMBER(8)
+	REFUND_START            NOT NULL DATE
+	REFUND_STATE            NOT NULL NUMBER(1)
+	REFUND_END                       DATE
+	REASON                  NOT NULL NUMBER(1)
+	REFUND_BANK             NOT NULL VARCHAR2(20)
+	REFUND_ACCOUNT          NOT NULL NUMBER(12)
+	REFUND_NAME             NOT NULL VARCHAR2(20)*/
+	
 	private int num;
 	private int paid_num;
 	private String refund_start;
