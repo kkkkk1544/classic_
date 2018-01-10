@@ -55,7 +55,7 @@
 <!-- 문의하기 버튼 -->
 	<c:if test="${loginMem ne null}">
 		<div class="comu_insert_btn" align="right">
-			<button type="button" class="btn btn-default" onclick="location.href='<c:url value='/comu/qna/register.jsp'/>'">문의하기</button>
+			<button type="button" class="btn btn-default" onclick="location.href='<c:url value='/community/qna/action.do'/>'">문의하기</button>
 		</div>
 	</c:if>
 <!-- 페이징 -->

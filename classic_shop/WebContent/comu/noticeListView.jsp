@@ -14,9 +14,9 @@
 <!-- COMMUNITY BODY -->
 <div class="comu_body">
 	<p class="comu_title">NOTICE</p>
-		<div class="table-responsive" id="notice_read">
+		<div class="table-responsive notice_div">
 			<table class="table table-hover">
-				<tbody class="notice_title">
+				<tbody class="notice_list_title">
 					<tr>
 						<th class='col-sm-1'>No.</th>
 						<th class='col-sm-6' style="text-align: left;">TITLE</th>
@@ -25,7 +25,7 @@
 						<th class='col-sm-1'>VIEW</th>
 					</tr>
 				</tbody>
-				<tbody class="notice_contents">
+				<tbody class="notice_list_contents">
 					<c:forEach var="notice" items="${noticeList}">
 						<tr>
 							<td>${notice.num}</td>
@@ -39,23 +39,4 @@
 			</table>
 		</div>
 <!-- PAGING -->
-		<div class="comu_paging">
-		  <ul class="pagination">
-		    <li>
-		      <a href="#" aria-label="Previous">
-		        <span aria-hidden="true">&laquo;</span>
-		      </a>
-		    </li>
-		    <li><a href="#">1</a></li>
-		    <li><a href="#">2</a></li>
-		    <li><a href="#">3</a></li>
-		    <li><a href="#">4</a></li>
-		    <li><a href="#">5</a></li>
-		    <li>
-		      <a href="#" aria-label="Next">
-		        <span aria-hidden="true">&raquo;</span>
-		      </a>
-		    </li>
-		  </ul>
-		</div>
 </div>

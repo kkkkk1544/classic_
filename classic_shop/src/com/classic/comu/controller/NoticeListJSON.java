@@ -9,15 +9,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.classic.comu.dto.QnaDTO;
-import com.classic.comu.serviceImp.QnaServiceImp;
+import com.classic.comu.dto.NoticeDTO;
+import com.classic.comu.serviceImp.NoticeServiceImp;
 
-@WebServlet("/community/qna.do")
-public class QnaListJSONController extends HttpServlet{
+@WebServlet("/community/notice.do")
+public class NoticeListJSON extends HttpServlet{
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<QnaDTO> qnaList = new QnaServiceImp().readQna();
-		req.setAttribute("qnaList", qnaList);
-		req.getRequestDispatcher("/comu/qnaList.jsp").forward(req, resp);
+		List<NoticeDTO> noticeList = new NoticeServiceImp().readNotice();
+		req.setAttribute("noticeList", noticeList);
+		req.getRequestDispatcher("/comu/noticeListView.jsp").forward(req, resp);
 	}
+
 }
