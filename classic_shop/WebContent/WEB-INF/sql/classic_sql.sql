@@ -409,7 +409,6 @@ INSERT INTO mini_cate VALUES(mini_cate_seq.nextval, (select num from cate where 
 INSERT INTO mini_cate VALUES(mini_cate_seq.nextval, (select num from cate where name='SHOES'||chr(38)||'BAG'), 'BAG', 1);
 INSERT INTO mini_cate VALUES(mini_cate_seq.nextval, (select num from cate where name='ACC'), 'ACC', 1);
 INSERT INTO mini_cate VALUES(mini_cate_seq.nextval, (select num from cate where name='ACC'), 'X', 0);
-
 -- 상품DB
 INSERT INTO product VALUES(product_seq.nextval,'0000001',1,'상품명1','서브 설명','메인 설명',100000,50000,'FREE,S,M,L',999,1,1,1,1,sysdate,0,sysdate);
 INSERT INTO product VALUES(product_seq.nextval,'0000001',1,'상품명2','서브 설명','메인 설명',100000,50000,'FREE,S,M,L',999,1,1,1,0,sysdate,0,sysdate);
@@ -749,6 +748,8 @@ values (paid_seq.nextval,1,52,null,2017123000000122,'김상우',01012341234,1175
 INSERT INTO wish VALUES(wish_seq.nextval ,1 , 1, sysdate);
 INSERT INTO wish VALUES(wish_seq.nextval ,2 , 2, sysdate);
 INSERT INTO wish VALUES(wish_seq.nextval ,3 , 3, sysdate);
+INSERT INTO wish VALUES(wish_seq.nextval ,5 , 3, sysdate);
+INSERT INTO wish VALUES(wish_seq.nextval ,6 , 3, sysdate);
 
 -- 상품후기DB
 INSERT INTO review VALUES(review_seq.nextval, 1, 1, '치수', '내용', 1, sysdate);
@@ -759,11 +760,53 @@ INSERT INTO review VALUES(review_seq.nextval, 1, 1, '치수', '내용', 5, sysda
 INSERT INTO review VALUES(review_seq.nextval, 1, 1, '치수', '내용', 5, sysdate);
 
 --마일리지
-INSERT INTO mileage VALUES(mileage_seq.nextval,1,1,null,200000,sysdate,2);
+INSERT INTO mileage VALUES(mileage_seq.nextval,1,1,200000,sysdate,2);
 -- bank, delivery, trade, refund, cancel, mileage, img_path TEST DATA 없음
+INSERT INTO mileage VALUES(mileage_seq.nextval,1,1,null,200000,sysdate,2);
+
+--테이블 수정
+ALTER TABLE bank MODIFY(bank_name VARCHAR2(12));
+ALTER TABLE bank MODIFY(bank_num NUMBER(16));
+
+--company uk빼야함
+drop table delivery;
+create sequence delivery_seq start with 1 increment by 1;
+create table delivery(
+	num number(8) constraint delivery_pk_num primary key,
+	paid_num number(8) constraint delivery_fk_paid_num references paid(num),
+	company varchar2(12),
+	deliv_num number(16) UNIQUE,
+	state number(1) default 0 not null constraint delivery_ck_state check(state between 0 and 3),
+	deliv_start date not null,
+	deliv_end date
+);
+
+-- bank
+INSERT INTO bank VALUES(bank_seq.nextval ,'우리은행' ,'1002536238755','클래식');
+INSERT INTO bank VALUES(bank_seq.nextval ,'신한은행' ,'22875504956326','클래식');
+INSERT INTO bank VALUES(bank_seq.nextval ,'국민은행' ,'5678920563257','클래식');
+
+--delivery
+INSERT INTO delivery VALUES(delivery_seq.nextval ,41 ,'CJ택배','6898000144426575' ,1 ,sysdate , '');
+INSERT INTO delivery VALUES(delivery_seq.nextval ,52 ,'','' ,0 ,sysdate , '');
+INSERT INTO delivery VALUES(delivery_seq.nextval ,43 ,'대한통운','1111222233334444' ,2 ,sysdate , '');
+INSERT INTO delivery VALUES(delivery_seq.nextval ,47 ,'대한통운','6666222233335555' ,3 ,sysdate , '20180107');
+
+--trade
+INSERT INTO trade VALUES(trade_seq.nextval ,44,0,sysdate,'',0);
+INSERT INTO trade VALUES(trade_seq.nextval ,45,2,sysdate,'',2);
+
+--refund
+INSERT INTO refund VALUES(refund_seq.nextval ,46,sysdate,1,'',1,'카카오뱅크','12345678912','김다혜');
+INSERT INTO refund VALUES(refund_seq.nextval ,47,sysdate,5,'',2,'우리은행','12345678912','홍길동');
+
+--cancel
+INSERT INTO cancel VALUES(cancel_seq.nextval ,48,sysdate,'');
+INSERT INTO cancel VALUES(cancel_seq.nextval ,49,sysdate,'20180109');
+
+-- img_path TEST DATA 없음
 -- 수정사항: 주문테이블(paid) 주문번호에 uk 빼야함니다!!
 -- 주문디비 다 수정함!! 
-
 -- 18/01/09 DB 수정 
 ALTER TABLE product DROP COLUMN sizu;
 CREATE sequence sizu_seq start WITH 1 increment BY 1;
@@ -957,3 +1000,25 @@ INSERT INTO sizu VALUES(sizu_seq.nextval, 'FREE', (Select num from product where
 INSERT INTO sizu VALUES(sizu_seq.nextval, 'FREE', (Select num from product where name='상품명50'));
 INSERT INTO sizu VALUES(sizu_seq.nextval, 'FREE', (Select num from product where name='상품명51'));
 INSERT INTO sizu VALUES(sizu_seq.nextval, 'FREE', (Select num from product where name='상품명52'));
+
+--혜진 필요 DB
+INSERT INTO member VALUES(member_seq.nextval, 'member4', '1234', '01099998888', 'member4@c.com', 3, sysdate);
+INSERT INTO product VALUES(product_seq.nextval,'0000053',1,'상품명53','서브 설명','메인 설명',100000,50000,'FREE',999,1,1,1,1,sysdate,0,sysdate);
+INSERT INTO product VALUES(product_seq.nextval,'0000054',1,'상품명53','서브 설명','메인 설명',100000,50000,'S',999,1,1,1,1,sysdate,0,sysdate);
+INSERT INTO product VALUES(product_seq.nextval,'0000055',1,'상품명53','서브 설명','메인 설명',100000,50000,'M',999,1,1,1,1,sysdate,0,sysdate);
+INSERT INTO product VALUES(product_seq.nextval,'0000056',1,'상품명53','서브 설명','메인 설명',100000,50000,'L',999,1,1,1,1,sysdate,0,sysdate);
+INSERT INTO product VALUES(product_seq.nextval,'0000057',1,'상품명54','서브 설명','메인 설명',100000,50000,'FREE',999,1,1,1,1,sysdate,0,sysdate);
+INSERT INTO product VALUES(product_seq.nextval,'0000058',1,'상품명54','서브 설명','메인 설명',100000,50000,'S',999,1,1,1,1,sysdate,0,sysdate);
+INSERT INTO product VALUES(product_seq.nextval,'0000059',1,'상품명54','서브 설명','메인 설명',100000,50000,'M',999,1,1,1,1,sysdate,0,sysdate);
+INSERT INTO product VALUES(product_seq.nextval,'0000060',1,'상품명54','서브 설명','메인 설명',100000,50000,'L',999,1,1,1,1,sysdate,0,sysdate);
+INSERT INTO colour VALUES(colour_seq.nextval, (select num from product where code='0000053'), 'F0F8FF', '하늘색');
+INSERT INTO colour VALUES(colour_seq.nextval, (select num from product where code='0000054'), 'F0F8FF', '하늘색');
+INSERT INTO colour VALUES(colour_seq.nextval, (select num from product where code='0000055'), 'F0F8FF', '하늘색');
+INSERT INTO colour VALUES(colour_seq.nextval, (select num from product where code='0000056'), 'F0F8FF', '하늘색');
+INSERT INTO colour VALUES(colour_seq.nextval, (select num from product where code='0000057'), 'F0F8FF', '하늘색');
+INSERT INTO colour VALUES(colour_seq.nextval, (select num from product where code='0000058'), 'F0F8FF', '하늘색');
+INSERT INTO colour VALUES(colour_seq.nextval, (select num from product where code='0000059'), 'F0F8FF', '하늘색');
+INSERT INTO colour VALUES(colour_seq.nextval, (select num from product where code='0000060'), 'F0F8FF', '하늘색');
+INSERT INTO wish VALUES(wish_seq.nextval ,(select num from product where code='0000053'), (select num from member where id='member4'), sysdate);
+INSERT INTO wish VALUES(wish_seq.nextval ,(select num from product where code='0000057'), (select num from member where id='member4'), sysdate);
+INSERT INTO wish VALUES(wish_seq.nextval ,(select num from product where code='0000057'), (select num from member where id='member4'), sysdate);

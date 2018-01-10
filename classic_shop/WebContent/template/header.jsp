@@ -109,33 +109,60 @@
 									</li>
 								</c:otherwise>
 							</c:choose>
+<!-- 임시 필터 설정 -->
+<!-- 회원인 경우 해당 페이지로 바로 넘어감. 비회원인 경우 로그인 페이지로 감 -->
+						<c:choose>
+							<c:when test="${loginMem ne null}">
+								<li role="presentation" class="dropdown">
+									<a class="dropdown-toggle" href="<c:url value='/member/mypage/detail.jsp'/>" role="button" aria-expanded="false">MY PAGE</a>
+									<ul class="dropdown-menu" role="menu">
+										<li><a href="<c:url value='/member/mypage/modify.jsp'/>">회원정보수정</a></li>
+										<li><a href="<c:url value='/member/mypage/address.jsp'/>">배송주소록</a></li>
+										<li><a href="<c:url value='/member/mypage/mileage.jsp'/>">적립금</a></li>
+										<li><a href="<c:url value='/member/mypage/coupon.jsp'/>">쿠폰</a></li>
+										<li><a href="<c:url value='/order/cart/cart.jsp'/>">장바구니</a></li>
+										<li><a href="<c:url value='/order/wishlist.do?num=22'/>">위시리스트</a></li>
+										<li><a href="#">주문내역</a></li>
+										<li><a href="<c:url value='/member/mypage/myposting.jsp'/>">내가쓴글</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="<c:url value='/order/cart/cart.jsp'/>">CART
+										<span class="badge badge-pill badge-secondary" style="background-color: #ccc;">0</span>
+									</a>
+								</li>
+								<li><a href="<c:url value='/order/list.jsp' />">ORDER</a></li>
+							</c:when>
+							<c:otherwise>
+								<li role="presentation" class="dropdown">
+									<a class="dropdown-toggle" href="<c:url value='/login.do' />" role="button" aria-expanded="false">MY PAGE</a>
+									<ul class="dropdown-menu" role="menu">
+										<li><a href="<c:url value='/login.do' />">회원정보수정</a></li>
+										<li><a href="<c:url value='/login.do' />">배송주소록</a></li>
+										<li><a href="<c:url value='/login.do' />">적립금</a></li>
+										<li><a href="<c:url value='/login.do' />">쿠폰</a></li>
+										<li><a href="<c:url value='/login.do' />">장바구니</a></li>
+										<li><a href="<c:url value='/login.do' />">위시리스트</a></li>
+										<li><a href="<c:url value='/login.do' />">주문내역</a></li>
+										<li><a href="<c:url value='/login.do' />">내가쓴글</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="<c:url value='/login.do' />">CART
+										<span class="badge badge-pill badge-secondary" style="background-color: #ccc;">0</span>
+									</a>
+								</li>
+								<li><a href="<c:url value='/login.do' />">ORDER</a></li>
+							</c:otherwise>
+						</c:choose>
 							<li role="presentation" class="dropdown">
-								<a class="dropdown-toggle" href="<c:url value='/member/mypage/detail.jsp'/>" role="button" aria-expanded="false">MY PAGE</a>
-								<ul class="dropdown-menu" role="menu">
-									<li><a href="<c:url value='/member/mypage/modify.jsp'/>">회원정보수정</a></li>
-									<li><a href="<c:url value='/member/mypage/address.jsp'/>">배송주소록</a></li>
-									<li><a href="<c:url value='/member/mypage/mileage.jsp'/>">적립금</a></li>
-									<li><a href="<c:url value='/member/mypage/coupon.jsp'/>">쿠폰</a></li>
-									<li><a href="<c:url value='/order/cart/cart.jsp'/>">장바구니</a></li>
-									<li><a href="<c:url value='/order/wish/wish.jsp'/>">위시리스트</a></li>
-									<li><a href="#">주문내역</a></li>
-									<li><a href="<c:url value='/member/mypage/myposting.jsp'/>">내가쓴글</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="<c:url value='/order/cart/cart.jsp'/>">CART
-									<span class="badge badge-pill badge-secondary" style="background-color: #ccc;">0</span>
-								</a>
-							</li>
-							<li><a href="<c:url value='/order/list.jsp' />">ORDER</a></li>
-							<li role="presentation" class="dropdown">
-								<a class="dropdown-toggle" href="<c:url value='/community/notice.do' />" role="button" aria-expanded="false">COMMUNITY</a>
-								<ul class="dropdown-menu" role="menu">
-									<li><a href="<c:url value='/community/notice.do' />">NOTICE</a></li>
-									<li><a href="<c:url value='/community/qna.do' />">QNA</a></li>
-									<li><a href="<c:url value='/community/faq.do' />">FAQ</a></li>
-								</ul>
-							</li>
+									<a class="dropdown-toggle" href="<c:url value='/community/notice.do' />" role="button" aria-expanded="false">COMMUNITY</a>
+									<ul class="dropdown-menu" role="menu">
+										<li><a href="<c:url value='/community/notice.do' />">NOTICE</a></li>
+										<li><a href="<c:url value='/community/qna.do' />">QNA</a></li>
+										<li><a href="<c:url value='/community/faq.do' />">FAQ</a></li>
+									</ul>
+								</li>
 							<li role="presentation" class="dropdown">
 								<a class="dropdown-toggle" href="<c:url value='/product/search/searchForm.jsp' />" role="button">&#128269;</a>
 								<ul class="dropdown-menu" role="menu">
