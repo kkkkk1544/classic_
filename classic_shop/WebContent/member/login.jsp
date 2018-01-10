@@ -17,7 +17,7 @@
 				</p>
 				<div class="login_btn">
 					<button id="loginBtn" class="btn btn-default" type="submit">LOGIN</button>
-					<button id="joinBtn" class="btn btn-default" onclick="location.href='<c:url value='/member/join.jsp'/>'">JOIN US</button>
+					<button id="joinBtn" class="btn btn-default" type="button">JOIN US</button>
 				</div>
 				<div class="login_outside">
 					<button id="naver_login" class="btn btn-success">NAVER LOGIN</button>
