@@ -20,12 +20,16 @@ public class ColourDAOImp implements ColourDAO {
 			e.printStackTrace();
 		}
 	}*/
+	Connection conn = null;
+	public ColourDAOImp() throws Exception {
+		conn=ClassicDBConnection.getConnection();
+	}
 	@Override
 	public List<ColourDTO> selectColourList(int product_num) throws Exception {
 		ColourDTO colour = null;
 		List<ColourDTO> colourList = new ArrayList<ColourDTO>();
 		String sql = "select * from colour where product_num=?";
-		Connection conn=ClassicDBConnection.getConnection();
+		//Connection conn=ClassicDBConnection.getConnection();
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, product_num);
 		ResultSet rs= pstmt.executeQuery();

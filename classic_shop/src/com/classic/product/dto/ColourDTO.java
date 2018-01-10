@@ -40,10 +40,6 @@ public class ColourDTO {
 				+ "\", \"name\":\"" + name + "\"}";
 	}
 	
-	/*@Override
-	public String toString() {
-		return "[num=" + num + ", product_num=" + product_num + ", code=" + code + ", name=" + name + "]";
-	}*/
 	
 	
 	
