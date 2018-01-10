@@ -27,8 +27,8 @@
 				</div>
 			</div>
 			<div class="mypage_btn_group">
-				<button class="btn btn-default" type="button">회원정보 수정</button>
-				<button class="btn btn-default" type="button">배송주소록 관리</button>
+				<button class="btn btn-default" type="button" onclick="location.href='<c:url value='/member/mypage/modify.jsp'/>'">회원정보 수정</button>
+				<button class="btn btn-default" type="button" onclick="location.href='<c:url value='/member/mypage/address.jsp'/>'">배송주소록 관리</button>
 			</div>
 		</div>
 		
@@ -37,7 +37,7 @@
 			<div class="orderList_titleandbtn">
 				<h2 class="orderListTitle">ORDER LIST</h2>
 				<p>
-					<a href="#">
+					<a href="<c:url value='/order/list.jsp'/>">
 						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 					</a>
 				</p>
@@ -63,7 +63,7 @@
 						<td>
 							<img alt="images" src="" align="left" hspace="10">
 						</td>
-						<td>상품명이야</td>
+						<td><a href="#">상품명이야</a></td>
 						<td>[옵션]색상:color_name, 사이즈:product_sizu</td>
 						<td>1개</td>
 						<td>100,000원</td>
@@ -79,7 +79,7 @@
 						<td>
 							<img alt="images" src="" align="left" hspace="10">
 						</td>
-						<td>상품명이야</td>
+						<td><a href="#">상품명이야</a></td>
 						<td>옵션</td>
 						<td>1개</td>
 						<td>100,000원</td>
@@ -97,7 +97,7 @@
 			<div class="myPosting_titleandbtn">
 				<h2 class="myPostingTitle">MY POSTING</h2>
 				<p>
-					<a href="#">
+					<a href="<c:url value='/member/mypage/myposting.jsp'/>">
 						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 					</a>
 				</p>
@@ -117,7 +117,7 @@
 						<tbody>
 							<tr>
 								<td class="col-sm-1">1</td>
-								<td class="col-sm-4">옷 예뻐요</td>
+								<td class="col-sm-4"><a href="#">옷 예뻐요</a></td>
 								<td class="col-sm-1">김기김</td>
 								<td class="col-sm-1">18/01/01</td>
 							</tr>
@@ -140,7 +140,7 @@
 						<tbody>
 							<tr>
 								<td class="col-sm-1">1</td>
-								<td class="col-sm-4">배송 문의</td>
+								<td class="col-sm-4"><a href="#">배송 문의</a></td>
 								<td class="col-sm-1">김기김</td>
 								<td class="col-sm-1">17/12/30</td>
 							</tr>
@@ -149,19 +149,11 @@
 				</div>
 			</div>					
 		</div>
-		<div style="clear:both"></div>
 	</div>
 </div>
 
 <!-- 
-table 맨 밑줄 border
-order List에 주문번호 추가(일단 이건 하지마)
-my posting 제목에 링크
- -->
-
-
-<!-- 
-table 맨 밑줄 border
-order List에 주문번호 추가(일단 이건 하지마)
-my posting 제목에 링크
+table 맨 밑줄 border -> 어떤 테이블의 맨 밑에 border를 넣는건가여?
+order List에 주문번호 추가(일단 이건 하지마) -> 넵!!
+my posting -> 제목에 링크했습니다
  -->

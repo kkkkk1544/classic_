@@ -40,7 +40,7 @@
 			</div>
 			<div class="modify_btn_group">
 				<button class="btn btn-default" type="button">수정</button>
-				<button class="btn btn-default" type="button">취소</button>
+				<button class="btn btn-default" type="button" onclick="location.href='<c:url value='/member/mypage/detail.jsp'/>'">취소</button>
 			</div>
 		</form>
 	</div>
