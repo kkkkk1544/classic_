@@ -116,6 +116,7 @@ public class ProductDataDTO {
 	}
 	@Override
 	public String toString() {
+
 		return "\"num\":\"" + num + "\", \"info\":\"" + info + "\", \"material\":\"" + material
 				+ "\", \"colour\":\"" + colour + "\", \"sizu\":\"" + sizu + "\", \"wash\":\"" + wash
 				+ "\", \"maker\":\"" + maker + "\", \"nation\":\"" + nation + "\", \"make_date\":\""
@@ -123,6 +124,6 @@ public class ProductDataDTO {
 				+ "\", \"as_person\":\"" + as_person + "\", \"as_phone\":\"" + as_phone
 				+ "\", \"weight\":\"" + weight + "\"";
 	}
-	
+
 	
 }

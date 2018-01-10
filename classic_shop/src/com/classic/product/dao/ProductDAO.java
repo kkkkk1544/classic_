@@ -9,5 +9,6 @@ public interface ProductDAO {
 
 	//public List<ProductDTO> searchProduct(ProductDTO productDTO, PagingDTO pagingDTO) throws Exception; //상품 검색
 	public List<ProductDTO> selectProductList() throws Exception;
+	//public List<ProductDTO> selectProductList(pagingDTO p) throws Exception;
 	public ProductDTO selectProduct(int num) throws Exception;
 }

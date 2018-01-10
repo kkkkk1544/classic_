@@ -149,6 +149,7 @@ public class ProductDTO {
 		this.out_time = out_time;
 	}
 	
+	//이거 쓰지 말기!
 	public void setSelect(ResultSet rs) throws Exception{	
 		this.setBuy_price(rs.getInt("buy_price"));
 		this.setCate_num(rs.getInt("cate_num"));
@@ -167,6 +168,7 @@ public class ProductDTO {
 		this.setSub_info(rs.getString("sub_info"));
 		this.setTotal_pcs(rs.getInt("total_pcs"));	
 	}
+	
 	@Override
 	public String toString() {
 		return "\"num\":\"" + num + "\", \"code\":\"" + code + "\", \"cate_num\":\"" + cate_num

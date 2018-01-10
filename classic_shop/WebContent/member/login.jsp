@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-
 <div class="member_body">
 	<div class="container">
 		<form name="loginForm" action="<c:url value='/login.do'/>" method="post">
@@ -12,8 +11,7 @@
 					<input type="password" name="memPw" placeholder="Password">
 				</div>
 				<p class="login_option">
-					<span id="searchIdPwd"><small><a>ID/PW 찾기</a></small></span>
-					<span><input type="checkbox" name="cookieLogin" value="1">Remember me</span>
+					<span id="searchIdPwd"><small><a href="javascript:searchIdPwd()">ID/PW 찾기</a></small></span>
 				</p>
 				<div class="login_btn">
 					<button id="loginBtn" class="btn btn-default" type="submit">LOGIN</button>
@@ -21,15 +19,12 @@
 				</div>
 				<div class="login_outside">
 					<button id="naver_login" class="btn btn-success">NAVER LOGIN</button>
-					<button id="google_login" class="btn btn-danger">GOOGLE LOGIN</button>
+					<button id="google_login" class="" data-onsuccess="onSignIn"><span class="fa fa-google-plus"> LOGIN</span></button>
+					<!-- <button id="google_login" class="btn btn-danger" data-onsuccess="onSignIn"> -->
+					<!-- <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
+					<!-- </button> -->
 				</div>
 			</div>
 		</form>
 	</div>
 </div>
-
-<%-- <!-- 로그인 alert -->
-									<script>
-										if("${msg}!=''") {alert("${msg}");}
-									</script>
-									<c:remove var="msg" /> --%>

@@ -8,6 +8,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="<c:url value='/public/bootstrap/css/bootstrap.css' />">
+<!-- Google Login -->
+<meta name="google-signin-scope" content="profile email">
+<meta name="google-signin-client_id" content="785211237752-m7ipg6nvj45vdhjoc3i2di29u5g4m4qj.apps.googleusercontent.com">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<!-- awesome Icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- 개인 lib -->
 <link rel="stylesheet" href="<c:url value='/public/css/common.css' />">
 <link rel="stylesheet" href="<c:url value='/public/css/comu.css' />">
@@ -19,9 +25,17 @@
 <!-- jQuery lib -->
 <script src='<c:url value="/public/js/jquery/jquery-3.2.1.min.js"/>'></script>
 <script src='<c:url value="/public/js/jquery-ui/jquery-ui.min.js"/>'></script>
+<!-- kakao 지도 api -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9634cbc392b8b80779d4f419ee72bf3a"></script>
 <title>CLASSIC</title>
 </head>
 <body>
+<script>
+	if("${msg}"!=""){
+		alert("${msg}");	
+	}
+</script>
+<c:remove var="msg"/>
 	<header>
 		<nav class="navbar navbar-default navbar-fixed-top" style="background-color: #ffffff;">
 			<div class="container">
@@ -85,7 +99,7 @@
 										<c:if test="${loginMem.grade==0}">
 											<li><a href="#"><strong style="color: navy;">관리자 페이지 이동</strong></a></li>
 										</c:if>
-									<li><a><strong>${loginMem.id} 님 접속</strong></a></li>
+									<li><a><strong style="color: #000;">${loginMem.id} 님 접속</strong></a></li>
 									<li><a href="<c:url value='/logout.do' />">LOGOUT</a></li>
 								</c:when>
 								<c:otherwise>

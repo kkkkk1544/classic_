@@ -29,5 +29,4 @@ public class MemberCheckIdJSON extends HttpServlet{
 		resp.setContentType("application/json");
 		resp.getWriter().append("{\"checkIdMsg\":"+checkIdMsg+"}");
 	}
-//MemberJoinJSON 으로 합치는 게 될가..?
 }

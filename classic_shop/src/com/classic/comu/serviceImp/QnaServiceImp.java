@@ -4,10 +4,7 @@ import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.classic.common.dao.ImgPathDAO;
-import com.classic.common.daoImp.ImgPathDAOImp;
-import com.classic.common.dto.ImgPathDTO;
-import com.classic.comu.dao.QnaDAO;
+import com.classic.common.dto.pagingTest;
 import com.classic.comu.daoImp.QnaDAOImp;
 import com.classic.comu.dto.QnaDTO;
 import com.classic.comu.service.QnaService;
@@ -18,7 +15,7 @@ public class QnaServiceImp implements QnaService{
 	static Connection conn = null;
 
 	@Override
-	public List<QnaDTO> readQna() {
+	public List<QnaDTO> listQna() {
 		List<QnaDTO> qnaList = new ArrayList<QnaDTO>();
 		try {
 			conn = ClassicDBConnection.getConnection();
@@ -30,7 +27,22 @@ public class QnaServiceImp implements QnaService{
 		}
 		return qnaList;
 	}
-
+	
+/*	
+	@Override
+	public List<QnaDTO> listQna(pagingTest pagingDTO) {
+		List<QnaDTO> qnaList = new ArrayList<QnaDTO>();
+		try {
+			conn = ClassicDBConnection.getConnection();
+			qnaList = new QnaDAOImp(conn).selectQna(pagingDTO);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			ClassicDBConnection.close(conn);
+		}
+		return qnaList;
+	}
+*/
 	@Override
 	public QnaDTO readQna(int num) {
 		QnaDTO qnaDTO = null;
