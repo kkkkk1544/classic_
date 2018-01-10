@@ -8,19 +8,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.classic.comu.dto.FaqDTO;
-import com.classic.comu.serviceImp.FaqServiceImp;
+import com.classic.comu.dto.NoticeDTO;
+import com.classic.comu.serviceImp.NoticeServiceImp;
 
-@WebServlet("/faqDetail.do")
-public class FaqDetailAJAX extends HttpServlet{
+@WebServlet("/notice/read.do")
+public class NoticeReadAJAX extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("UTF-8");
 		String str_num = req.getParameter("num");
-		FaqDTO faqDTO = new FaqServiceImp().readFaq(Integer.parseInt(str_num));
+		NoticeDTO noticeDTO = new NoticeServiceImp().readNotice(Integer.parseInt(str_num));
 		resp.setCharacterEncoding("UTF-8");
 		resp.setContentType("application/json");
-		resp.getWriter().append(faqDTO.toString());
+		resp.getWriter().append(noticeDTO.toString());
 	}
-
 }

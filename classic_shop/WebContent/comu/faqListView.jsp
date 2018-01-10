@@ -11,6 +11,7 @@
 			</ul>
 	</div>
 </div>
+<!-- COMMUNITY BODY -->
 <div class="comu_body">
 	<p class="comu_title">FAQ</p>
 		<div id="faqAccordion">

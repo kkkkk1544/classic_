@@ -19,8 +19,9 @@
 				</div>
 				<div class="login_outside">
 					<button id="naver_login" class="btn btn-success">NAVER LOGIN</button>
+					<button id="google_login" class="" data-onsuccess="onSignIn"><span class="fa fa-google-plus"> LOGIN</span></button>
 					<!-- <button id="google_login" class="btn btn-danger" data-onsuccess="onSignIn"> -->
-					<div class="g-signin2" data-onsuccess="onSignIn"></div>
+					<!-- <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
 					<!-- </button> -->
 				</div>
 			</div>

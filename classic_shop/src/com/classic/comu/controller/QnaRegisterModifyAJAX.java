@@ -11,49 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 import com.classic.comu.dto.QnaDTO;
 import com.classic.comu.serviceImp.QnaServiceImp;
 
-@WebServlet("/qna/ajax.do")
-public class QnaAJAX extends HttpServlet{
+@WebServlet("/community/qna/action.do")
+public class QnaRegisterModifyAJAX extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		//detail
-		String str_num = req.getParameter("num");
-		QnaDTO qnaDTO = new QnaServiceImp().readQna(Integer.parseInt(str_num));
-		resp.setCharacterEncoding("UTF-8");
-		resp.setContentType("application/json");
-		resp.getWriter().append(qnaDTO.toString());
-	}
-	
-	@Override
-	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		//delete
-		String str_num = req.getParameter("num");
-		boolean remove = false;
-		remove = new QnaServiceImp().removeQna(Integer.parseInt(str_num));
-		resp.setCharacterEncoding("UTF-8");
-		resp.setContentType("application/json");
-		resp.getWriter().append("{\"remove\":"+remove+"}");
-	}
-	
-	@Override
-	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		//modify
-		String str_num = req.getParameter("num");
-		String str_subject = req.getParameter("subject");
-		String str_secure = req.getParameter("secure");
-		String content = req.getParameter("content");
-		String pwd = req.getParameter("pwd");
-		QnaDTO qnaDTO = new QnaDTO();
-		qnaDTO.setNum(Integer.parseInt(str_num));
-		qnaDTO.setSubject(Integer.parseInt(str_subject));
-		qnaDTO.setSecure(Integer.parseInt(str_secure));
-		qnaDTO.setContent(content);
-		qnaDTO.setPwd(pwd);
-		boolean modify = false;
-		modify = new QnaServiceImp().modifyQna(qnaDTO);
-		resp.setCharacterEncoding("UTF-8");
-		resp.setContentType("application/json");
-		resp.getWriter().append("{\"modify\":"+modify+"}");
+		//request qna form
+		req.getRequestDispatcher("/comu/qna/register.jsp").forward(req, resp);
 	}
 	
 	@Override
@@ -76,4 +40,32 @@ public class QnaAJAX extends HttpServlet{
 		resp.setContentType("application/json");
 		resp.getWriter().append("{\"register\":"+register+"}");
 	}
+	
+	@Override
+	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		//update
+		String str_num = req.getParameter("num");
+		String str_subject = req.getParameter("subject");
+		String str_secure = req.getParameter("secure");
+		String content = req.getParameter("content");
+		String pwd = req.getParameter("pwd");
+		QnaDTO qnaDTO = new QnaDTO();
+		qnaDTO.setNum(Integer.parseInt(str_num));
+		qnaDTO.setSubject(Integer.parseInt(str_subject));
+		qnaDTO.setSecure(Integer.parseInt(str_secure));
+		qnaDTO.setContent(content);
+		qnaDTO.setPwd(pwd);
+		boolean modify = false;
+		modify = new QnaServiceImp().modifyQna(qnaDTO);
+		resp.setCharacterEncoding("UTF-8");
+		resp.setContentType("application/json");
+		resp.getWriter().append("{\"modify\":"+modify+"}");
+	}
+/*	
+	//수정폼
+			String str_num = req.getParameter("num");
+			QnaDTO qnaDTO = new QnaServiceImp().readQna(Integer.parseInt(str_num));
+			req.setAttribute("qnaModify", qnaDTO);
+			req.getRequestDispatcher("/comu/qna/modify.jsp").forward(req, resp);
+*/
 }

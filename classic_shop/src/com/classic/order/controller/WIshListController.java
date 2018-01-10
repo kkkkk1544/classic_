@@ -2,7 +2,6 @@ package com.classic.order.controller;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -33,13 +32,7 @@ public class WIshListController extends HttpServlet{
 		} finally {
 			ClassicDBConnection.close(null,null,conn);
 		}
-		if(wishList.isEmpty()) {
-			req.getSession().setAttribute("wishList", null);
-			req.getRequestDispatcher("/order/wish/wish.jsp").forward(req, resp);
-		} else {
-			req.getSession().setAttribute("wishList", wishList);
-			req.getRequestDispatcher("/order/wish/wish.jsp").forward(req, resp);
-		}
+		req.getSession().setAttribute("wishList", wishList);
+		req.getRequestDispatcher("/order/wish/wish.jsp").forward(req, resp);
 	}
-	
 }

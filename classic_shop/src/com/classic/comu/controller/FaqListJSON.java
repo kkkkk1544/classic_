@@ -9,17 +9,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.classic.comu.dto.NoticeDTO;
-import com.classic.comu.serviceImp.NoticeServiceImp;
+import com.classic.comu.dto.FaqDTO;
+import com.classic.comu.serviceImp.FaqServiceImp;
 
-@WebServlet("/community/notice.do")
-public class NoticeListJSONController extends HttpServlet{
-	
+
+@WebServlet("/community/faq.do")
+public class FaqListJSON extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<NoticeDTO> noticeList = new NoticeServiceImp().readNotice();
-		req.setAttribute("noticeList", noticeList);
-		req.getRequestDispatcher("/comu/noticeList.jsp").forward(req, resp);
+		List<FaqDTO> faqList = new FaqServiceImp().readFaq();
+		req.setAttribute("faqList", faqList);
+		req.getRequestDispatcher("/comu/faqListView.jsp").forward(req, resp);
 	}
-
 }

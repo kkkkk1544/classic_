@@ -31,18 +31,24 @@
 			</div>
 		</div>
 	
-		<div id="list">
-		  <table class="listTable">
-		    <tr class="tableTitle">
-				<th>주문번호</th>
-				<th>상품정보</th>
-				<th>수량</th>
-				<th>상품구매금액</th>
-				<th>주문처리상태</th>
-				<th>선택</th>
-			</tr>
+		<div id="list"  class="table-responsive">
+		  <table class="table table-hover">
+		  	<tbody class="list_title">
+			    <tr>
+					<th>주문번호</th>
+					<th>상품정보</th>
+					<th>수량</th>
+					<th>상품구매금액</th>
+					<th>주문처리상태</th>
+					<th>선택</th>
+				</tr>
+			</tbody>
 			<tr>
-				<td><a href="<c:url value='/order/detail.jsp' />">order_num</a></td> <!-- 주문번호 누르면 디테일로 -->
+				<td>
+					<a href="<c:url value='/order/detail.jsp' />">
+						order_num
+					</a>
+				</td> <!-- 주문번호 누르면 디테일로 -->
 				<td>
 					<img alt="images" src=""  align="left" hspace="10">
 					<label><a href="#">상품명:product_name</a></label><br><!-- 상품명 누르면 상품상세정보로 -->
@@ -57,7 +63,7 @@
 					<button type="button" class="btn btn-default">교환/반품</button>	
 				</td>
 			</tr>
-			<tr>
+			 <tr>
 				<td><a href="#">order_num</a></td>
 				<td>
 					<img alt="" src=""  align="left" hspace="10">
