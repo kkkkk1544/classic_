@@ -1,7 +1,4 @@
-<%@page import="com.sun.xml.internal.txw2.Document"%>
-<%@page import="java.util.ArrayList"%>
 <%@page import="com.classic.order.dto.WishDTO"%>
-<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
@@ -30,7 +27,7 @@
 				<c:when test="${(fn:length(wishList))!=0}">
 					<c:forEach var="wish" items="${wishList}">
 						<tr>
-							<td><input type="checkbox" value="${wish.productNum}" class="checkWish"></td>
+							<td><input type="checkbox" value="${wish.productNum}" class="checkWish paramValue" name="product_num"></td>
 							<td class="infoList">
 								<div class="infoListDiv">
 									<div>
@@ -39,14 +36,14 @@
 								</div>
 								<div>
 									<ul class="list-group">
-										<li class="list-group-item"><strong><a>${wish.productName}</a></strong></li>
-										<li class="list-group-item"><strong>color ${wish.colour} size ${wish.sizu}</strong></li>
+										<li class="list-group-item"><strong><a><input type="hidden" name="product_name" value="${wish.productName}" class="paramValue">${wish.productName}</a></strong></li>
+										<li class="list-group-item"><strong><input type="hidden" name="color" value="${wish.colour}" class="paramValue">color ${wish.colour}<input type="hidden" name="size" value="${wish.sizu}" class="paramValue"> size ${wish.sizu}</strong></li>
 										<li class="list-group-item"><button type="button" class="btn btn-default">옵션변경</button></li> <!--  onclick구현 -->
 									</ul>
 								</div>
 							</td>
-							<td>${wish.price}원</td>
-							<td>${wish.wishQuantity}개</td>
+							<td><input type="hidden" name="price" value="${wish.price}" class="paramValue">${wish.price}원</td>
+							<td><input type="hidden" name="wishQuantity" value="${wish.wishQuantity}" class="paramValue">${wish.wishQuantity}개</td>
 							<fmt:parseNumber var="percent" value="${((wish.price*wish.wishQuantity)*0.02)}" integerOnly="true" />
 							<td>${percent}</td>
 							<c:choose>
@@ -61,10 +58,9 @@
 							</c:choose>
 							<td>
 								<div class="buttonGroup">
-									<input type="hidden" value="num=${param.num}&product_num=${wish.productNum}&product_name=${wish.productName}&">
-									<button type="button" class="btn btn-default" id="partOrder">주문하기</button>									
+									<button type="button" class="btn btn-default partOrder">주문하기</button>									
 									<button type="button" class="btn btn-default">장바구니 등록</button>
-									<button type="button" class="btn btn-default" onclick="pickWishDel(${param.num},${wish.productNum})">삭제</button>
+									<button type="button" class="btn btn-default" onclick="pickWishDel(${loginMem.num},${wish.productNum})">삭제</button>
 								</div>
 							</td>
 						</tr>
@@ -171,10 +167,10 @@
 			</tbody>
 		</table>
 		<div id="wishCRUDBtn">
-			<button type="button" class="btn btn-default" onclick="allWishDel(${param.num})">전체삭제</button>
+			<button type="button" class="btn btn-default" onclick="allWishDel(${loginMem.num})">전체삭제</button>
 			<!-- ~~~~~~~~~~~~~~~mem_num으로 바꿔야댐~~~~~~~~`~~~~~~~~~~~~-->
 			<button type="button" class="btn btn-default" >선택주문</button>
-			<button type="button" class="btn btn-default"  onclick="delWishSelected(${param.num})">선택삭제</button>
+			<button type="button" class="btn btn-default"  onclick="delWishSelected(${loginMem.num})">선택삭제</button>
 			<button type="button" class="btn btn-default" id="moveCartBtn">선택한 상품을<br> 장바구니에 등록</button>
 			<button class="btn btn-default pull-right">전체상품 주문</button>
 		</div>
@@ -199,8 +195,12 @@
 		</div>
 	</div>
 <script>
-$("#partOrder").click(function(){
+$(".partOrder").click(function(){
 	url="http://localhost:9999/classic_shop/order/order_sheet/order_sheet.jsp?";
+	$('input[class*="paramValue"]').each(function(){
+		console.log(this.value);
+		
+	});
 	
 });
 $("#allCheck").click(function(){
