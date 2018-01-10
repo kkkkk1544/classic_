@@ -4,6 +4,11 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<input type="hidden" value="여기에 고객이 담은 정보가 일시적으로 들어가는 것">
+<input type="text" value="마찬가지" style="display:none;">
+
+
 <body>
 	<div class="container" id="mainDiv">
 		<h2 class="text-left" id="wishName">WISH LIST</h2>
@@ -22,7 +27,7 @@
 			</thead>
 			<tbody id="wishContents">
 			<c:choose>
-				<c:when test="${wishList!=null}">
+				<c:when test="${wishList}">
 					<c:forEach var="wish" items="${wishList}">
 						<tr>
 							<td><input type="checkbox" value="${wish.productNum}" class="checkWish"></td>
@@ -56,7 +61,7 @@
 							</c:choose>
 							<td>
 								<div class="buttonGroup">
-									<a class="btn btn-default" href="">주문하기</a>
+									<button type="button" class="btn btn-default" id="partOrder">주문하기</button>									
 									<button type="button" class="btn btn-default">장바구니 등록</button>
 									<button type="button" class="btn btn-default" onclick="pickWishDel(22,${wish.productNum})">삭제</button>
 								</div>
@@ -167,7 +172,7 @@
 		<div id="wishCRUDBtn">
 			<button type="button" class="btn btn-default" onclick="allWishDel(22)">전체삭제</button>
 			<!-- ~~~~~~~~~~~~~~~mem_num으로 바꿔야댐~~~~~~~~`~~~~~~~~~~~~-->
-			<button type="button" class="btn btn-default">선택주문</button>
+			<button type="button" class="btn btn-default" >선택주문</button>
 			<button type="button" class="btn btn-default"  onclick="delWishSelected(22)">선택삭제</button>
 			<button type="button" class="btn btn-default" id="moveCartBtn">선택한 상품을<br> 장바구니에 등록</button>
 			<button class="btn btn-default pull-right">전체상품 주문</button>
@@ -193,6 +198,9 @@
 		</div>
 	</div>
 <script>
+$("#partOrder").click(function(){
+	
+});
 $("#allCheck").click(function(){
 	if(this.checked){
 		$('input:checkbox[class*="checkWish"]').each(function(){
