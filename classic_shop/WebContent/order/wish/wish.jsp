@@ -61,6 +61,7 @@
 							</c:choose>
 							<td>
 								<div class="buttonGroup">
+									<input type="hidden" value="num=${param.num}&product_num=${wish.productNum}&product_name=${wish.productName}&">
 									<button type="button" class="btn btn-default" id="partOrder">주문하기</button>									
 									<button type="button" class="btn btn-default">장바구니 등록</button>
 									<button type="button" class="btn btn-default" onclick="pickWishDel(${param.num},${wish.productNum})">삭제</button>
@@ -199,7 +200,7 @@
 	</div>
 <script>
 $("#partOrder").click(function(){
-	url="http://localhost:9999/classic_shop/order/order_sheet/order_sheet.jsp";
+	url="http://localhost:9999/classic_shop/order/order_sheet/order_sheet.jsp?";
 	
 });
 $("#allCheck").click(function(){
