@@ -1,6 +1,13 @@
 package com.classic.order.dto;
 
 public class BankDTO {
+	/*Name                    Null?    Type
+	----------------------- -------- ---------------
+	NUM                     NOT NULL NUMBER(8)
+	BANK_NAME                        VARCHAR2(8)
+	BANK_NUM                NOT NULL NUMBER(12)
+	NAME                    NOT NULL VARCHAR2(10)*/
+	
 	private int num;
 	private String bank_name;
 	private int bank_num;

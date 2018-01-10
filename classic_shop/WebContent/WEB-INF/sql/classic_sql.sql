@@ -762,6 +762,49 @@ INSERT INTO review VALUES(review_seq.nextval, 1, 1, '치수', '내용', 5, sysda
 --마일리지
 INSERT INTO mileage VALUES(mileage_seq.nextval,1,1,200000,sysdate,2);
 -- bank, delivery, trade, refund, cancel, mileage, img_path TEST DATA 없음
+INSERT INTO mileage VALUES(mileage_seq.nextval,1,1,null,200000,sysdate,2);
+
+--테이블 수정
+ALTER TABLE bank MODIFY(bank_name VARCHAR2(12));
+ALTER TABLE bank MODIFY(bank_num NUMBER(16));
+
+--company uk빼야함
+drop table delivery;
+create sequence delivery_seq start with 1 increment by 1;
+create table delivery(
+	num number(8) constraint delivery_pk_num primary key,
+	paid_num number(8) constraint delivery_fk_paid_num references paid(num),
+	company varchar2(12),
+	deliv_num number(16) UNIQUE,
+	state number(1) default 0 not null constraint delivery_ck_state check(state between 0 and 3),
+	deliv_start date not null,
+	deliv_end date
+);
+
+-- bank
+INSERT INTO bank VALUES(bank_seq.nextval ,'우리은행' ,'1002536238755','클래식');
+INSERT INTO bank VALUES(bank_seq.nextval ,'신한은행' ,'22875504956326','클래식');
+INSERT INTO bank VALUES(bank_seq.nextval ,'국민은행' ,'5678920563257','클래식');
+
+--delivery
+INSERT INTO delivery VALUES(delivery_seq.nextval ,41 ,'CJ택배','6898000144426575' ,1 ,sysdate , '');
+INSERT INTO delivery VALUES(delivery_seq.nextval ,52 ,'','' ,0 ,sysdate , '');
+INSERT INTO delivery VALUES(delivery_seq.nextval ,43 ,'대한통운','1111222233334444' ,2 ,sysdate , '');
+INSERT INTO delivery VALUES(delivery_seq.nextval ,47 ,'대한통운','6666222233335555' ,3 ,sysdate , '20180107');
+
+--trade
+INSERT INTO trade VALUES(trade_seq.nextval ,44,0,sysdate,'',0);
+INSERT INTO trade VALUES(trade_seq.nextval ,45,2,sysdate,'',2);
+
+--refund
+INSERT INTO refund VALUES(refund_seq.nextval ,46,sysdate,1,'',1,'카카오뱅크','12345678912','김다혜');
+INSERT INTO refund VALUES(refund_seq.nextval ,47,sysdate,5,'',2,'우리은행','12345678912','홍길동');
+
+--cancel
+INSERT INTO cancel VALUES(cancel_seq.nextval ,48,sysdate,'');
+INSERT INTO cancel VALUES(cancel_seq.nextval ,49,sysdate,'20180109');
+
+-- img_path TEST DATA 없음
 -- 수정사항: 주문테이블(paid) 주문번호에 uk 빼야함니다!!
 -- 주문디비 다 수정함!! 
 -- 18/01/09 DB 수정 

@@ -1,6 +1,16 @@
 package com.classic.order.dto;
 
 public class DeliveryDTO {
+	/*Name                 Null?    Type
+	------------------- -------- -------------
+	NUM                  NOT NULL NUMBER(8)
+	PAID_NUM                      NUMBER(8)
+	COMPANY                       VARCHAR2(12)
+	DELIV_NUM                     NUMBER(12)
+	STATE                NOT NULL NUMBER(1)
+	DELIV_START          NOT NULL DATE
+	DELIV_END                     DATE*/
+	
 	private int num;
 	private int paid_num;
 	private String company;
