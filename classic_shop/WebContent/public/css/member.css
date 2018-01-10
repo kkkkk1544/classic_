@@ -63,8 +63,7 @@
 }
 
 #searchIdPwd{
-	margin-left: 15%;
-	margin-right: 35%;
+	margin-left: 72%;
 }
 
 /* 회원가입 */
@@ -147,7 +146,7 @@
 
 
 /* 배송주소록 */
-.adressTitle{
+.addressTitle{
 	padding-bottom: 15px;
 	margin-bottom: 0px;
 	color: #000;
@@ -179,6 +178,28 @@
 	margin-bottom: 0px;
 }
 
+/* 배송주소록 등록 */
+
+.addressBookTitle{
+	padding-bottom: 15px;
+	color: #000;
+	border-bottom: 1px solid #000;
+}
+.table.addressBook_table{
+
+}
+.zip_code_wrap{
+	overflow: hidden;
+}
+.zip_code_wrap button{
+	float: left;
+}
+.addrbase_wrap{
+	overflow: hidden;
+}
+.addrdetail_wrap{
+	overflow: hidden;
+}
 
 /* 마이페이지 */
 .mypageTitle{
@@ -327,7 +348,6 @@
 	border-top: 1px solid #000;
 	border-bottom: 1px solid #000;
 }
-
 
 /* 회원정보 수정*/
 #memberModifyTitle{
@@ -484,10 +504,17 @@
 .table.myQna_table label{
 	margin-bottom: 0px;
 }
+.myposting_paging{
+	text-align: center;
+}
 .myReview_wrap{
 	border-bottom: 1px solid #c5b4b4e6;
     padding-bottom: 40px;
     padding-top: 40px;
+}
+.myReview_wrap ul{
+	margin: 0;
+    padding: 0;
 }
 .myReviewTitle{
 	padding-bottom: 15px;
@@ -495,62 +522,27 @@
 	margin-bottom: 0px;
 	color: #000;
 }
+.myReview_inner{
+	overflow: hidden;
+}
 .myReview_top_menu{
-	position: relative;
     border: 1px solid #e1e1e1;
     margin-top: 18px;
     margin-bottom: 33px;
     height: 51px;
     box-sizing: content-box;
 }
-.top_menu_left{
-	transition: padding-right 0.3s;
-	padding-right: 450px;
-    height: 51px;
-    line-height: 51px;
-}
-
-.top_menu_left:after {
-     clear: both;
-     content: ".";
-     display: block;
-     font-size: 0;
-     height: 0;
-     line-height: 0;
-     visibility: hidden;
-}
 .top_menu_left li{
     padding: 10px 20px;
     line-height: 31px;
     max-width: 100%;
-    font-size: 13px;
-    border-left: 0;
-    display: inline-block;
-    height: 51px;
     float: left;
     list-style-type: none;
 }
-.top_menu_left .top_menu_text{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-.top_menu_two{
+.top_menu_right{
     float: right;
-    position: absolute;
-    top: 0;
     right: 0;
-    height: 51px;
     line-height: 51px;
-}
-.top_menu_two:after {
-    clear: both;
-    content: ".";
-    display: block;
-    font-size: 0;
-    height: 0;
-    line-height: 0;
-    visibility: hidden;
 }
 .top_menu_li{
 	display: inline-block;
@@ -559,15 +551,10 @@
     float: left;
     list-style-type: none;
 }
-.top_menu_li.li_one{
-	padding: 0;
+.top_menu_li.li_action{
     width: 145px;
 }
-.top_menu_li.li_two{
-	padding: 0;
-    position: relative;
-}
-.top_menu_two a{
+.top_menu_right a{
 	color: #b7b7b7;
     cursor: pointer;
     line-height: 51px;
@@ -583,6 +570,173 @@
     transition: width 0.3s;
     margin-left: 10px;
 }
-.top_menu_icon .btn{
+.top_menu_search .btn{
 	margin-right: 10px;
+}
+.myreview_List{
+	margin-top: 10px;
+    padding-top: 10px;
+        border-bottom: 1px solid #dadada;
+}
+#reviews_1{
+	    position: relative;
+    border-top: 1px solid #dadada;
+    padding-top: 30px;
+    padding-bottom: 8px;
+        list-style-type: none;
+}
+.reviews_a1{
+    position: absolute;
+    min-width: 90px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.reviews_a1 img{
+	width: 150px;
+	height: 150px;	
+	background-color: #e6e6e6;
+}
+.reviews_2{
+
+
+    padding-right: 145px;
+    padding-left: 170px;
+}
+.reviews_score{
+	    color: #a4a4a4;
+	
+}
+.reviews_title{
+    display: inline-block;
+    line-height: 17px;
+    max-width: 100%;
+	overflow: hidden;
+}
+
+.review_tags{
+	float: right;
+    padding-left: 3px;
+	
+}
+.reviews_index{
+	font-size: 10px;
+    margin-left: 3px;
+    color: #999;
+    padding: 2px 3px;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    line-height: 11px;
+}
+.reviews_a2{
+	overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    color: #323232;s
+    white-space: nowrap;
+    font-weight: bold;
+        text-decoration: none;
+    cursor: pointer;
+    padding-bottom: 1px;
+}
+.top_star:first-child{
+	    margin-left: 2;
+    position: relative;
+    top: -1px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.star_rating{
+	display: inline-block;
+    width: 12px;
+    height: 12px;
+}
+.reviews_camera{
+	display: inline-block;
+}
+.camera{
+	    max-height: 17px;
+    width: auto;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+}
+.content_expanded{
+	    position: relative;
+    width: 100%;
+}
+.content_msg{
+	    padding-top: 13px;
+    padding-bottom: 5px;
+    padding-bottom: 20px;
+}
+.review_options{
+	    font-size: 12px;
+    border: 1px solid #dadada;
+    padding: 15px;
+    margin-bottom: 18px;
+
+    max-width: 800px;
+}
+.review_option:first-child{
+	margin-top: 0;
+}
+.review_option{
+	margin-top: 4px;
+	overflow: hidden;
+}
+.review_option_title{
+	    float: left;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 15%;
+}
+.review_option_content{
+    float: left;
+    color: #777;
+    width: 85%;
+}
+.review_msg{
+	line-height: 1.6;
+    word-wrap: break-word;
+	
+}
+.reviws_reply_wrap{
+	    padding-bottom: 20px;
+}
+.reply_name{
+	    line-height: 25px;
+    text-align: left;
+    border: 1px solid;
+	
+}
+.reply_name span{
+	font-weight: bold;
+	border-right: 1px solid;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.reply_content{
+	    padding-left: 20px;
+		display: inline-block;
+}
+.reply_label{
+	display: inline-block;
+    margin-right: 20px;
+    margin-left:20px
+}
+.myreview_row{
+	margin-top:30px;
+}
+.myreview_paging{
+	    text-align: center;
+}
+.edit_trash_btn{
+	float: right;
+}
+.edit_trash_btn button{
+width: 70px;
+    height: 35px;
+	padding: 0px;
 }

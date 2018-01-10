@@ -4,8 +4,10 @@
 <div class="member_body">
 	<div class="container">
 		<div class="address_wrap">
-			<h2 class="adressTitle">ADRESS LIST</h2>
+			<h2 class="addressTitle">ADRESS LIST</h2>
 			<table class="table address_table">
+
+			
 				<thead>
 					<tr>
 						<th class="col-sm-1">
@@ -27,8 +29,8 @@
 								<input type="checkbox" id="blankCheckbox" value="option1" aria-label="checkbox">
 							</label>
 						</td>
-						<td>1</td>
-						<td><a href="#">주소야주소</a></td>
+						<td>${addrBookList.num}</td>
+						<td><a href="#"></a></td>
 						<td>010-2222-3333</td>
 						<td>나야나</td>
 						<td>상태</td>
@@ -38,12 +40,12 @@
  			<div class="adress_btn_group">
 				<button class="btn btn-default" type="button">전체 선택</button>
 				<button class="btn btn-default" type="button">선택 삭제</button>
-				<button class="btn btn-default" type="button">주소 등록</button>
+				<button class="btn btn-default" type="button" onclick="location.href='<c:url value='/member/mypage/addressInsert.jsp'/>'">주소 등록</button>
 			</div>
 		</div>
 		<!-- RECENT ADDRESS -->
 		<div class="recentaddr_wrap">
-			<h2 class="adressTitle">RECENT ADDRESS</h2>
+			<h2 class="addressTitle">RECENT ADDRESS</h2>
 			<table class="table address_table">
 				<thead>
 					<tr>
