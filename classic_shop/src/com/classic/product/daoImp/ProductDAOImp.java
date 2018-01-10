@@ -14,6 +14,15 @@ import com.classic.util.ClassicDBConnection;
 
 public class ProductDAOImp implements ProductDAO{
 	
+	/*public static void main(String[] args) {
+		
+		try {
+			System.out.println(new ProductDAOImp().selectProduct(1));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}*/
 	private Connection conn=null;
 /*	public ProductDAOImp(Connection conn) {
 		this.conn = conn;

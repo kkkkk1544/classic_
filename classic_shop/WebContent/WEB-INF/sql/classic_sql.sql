@@ -773,8 +773,6 @@ CREATE table sizu(
 	product_num number(8) constraint sizu_fk_product_num references product(num)
 );
 INSERT INTO sizu VALUES(sizu_seq.nextval, 'FREE', (Select num from product where name='상품명1'));
-
-INSERT INTO sizu VALUES(sizu_seq.nextval, 'S', (Select num from product where name='상품명1'));
 INSERT INTO sizu VALUES(sizu_seq.nextval, 'M', (Select num from product where name='상품명1'));
 INSERT INTO sizu VALUES(sizu_seq.nextval, 'L', (Select num from product where name='상품명1'));
 INSERT INTO sizu VALUES(sizu_seq.nextval, 'FREE', (Select num from product where name='상품명2'));

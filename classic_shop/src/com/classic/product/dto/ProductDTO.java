@@ -157,7 +157,6 @@ public class ProductDTO {
 		this.setGuide_num(rs.getInt("guide_num"));
 		this.setIndate(rs.getDate("indate"));
 		this.setMain_info(rs.getString("main_info"));
-		this.setSizu(rs.getString("sizu"));
 		this.setName(rs.getString("name"));
 		this.setNum(rs.getInt("num"));
 		this.setOut_ox(rs.getInt("out_ox"));
@@ -170,13 +169,13 @@ public class ProductDTO {
 	}
 	@Override
 	public String toString() {
-		return "{\"num\":\"" + num + "\", \"code\":\"" + code + "\", \"cate_num\":\"" + cate_num
+		return "\"num\":\"" + num + "\", \"code\":\"" + code + "\", \"cate_num\":\"" + cate_num
 				+ "\", \"name\":\"" + name + "\", \"sub_info\":\"" + sub_info + "\", \"main_info\":\""
 				+ main_info + "\", \"price\":\"" + price + "\", \"buy_price\":\"" + buy_price
 				+ "\", \"sizu\":\"" + sizu + "\", \"total_pcs\":\"" + total_pcs + "\", \"guide_num\":\""
 				+ guide_num + "\", \"data_num\":\"" + data_num + "\", \"sell_ox\":\"" + sell_ox
 				+ "\", \"out_ox\":\"" + out_ox + "\", \"indate\":\"" + indate + "\", \"sale\":\"" + sale
-				+ "\", \"out_time\":\"" + out_time + "\"}";
+				+ "\", \"out_time\":\"" + out_time + "\"";
 	}
 	
 	

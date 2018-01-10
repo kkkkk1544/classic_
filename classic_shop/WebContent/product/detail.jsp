@@ -46,19 +46,19 @@ $(function(){
 		<div class="detail_top_right">
 			<div class="detail_top_right_top">
 			<hr class="detail_hr">
-			<h3>${productDetail.name}<%-- <c:forEach var="detail" items="${productDetail}">${detail.name}</c:forEach> --%></h3>
-			<p class="detail_top_right_description_one">${productDetail.main_info}</p><!-- product description Line1 -->
-			<p class="detail_top_right_description_two">${productDetail.sub_info}</p><!-- product description Line2 -->
+			<h3><%-- ${productDetail.name} --%><%-- <c:forEach var="detail" items="${productDetail}">${detail.name}</c:forEach> --%></h3>
+			<p class="detail_top_right_description_one"><%-- ${productDetail.main_info} --%></p><!-- product description Line1 -->
+			<p class="detail_top_right_description_two"><%-- ${productDetail.sub_info} --%></p><!-- product description Line2 -->
 			</div>
 			<div class="detail_top_right_middle">
 			<table>
 				<tr>
 					<th>Price</th>
-					<td>${productDetail.price}</td>
+					<td><%-- ${productDetail.price} --%></td>
 				</tr>
 				<tr>
 					<th>마일리지</th>
-					<td>${productDetail.price*0.01}원(1%)</td>
+					<td><%-- ${productDetail.price*0.01}원(1%) --%></td>
 				</tr>
 			</table>
 			</div>
@@ -76,7 +76,7 @@ $(function(){
 					</tr>
 					<tr>
 						<th>Size</th>
-						<td><select>${productDetail.sizu}</select></td>
+						<td><select><%-- ${productDetail.sizu} --%></select></td>
 					</tr>
 				</table>
 				<hr>
