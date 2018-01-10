@@ -9,7 +9,6 @@
 <body>
 	<div class="container" id="mainDiv">
 		<h2 class="text-left" id="wishName">WISH LIST</h2>
-		<form action='<c:url value="/order/order_sheet/order_sheet.jsp"/>' method='post'>
 		<table class="table" id="wishTable">
 			<thead id="wishTitle">
 				<tr>
@@ -59,7 +58,7 @@
 							</c:choose>
 							<td>
 								<div class="buttonGroup">
-									<button type="button" class="btn btn-default partOrder">주문하기</button>									
+									<a type="button" class="btn btn-default partOrder" href='<c:url vlaue="/order/order_sheet.do?num=${loginMem.num}&product_num=${wish.productNum}"/>'>주문하기</button>									
 									<button type="button" class="btn btn-default">장바구니 등록</button>
 									<button type="button" class="btn btn-default" onclick="pickWishDel(${loginMem.num},${wish.productNum})">삭제</button>
 								</div>
@@ -73,7 +72,6 @@
 					</tr>
 				</c:otherwise>
 			</c:choose>
-		</form>
 <%-- 			<c:choose>
 				<c:when test="${wishList!=null}">
 					<c:forEach var="wish" items="${wishList}">
@@ -197,21 +195,7 @@
 		</div>
 	</div>
 <script>
-$(".partOrder").click(function(){
-	/* url="http://localhost:9999/classic_shop/order/order_sheet/order_sheet.jsp?";
-	$('input[class*="paramValue"]').each(function(){
-		console.log(this.value);
-		${wishList}.each()
-	}); */
-	url="http://localhost:9999/classic_shop/order/order_sheet/order_sheet.jsp";
-	var wishList  =[];
-	var wish = "";
-	var i;
-	
-	console.log(wish);
-	$.get(url,${wishList});
-	
-});
+
 $("#allCheck").click(function(){
 	if(this.checked){
 		$('input:checkbox[class*="checkWish"]').each(function(){

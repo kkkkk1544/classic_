@@ -76,5 +76,12 @@ public class WishListDAOImp implements WishListDAO{
 		delete = pstmt.executeUpdate();
 		return delete;
 	}
+	@Override
+	public WishDTO selectProduct(int product_num) throws Exception {
+		WishDTO product =null;
+		String sql ="select p.name , p.price, (select name from colour where product_num = p.num), (select )";
+		return product;
+		
+	}
 	
 }

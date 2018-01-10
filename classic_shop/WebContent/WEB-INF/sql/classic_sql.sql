@@ -225,15 +225,14 @@ create table paid(
 	paid_date date,
 	pay_with number(1) default 2 not null constraint paid_ck_pay_with check(pay_with between -1 and 3),
 	order_money number(12) not null,
-	payment	number(12) not null,
+	payment		number(12) not null,
 	order_date date not null,
 	order_state number(1) default 0 not null constraint paid_ck_order_state check(order_state between -2 and 3),
 	deposit_name varchar2(10) not null,
 	cancel_start date,
-	cancel_end date
-	product_num number(8) constraint paid_fk_product_num references product(num),
-	colou
-	
+	cancel_end date,
+	sizu_num number(8) CONSTRAINT paid_fk_sizu_num references sizu(num),
+	colour_num number(8) constraint paid_fk_colour_num references colour(num) 
 );
 
 create sequence delivery_seq start with 1 increment by 1;
@@ -1027,3 +1026,6 @@ INSERT INTO colour VALUES(colour_seq.nextval, (select num from product where cod
 INSERT INTO wish VALUES(wish_seq.nextval ,(select num from product where code='0000053'), (select num from member where id='member4'), sysdate);
 INSERT INTO wish VALUES(wish_seq.nextval ,(select num from product where code='0000057'), (select num from member where id='member4'), sysdate);
 INSERT INTO wish VALUES(wish_seq.nextval ,(select num from product where code='0000057'), (select num from member where id='member4'), sysdate);
+
+--헤진 paid table만 수정!! data는 아직 못수정!! paid table 넣을 때 오류나면 payment랑 number(8) 붙진 않았는디 확인!!
+--스페이스를 혀도.. tab을 눌러도 계속 붙어 벌임 짱나는것..
