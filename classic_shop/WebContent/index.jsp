@@ -199,5 +199,13 @@
 		3. 게시판 유효성 검사/첨부파일/reply 제외한 기본적인 CRUD
 		4. header/footer(회원/비회원 필터 & 지도 제외)
  -->
+<!-- 
+	이메일 인증 참고자료
+	http://altongmon.tistory.com/308
+	http://sick33.tistory.com/30
+	http://hunit.tistory.com/306
+	http://compunication.tistory.com/15
+	https://prezi.com/ggcv6bezgvmr/mvc/
+ -->
 
  
