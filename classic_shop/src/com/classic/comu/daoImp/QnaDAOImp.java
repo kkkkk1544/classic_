@@ -102,7 +102,7 @@ public class QnaDAOImp implements QnaDAO{
 	public int insertQna(QnaDTO qnaDTO) throws Exception {
 		int insert = 0;
 		String sql = "INSERT INTO qna (num, mem_num, subject, content, count, secure, pwd, indate)"
-				+ " VALUES(qna_seq.nextval,?,?,?,0,?,?,sysdate);";
+				+ " VALUES(qna_seq.nextval,?,?,?,0,?,?,sysdate)";
 		PreparedStatement pstmt = null;
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, qnaDTO.getMem_num());

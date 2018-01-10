@@ -20,8 +20,8 @@
 			<div class="form-group">
 				<label id="subjectField">SUBJECT</label>
 				<span class="form-inline">
-					<select name="subjectField" class="form-control" id="optionField">
-						<option value="">
+					<select name="subjectValue" class="form-control optionField">
+						<option value="${qnaModify.subject}">
 							<c:choose>
 								<c:when test="${qnaModify.subject==0}">상품 문의</c:when>
 								<c:when test="${qnaModify.subject==1}">배송 문의</c:when>
@@ -38,31 +38,33 @@
 						<option value="4">교환/환불 문의</option>
 						<option value="5">기타 문의</option>
 					</select>
+					<input type="hidden" name="memNum" value="${loginMem.num}">
+					<input type="hidden" name="qnaNum" value="${qnaModify.num}">
 				</span>
 			</div>
 			<!-- QNA 글 내용 -->
 			<div class="form-group">
-				<textarea class="form-control" rows="20" name="qnaContents">${qnaModify.content}</textarea>
+				<textarea class="form-control" rows="20" name="qnaContent">${qnaModify.content}</textarea>
 			</div>
 			<!-- QNA 첨부파일 및 옵션 -->
 			<div class="qna_option">
 				<label class="col-xs-2">File Upload</label>
-				<input type="file" id="qnaFile" style="margin: 0; display: inline-block;">
+				<input type="file" id="qnaFile" name="qnaFileValue" style="margin: 0; display: inline-block;">
 			</div>
 			<div class="qna_option">
 				<label class="col-xs-2">공개</label>
 					<div class="checkbox">
-						<input type="radio" name="secure" id="qnaOpen" value="0" checked> 공개
-						<input type="radio" name="secure" id="qnaSecure" value="1"> 비공개
+						<input type="radio" name="qnaSecure" id="qnaOpen" value="0" checked> 공개
+						<input type="radio" name="qnaSecure" id="qnaSecure" value="1"> 비공개
 					</div>
 			</div>
 			<div class="qna_option">
 				<label class="col-xs-2">Password</label>
-				<input type="password" name="pwd" placeholder="비밀번호 설정"  disabled>
+				<input type="password" name="qnaPwdValue" placeholder="비밀번호 설정"  disabled>
 			</div>
 			<!-- QNA 버튼 -->
 			<div class="qna_btn_group">
-				<button type="button" class="btn btn-default btn-lg" onclick="modifyQna()">수정</button>
+				<button type="button" class="btn btn-default btn-lg" onclick="modifyQna(this.form)">수정</button>
 				<button type="button" class="btn btn-default btn-lg" onclick="qnaListBtn()">취소</button>
 			</div>
 		</form>

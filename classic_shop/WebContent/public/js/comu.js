@@ -85,10 +85,10 @@ var removeQna = function(num){
 			dataType: "json",
 			success: function(data){
 				if(data["remove"]){
-					alert("삭제 성공");
-					location.href="/classic_shop/community/qna.do";
+					alert("문의하신 글이 정상적으로 삭제 되었습니다.");
+					qnaListBtn();
 				} else{
-					alert("ㅠㅠ")
+					alert("다시 시도해주세요.")
 				}
 			}
 	}
@@ -166,63 +166,65 @@ var readQna = function(num){
 		return subjectStr;
 	}
 }
-/*
+
 //qnaModify
 var modifyQnaForm = function(num){
 	var modifyNum = num;
 	location.href="/classic_shop/community/qna/modify.do?num="+modifyNum;
-	return modifyNum;
 }
 
 var modifyQna = function(qnaModifyForm){
-	var urlSet = "/classic_shop/community/qna/modify.do?num="+modifyNum;
+	var num = qnaModifyForm.qnaNum.value;
+	var mem_num = qnaModifyForm.memNum.value;
+	var subject = qnaModifyForm.subjectValue.value;
+	var content = qnaModifyForm.qnaContent.value;
+	var secure = qnaModifyForm.qnaSecure.value;
+	var pwd = qnaModifyForm.qnaPwdValue.value;
+	var urlSet = "/classic_shop/community/qna/modify.do?num="+num;
 	var method = "PUT";
-	var num = qnaPutForm.num.value;
-	var subject = qnaPutForm.subject.value;
-	var content = qnaPutForm.content.value;
-	var secure = qnaPutForm.secure.value;
-	var pwd = qnaPutForm.pwd.value;
 	var http = new XMLHttpRequest();
-	var url = urlSet+"?num="+num+"&subject="+subject+"&content="+content+"&secure="+secure+"&pwd="+pwd;
+	var url = urlSet+"&mem_num="+num+"&subject="+subject+"&content="+content+"&secure="+secure+"&pwd="+pwd;
 	http.open(method, url, true);
 	http.onreadystatechange = function(){
 		if(this.readyState==4 && this.status==200){
 			var modifyVal = JSON.parse(this.responseText)["modify"];
 			if(modifyVal){
-				alert("수정 성공");
+				alert("등록하신 글이 정상적으로 수정 되었습니다.");
+				qnaListBtn();
 			} else {
-				alert("수정 실패");
+				alert("다시 시도해주세요.");
 			}
 		}
 	}
 	http.send();
 }
-*/
+
 //qnaInsert
 var registerQna = function(qnaRegisterForm){
-	var url = "community/qna/action.do";
-	var method = "POST";
-	var num = qnaRegisterForm.num.value;
+	//첨부파일 아직X
+	var mem_num = qnaRegisterForm.memNum.value;
 	var subject = qnaRegisterForm.subjectValue.value;
-	var content = qnaRegisterForm.qnaContents.value;
-	var secure = qnaRegisterForm.secure.value;
-	var pwd = qnaRegisterForm.pwd.value;
-	
-	var data = "num="+num+"&subject="+subject+"&content="+content+"&secure="+secure+"&pwd="+pwd;
-	
+	var content = qnaRegisterForm.qnaContent.value;
+	var secure = qnaRegisterForm.qnaSecure.value;
+	var pwd = qnaRegisterForm.qnaPwdValue.value;
+	var url = "/classic_shop/community/qna/register.do";
+	var method = "POST";
+	var data = "mem_num="+mem_num+"&subject="+subject+"&content="+content+"&secure="+secure+"&pwd="+pwd;
+	console.log(data);
 	var http = new XMLHttpRequest();
 	http.open(method, url, true);
 	http.onreadystatechange = function(){
 		if(this.readyState==4 && this.status==200){
 			var register = JSON.parse(this.response)["register"];
 			if(register){
-				alert("성공");
+				alert("문의하신 글이 정상적으로 등록 되었습니다.");
+				//location.href="/classic_shop/community/qna.do?num="+num;
+				qnaListBtn();
 			}else{
-				alert("실패");
+				alert("다시 시도해주세요.");
 			}
 		}
 	}
-	
 	http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	http.send(data);
 }
