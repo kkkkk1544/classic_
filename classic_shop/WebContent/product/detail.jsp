@@ -3,11 +3,32 @@
     
 
 
+<script>
+
+$(function(){
+	console.log(${productDetail});
+	$.ajax({
+		
+	
+		
+		
+	});//ajax
+});//ready
+</script>
 <div class="product_body">
+	
+	<p class="-detail-spec-description displaynone">
+		<input id="productNum" desc="상품번호" type="text" value="">
+		<input id="productName" desc="상품이름" type="text" value="">
+		<input id="productPrice" desc="상품가격" type="text" value="">
+		<input id="productMileage" desc="상품마일리지" type="text" value="">
+		<input id="productColor" desc="상품색상" type="text" value="">
+		<input id="productSize" desc="상품사이즈" type="text" value="">
+	</p>
 	<div id="productTitle">
 		<h2>Outer List <!--Custom content--></h2>
 	  <p><!--With a bit of extra markup, it's possible to add any kind of HTML content like headings, paragraphs, or buttons into thumbnails.-->
-	  	<a href="#" class="cate" style="text-align: right">코트</a>
+	  	<a href="#" class="cate">코트</a>
 	  	<a href="#" class="cate">자켓</a>
 	  	<a href="#" class="cate">점퍼</a> 
 	  	<a href="#" class="cate">가디건</a> 
@@ -25,19 +46,19 @@
 		<div class="detail_top_right">
 			<div class="detail_top_right_top">
 			<hr class="detail_hr">
-			<h3>Product Name</h3>
-			<p class="detail_top_right_description_one">product description Line1</p>
-			<p class="detail_top_right_description_two">product description Line2</p>
+			<h3>${productDetail.name}<%-- <c:forEach var="detail" items="${productDetail}">${detail.name}</c:forEach> --%></h3>
+			<p class="detail_top_right_description_one">${productDetail.main_info}</p><!-- product description Line1 -->
+			<p class="detail_top_right_description_two">${productDetail.sub_info}</p><!-- product description Line2 -->
 			</div>
 			<div class="detail_top_right_middle">
 			<table>
 				<tr>
 					<th>Price</th>
-					<td>100,000</td>
+					<td>${productDetail.price}</td>
 				</tr>
 				<tr>
 					<th>마일리지</th>
-					<td>1,000원(1%)</td>
+					<td>${productDetail.price*0.01}원(1%)</td>
 				</tr>
 			</table>
 			</div>
@@ -47,13 +68,15 @@
 				<table>
 					<tr>
 						<th>Color</th>
-						<td style="text-align: 'right';"><button type="button" class="colorbtn"></button>
-					        <button type="button" class="colorbtn2"></button>
+						<td style="text-align: 'right';" class="text-left">
+							<span style="display: inline-block; width:10px; height:10px; background-color:red;"></span> 
+							<span style="display: inline-block; width:10px; height:10px; background-color:blue;"></span>
+
 					    </td>
 					</tr>
 					<tr>
 						<th>Size</th>
-						<td><select></select></td>
+						<td><select>${productDetail.sizu}</select></td>
 					</tr>
 				</table>
 				<hr>
@@ -111,7 +134,7 @@
 	</ol>
 	<!-- 페이지 -->
 
-	<div class="carousel-inner">
+	<div class="carousel-inner"> <!-- 카로셀 -->
 		<!-- 슬라이드1 -->
 		<div class="item active"> 
 			<img src="http://www.blueb.co.kr/SRC2/_image/w01.jpg" style="width:100%" alt="First slide">
@@ -156,7 +179,7 @@
 	</div> <!-- 이미지슬라이드  -->
 	
 	<h6 id="product_qna"></h6>
-	<div id="" class="bs-example">
+	<div id="sidebox" class="bs-example">
 <!-- 	<div id="message" class="bs-example" data-example-id="simple-nav-tabs"> -->
 	    <ul class="nav nav-tabs">
 	      <li role="presentation" class="active"><a href="javascript:productDetailInfo()">DETAIL INFO</a></li>
@@ -165,21 +188,55 @@
 	      <li role="presentation"><a href="javascript:productQna()">QNA</a></li>
 	    </ul>
  	</div>
+ 	<script>
+ 		//https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/tabs/move
+ 		var currentPosition = parseInt($("#sidebox").css("top"));
+ 		$(window).scroll(function() { var position = $(window).scrollTop();
+		$("#sidebox").stop().animate({"top":position+currentPosition+"px"},100); });
+ 	</script>
 	<div class="highlight"><pre><code id="productDetailTest" class="language-html" data-lang="html">초기내용
 	</code></pre></div>
 <script>
 //$(function(){
 	var productDetailInfo=function(){
-		$(".language-html").html("안녕안녕 여기는 detail info.");
+		$.ajax({
+			url:"#",
+			dataType:"html",
+			type: "GET",
+			success: function(respData, status, jqXHR){
+				$(".language-html").html("안녕안녕 여기는 detail info.");
+			}
+		});
 	};
 	var shopGuide=function(){
-		$(".language-html").html("헬로우 이곳은 샵가이드얌.");
+		$.ajax({
+			url:"#",
+			dataType:"html",
+			type: "GET",
+			success: function(respData, status, jqXHR){
+				$(".language-html").html("헬로우 이곳은 샵가이드얌.");
+			}
+		});
 	};
 	var productReview=function(){
-		$(".language-html").html("요기는 프로덕트 리뷰~~~~예에에에~~~.");
+		$.ajax({
+			url:"#",
+			dataType:"html",
+			type: "GET",
+			success: function(respData, status, jqXHR){
+				$(".language-html").html("요기는 프로덕트 리뷰~~~~예에에에~~~.");
+			}
+		});
 	};
 	var productQna=function(){
-		$(".language-html").html("프롸덕 큐앤에이");
+		$.ajax({
+			url:"#",
+			dataType:"html",
+			type: "GET",
+			success: function(respData, status, jqXHR){
+				$(".language-html").html("프롸덕 큐앤에이");
+			}
+		});
 	};
 //});
 
