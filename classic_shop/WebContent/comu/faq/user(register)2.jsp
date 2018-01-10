@@ -2,11 +2,11 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="/comu/menu.jsp"%>
 
-<div class="comu_body">
+<div class="comu_body">	<!-- 일단 기능 이것저것 햇는데 필요없으면 빼도 될것 같아요~ -->
 	<p class="comu_title">FAQ</p>
 	<div class="panel-group" id="accordion" role="tablist"
 		aria-multiselectable="true">
-		<div class="panel panel-default">
+		<div class="panel panel-default">				<!-- h2로 바꾸면 모양이상해져서 h4로 햇어요~ -->
 			<div class="panel-heading" role="tab" id="headingOne">
 				<h4 class="panel-title"></h4>
 
@@ -58,10 +58,20 @@
 
 
 
-							<button type="button" class="btn btn-default btn-sm">
-								<span class="glyphicon glyphicon-file"></span> File
-							</button>
 
+
+<div class="form-group">
+ <div class="col-sm-10">
+  <div class="input-group">
+   <label class="input-group-btn" >
+    <span class="btn btn-default btn-file"	 >
+      <input type="file" name="attach_file" data-display-target="attachFile"
+     >
+    </span>
+   </label>
+  </div>
+ </di>v
+</div>
 
 
 							<!-- contact modal button -->

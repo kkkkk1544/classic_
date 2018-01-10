@@ -14,14 +14,14 @@
 			</a>
 
 			<div class="panel-heading" role="tab" id="headingOne">
-				<h4 class="panel-title">
+				<h2 class="panel-title">
 
 
 					<a data-toggle="collapse" data-parent="#accordion"
 						href="#faqTitleOne" aria-expanded="true"
 						aria-controls="faqTitleOne"> FAQ title </a>
 
-				</h4>
+				</h2>
 
 
 			</div>
