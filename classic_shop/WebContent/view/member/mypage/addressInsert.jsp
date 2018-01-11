@@ -78,7 +78,7 @@
 				
 						<div class="modify_btn_group">
 							<button class="btn btn-default" type="button">등록</button>
-							<button class="btn btn-default" type="button" onclick="location.href='<c:url value='/member/mypage/address.jsp'/>'">취소</button>
+							<button class="btn btn-default" type="button" onclick="location.href='<c:url value='/address/list.do?num=${loginMem.num}'/>'">취소</button>
 						</div>
 					</div>
 				</form>
