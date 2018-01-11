@@ -1,11 +1,6 @@
 <%@page import="com.classic.order.dto.WishDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-<input type="hidden" value="여기에 고객이 담은 정보가 일시적으로 들어가는 것">
-<input type="text" value="마찬가지" style="display:none;">
-
-
 <body>
 	<div class="container" id="mainDiv">
 		<h2 class="text-left" id="wishName">WISH LIST</h2>
@@ -37,8 +32,6 @@
 								<div>
 									<ul class="list-group">
 										<li class="list-group-item"><strong><a><input type="hidden" name="product_name" value="${wish.productName}" class="paramValue">${wish.productName}</a></strong></li>
-										<li class="list-group-item"><strong><input type="hidden" name="color" value="${wish.colour}" class="paramValue">color ${wish.colour}<input type="hidden" name="size" value="${wish.sizu}" class="paramValue"> size ${wish.sizu}</strong></li>
-										<li class="list-group-item"><button type="button" class="btn btn-default">옵션변경</button></li> <!--  onclick구현 -->
 									</ul>
 								</div>
 							</td>
@@ -59,7 +52,6 @@
 							<td>
 								<div class="buttonGroup">
 									<button type="button" class="btn btn-default partOrder">주문하기</button>									
-									<button type="button" class="btn btn-default">장바구니 등록</button>
 									<button type="button" class="btn btn-default" onclick="pickWishDel(${loginMem.num},${wish.productNum})">삭제</button>
 								</div>
 							</td>
@@ -171,7 +163,6 @@
 			<!-- ~~~~~~~~~~~~~~~mem_num으로 바꿔야댐~~~~~~~~`~~~~~~~~~~~~-->
 			<button type="button" class="btn btn-default" >선택주문</button>
 			<button type="button" class="btn btn-default"  onclick="delWishSelected(${loginMem.num})">선택삭제</button>
-			<button type="button" class="btn btn-default" id="moveCartBtn">선택한 상품을<br> 장바구니에 등록</button>
 			<button class="btn btn-default pull-right">전체상품 주문</button>
 		</div>
 		<div id="pagingBtn">

@@ -26,7 +26,7 @@ public class WIshListController extends HttpServlet{
 		try {
 			conn = ClassicDBConnection.getConnection();
 			WishListDAO wish = new WishListDAOImp(conn);
-			wishList = wish.selectWish(Integer.parseInt(strMemNum));//�굹以묒뿉 mem_num�쑝濡� 諛붽퓭�빞�븿
+			wishList = wish.selectWish(Integer.parseInt(strMemNum));
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
