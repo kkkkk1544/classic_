@@ -18,12 +18,13 @@ public class AddrBookDAOImp implements AddrBookDAO {
 	}
 
 	@Override
-	public List<AddrBookDTO> addrBookSelect() throws Exception {
+	public List<AddrBookDTO> addrBookSelect(int mem_num) throws Exception {
 		List<AddrBookDTO> addrBookList = new ArrayList<AddrBookDTO>();
-		String sql="select a.num, a.zip_code, a.base_addr, a.mem_num, a.detail_addr from addr_book a, member m where a.mem_num=m.num";
 		PreparedStatement pstmt=null;
 		ResultSet rs = null;
+		String sql="select a.num, a.zip_code, a.base_addr, a.mem_num, a.detail_addr from addr_book a, member m where a.mem_num=m.num and m.num=?";
 		pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, mem_num);
 		rs = pstmt.executeQuery();
 		while(rs.next()) {
 			AddrBookDTO addrBookDTO = new AddrBookDTO();
