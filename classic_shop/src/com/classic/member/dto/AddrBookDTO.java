@@ -50,7 +50,7 @@ public class AddrBookDTO {
 	}
 	@Override
 	public String toString() {
-		return "AddrBookDTO [num=" + num + ", mem_num=" + mem_num + ", zip_code=" + zip_code + ", base_addr="
-				+ base_addr + ", detail_addr=" + detail_addr + "]";
+		return "{\"num\":\"" + num + "\", \"mem_num\":\"" + mem_num + "\", \"zip_code\":\"" + zip_code
+				+ "\", \"base_addr\":\"" + base_addr + "\", \"detail_addr\":\"" + detail_addr + "\"}";
 	}
 }

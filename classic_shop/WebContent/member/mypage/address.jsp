@@ -6,7 +6,6 @@
 		<div class="address_wrap">
 			<h2 class="addressTitle">ADRESS LIST</h2>
 			<table class="table address_table">
-
 			
 				<thead>
 					<tr>
@@ -23,18 +22,20 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>
-							<label>
-								<input type="checkbox" id="blankCheckbox" value="option1" aria-label="checkbox">
-							</label>
-						</td>
-						<td>${addrBookList.num}</td>
-						<td><a href="#"></a></td>
-						<td>010-2222-3333</td>
-						<td>나야나</td>
-						<td>상태</td>
-					</tr>
+					<c:forEach var="addr" items="${addrBookList}">
+						<tr>
+							<td>
+								<label>
+									<input type="checkbox" id="blankCheckbox" value="${addr.num}" aria-label="checkbox">
+								</label>
+							</td>
+							<td>${addr.num }</td>
+							<td><a href="#">${addr.zip_code} ${addr.base_addr} ${addr.detail_addr}</a></td>
+							<td>010-2222-3333</td>
+							<td>나야나</td>
+							<td>상태</td>
+						</tr>
+					</c:forEach>
 				</tbody>
 			</table>
  			<div class="adress_btn_group">
@@ -62,18 +63,20 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>
-							<label>
-								<input type="checkbox" id="blankCheckbox" value="option1" aria-label="checkbox">
-							</label>
-						</td>
-						<td>1</td>
-						<td><a href="#">주소야주소</a></td>
-						<td>010-2222-3333</td>
-						<td>나야나</td>
-						<td>상태</td>
-					</tr>
+					<c:forEach var="addr" items="${addrBookList}">
+						<tr>
+							<td>
+								<label>
+									<input type="checkbox" id="blankCheckbox" value="option1" aria-label="checkbox">
+								</label>
+							</td>
+							<td>${addr.num }</td>
+							<td><a href="#">${addr.zip_code} ${addr.base_addr} ${addr.detail_addr}</a></td>
+							<td>010-2222-3333</td>
+							<td>나야나</td>
+							<td>상태</td>
+						</tr>
+					</c:forEach>
 				</tbody>
 			</table>
  			<div class="recentadress_btn_group">
