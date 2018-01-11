@@ -24,6 +24,7 @@ public class WIshListController extends HttpServlet{
 		Connection conn =null;
 		List<WishDTO> wishList = null;
 		try {
+			//djs
 			conn = ClassicDBConnection.getConnection();
 			WishListDAO wish = new WishListDAOImp(conn);
 			wishList = wish.selectWish(Integer.parseInt(strMemNum));
