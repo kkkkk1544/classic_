@@ -28,7 +28,7 @@ public class OrderListController extends HttpServlet {
 		String str_mem_num = req.getParameter("mem_num");
 		try {
 			conn=ClassicConnection.getConnection();
-			orderList = orderDAO.ListSelect(Integer.parseInt(str_mem_num));
+			orderList = orderDAO.ListSelect(1);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

@@ -1,7 +1,4 @@
-<%@page import="com.sun.xml.internal.txw2.Document"%>
-<%@page import="java.util.ArrayList"%>
 <%@page import="com.classic.order.dto.WishDTO"%>
-<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 

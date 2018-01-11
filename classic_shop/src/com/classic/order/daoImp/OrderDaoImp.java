@@ -18,7 +18,7 @@ public class OrderDaoImp implements OrderDAO{
 	}
 	
 	//▼ 이거 나중에 개발 다 끝났을 땐 지우셔야 돼요(다른 곳에 있는 syso 포함!)
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		Connection conn=null;
 		try {
 			conn=ClassicConnection.getConnection();
@@ -28,7 +28,7 @@ public class OrderDaoImp implements OrderDAO{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
+	}*/
 
 	@Override
 	public List<ListDTO> ListSelect(int mem_num) throws Exception {
@@ -45,13 +45,12 @@ public class OrderDaoImp implements OrderDAO{
 			ListDTO order = new ListDTO();
 			order.setPaid_num(rs.getInt("paid_num"));
 			order.setG_name(rs.getString("g_name"));
-			order.setG_color(rs.getString("g_color"));
-			order.setG_size(rs.getString("g_size"));
+			//order.setG_color(rs.getString("g_color"));
+			//order.setG_size(rs.getString("g_size"));
 			order.setPayment(rs.getInt("payment"));
 			order.setOrder_state(rs.getInt("order_state"));
 			orderList.add(order);
 		}
-		System.out.println("orderList: "+orderList);
 		return orderList;
 	}
 
