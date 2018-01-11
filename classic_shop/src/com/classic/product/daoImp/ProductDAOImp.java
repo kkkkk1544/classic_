@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.classic.common.dto.PagingDTO;
 import com.classic.product.controller.ProductDetail;
 import com.classic.product.dao.ProductDAO;
 import com.classic.product.dto.ProductDTO;

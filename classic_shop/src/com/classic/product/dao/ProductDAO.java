@@ -2,7 +2,6 @@ package com.classic.product.dao;
 
 import java.util.List;
 
-import com.classic.common.dto.PagingDTO;
 import com.classic.product.dto.ProductDTO;
 
 public interface ProductDAO {

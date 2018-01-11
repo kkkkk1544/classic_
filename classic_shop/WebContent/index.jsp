@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="<c:url value='/public/css/product.css' />">
+<script src="<c:url value='/public/js/banner.js'/>"></script>
 </head>
 <body>
 <!-- 이미지 슬라이드 -->
@@ -160,12 +161,6 @@
 			</div>		
 		</div>
 </div>
-
-<!-- 팝업창 -->
-<script>
-	//var popupBanner = window.open("banner/openPop.html","_blank","top=100 left=200 width=400 height=400");
-</script>
-
 <!-- 
 	안 한 거
 		2. 이메일 인증 api
