@@ -4,7 +4,9 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<link rel="stylesheet" href="<c:url value='/public/css/order.css' />">
+</head>
+<body>
 <input type="hidden" value="여기에 고객이 담은 정보가 일시적으로 들어가는 것">
 <input type="text" value="마찬가지" style="display:none;">
 

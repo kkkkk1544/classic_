@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<link rel="stylesheet" href="<c:url value='/public/css/product.css' />">
+</head>
+<body>
 <!-- 이미지 슬라이드 -->
 <div class="product_slide">
 	<div id="myCarousel" class="carousel slide" data-ride="carousel"> 

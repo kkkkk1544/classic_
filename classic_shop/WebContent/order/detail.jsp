@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<link rel="stylesheet" href="<c:url value='/public/css/order.css' />">
+</head>
+<body>
 <!-- div 추가 (orderDetail.css 삭제하고 order.css에 추가)-->
 <div class="order_detail_body">
 	<div id="mainTitle">    

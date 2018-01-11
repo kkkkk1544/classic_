@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<link rel="stylesheet" href="<c:url value='/public/css/order.css' />">
+</head>
 <body>
 	<div class="container" id="orderMainDiv">
 		<h2 id="orderName">주문서</h2>

@@ -21,7 +21,7 @@ public class QnaDAOImp implements QnaDAO{
 	@Override
 	public List<QnaDTO> selectQna() throws Exception {
 		List<QnaDTO> qnaList = new ArrayList<QnaDTO>();
-		String sql = "SELECT q.num, m.id as name, q.subject, q.count, q.indate, q.secure"
+		String sql = "SELECT q.num, q.mem_num, m.id as name, q.subject, q.count, q.indate, q.secure"
 				+ " FROM qna q, member m"
 				+ " WHERE q.mem_num=m.num"
 				+ " ORDER BY q.num DESC";
@@ -32,6 +32,7 @@ public class QnaDAOImp implements QnaDAO{
 		while(rs.next()) {
 			QnaDTO qnaDTO = new QnaDTO();
 			qnaDTO.setNum(rs.getInt("num"));
+			qnaDTO.setMem_num(rs.getInt("mem_num"));
 			qnaDTO.setName(rs.getString("name"));
 			qnaDTO.setSubject(rs.getInt("subject"));
 			qnaDTO.setCount(rs.getInt("count"));

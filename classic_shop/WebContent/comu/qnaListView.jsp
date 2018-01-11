@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<link rel="stylesheet" href="<c:url value='/public/css/comu.css' />">
+<script src="<c:url value='/public/js/comu.js'/>"></script>
+</head>
+<body>
 <!-- COMMUNITY MENU -->
 <div class="comu_menu">
 	<div class="container">
@@ -28,22 +32,22 @@
 					<c:forEach var="qnaList" items="${qnaList}">
 						<tr>
 							<td>${qnaList.num}</td>
-							<td style="text-align: left;">
-								<a href="javascript:readQna('${qnaList.num}')">
-									<c:choose>
-										<c:when test="${qnaList.subject==0}">상품 문의</c:when>
-										<c:when test="${qnaList.subject==1}">배송 문의</c:when>
-										<c:when test="${qnaList.subject==2}">배송 전 변경</c:when>
-										<c:when test="${qnaList.subject==3}">입금 문의</c:when>
-										<c:when test="${qnaList.subject==4}">교환/환불 문의</c:when>
-										<c:when test="${qnaList.subject==5}">기타 문의</c:when>
-									</c:choose>
-								</a>
-								<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+								<td style="text-align: left;">
+									<a href="javascript:readQna('${qnaList.num}')">
+										<c:choose>
+											<c:when test="${qnaList.subject==0}">상품 문의</c:when>
+											<c:when test="${qnaList.subject==1}">배송 문의</c:when>
+											<c:when test="${qnaList.subject==2}">배송 전 변경</c:when>
+											<c:when test="${qnaList.subject==3}">입금 문의</c:when>
+											<c:when test="${qnaList.subject==4}">교환/환불 문의</c:when>
+											<c:when test="${qnaList.subject==5}">기타 문의</c:when>
+										</c:choose>
+									</a>
+									<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
 									<c:if test="${qnaList.secure==1}">
 										<span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
 									</c:if>
-							</td>
+								</td>
 							<td>${qnaList.name}</td>
 							<td>${qnaList.indate}</td>
 							<td>${qnaList.count}</td>

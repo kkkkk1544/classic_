@@ -15,6 +15,9 @@ $(function(){
 	});//ajax
 });//ready
 </script>
+<link rel="stylesheet" href="<c:url value='/public/css/product.css' />">
+</head>
+<body>
 <div class="product_body">
 	
 	<p class="-detail-spec-description displaynone">

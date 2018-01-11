@@ -1,6 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<!-- Google Login -->
+<meta name="google-signin-scope" content="profile email">
+<meta name="google-signin-client_id" content="785211237752-m7ipg6nvj45vdhjoc3i2di29u5g4m4qj.apps.googleusercontent.com">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<link rel="stylesheet" href="<c:url value='/public/css/member.css' />">
+<script src="<c:url value='/public/js/member.js'/>"></script>
+</head>
+<body>
 <div class="member_body">
 	<div class="container">
 		<form name="loginForm" action="<c:url value='/login.do'/>" method="post">

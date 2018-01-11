@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-
+<link rel="stylesheet" href="<c:url value='/public/css/product.css' />">
+</head>
+<body>
 <div class="product_body container">
 <div id="productTitle">
 	<h2>Outer List <!--Custom content--></h2>
