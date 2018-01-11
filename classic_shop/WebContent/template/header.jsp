@@ -35,7 +35,7 @@
 							<li><a href="#">NEW</a></li>
 							<li><a href="#">BEST</a></li>
 							<li role="presentation" class="dropdown">
-								<a class="dropdown-toggle" href="<c:url value='/product/list.jsp' />" role="button" aria-expanded="false">OUTER</a>
+								<a class="dropdown-toggle" href="<c:url value='/view/product/list.jsp' />" role="button" aria-expanded="false">OUTER</a>
 								<%-- <a class="dropdown-toggle" data-toggle="dropdown" href="<c:url value='/product/list/outerList.jsp' />" role="button" aria-expanded="false">OUTER</a>
 								 --%>
 								 <ul class="dropdown-menu" role="menu">
@@ -102,24 +102,24 @@
 						<c:choose>
 							<c:when test="${loginMem ne null}">
 								<li role="presentation" class="dropdown">
-									<a class="dropdown-toggle" href="<c:url value='/member/mypage/detail.jsp'/>" role="button" aria-expanded="false">MY PAGE</a>
+									<a class="dropdown-toggle" href="<c:url value='/view/member/mypage/detail.jsp'/>" role="button" aria-expanded="false">MY PAGE</a>
 									<ul class="dropdown-menu" role="menu">
-										<li><a href="<c:url value='/member/mypage/modify.jsp'/>">회원정보수정</a></li>
-										<li><a href="<c:url value='/member/mypage/address.jsp'/>">배송주소록</a></li>
-										<li><a href="<c:url value='/member/mypage/mileage.jsp'/>">적립금</a></li>
-										<li><a href="<c:url value='/member/mypage/coupon.jsp'/>">쿠폰</a></li>
-										<li><a href="<c:url value='/order/cart/cart.jsp'/>">장바구니</a></li>
+										<li><a href="<c:url value='/view/member/mypage/modify.jsp'/>">회원정보수정</a></li>
+										<li><a href="<c:url value='/view/member/mypage/address.jsp'/>">배송주소록</a></li>
+										<li><a href="<c:url value='/view/member/mypage/mileage.jsp'/>">적립금</a></li>
+										<li><a href="<c:url value='/view/member/mypage/coupon.jsp'/>">쿠폰</a></li>
+										<li><a href="<c:url value='/view/order/cart/cart.jsp'/>">장바구니</a></li>
 										<li><a href="<c:url value='/order/wishlist.do?num=22'/>">위시리스트</a></li>
 										<li><a href="#">주문내역</a></li>
-										<li><a href="<c:url value='/member/mypage/myposting.jsp'/>">내가쓴글</a></li>
+										<li><a href="<c:url value='/view/member/mypage/myposting.jsp'/>">내가쓴글</a></li>
 									</ul>
 								</li>
 								<li>
-									<a href="<c:url value='/order/cart/cart.jsp'/>">CART
+									<a href="<c:url value='/view/order/cart/cart.jsp'/>">CART
 										<span class="badge badge-pill badge-secondary" style="background-color: #ccc;">0</span>
 									</a>
 								</li>
-								<li><a href="<c:url value='/order/list.jsp' />">ORDER</a></li>
+								<li><a href="<c:url value='/order/list.do?mem_num=${loginMem.num}' />">ORDER</a></li>
 							</c:when>
 							<c:otherwise>
 								<li role="presentation" class="dropdown">
@@ -152,7 +152,7 @@
 									</ul>
 								</li>
 							<li role="presentation" class="dropdown">
-								<a class="dropdown-toggle" href="<c:url value='/product/search/searchForm.jsp' />" role="button">&#128269;</a>
+								<a class="dropdown-toggle" href="<c:url value='/view/product/search/searchForm.jsp' />" role="button">&#128269;</a>
 								<ul class="dropdown-menu" role="menu">
 									<li><input type="text" placeholder="상품명 검색" id="productSearch">
 										<button id="searchBtn">&#128269;</button></li>
