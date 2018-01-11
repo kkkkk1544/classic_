@@ -18,7 +18,7 @@ public class OrderDaoImp implements OrderDAO{
 	}
 	
 	//▼ 이거 나중에 개발 다 끝났을 땐 지우셔야 돼요(다른 곳에 있는 syso 포함!)
-	/*public static void main(String[] args) {
+	public static void main(String[] args) {
 		Connection conn=null;
 		try {
 			conn=ClassicConnection.getConnection();
@@ -28,21 +28,23 @@ public class OrderDaoImp implements OrderDAO{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}*/
+	}
 
 	@Override
 	public List<ListDTO> ListSelect(int mem_num) throws Exception {
 		List<ListDTO> orderList = new ArrayList<ListDTO>();
-		String sql="select p.num paid_num,g.name as g_name,p.payment,p.order_state " + 
+		String sql="select m.num mem_num, p.num paid_num,g.name as g_name,p.payment,p.order_state " + 
 				"from paid p, product g, member m " + 
 				"where m.num=? and " + 
 				"p.product_num=g.num and " + 
 				"p.mem_num=m.num";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, mem_num);
+		System.out.println("mem_num:"+mem_num);
 		ResultSet rs = pstmt.executeQuery();
 		while(rs.next()) {
 			ListDTO order = new ListDTO();
+			order.setMem_num(rs.getInt("mem_num"));
 			order.setPaid_num(rs.getInt("paid_num"));
 			order.setG_name(rs.getString("g_name"));
 			//order.setG_color(rs.getString("g_color"));

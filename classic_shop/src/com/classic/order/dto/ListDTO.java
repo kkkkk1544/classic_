@@ -1,12 +1,21 @@
 package com.classic.order.dto;
 
 public class ListDTO {
+	int mem_num;
 	int paid_num;
 	String g_name;
 	String g_color;
 	String g_size;
 	int payment;
 	int order_state;
+	
+	
+	public int getMem_num() {
+		return mem_num;
+	}
+	public void setMem_num(int mem_num) {
+		this.mem_num = mem_num;
+	}
 	public int getPaid_num() {
 		return paid_num;
 	}
@@ -45,9 +54,11 @@ public class ListDTO {
 	}
 	@Override
 	public String toString() {
-		return "ListDTO [paid_num=" + paid_num + ", g_name=" + g_name + ", g_color=" + g_color + ", g_size=" + g_size
-				+ ", payment=" + payment + ", order_state=" + order_state + "]";
+		return "{ \"mem_num\":\"" + mem_num + "\", \"paid_num\":\"" + paid_num + "\", \"g_name\":\"" + g_name
+				+ "\", \"g_color\":\"" + g_color + "\", \"g_size\":\"" + g_size + "\", \"payment\":\"" + payment
+				+ "\", \"order_state\":\"" + order_state + "\"}";
 	}
+	
 	
 	
 }
