@@ -35,7 +35,7 @@ public class OrderListController extends HttpServlet {
 			ClassicConnection.close(conn, null, null); //???
 		}
 		req.setAttribute("orderList", orderList);
-		req.getRequestDispatcher("/order/list.jsp").forward(req, resp);	
+		req.getRequestDispatcher("/view/order/list.jsp").forward(req, resp);	
 		
 	}
 }

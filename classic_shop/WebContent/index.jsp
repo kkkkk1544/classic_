@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<link rel="stylesheet" href="<c:url value='/public/css/product.css' />">
+<script src="<c:url value='/public/js/banner.js'/>"></script>
+</head>
+<body>
 <!-- 이미지 슬라이드 -->
 <div class="product_slide">
 	<div id="myCarousel" class="carousel slide" data-ride="carousel"> 
@@ -158,25 +161,48 @@
 			</div>		
 		</div>
 </div>
-
-<!-- 팝업창 -->
-<script>
-	//var popupBanner = window.open("banner/openPop.html","_blank","top=100 left=200 width=400 height=400");
-</script>
-
 <!-- 
 	안 한 거
-		2. 새 창 디자인(비밀번호 입력)
-		3. 네비게이션 三
-		4. +, - 아이콘 추가 (3)
-		5. 버튼 위치 마무리
-		6. 이메일 인증 api
-		7. notice 카메라 아이콘
-		8. qna 등록/수정/삭제 (2) --등록/수정(json) / 삭제(ajax)
-		9. banner (ajax)
-		10. join
-			-- email check (ajax) -- 중복 이메일 X
-		11. footer map
-		12. product search
-			-- search input (ajax)
+		2. 이메일 인증 api
+		3. 구글 로그인
+		4. banner cookie 구현
+		5. qna 유효성 검사 및 자잘한 것들
+			- 내 글만 확인하기
+			- 비공개글 클릭 시 비밀번호 입력창
+			- 비공개글 삭제 시 비밀번호 입력창
+			- 글 수정 후 해당 글로 이동하기(넘버값 어떻게?)
+			- 글 등록 후 해당 글로 이동하기(넘버값 어떻게?)
+			- 글 등록 시 subject, content, secure, pwdInput ajax 구현
+			- 첨부파일 기능 아예 안함
+			- qna reply 기능 아예 안함
+		6. product search
+		7. footer map
+			- 지도에 아이콘 띄우기
+			- 내용 채우기
+		8. CSS 총정리(로그인, 회원가입, 게시판)
+			- 네비게이션 三
+			- 반응형
+			- 버튼 위치
+			- 게시판 아이콘(카메라, +,-)
+			- 테이블 효과 제거
+			- 테이블 위치 및 여백, 출력 라인
+			- 아코디언
+			- 비밀번호 입력창 / 로그인 id/pw 찾기창
  -->
+<!-- 
+	한 거
+		1. 세션 로그인
+		2. 회원가입
+		3. 게시판 유효성 검사/첨부파일/reply 제외한 기본적인 CRUD
+		4. header/footer(회원/비회원 필터 & 지도 제외)
+ -->
+<!-- 
+	이메일 인증 참고자료
+	http://altongmon.tistory.com/308
+	http://sick33.tistory.com/30
+	http://hunit.tistory.com/306
+	http://compunication.tistory.com/15
+	https://prezi.com/ggcv6bezgvmr/mvc/
+ -->
+
+ 

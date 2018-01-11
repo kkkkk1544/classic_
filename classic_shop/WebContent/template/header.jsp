@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -8,46 +8,33 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="<c:url value='/public/bootstrap/css/bootstrap.css' />">
-<!-- Google Login -->
-<meta name="google-signin-scope" content="profile email">
-<meta name="google-signin-client_id" content="785211237752-m7ipg6nvj45vdhjoc3i2di29u5g4m4qj.apps.googleusercontent.com">
-<script src="https://apis.google.com/js/platform.js" async defer></script>
 <!-- awesome Icon -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- 개인 lib -->
 <link rel="stylesheet" href="<c:url value='/public/css/common.css' />">
-<link rel="stylesheet" href="<c:url value='/public/css/comu.css' />">
-<link rel="stylesheet" href="<c:url value='/public/css/product.css' />">
-<link rel="stylesheet" href="<c:url value='/public/css/member.css' />">
-<link rel="stylesheet" href="<c:url value='/public/css/order.css' />">
 <!-- jQuery ui CSS -->
 <link rel="stylesheet" href="<c:url value='/public/js/jquery-ui/jquery-ui.min.css' />">
 <!-- jQuery lib -->
 <script src='<c:url value="/public/js/jquery/jquery-3.2.1.min.js"/>'></script>
 <script src='<c:url value="/public/js/jquery-ui/jquery-ui.min.js"/>'></script>
-<!-- kakao 지도 api -->
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9634cbc392b8b80779d4f419ee72bf3a"></script>
 <title>CLASSIC</title>
-</head>
-<body>
 <script>
 	if("${msg}"!=""){
 		alert("${msg}");	
 	}
 </script>
 <c:remove var="msg"/>
-	<header>
 		<nav class="navbar navbar-default navbar-fixed-top" style="background-color: #ffffff;">
 			<div class="container">
 				<!-- 상품 Nav -->
 				<div id="productNav">
 					<div class="nav navbar-nav navbar-left">
 						<ul class="nav nav-pills">
-							<li><a href="<c:url value='/index.jsp' />">CLASSIC</a></li>
+							<li><a href="<c:url value='/main.do' />">CLASSIC</a></li>
 							<li><a href="#">NEW</a></li>
 							<li><a href="#">BEST</a></li>
 							<li role="presentation" class="dropdown">
-								<a class="dropdown-toggle" href="<c:url value='/product/list.jsp' />" role="button" aria-expanded="false">OUTER</a>
+								<a class="dropdown-toggle" href="<c:url value='/view/product/list.jsp' />" role="button" aria-expanded="false">OUTER</a>
 								<%-- <a class="dropdown-toggle" data-toggle="dropdown" href="<c:url value='/product/list/outerList.jsp' />" role="button" aria-expanded="false">OUTER</a>
 								 --%>
 								 <ul class="dropdown-menu" role="menu">
@@ -114,24 +101,24 @@
 						<c:choose>
 							<c:when test="${loginMem ne null}">
 								<li role="presentation" class="dropdown">
-									<a class="dropdown-toggle" href="<c:url value='/member/mypage/detail.jsp'/>" role="button" aria-expanded="false">MY PAGE</a>
+									<a class="dropdown-toggle" href="<c:url value='/view/member/mypage/detail.jsp'/>" role="button" aria-expanded="false">MY PAGE</a>
 									<ul class="dropdown-menu" role="menu">
-										<li><a href="<c:url value='/member/mypage/modify.jsp'/>">회원정보수정</a></li>
-										<li><a href="<c:url value='/member/mypage/address.jsp'/>">배송주소록</a></li>
-										<li><a href="<c:url value='/member/mypage/mileage.jsp'/>">적립금</a></li>
-										<li><a href="<c:url value='/member/mypage/coupon.jsp'/>">쿠폰</a></li>
-										<li><a href="<c:url value='/order/cart/cart.jsp'/>">장바구니</a></li>
-										<li><a href="<c:url value='/order/wishlist.do?num=${loginMem.num}'/>">위시리스트</a></li>
+										<li><a href="<c:url value='/view/member/mypage/modify.jsp'/>">회원정보수정</a></li>
+										<li><a href="<c:url value='/view/address/list.do?num=${loginMem.num}'/>">배송주소록</a></li>
+										<li><a href="<c:url value='/view/member/mypage/mileage.jsp'/>">적립금</a></li>
+										<li><a href="<c:url value='/view/member/mypage/coupon.jsp'/>">쿠폰</a></li>
+										<li><a href="<c:url value='/view/order/cart/cart.jsp'/>">장바구니</a></li>
+										<li><a href="<c:url value='/view/order/wishlist.do?num=${loginMem.num}'/>">위시리스트</a></li>
 										<li><a href="#">주문내역</a></li>
-										<li><a href="<c:url value='/member/mypage/myposting.jsp'/>">내가쓴글</a></li>
+										<li><a href="<c:url value='/view/member/mypage/myposting.jsp'/>">내가쓴글</a></li>
 									</ul>
 								</li>
 								<li>
-									<a href="<c:url value='/order/cart/cart.jsp'/>">CART
+									<a href="<c:url value='/view/order/cart/cart.jsp'/>">CART
 										<span class="badge badge-pill badge-secondary" style="background-color: #ccc;">0</span>
 									</a>
 								</li>
-								<li><a href="<c:url value='/order/list.jsp' />">ORDER</a></li>
+								<li><a href="<c:url value='/order/list.do?mem_num=${loginMem.num}' />">ORDER</a></li>
 							</c:when>
 							<c:otherwise>
 								<li role="presentation" class="dropdown">
@@ -164,7 +151,7 @@
 									</ul>
 								</li>
 							<li role="presentation" class="dropdown">
-								<a class="dropdown-toggle" href="<c:url value='/product/search/searchForm.jsp' />" role="button">&#128269;</a>
+								<a class="dropdown-toggle" href="<c:url value='/view/product/search/searchForm.jsp' />" role="button">&#128269;</a>
 								<ul class="dropdown-menu" role="menu">
 									<li><input type="text" placeholder="상품명 검색" id="productSearch">
 										<button id="searchBtn">&#128269;</button></li>
@@ -175,4 +162,3 @@
 				</div>
 			</div>
 		</nav>
-	</header>
