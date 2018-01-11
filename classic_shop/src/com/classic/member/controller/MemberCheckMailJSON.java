@@ -1,6 +1,7 @@
 package com.classic.member.controller;
 
 import java.io.IOException;
+import java.sql.Connection;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.classic.member.daoImp.MemberDAOImp;
 import com.classic.member.dto.MemberDTO;
 import com.classic.member.serviceImp.MemberServiceImp;
 
@@ -16,17 +18,12 @@ public class MemberCheckMailJSON extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String mail = req.getParameter("mail");
-		boolean checkEmailMsg = false;
+		boolean checkEmailMsg = false; //email 사용 가능
 		if(mail!=null && mail.trim()!="") {
-			MemberDTO memDTO = new MemberServiceImp().checkMail(mail);
-			if(memDTO==null) {
-				checkEmailMsg = true;
-			}
-		} else {
-			checkEmailMsg = true;
+			checkEmailMsg = new MemberServiceImp().checkMail(mail);
 		}
 		resp.setCharacterEncoding("UTF-8");
 		resp.setContentType("application/json");
-		resp.getWriter().append("{\"checkEmailMsg\":"+checkEmailMsg+"}");
+		resp.getWriter().append("{\"checkEmailMsg\":\""+checkEmailMsg+"\"}");
 	}
 }

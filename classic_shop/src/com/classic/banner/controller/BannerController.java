@@ -19,7 +19,7 @@ public class BannerController extends HttpServlet{
 		req.setCharacterEncoding("UTF-8");
 		List<BannerDTO> bannerDTO = new BannerServiceImp().readBanner();
 		req.setAttribute("bannerDTO", bannerDTO);
-		req.getRequestDispatcher("/banner/openPop.html").forward(req, resp);
+		req.getRequestDispatcher("/view/banner/openPop.html").forward(req, resp);
 	}
 
 }
