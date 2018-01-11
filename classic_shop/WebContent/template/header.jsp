@@ -24,7 +24,6 @@
 	}
 </script>
 <c:remove var="msg"/>
-	<header>
 		<nav class="navbar navbar-default navbar-fixed-top" style="background-color: #ffffff;">
 			<div class="container">
 				<!-- 상품 Nav -->
@@ -163,4 +162,3 @@
 				</div>
 			</div>
 		</nav>
-	</header>
