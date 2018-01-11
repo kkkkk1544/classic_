@@ -80,8 +80,19 @@ public class WishListDAOImp implements WishListDAO{
 	public WishDTO selectProduct(int product_num) throws Exception {
 		WishDTO product =null;
 		String sql ="select p.name , p.price, (select name from colour where product_num = p.num), (select )";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, product_num);
+		ResultSet rs = pstmt.executeQuery();
+		if(rs.next()) {
+			product.setProductName(rs.getString("product_name"));
+			product.setProductNum(rs.getInt("product_num"));
+			product.setSizu(rs.getString("sizu"));
+			product.setColour(rs.getString("colour"));
+			product.setWishQuantity(rs.getInt("count"));
+			product.setPrice(rs.getInt("price"));
+		}
 		return product;
-		
+		//sql문 미완성
 	}
 	
 }

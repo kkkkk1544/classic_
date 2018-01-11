@@ -702,7 +702,7 @@ conn classic_admin/admin1234
 
 -- 주문 db
 insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,1,1,null,2017110812345678,'김경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','벨고장났어요',to_date('2017-11-09','yyyy-mm-dd'),0,100000,90000,to_date('2017-11-08','yyyy-mm-dd'),1,'김경미');
+values (paid_seq.nextval,1,1,null,2017110812345678,'김경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','벨고장났어요',to_date('2017-11-09','yyyy-mm-dd'),0,100000,90000,to_date('2017-11-08','yyyy-mm-dd'),1,'김경미',);
 insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
 values (paid_seq.nextval,1,1,null,2017112900000001,'박경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','배송 전 연락 부탁드려요',null,0,100000,90000,to_date('2017-11-29','yyyy-mm-dd'),0,'함혜진');
 insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
