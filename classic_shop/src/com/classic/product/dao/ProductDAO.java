@@ -11,4 +11,5 @@ public interface ProductDAO {
 	public List<ProductDTO> selectProductList(String cate) throws Exception;
 	//public List<ProductDTO> selectProductList(pagingDTO p) throws Exception;
 	public ProductDTO selectProduct(int num) throws Exception;
+	
 }

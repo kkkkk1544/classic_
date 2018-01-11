@@ -27,6 +27,7 @@ public class ProductDAOImp implements ProductDAO{
 /*	public ProductDAOImp(Connection conn) {
 		this.conn = conn;
 	}*/
+	
 	@Override
 	public List<ProductDTO> selectProductList(String cate) throws Exception {
 		List<ProductDTO> productList = new ArrayList<ProductDTO>();

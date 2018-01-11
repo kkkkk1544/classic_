@@ -2,7 +2,6 @@ package com.classic.order.controller;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -25,21 +24,16 @@ public class WIshListController extends HttpServlet{
 		Connection conn =null;
 		List<WishDTO> wishList = null;
 		try {
+			//djs
 			conn = ClassicDBConnection.getConnection();
 			WishListDAO wish = new WishListDAOImp(conn);
-			wishList = wish.selectWish(Integer.parseInt(strMemNum));//�굹以묒뿉 mem_num�쑝濡� 諛붽퓭�빞�븿
+			wishList = wish.selectWish(Integer.parseInt(strMemNum));
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			ClassicDBConnection.close(null,null,conn);
 		}
-		if(wishList.isEmpty()) {
-			req.getSession().setAttribute("wishList", null);
-			req.getRequestDispatcher("/view/order/wish/wish.jsp").forward(req, resp);
-		} else {
-			req.getSession().setAttribute("wishList", wishList);
-			req.getRequestDispatcher("/view/order/wish/wish.jsp").forward(req, resp);
-		}
+		req.getSession().setAttribute("wishList", wishList);
+		req.getRequestDispatcher("/view/order/wish/wish.jsp").forward(req, resp);
 	}
-	
 }

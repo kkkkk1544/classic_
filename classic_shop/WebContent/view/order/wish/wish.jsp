@@ -1,12 +1,11 @@
+<%@page import="com.classic.order.dto.WishDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="<c:url value='/public/css/order.css' />">
 </head>
 <body>
-<input type="hidden" value="여기에 고객이 담은 정보가 일시적으로 들어가는 것">
-<input type="text" value="마찬가지" style="display:none;">
-
-
+<!-- <input type="hidden" value="여기에 고객이 담은 정보가 일시적으로 들어가는 것">
+<input type="text" value="마찬가지" style="display:none;"> -->
 <body>
 	<div class="container" id="mainDiv">
 		<h2 class="text-left" id="wishName">WISH LIST</h2>
@@ -25,10 +24,10 @@
 			</thead>
 			<tbody id="wishContents">
 			<c:choose>
-				<c:when test="${wishList}">
+				<c:when test="${(fn:length(wishList))!=0}">
 					<c:forEach var="wish" items="${wishList}">
 						<tr>
-							<td><input type="checkbox" value="${wish.productNum}" class="checkWish"></td>
+							<td><input type="checkbox" value="${wish.productNum}" class="checkWish paramValue" name="product_num"></td>
 							<td class="infoList">
 								<div class="infoListDiv">
 									<div>
@@ -37,14 +36,12 @@
 								</div>
 								<div>
 									<ul class="list-group">
-										<li class="list-group-item"><strong><a>${wish.productName}</a></strong></li>
-										<li class="list-group-item"><strong>color ${wish.colour} size ${wish.sizu}</strong></li>
-										<li class="list-group-item"><button type="button" class="btn btn-default">옵션변경</button></li> <!--  onclick구현 -->
+										<li class="list-group-item"><strong><a><input type="hidden" name="product_name" value="${wish.productName}" class="paramValue">${wish.productName}</a></strong></li>
 									</ul>
 								</div>
 							</td>
-							<td>${wish.price}원</td>
-							<td>${wish.wishQuantity}개</td>
+							<td><input type="hidden" name="price" value="${wish.price}" class="paramValue">${wish.price}원</td>
+							<td><input type="hidden" name="wishQuantity" value="${wish.wishQuantity}" class="paramValue">${wish.wishQuantity}개</td>
 							<fmt:parseNumber var="percent" value="${((wish.price*wish.wishQuantity)*0.02)}" integerOnly="true" />
 							<td>${percent}</td>
 							<c:choose>
@@ -59,9 +56,8 @@
 							</c:choose>
 							<td>
 								<div class="buttonGroup">
-									<button type="button" class="btn btn-default" id="partOrder">주문하기</button>									
-									<button type="button" class="btn btn-default">장바구니 등록</button>
-									<button type="button" class="btn btn-default" onclick="pickWishDel(22,${wish.productNum})">삭제</button>
+									<button type="button" class="btn btn-default partOrder">주문하기</button>									
+									<button type="button" class="btn btn-default" onclick="pickWishDel(${loginMem.num},${wish.productNum})">삭제</button>
 								</div>
 							</td>
 						</tr>
@@ -168,11 +164,10 @@
 			</tbody>
 		</table>
 		<div id="wishCRUDBtn">
-			<button type="button" class="btn btn-default" onclick="allWishDel(22)">전체삭제</button>
+			<button type="button" class="btn btn-default" onclick="allWishDel(${loginMem.num})">전체삭제</button>
 			<!-- ~~~~~~~~~~~~~~~mem_num으로 바꿔야댐~~~~~~~~`~~~~~~~~~~~~-->
 			<button type="button" class="btn btn-default" >선택주문</button>
-			<button type="button" class="btn btn-default"  onclick="delWishSelected(22)">선택삭제</button>
-			<button type="button" class="btn btn-default" id="moveCartBtn">선택한 상품을<br> 장바구니에 등록</button>
+			<button type="button" class="btn btn-default"  onclick="delWishSelected(${loginMem.num})">선택삭제</button>
 			<button class="btn btn-default pull-right">전체상품 주문</button>
 		</div>
 		<div id="pagingBtn">
@@ -196,7 +191,12 @@
 		</div>
 	</div>
 <script>
-$("#partOrder").click(function(){
+$(".partOrder").click(function(){
+	url="http://localhost:9999/classic_shop/order/order_sheet/order_sheet.jsp?";
+	$('input[class*="paramValue"]').each(function(){
+		console.log(this.value);
+		
+	});
 	
 });
 $("#allCheck").click(function(){
@@ -212,7 +212,7 @@ $("#allCheck").click(function(){
 });
 
 var delWishSelected=function(mem_num){
-	if(${wishList!=null}){
+	if(${(fn:length(wishList))!=0}){
 		var url ="http://localhost:9999/classic_shop/order/delwish.do?num="+mem_num+"&product_num=";
 		var method="GET";
 		var http = new XMLHttpRequest();
@@ -227,6 +227,7 @@ var delWishSelected=function(mem_num){
 				var delete_json = JSON.parse(this.response);
 				if(delete_json["delete"]){
 					alert("삭제되었습니다.");
+					location.reload();
 				}else{
 					alert("삭제실패");
 				}
@@ -239,7 +240,7 @@ var delWishSelected=function(mem_num){
 	}
 }
 var allWishDel = function(mem_num){
-	if(${wishList!=null}){
+	if(${(fn:length(wishList))!=0}){
 		var url ="http://localhost:9999/classic_shop/order/delwish.do?num="+mem_num;
 		var method="DELETE";
 		var http = new XMLHttpRequest();
@@ -270,6 +271,7 @@ var pickWishDel = function(mem_num,product_num){
 			console.log(delete_json["delete"]);
 			if(delete_json["delete"]){
 				alert("삭제되었습니다.");
+				location.reload();
 			}else{
 				alert("삭제실패");
 			}
