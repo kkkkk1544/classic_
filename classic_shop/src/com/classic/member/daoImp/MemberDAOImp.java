@@ -73,19 +73,18 @@ public class MemberDAOImp implements MemberDAO{
 	}
 
 	@Override
-	public MemberDTO selectMail(String mail) throws Exception {
-		MemberDTO memDTO = null;
-		String sql = "SELECT num FROM member WHERE mail=?";
+	public int selectMail(String mail) throws Exception {
+		int mailNumber = 0;
+		String sql = "SELECT * FROM member WHERE mail=?";
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, mail);
 		rs = pstmt.executeQuery();
 		if(rs.next()) {
-			memDTO = new MemberDTO();
-			memDTO.setNum(rs.getInt("num"));
+			mailNumber = 1;
 		}
-		return memDTO;
+		return mailNumber;
 	}
 //주연 끝	
 

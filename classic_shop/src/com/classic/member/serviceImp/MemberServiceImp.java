@@ -43,7 +43,6 @@ public class MemberServiceImp implements MemberService{
 	@Override
 	public boolean registerMember(MemberDTO memDTO) {
 		boolean register = false;
-		System.out.println("seri memDTO : "+memDTO);
 		try {
 			conn = ClassicDBConnection.getConnection();
 			conn.setAutoCommit(false);
@@ -66,17 +65,20 @@ public class MemberServiceImp implements MemberService{
 	}
 
 	@Override
-	public MemberDTO checkMail(String mail) {
-		MemberDTO memDTO = null;
+	public boolean checkMail(String mail) {
+		boolean checkEmailMsg = false;
 		try {
 			conn = ClassicDBConnection.getConnection();
-			memDTO = new MemberDAOImp(conn).selectMail(mail);
+			int mailNumber = new MemberDAOImp(conn).selectMail(mail);
+			if(mailNumber==1) {
+				checkEmailMsg = true; //true인 경우 email 중복
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			ClassicDBConnection.close(conn);
 		}
-		return memDTO;
+		return checkEmailMsg;
 	}
 //주연 끝
 

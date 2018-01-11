@@ -23,12 +23,12 @@ function onSignIn(googleUser){
 
 //ID/PW search
 var searchIdPwd = function(){
-	window.open("member/searchIdPwdBom.html","_blank","top=100 left=200 width=400 height=400");
+	window.open("view/member/searchIdPwdBom.html","_blank","top=100 left=200 width=400 height=400");
 }
 
 //Member Join
 var joinCancelBtn = function(){
-	location.href="/classic_shop/index.jsp";
+	location.href="/classic_shop/main.do";
 }
 
 var idStrFlag = false;
@@ -42,9 +42,9 @@ $(function(){
 		var idVal = $(this).val();
 		var idStrCheck = /^[a-z]\w/;
 		idStrFlag = false;
-		if(idVal.length < 4 || idVal.length >12){ //id 4~12자
+		if(idVal.length < 4 || idVal.length >12){ //id 4자 미만, 12자 초과인 경우
 			$("#checkIdMsg").html("아이디는 4자 이상, 12자 이하여야 합니다.").css("color","red");
-		} else if(!(idStrCheck.test(idVal))){ //id 영문, 숫자, _
+		} else if(!(idStrCheck.test(idVal))){ //id 정규식 표현에 어긋난 경우
 			$("#checkIdMsg").html("아이디는 영문/숫자/_로 구성, 첫글자는 영문만 사용 가능합니다.").css("color","red");
 		} else{
 			var setting={
@@ -52,7 +52,7 @@ $(function(){
 					type: "GET",
 					dataType: "json",
 					success: function(data){
-						if(data.checkIdMsg){
+						if(data.checkIdMsg){ //checkIdMsg == true
 							$("#checkIdMsg").html("사용 가능한 아이디입니다.").css("color","blue");
 							idStrFlag = true;
 						}else{
@@ -85,22 +85,22 @@ $(function(){
 });
 		
 //이메일 유효성 검사
-/*$(function(){
+$(function(){
 	$("#memEmailInput").keyup(function(){
-		var mailVal = $(this).val(); 
+		var mail = $(this).val();
 		var mailStrCheck = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-		if(!(mailStrCheck.test(mailVal))){
+		if(!(mailStrCheck.test(mail))){
 			$("#checkEmailMsg").html("이메일 주소가 올바르지 않을 경우 가입에 제한이 있을 수 있습니다.").css("color","red");
 		} else{
 			var setting={
-					url: "/classic_shop/signup/checkMail.do?mail="+mailVal,
+					url: "/classic_shop/signup/checkMail.do?mail="+mail,
 					type: "GET",
 					dataType: "json",
 					success: function(data){
-						if(data.checkEmailMsg){
+						if(!(data.checkEmailMsg)){ //false == mail 사용 가능
 							$("#checkEmailMsg").html("사용 가능한 이메일 입니다.").css("color","blue");
 							mailStrFlag = true;
-						}else{
+						}else{ //true == mail 중복
 							$("#checkEmailMsg").html("사용 불가능한 이메일 입니다.").css("color","red");
 						}
 					}
@@ -108,7 +108,7 @@ $(function(){
 			$.ajax(setting);
 		}
 	});
-});*/
+});
 
 //이용약관 유효성 검사
 $(function(){
@@ -124,7 +124,7 @@ $(function(){
 //회원가입
 var url = "join.do";
 var joinJson = function(joinForm){
-	if(idStrFlag && pwStrFlag && agreeFlag){
+	if(idStrFlag && pwStrFlag && mailStrFlag && agreeFlag){
 	var method = "POST";
 	var id = joinForm.id.value;
 	var pw = joinForm.pw.value;
@@ -150,8 +150,8 @@ var joinJson = function(joinForm){
 		alert("아이디를 확인해주세요.");
 	}else if(!(pwStrFlag)){
 		alert("비밀번호를 확인해주세요.");
-/*	}else if(!(mailStrFlag)){
-		alert("이메일 주소를 확인해주세요.");*/
+	}else if(!(mailStrFlag)){
+		alert("이메일 주소를 확인해주세요.");
 	}else if(!(agreeFlag)){
 		alert("이용 약관과 개인정보 수집 및 이용에 동의해주세요.");
 	}

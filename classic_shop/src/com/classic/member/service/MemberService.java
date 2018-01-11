@@ -19,7 +19,7 @@ public interface MemberService {
 //주연 시작
 	public MemberDTO readMember(String id, String pw);
 	public MemberDTO readMember(String id);
-	public MemberDTO checkMail(String mail);
+	public boolean checkMail(String mail);
 	public boolean registerMember(MemberDTO memDTO);
 //주연 끝
 
