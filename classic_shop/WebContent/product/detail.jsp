@@ -17,14 +17,14 @@ $(function(){
 </script>
 <div class="product_body">
 	
-	<p class="-detail-spec-description displaynone">
+	<!-- <p class="-detail-spec-description displaynone">
 		<input id="productNum" desc="상품번호" type="text" value="">
 		<input id="productName" desc="상품이름" type="text" value="">
 		<input id="productPrice" desc="상품가격" type="text" value="">
 		<input id="productMileage" desc="상품마일리지" type="text" value="">
 		<input id="productColor" desc="상품색상" type="text" value="">
 		<input id="productSize" desc="상품사이즈" type="text" value="">
-	</p>
+	</p> -->
 	<div id="productTitle">
 		<h2>Outer List <!--Custom content--></h2>
 	  <p><!--With a bit of extra markup, it's possible to add any kind of HTML content like headings, paragraphs, or buttons into thumbnails.-->
@@ -46,7 +46,7 @@ $(function(){
 		<div class="detail_top_right">
 			<div class="detail_top_right_top">
 			<hr class="detail_hr">
-			<h3><%-- ${productDetail.name} --%><%-- <c:forEach var="detail" items="${productDetail}">${detail.name}</c:forEach> --%></h3>
+			<h3><c:forEach var="detail" items="${detailList}">${detail.name}</c:forEach></h3>
 			<p class="detail_top_right_description_one"><%-- ${productDetail.main_info} --%></p><!-- product description Line1 -->
 			<p class="detail_top_right_description_two"><%-- ${productDetail.sub_info} --%></p><!-- product description Line2 -->
 			</div>

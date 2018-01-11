@@ -12,6 +12,8 @@ import com.classic.comu.dto.NoticeDTO;
 import com.classic.comu.serviceImp.NoticeServiceImp;
 import com.classic.product.daoImp.ColourDAOImp;
 import com.classic.product.daoImp.ProductDAOImp;
+import com.classic.product.daoImp.ProductDataDAOImp;
+import com.classic.product.daoImp.SizuDAOImp;
 import com.classic.product.dto.ProductDTO;
 
 @WebServlet("/product/detail.do")
@@ -22,17 +24,30 @@ public class ProductDetail extends HttpServlet{
 		String str_num = req.getParameter("num");
 		ProductDTO productDTO=null;
 		String productColour ="";
+		String productSizu="";
 		String productDetail=null;
+		String productData="";
+	
 		try {
 			productDTO=new ProductDAOImp().selectProduct(Integer.parseInt(str_num));
 			productColour=new ColourDAOImp().selectProductColour(Integer.parseInt(str_num));
-			productDetail="{"+productDTO+", \"colour\":\""+productColour+"\"}";
+			productSizu = new SizuDAOImp().selectProductSizu(Integer.parseInt(str_num));
+			productData = new ProductDataDAOImp().selectProductData(1).toString();
+	
+			productDetail="[{"+productDTO+", \"colour\":\""+productColour+"\", \"Sizu\":\""+productSizu+"\", "
+					+productData+", \"deliv_info\":"+"\"deliv_info입니당~~~\""
+					+", \"refund_info\":"+"\"refund_info입니당.\""
+					+", \"trade_info\":"+"\"trade_info입니당.\""
+					+", \"as_info\":"+"\"as_info입니당.\""
+					+", \"unregi_info\":"+"\"unregi_info입니당.\""
+					+"}]";
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
 		
-		System.out.println(productDetail);
+		//System.out.println(productDetail);
 		req.setAttribute("productDetail", productDetail); 
 		
 		req.getRequestDispatcher("/product/detail.jsp").forward(req, resp);

@@ -678,6 +678,7 @@ create synonym cancel_seq for classic_dba.cancel_seq;
 create synonym mileage_seq for classic_dba.mileage_seq;
 create synonym img_path_seq for classic_dba.img_path_seq;
 
+
 -- 테이블 수정
 
 conn classic_dba/dba1234
@@ -808,6 +809,8 @@ INSERT INTO cancel VALUES(cancel_seq.nextval ,49,sysdate,'20180109');
 -- 수정사항: 주문테이블(paid) 주문번호에 uk 빼야함니다!!
 -- 주문디비 다 수정함!! 
 -- 18/01/09 DB 수정 
+
+conn classic_dba/dba1234
 ALTER TABLE product DROP COLUMN sizu;
 CREATE sequence sizu_seq start WITH 1 increment BY 1;
 CREATE table sizu(
@@ -1001,6 +1004,10 @@ INSERT INTO sizu VALUES(sizu_seq.nextval, 'FREE', (Select num from product where
 INSERT INTO sizu VALUES(sizu_seq.nextval, 'FREE', (Select num from product where name='상품명51'));
 INSERT INTO sizu VALUES(sizu_seq.nextval, 'FREE', (Select num from product where name='상품명52'));
 
+conn classic_admin/admin1234
+create synonym sizu for classic_dba.sizu;
+create synonym sizu_seq for classic_dba.sizu_seq;
+
 --혜진 필요 DB
 INSERT INTO member VALUES(member_seq.nextval, 'member4', '1234', '01099998888', 'member4@c.com', 3, sysdate);
 INSERT INTO product VALUES(product_seq.nextval,'0000053',1,'상품명53','서브 설명','메인 설명',100000,50000,'FREE',999,1,1,1,1,sysdate,0,sysdate);
@@ -1022,3 +1029,5 @@ INSERT INTO colour VALUES(colour_seq.nextval, (select num from product where cod
 INSERT INTO wish VALUES(wish_seq.nextval ,(select num from product where code='0000053'), (select num from member where id='member4'), sysdate);
 INSERT INTO wish VALUES(wish_seq.nextval ,(select num from product where code='0000057'), (select num from member where id='member4'), sysdate);
 INSERT INTO wish VALUES(wish_seq.nextval ,(select num from product where code='0000057'), (select num from member where id='member4'), sysdate);
+
+

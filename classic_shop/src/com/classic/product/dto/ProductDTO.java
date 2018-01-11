@@ -16,7 +16,6 @@ public class ProductDTO {
 		MAIN_INFO 				NOT NULL 	VARCHAR2(4000) 
 		PRICE     				NOT NULL 	NUMBER(12)     
 		BUY_PRICE          					NUMBER(12)     
-		SIZU      				NOT NULL 	VARCHAR2(20)   
 		TOTAL_PCS 			NOT NULL 	NUMBER(4)      
 		GUIDE_NUM          					NUMBER(8)      
 		DATA_NUM           					NUMBER(8)      
@@ -37,7 +36,6 @@ public class ProductDTO {
 	private String main_info;
 	private int price;
 	private int buy_price;
-	private String sizu;
 	private int total_pcs;
 	private int guide_num;
 	private int data_num;
@@ -93,12 +91,6 @@ public class ProductDTO {
 	}
 	public void setBuy_price(int buy_price) {
 		this.buy_price = buy_price;
-	}
-	public String getSizu() {
-		return sizu;
-	}
-	public void setSizu(String sizu) {
-		this.sizu = sizu;
 	}
 	public int getTotal_pcs() {
 		return total_pcs;
@@ -174,7 +166,7 @@ public class ProductDTO {
 		return "\"num\":\"" + num + "\", \"code\":\"" + code + "\", \"cate_num\":\"" + cate_num
 				+ "\", \"name\":\"" + name + "\", \"sub_info\":\"" + sub_info + "\", \"main_info\":\""
 				+ main_info + "\", \"price\":\"" + price + "\", \"buy_price\":\"" + buy_price
-				+ "\", \"sizu\":\"" + sizu + "\", \"total_pcs\":\"" + total_pcs + "\", \"guide_num\":\""
+				+ "\", \"total_pcs\":\"" + total_pcs + "\", \"guide_num\":\""
 				+ guide_num + "\", \"data_num\":\"" + data_num + "\", \"sell_ox\":\"" + sell_ox
 				+ "\", \"out_ox\":\"" + out_ox + "\", \"indate\":\"" + indate + "\", \"sale\":\"" + sale
 				+ "\", \"out_time\":\"" + out_time + "\"";
