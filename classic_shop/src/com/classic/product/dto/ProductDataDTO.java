@@ -116,11 +116,15 @@ public class ProductDataDTO {
 	}
 	@Override
 	public String toString() {
-		return "{\"num\" : \"" + num + "\", \"info\" : \"" + info + "\", \"material\" : \"" + material
-				+ "\", \"colour\" : \"" + colour + "\", \"sizu\" : \"" + sizu + "\", \"wash\" : \"" + wash
-				+ "\", \"maker\" : \"" + maker + "\", \"nation\" : \"" + nation + "\", \"make_date\" : \"" + make_date
-				+ "\", \"supply\" : \"" + supply + "\", \"q_standard\" : \"" + q_standard + "\", \"as_person\" : \""
-				+ as_person + "\", \"as_phone\" : \"" + as_phone + "\", \"weight\" : \"" + weight + "\"}";
+
+		return "\"product_data_num\":\"" + num + "\", \"product_data_info\":\"" + info + "\", \"product_data_material\":\"" + material
+				+ "\", \"product_data_colour\":\"" + colour + "\", \"product_data_sizu\":\"" + sizu + "\", \"product_data_wash\":\"" + wash
+				+ "\", \"product_data_maker\":\"" + maker + "\", \"product_data_nation\":\"" + nation + "\", \"product_data_make_date\":\""
+				+ make_date + "\", \"product_data_supply\":\"" + supply + "\", \"product_data_q_standard\":\"" + q_standard
+				+ "\", \"product_data_as_person\":\"" + as_person + "\", \"product_data_as_phone\":\"" + as_phone
+				+ "\", \"product_data_weight\":\"" + weight + "\"";
 	}
+	
+
 	
 }
