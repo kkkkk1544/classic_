@@ -31,9 +31,19 @@ public class QnaServiceImp implements QnaService{
 		List<QnaDTO> qnaList = new ArrayList<QnaDTO>();
 		try {
 			conn = ClassicDBConnection.getConnection();
-			qnaList = new QnaDAOImp(conn).selectQna(pagingDTO);
+			conn.setAutoCommit(false);
+			conn.commit();
+			QnaDAO qnaDAO = new QnaDAOImp(conn);
+			int totalRecord = qnaDAO.qnaTotalRecord();
+			pagingDTO.setTotalRecord(totalRecord);
+			qnaList = qnaDAO.selectQna(pagingDTO);
 		} catch (Exception e) {
 			e.printStackTrace();
+			try{
+				conn.rollback();
+			} catch (Exception e2){
+				e2.printStackTrace();
+			}
 		} finally {
 			ClassicDBConnection.close(conn);
 		}
@@ -127,10 +137,5 @@ public class QnaServiceImp implements QnaService{
 		return remove;
 	}
 
-	@Override
-	public boolean viewQna() {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
 }
