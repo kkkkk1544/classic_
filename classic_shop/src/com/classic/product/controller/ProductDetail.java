@@ -49,8 +49,8 @@ public class ProductDetail extends HttpServlet{
 		
 		//System.out.println(productDetail);
 		req.setAttribute("productDetail", productDetail); 
-		
-		req.getRequestDispatcher("/product/detail.jsp").forward(req, resp);
+		//HashMap으로 넣어서 보낼 것!
+		req.getRequestDispatcher("/view/product/detail.jsp").forward(req, resp);
 		
 	}
 }

@@ -1,3 +1,35 @@
+-- 예전 파일
+-- 다른 분들이 달아놓은 주석이 있음..!
+
+-- ▼ 1/10 기준 수정사항 포함된 최신 sql
+-- classic.sql 			: table DB
+-- classic_test_data : test data DB
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 DROP tablespace CLASSIC_DB including contents AND datafiles;
 
 create tablespace CLASSIC_DB

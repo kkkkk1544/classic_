@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.classic.common.dto.pagingTest;
 import com.classic.comu.dao.QnaDAO;
 import com.classic.comu.dto.QnaDTO;
 
@@ -21,7 +20,7 @@ public class QnaDAOImp implements QnaDAO{
 	@Override
 	public List<QnaDTO> selectQna() throws Exception {
 		List<QnaDTO> qnaList = new ArrayList<QnaDTO>();
-		String sql = "SELECT q.num, m.id as name, q.subject, q.count, q.indate, q.secure"
+		String sql = "SELECT q.num, q.mem_num, m.id as name, q.subject, q.count, q.indate, q.secure"
 				+ " FROM qna q, member m"
 				+ " WHERE q.mem_num=m.num"
 				+ " ORDER BY q.num DESC";
@@ -32,6 +31,7 @@ public class QnaDAOImp implements QnaDAO{
 		while(rs.next()) {
 			QnaDTO qnaDTO = new QnaDTO();
 			qnaDTO.setNum(rs.getInt("num"));
+			qnaDTO.setMem_num(rs.getInt("mem_num"));
 			qnaDTO.setName(rs.getString("name"));
 			qnaDTO.setSubject(rs.getInt("subject"));
 			qnaDTO.setCount(rs.getInt("count"));
@@ -41,9 +41,9 @@ public class QnaDAOImp implements QnaDAO{
 		}
 		return qnaList;
 	}
-/*	
-	@Override
-	public List<QnaDTO> selectQna(pagingTest pagingDTO) throws Exception {
+	
+/*	@Override
+	public List<QnaDTO> selectQna(PagingDTO pagingDTO) throws Exception {
 		List<QnaDTO> qnaList = new ArrayList<QnaDTO>();
 		String sql = "SELECT * FROM"
 				+ " (SELECT ROWNUM row_num, qna.* FROM"
@@ -51,13 +51,13 @@ public class QnaDAOImp implements QnaDAO{
 				+ " FROM qna q, member m"
 				+ " WHERE q.mem_num=m.num"
 				+ " ORDER BY q.num DESC) qna"
-				+ "WHERE ROWNUM <= 60)"
-				+ "WHERE row_num >= 51";
+				+ "WHERE ROWNUM <= ?)"
+				+ "WHERE row_num >= ?";
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		pstmt = conn.prepareStatement(sql);
-		pstmt.setInt(1, pagingDTO.getEnd());
-		pstmt.setInt(2, pagingDTO.getStart());
+		pstmt.setInt(1, pagingDTO.getEndPage());
+		pstmt.setInt(2, pagingDTO.getStartPage());
 		rs = pstmt.executeQuery();
 		while(rs.next()) {
 			QnaDTO qnaDTO = new QnaDTO();
@@ -70,8 +70,8 @@ public class QnaDAOImp implements QnaDAO{
 			qnaList.add(qnaDTO);
 		}
 		return qnaList;
-	}
-*/
+	}*/
+
 	@Override
 	public QnaDTO detailQna(int num) throws Exception {
 		QnaDTO qnaDTO = null;
@@ -102,7 +102,7 @@ public class QnaDAOImp implements QnaDAO{
 	public int insertQna(QnaDTO qnaDTO) throws Exception {
 		int insert = 0;
 		String sql = "INSERT INTO qna (num, mem_num, subject, content, count, secure, pwd, indate)"
-				+ " VALUES(qna_seq.nextval,?,?,?,0,?,?,sysdate);";
+				+ " VALUES(qna_seq.nextval,?,?,?,0,?,?,sysdate)";
 		PreparedStatement pstmt = null;
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, qnaDTO.getMem_num());

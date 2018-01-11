@@ -27,7 +27,12 @@ public class ProductList extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("utf-8");
 		List<ProductDTO> productList = new ArrayList<ProductDTO>();
-		ProductDAO productDAO=new ProductDAOImp();
+		try {
+			ProductDAO productDAO=new ProductDAOImp();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		
 		/*StringBuffer products= new StringBuffer();
