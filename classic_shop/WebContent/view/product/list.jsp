@@ -59,11 +59,12 @@ $(function(){
 					var thum="";
 					thum+="<div class='col-sm-6 col-md-4 border-0 border-white'>";
 					thum+="<div class='thumbnail'>";
-					thum+="<a href=\"<c:url value='/product/detail.do?num="+item.num+"'/>\"";
+					thum+="<a href=\"<c:url value='/product/detail.do?num="+item.num+"'/>\">";
 					thum+="<img data-src='' data-holder-rendered='true' style='height: 400px; width: 400px; display: block;'></a>";
 					thum+="<div class='product_caption'>";
 					/*  */
-					thum+="<a href=\"<c:url value='/product/detail.do?num="+item.num+"'/>\"";
+					/* thum+="<a href=\"<c:url value='/product/detail.do?num="+item.num+"'/>\""; */
+					thum+="<a href=\"<c:url value='/product/detail.do?num="+item.num+"'/>\">";
 					thum+="<span>"+item.name+"</span></a>";
 					thum+="<span style='display: inline-block; width:10px; height:10px; background-color:red;'></span> <span style='display: inline-block; width:10px; height:10px; background-color:blue;'></span>";
 				
