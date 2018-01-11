@@ -22,6 +22,6 @@ public class QnaListJSON extends HttpServlet{
 		//List<QnaDTO> qnaList = new QnaServiceImp().listQna(pagingDTO);
 		List<QnaDTO> qnaList = new QnaServiceImp().listQna();
 		req.setAttribute("qnaList", qnaList);
-		req.getRequestDispatcher("/comu/qnaListView.jsp").forward(req, resp);
+		req.getRequestDispatcher("/view/comu/qnaListView.jsp").forward(req, resp);
 	}
 }

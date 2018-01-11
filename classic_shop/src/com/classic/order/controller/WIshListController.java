@@ -35,10 +35,10 @@ public class WIshListController extends HttpServlet{
 		}
 		if(wishList.isEmpty()) {
 			req.getSession().setAttribute("wishList", null);
-			req.getRequestDispatcher("/order/wish/wish.jsp").forward(req, resp);
+			req.getRequestDispatcher("/view/order/wish/wish.jsp").forward(req, resp);
 		} else {
 			req.getSession().setAttribute("wishList", wishList);
-			req.getRequestDispatcher("/order/wish/wish.jsp").forward(req, resp);
+			req.getRequestDispatcher("/view/order/wish/wish.jsp").forward(req, resp);
 		}
 	}
 	

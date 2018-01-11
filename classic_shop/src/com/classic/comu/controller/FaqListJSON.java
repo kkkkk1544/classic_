@@ -19,6 +19,6 @@ public class FaqListJSON extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		List<FaqDTO> faqList = new FaqServiceImp().readFaq();
 		req.setAttribute("faqList", faqList);
-		req.getRequestDispatcher("/comu/faqListView.jsp").forward(req, resp);
+		req.getRequestDispatcher("/view/comu/faqListView.jsp").forward(req, resp);
 	}
 }

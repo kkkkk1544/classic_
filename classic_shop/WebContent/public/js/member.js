@@ -23,12 +23,12 @@ function onSignIn(googleUser){
 
 //ID/PW search
 var searchIdPwd = function(){
-	window.open("member/searchIdPwdBom.html","_blank","top=100 left=200 width=400 height=400");
+	window.open("view/member/searchIdPwdBom.html","_blank","top=100 left=200 width=400 height=400");
 }
 
 //Member Join
 var joinCancelBtn = function(){
-	location.href="/classic_shop/index.jsp";
+	location.href="/classic_shop/main.do";
 }
 
 var idStrFlag = false;

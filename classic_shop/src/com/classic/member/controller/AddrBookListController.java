@@ -34,6 +34,6 @@ public class AddrBookListController extends HttpServlet{
 		}
 		System.out.println(addrBookList);
 		req.setAttribute("addrBookList", addrBookList);
-		req.getRequestDispatcher("/member/mypage/address.jsp");
+		req.getRequestDispatcher("/view/member/mypage/address.jsp");
 	}
 }

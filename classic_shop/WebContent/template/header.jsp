@@ -31,7 +31,7 @@
 				<div id="productNav">
 					<div class="nav navbar-nav navbar-left">
 						<ul class="nav nav-pills">
-							<li><a href="<c:url value='/index.jsp' />">CLASSIC</a></li>
+							<li><a href="<c:url value='/main.do' />">CLASSIC</a></li>
 							<li><a href="#">NEW</a></li>
 							<li><a href="#">BEST</a></li>
 							<li role="presentation" class="dropdown">

@@ -1,4 +1,4 @@
-package com.classic.member.controller;
+package com.classic.common.controller;
 
 import java.io.IOException;
 
@@ -8,14 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.classic.member.dto.MemberDTO;
-import com.classic.member.serviceImp.MemberServiceImp;
-
-@WebServlet("/signup.do")
-public class MemberJoinFormController extends HttpServlet{
-	
+@WebServlet("/main.do")
+public class MainController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher("/view/member/join.jsp").forward(req, resp);
+		req.getRequestDispatcher("/index.jsp").forward(req, resp);
 	}
+
 }
