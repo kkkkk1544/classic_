@@ -21,6 +21,7 @@ public class WishDeleteController extends HttpServlet{
 		String strMemNum = req.getParameter("num");
 		Connection conn = null;
 		WishListDAO wish = null;
+		//띵호와
 		int delete = 0;
 		try {
 			conn = ClassicDBConnection.getConnection();
