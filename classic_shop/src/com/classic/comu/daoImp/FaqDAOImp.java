@@ -6,8 +6,10 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.classic.comu.controller.FaqListJSON;
 import com.classic.comu.dao.FaqDAO;
 import com.classic.comu.dto.FaqDTO;
+import com.classic.util.ClassicDBConnection;
 
 public class FaqDAOImp implements FaqDAO{
 
@@ -51,5 +53,38 @@ public class FaqDAOImp implements FaqDAO{
 		}
 		return faqDTO;
 	}
+	public static void main(String[] args) {
+		Connection conn=null;
+		try {
+			conn=ClassicDBConnection.getConnection();
+			FaqDAO faqDao= new FaqDAOImp(conn);
+			FaqDTO faqDTO  = new FaqDTO();
+			/* FaqDTO.selectFaq(1);*/
+		/*	System.out.println(FaqDTO.selectFaq(num));*/
+			for(int i=1; i<1203; i++) {
+			/*	FaqDTO faqDTO  = new FaqDTO();*/
+				faqDTO.setNum(1);
+				faqDTO.setQ_title("상품_"+i);
+				faqDTO.setA_content("상품 정보입니다. 환불규정도 있습니다....");
+				int insert=faqDao.insert(faqDTO);
+				System.out.println(insert);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			 ClassicDBConnection.close(conn);
+		}
+	}
 
+	@Override
+	public int insert(FaqDTO faqDTO) throws Exception {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int selectCount() throws Exception {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

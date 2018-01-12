@@ -15,6 +15,12 @@ A_CONTENT		NOT NULL 	VARCHAR2(4000)
 	private int mem_num;
 	private String q_title;
 	private String a_content;
+	
+
+	
+	
+	
+	
 	public int getNum() {
 		return num;
 	}
@@ -39,6 +45,9 @@ A_CONTENT		NOT NULL 	VARCHAR2(4000)
 	public void setA_content(String a_content) {
 		this.a_content = a_content;
 	}
+	
+	
+	
 	@Override
 	public String toString() {
 		return "{\"num\":\"" + num + "\", \"mem_num\":\"" + mem_num + "\", \"q_title\":\"" + q_title
