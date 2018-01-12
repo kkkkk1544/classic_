@@ -141,9 +141,17 @@ public class QnaDAOImp implements QnaDAO{
 	}
 
 	@Override
-	public int qnaCount() throws Exception {
-		int count = 0;
-		return count;
+	public int qnaTotalRecord() throws Exception {
+		int totalRecord = 0;
+		String sql = "SELECT COUNT(*) as total FROM qna";
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		pstmt = conn.prepareStatement(sql);
+		rs = pstmt.executeQuery();
+		if(rs.next()) {
+			totalRecord = rs.getInt("total");
+		}
+		return totalRecord;
 	}
 
 }

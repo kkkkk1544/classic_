@@ -13,6 +13,5 @@ public interface QnaService {
 	public boolean registerQna(QnaDTO qnaDTO);
 	public boolean modifyQna(QnaDTO qnaDTO);
 	public boolean removeQna(int num);
-	public boolean viewQna();
 	
 }

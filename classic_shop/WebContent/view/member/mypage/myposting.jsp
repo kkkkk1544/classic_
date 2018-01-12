@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<link rel="stylesheet" href="<c:url value='/public/css/member.css' />">
+<script src="<c:url value='/public/js/member.js'/>"></script>
+</head>
+<body>
 <div class="member_body">
 	<div class="container">
 		<!-- My QNA -->
