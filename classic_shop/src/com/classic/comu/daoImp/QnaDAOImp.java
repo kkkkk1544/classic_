@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.classic.common.dto.PagingDTO;
 import com.classic.comu.dao.QnaDAO;
 import com.classic.comu.dto.QnaDTO;
 
@@ -17,7 +18,7 @@ public class QnaDAOImp implements QnaDAO{
 		this.conn = conn;
 	}
 
-	@Override
+/*	@Override
 	public List<QnaDTO> selectQna() throws Exception {
 		List<QnaDTO> qnaList = new ArrayList<QnaDTO>();
 		String sql = "SELECT q.num, q.mem_num, m.id as name, q.subject, q.count, q.indate, q.secure"
@@ -40,9 +41,9 @@ public class QnaDAOImp implements QnaDAO{
 			qnaList.add(qnaDTO);
 		}
 		return qnaList;
-	}
+	}*/
 	
-/*	@Override
+	@Override
 	public List<QnaDTO> selectQna(PagingDTO pagingDTO) throws Exception {
 		List<QnaDTO> qnaList = new ArrayList<QnaDTO>();
 		String sql = "SELECT * FROM"
@@ -51,16 +52,17 @@ public class QnaDAOImp implements QnaDAO{
 				+ " FROM qna q, member m"
 				+ " WHERE q.mem_num=m.num"
 				+ " ORDER BY q.num DESC) qna"
-				+ "WHERE ROWNUM <= ?)"
-				+ "WHERE row_num >= ?";
+				+ " WHERE ROWNUM <= ?)"
+				+ " WHERE row_num >= ?";
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		pstmt = conn.prepareStatement(sql);
-		pstmt.setInt(1, pagingDTO.getEndPage());
-		pstmt.setInt(2, pagingDTO.getStartPage());
+		pstmt.setInt(1, pagingDTO.getEndRecord());
+		pstmt.setInt(2, pagingDTO.getStartRecord());
 		rs = pstmt.executeQuery();
 		while(rs.next()) {
 			QnaDTO qnaDTO = new QnaDTO();
+			qnaDTO.setRow_num(rs.getInt("row_num"));
 			qnaDTO.setNum(rs.getInt("num"));
 			qnaDTO.setName(rs.getString("name"));
 			qnaDTO.setSubject(rs.getInt("subject"));
@@ -70,7 +72,7 @@ public class QnaDAOImp implements QnaDAO{
 			qnaList.add(qnaDTO);
 		}
 		return qnaList;
-	}*/
+	}
 
 	@Override
 	public QnaDTO detailQna(int num) throws Exception {
