@@ -54,7 +54,7 @@
 							</c:choose>
 							<td>
 								<div class="buttonGroup">
-									<button type="button" class="btn btn-default partOrder">주문하기</button>									
+									<a type="button" class="btn btn-default partOrder" href="<c:url value='/view/cart.do?num=${loginMem.num}&productNum=${wish.productNum}'/>">주문하기</a>									
 									<button type="button" class="btn btn-default" onclick="pickWishDel(${loginMem.num},${wish.productNum})">삭제</button>
 								</div>
 							</td>
@@ -189,7 +189,6 @@
 		</div>
 	</div>
 <script>
-
 $("#allCheck").click(function(){
 	if(this.checked){
 		$('input:checkbox[class*="checkWish"]').each(function(){

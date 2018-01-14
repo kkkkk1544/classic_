@@ -7,8 +7,6 @@ public class WishDTO {
 	INDATE                   DATE*/
 	
 	private String productName;
-	private String sizu;
-	private String colour;
 	private int price;
 	private int wishQuantity;
 	private int num;
@@ -20,18 +18,6 @@ public class WishDTO {
 	}
 	public void setProductName(String productName) {
 		this.productName = productName;
-	}
-	public String getSizu() {
-		return sizu;
-	}
-	public void setSizu(String sizu) {
-		this.sizu = sizu;
-	}
-	public String getColour() {
-		return colour;
-	}
-	public void setColour(String colour) {
-		this.colour = colour;
 	}
 	public int getPrice() {
 		return price;
@@ -71,8 +57,8 @@ public class WishDTO {
 	}
 	@Override
 	public String toString() {
-		return "{ \"productName\" : \"" + productName + "\", \"sizu\" : \"" + sizu + "\", \"colour\" : \"" + colour
-				+ "\", \"price\" : \"" + price + "\", \"wishQuantity\" : \"" + wishQuantity + "\", \"num\" : \"" + num
+		return "{ \"productName\" : \"" + productName + "\",  \"price\" : \"" + price 
+				+ "\", \"wishQuantity\" : \"" + wishQuantity + "\", \"num\" : \"" + num
 				+ "\", \"productNum\" : \"" + productNum + "\", \"memNum\" : \"" + memNum + "\", \"indate\" : \""
 				+ indate + "\"}";
 	}

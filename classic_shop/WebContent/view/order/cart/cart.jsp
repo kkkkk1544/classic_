@@ -125,3 +125,47 @@
 			<p>장바구니 안내문</p>
 		</div>
 	</div>
+<script>
+	var cookies = document.cookie.split(";");
+	var product = {};
+	var pNum;
+	/* var pInfo;
+	var value; */
+	var temp = 0; 
+	for(i=0; i<cookies.length; i++){
+		var key = cookies[i].split("=")[0].trim();
+		//console.log(key);
+		//console.log(eval("map"+i));
+		if(key.startsWith("classic_")){
+			pNum = key.split("_")[1].trim();
+			var pInfo = key.split("_")[2].trim();			//productInfo
+			var value = cookies[i].split("=")[1].trim();
+			//console.log(pNum+"="+pInfo+"="+value);
+			if(temp!=pNum){
+				temp = pNum;
+				/* console.log("temp : "+temp);
+				console.log(pInfo);
+				console.log(value);  */
+				eval("var c"+pNum+"= {}");
+				eval("c"+pNum+"."+pInfo+"=\""+value+"\"");
+				//console.log(eval("c"+pNum));
+			}else{
+				/* console.log(pNum);
+				console.log(pInfo);
+				console.log(value);  */
+				eval("c"+pNum+"."+pInfo+"=\""+value+"\"");
+			}
+		}
+		if(eval("Object.keys(c"+pNum+").length==3")){
+			product[pNum]=eval("c"+pNum);
+		} else if(eval("Object.keys(c"+pNum+").length==5")){
+			product[pNum]=eval("c"+pNum);
+		}
+	}
+	//console.log(product);
+	//product[pNum] = info;
+	//console.log(product);
+	for(var key in product){
+		console.log(product[key]);
+	}
+</script>

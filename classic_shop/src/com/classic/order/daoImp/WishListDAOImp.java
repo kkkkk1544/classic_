@@ -31,8 +31,6 @@ public class WishListDAOImp implements WishListDAO{
 		List<WishDTO> wishList =new ArrayList<WishDTO>();
 		String sql ="select (select name from product where num=w.product_num) as product_name, "
 				+ "(select num from product where num=w.product_num) as product_num ,"
-				+ "(select sizu from product where num=w.product_num) as sizu, "
-				+ "(select name from colour where product_num=w.product_num) as colour, "
 				+ "count(w.product_num) as count, "
 				+ "(select price from product where num=w.product_num)as price " 
 				+ "from product p ,wish w "
@@ -45,8 +43,6 @@ public class WishListDAOImp implements WishListDAO{
 			WishDTO wish = new WishDTO();
 			wish.setProductName(rs.getString("product_name"));
 			wish.setProductNum(rs.getInt("product_num"));
-			wish.setSizu(rs.getString("sizu"));
-			wish.setColour(rs.getString("colour"));
 			wish.setWishQuantity(rs.getInt("count"));
 			wish.setPrice(rs.getInt("price"));
 			wishList.add(wish);
@@ -76,23 +72,4 @@ public class WishListDAOImp implements WishListDAO{
 		delete = pstmt.executeUpdate();
 		return delete;
 	}
-	@Override
-	public WishDTO selectProduct(int product_num) throws Exception {
-		WishDTO product =null;
-		String sql ="select p.name , p.price, (select name from colour where product_num = p.num), (select )";
-		PreparedStatement pstmt = conn.prepareStatement(sql);
-		pstmt.setInt(1, product_num);
-		ResultSet rs = pstmt.executeQuery();
-		if(rs.next()) {
-			product.setProductName(rs.getString("product_name"));
-			product.setProductNum(rs.getInt("product_num"));
-			product.setSizu(rs.getString("sizu"));
-			product.setColour(rs.getString("colour"));
-			product.setWishQuantity(rs.getInt("count"));
-			product.setPrice(rs.getInt("price"));
-		}
-		return product;
-		//sql문 미완성
-	}
-	
 }

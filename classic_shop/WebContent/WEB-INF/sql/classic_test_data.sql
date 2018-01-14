@@ -910,29 +910,29 @@ INSERT INTO review VALUES(review_seq.nextval, 1, 1, '치수', '내용', 5, sysda
 
 --마일리지
 INSERT INTO mileage VALUES(mileage_seq.nextval,1,1,200000,sysdate,2);
-INSERT INTO mileage VALUES(mileage_seq.nextval,1,1,null,200000,sysdate,2);
+INSERT INTO mileage VALUES(mileage_seq.nextval,1,1,200000,sysdate,2);
 
 -- bank
 INSERT INTO bank VALUES(bank_seq.nextval ,'우리은행' ,'1002536238755','클래식');
 INSERT INTO bank VALUES(bank_seq.nextval ,'신한은행' ,'22875504956326','클래식');
 INSERT INTO bank VALUES(bank_seq.nextval ,'국민은행' ,'5678920563257','클래식');
 
---delivery
-INSERT INTO delivery VALUES(delivery_seq.nextval ,41 ,'CJ택배','6898000144426575' ,1 ,sysdate , '');
-INSERT INTO delivery VALUES(delivery_seq.nextval ,52 ,'','' ,0 ,sysdate , '');
-INSERT INTO delivery VALUES(delivery_seq.nextval ,43 ,'대한통운','1111222233334444' ,2 ,sysdate , '');
+--delivery// 요 밑에 디비 못넣음 혜진 체크용 
+INSERT INTO delivery VALUES(delivery_seq.nextval ,41 ,'CJ택배','6898000144426575' ,1 ,sysdate , NULL);
+INSERT INTO delivery VALUES(delivery_seq.nextval ,52 ,NULL,NULL ,0 ,sysdate , NULL);
+INSERT INTO delivery VALUES(delivery_seq.nextval ,43 ,'대한통운','1111222233334444' ,2 ,sysdate , NULL);
 INSERT INTO delivery VALUES(delivery_seq.nextval ,47 ,'대한통운','6666222233335555' ,3 ,sysdate , '20180107');
 
 --trade
-INSERT INTO trade VALUES(trade_seq.nextval ,44,0,sysdate,'',0);
-INSERT INTO trade VALUES(trade_seq.nextval ,45,2,sysdate,'',2);
+INSERT INTO trade VALUES(trade_seq.nextval ,44,0,sysdate,NULL,0);
+INSERT INTO trade VALUES(trade_seq.nextval ,45,2,sysdate,NULL,2);
 
 --refund
-INSERT INTO refund VALUES(refund_seq.nextval ,46,sysdate,1,'',1,'카카오뱅크','12345678912','김다혜');
-INSERT INTO refund VALUES(refund_seq.nextval ,47,sysdate,5,'',2,'우리은행','12345678912','홍길동');
+INSERT INTO refund VALUES(refund_seq.nextval ,46,sysdate,1,NULL,1,'카카오뱅크','12345678912','김다혜');
+INSERT INTO refund VALUES(refund_seq.nextval ,47,sysdate,5,NULL,2,'우리은행','12345678912','홍길동');
 
 --cancel
-INSERT INTO cancel VALUES(cancel_seq.nextval ,48,sysdate,'');
+INSERT INTO cancel VALUES(cancel_seq.nextval ,48,sysdate,NULL);
 INSERT INTO cancel VALUES(cancel_seq.nextval ,49,sysdate,'20180109');
 
 --혜진 필요 DB
