@@ -17,6 +17,8 @@
 <!-- jQuery lib -->
 <script src='<c:url value="/public/js/jquery/jquery-3.2.1.min.js"/>'></script>
 <script src='<c:url value="/public/js/jquery-ui/jquery-ui.min.js"/>'></script>
+<!-- kakao 지도 api -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9634cbc392b8b80779d4f419ee72bf3a"></script>
 <title>CLASSIC</title>
 <script>
 	if("${msg}"!=""){
