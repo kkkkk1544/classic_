@@ -63,7 +63,7 @@
 		</div>
 	</c:if>
 <!-- 페이징 -->
-	<jsp:include page="/template/paging.jsp"/>
+	<jsp:include page="/common/paging.jsp"/>
 <!-- 검색 -->
 		<div class="qna_search" align="left">
 			<form name="qnaSearchForm" action="" class="form-inline">

@@ -17,9 +17,8 @@ public class BannerController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
-		List<BannerDTO> bannerDTO = new BannerServiceImp().readBanner();
+		BannerDTO bannerDTO = new BannerServiceImp().readBanner();
 		req.setAttribute("banner", bannerDTO);
-		req.getRequestDispatcher("/view/banner/openPop.html").forward(req, resp);
+		req.getRequestDispatcher("/common/openPop.jsp").forward(req, resp);
 	}
-
 }
