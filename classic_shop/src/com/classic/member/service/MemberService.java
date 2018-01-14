@@ -16,11 +16,10 @@ public interface MemberService {
 	 * */
 	
 	
-//주연 시작
 	public MemberDTO readMember(String id, String pw);
 	public MemberDTO readMember(String id);
 	public boolean checkMail(String mail);
 	public boolean registerMember(MemberDTO memDTO);
-//주연 끝
+	public boolean modifyMember(MemberDTO memDTO);
 
 }

@@ -157,3 +157,31 @@ var joinJson = function(joinForm){
 	}
 }
 
+var returnMypage = function(){
+	//일단은 main으로
+	location.href="/classic_shop/main.do";
+}
+
+//회원정보수정
+var memModify = function(memModifyForm){
+	var num = memModifyForm.num.value;
+	var pw = memModifyForm.pw.value;
+	var phone = memModifyForm.phone.value;
+	var urlSet = "/classic_shop/mypage/modify.do?num="+num;
+	var method = "PUT";
+	var http = new XMLHttpRequest();
+	var url = urlSet+"&pw="+pw+"&phong="+phone;
+	http.open(method, url, true);
+	http.onreadystatechange = function(){
+		if(this.readyState==4 && this.status==200){
+			var modifyVal = JSON.parse(this.responseText)["modify"];
+			if(modifyVal){
+				alert("회원정보가 정상적으로 수정 되었습니다.");
+				returnMypage();
+			} else{
+				alert("다시 시도해주세요");
+			}
+		}
+	}
+	http.send();
+}
