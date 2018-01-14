@@ -12,7 +12,7 @@
 				<h2 class="mypageTitle">MY PAGE</h2>
 				<ul>
 					<li> <span class="mypageInfoLabel">회원등급</span>
-						<div class="value"><strong>Lv1</strong></div>
+						<div class="value"><strong>Lv. ${memDTO.grade}</strong></div>
 					</li>
 					<li> <span class="mypageInfoLabel">적립금</span>
 						<div class="value"><strong>0원</strong></div>
@@ -25,12 +25,12 @@
 					</li>
 				</ul>
 				<div class="benefit_group">
-					<div class="benefitInfo">회원님의 혜택정보</div>
+					<div class="benefitInfo"><strong>${memDTO.id} </strong>님의<br> 혜택정보</div>
 					<div class="benefitprint">혜택 정보 출력</div>
 				</div>
 			</div>
 			<div class="mypage_btn_group">
-				<button class="btn btn-default" type="button" onclick="location.href='<c:url value='/member/mypage/modify.jsp'/>'">회원정보 수정</button>
+				<button class="btn btn-default" type="button" onclick="location.href='<c:url value='/mypage/modify.do'/>'">회원정보 수정</button>
 				<button class="btn btn-default" type="button" onclick="location.href='<c:url value='/member/mypage/address.jsp'/>'">배송주소록 관리</button>
 			</div>
 		</div>
@@ -141,12 +141,14 @@
 							</tr>
 						</thead>
 						<tbody>
+						<c:forEach var="qna" items="${qnaList}" begin="1" end="5">
 							<tr>
-								<td class="col-sm-1">1</td>
-								<td class="col-sm-4"><a href="#">배송 문의</a></td>
-								<td class="col-sm-1">김기김</td>
-								<td class="col-sm-1">17/12/30</td>
+								<td class="col-sm-1">${qna.num}</td>
+								<td class="col-sm-4"><a href="#">${qna.subject}</a></td>
+								<td class="col-sm-1">${qna.name}</td>
+								<td class="col-sm-1">${qna.indate}</td>
 							</tr>
+						</c:forEach>
 						</tbody>
 					</table>
 				</div>

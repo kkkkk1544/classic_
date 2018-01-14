@@ -15,5 +15,5 @@ public interface QnaService {
 	public boolean modifyQna(QnaDTO qnaDTO);
 	public boolean removeQna(int num);
 	public int recordTotal();
-	
+	public List<QnaDTO> readQnaMem(int mem_num);
 }

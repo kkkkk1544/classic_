@@ -13,7 +13,7 @@
 			<p class="cs">
 				<span class="name">TEL</span><span class="value">000-0000-0000</span>
 				<span class="name">FAX</span><span class="value">00-000-0000</span>
-				<span class="badge badge-pill project"><a href="<c:url value='/template/company.jsp'/>">Project Info</a></span>
+				<span class="badge badge-pill project"><a href="<c:url value='/introduce.do'/>">Project Info</a></span>
 			</p>
 			<p class="cs">
 				<span id="operation">

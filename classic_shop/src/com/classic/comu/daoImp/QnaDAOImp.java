@@ -86,7 +86,7 @@ public class QnaDAOImp implements QnaDAO{
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, num);
 		rs = pstmt.executeQuery();
-		while(rs.next()) {
+		if(rs.next()) {
 			qnaDTO = new QnaDTO();
 			qnaDTO.setNum(rs.getInt("num"));
 			qnaDTO.setName(rs.getString("name"));
@@ -160,6 +160,30 @@ public class QnaDAOImp implements QnaDAO{
 	public List<QnaDTO> searchQna(int subject, String name, PagingDTO pagingDTO) throws Exception {
 		List<QnaDTO> qnaSearchList = new ArrayList<QnaDTO>();
 		return qnaSearchList;
+	}
+
+	@Override
+	public List<QnaDTO> selectQna(int mem_num) throws Exception {
+		List<QnaDTO> qnaList = new ArrayList<QnaDTO>();
+		String sql = "SELETE q.num, m.id as name, q.subject, q.indate"
+				+ " FROM qna q, member m"
+				+ " WHERE mem_num=?"
+				+ " AND q.mem_num=m.num"
+				+ " ORDER BY q.indate DESC";
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, mem_num);
+		rs = pstmt.executeQuery();
+		while(rs.next()) {
+			QnaDTO qnaDTO = new QnaDTO();
+			qnaDTO.setNum(rs.getInt("num"));
+			qnaDTO.setMem_num(rs.getInt("mem_num"));
+			qnaDTO.setSubject(rs.getInt("subject"));
+			qnaDTO.setContent(rs.getString("content"));
+			qnaDTO.setIndate(rs.getDate("indate"));
+		}
+		return qnaList;
 	}
 
 }

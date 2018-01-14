@@ -103,7 +103,7 @@
 						<c:choose>
 							<c:when test="${loginMem ne null}">
 								<li role="presentation" class="dropdown">
-									<a class="dropdown-toggle" href="<c:url value='/view/member/mypage/detail.jsp'/>" role="button" aria-expanded="false">MY PAGE</a>
+									<a class="dropdown-toggle" href="<c:url value='/mypage.do?id=${loginMem.id}'/>" role="button" aria-expanded="false">MY PAGE</a>
 									<ul class="dropdown-menu" role="menu">
 										<li><a href="<c:url value='/mypage/modify.do?id=${loginMem.id}'/>">회원정보수정</a></li>
 										<li><a href="<c:url value='/view/address/list.do?num=${loginMem.num}'/>">배송주소록</a></li>

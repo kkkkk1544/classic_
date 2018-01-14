@@ -28,6 +28,7 @@
 			- 아코디언
 			- 비밀번호 입력창 / 로그인 id/pw 찾기창
 			- footer Map CSS
+		9. mypage, memUpdate == num으로 받아서 고치기
  -->
 <!-- 
 	한 거

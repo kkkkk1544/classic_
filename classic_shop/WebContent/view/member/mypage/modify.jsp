@@ -44,7 +44,7 @@
 			</div>
 			<div class="modify_btn_group">
 				<button class="btn btn-default" type="button" onclick="memModify(this.form)">수정</button>
-				<button class="btn btn-default" type="button" onclick="retrunMypage()">취소</button>
+				<button class="btn btn-default" type="button" onclick="returnMypage()">취소</button>
 			</div>		
 		</form>
 	</div>

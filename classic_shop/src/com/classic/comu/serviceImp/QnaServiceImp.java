@@ -157,5 +157,17 @@ public class QnaServiceImp implements QnaService{
 		return totalRecord;
 	}
 
-
+	@Override
+	public List<QnaDTO> readQnaMem(int mem_num) {
+		List<QnaDTO> qnaList = new ArrayList<QnaDTO>();
+		try {
+			conn = ClassicDBConnection.getConnection();
+			qnaList = new QnaDAOImp(conn).selectQna(mem_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			ClassicDBConnection.close(conn);
+		}
+		return qnaList;
+	}
 }

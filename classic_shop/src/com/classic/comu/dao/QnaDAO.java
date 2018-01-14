@@ -18,5 +18,7 @@ public interface QnaDAO {
 	
 	public List<QnaDTO> searchQna(int subject, String name, PagingDTO pagingDTO) throws Exception; //qna 검색
 	
+	public List<QnaDTO> selectQna(int mem_num) throws Exception; //특정 회원이 쓴 qna 글
+	
 
 }
