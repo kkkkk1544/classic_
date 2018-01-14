@@ -67,13 +67,30 @@
 <!-- 검색 -->
 		<div class="qna_search" align="left">
 			<form name="qnaSearchForm" action="" class="form-inline">
-				<select name="searchField" class="form-control">
-					<option value="">SEARCH</option>
-					<option value="subject">SUBJECT</option>
-					<option value="name">NAME</option>
+				<select class="form-control" id="qnaSearchField">
+					<option>SEARCH</option>
+					<option value="0">SUBJECT</option>
+					<option value="1">NAME</option>
 				</select>
-					<input type="text" class="form-control" name="searchValue">
-					<button type="submit" class="btn btn-default">&#128269;</button>
+					<input type="text" class="form-control" name="qnaSearchValue">
+					<button type="button" class="btn btn-default" onclick="qnaSearch(this.form)">&#128269;</button>
 			</form>
 		</div>
 </div>
+
+
+
+
+
+
+
+<!-- 
+<select name="subjectValue" class="form-control optionField">
+						<option value="">선택</option>
+						<option value="0">상품 문의</option>
+						<option value="1">배송 문의</option>
+						<option value="2">배송 전 변경</option>
+						<option value="3">입금 문의</option>
+						<option value="4">교환/환불 문의</option>
+						<option value="5">기타 문의</option>
+					</select> -->

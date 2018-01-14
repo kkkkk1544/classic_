@@ -16,5 +16,7 @@ public interface QnaDAO {
 	public int deleteQna(int num) throws Exception; //qna 글 삭제
 	public int qnaTotalRecord() throws Exception; //qna 게시글수
 	
+	public List<QnaDTO> searchQna(int subject, String name, PagingDTO pagingDTO) throws Exception; //qna 검색
+	
 
 }

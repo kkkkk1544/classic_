@@ -156,4 +156,10 @@ public class QnaDAOImp implements QnaDAO{
 		return totalRecord;
 	}
 
+	@Override
+	public List<QnaDTO> searchQna(int subject, String name, PagingDTO pagingDTO) throws Exception {
+		List<QnaDTO> qnaSearchList = new ArrayList<QnaDTO>();
+		return qnaSearchList;
+	}
+
 }
