@@ -13,6 +13,7 @@
 			<p class="cs">
 				<span class="name">TEL</span><span class="value">000-0000-0000</span>
 				<span class="name">FAX</span><span class="value">00-000-0000</span>
+				<span class="badge badge-pill project"><a href="<c:url value='/template/company.jsp'/>">Project Info</a></span>
 			</p>
 			<p class="cs">
 				<span id="operation">
@@ -29,7 +30,7 @@
 			<p class="cs">
 				<span class="name">ADDRESS</span>
 				<span class="value">서울특별시 뫄뫄구 솨솨로 6층</span>
-				<span class="badge badge-pill badge-warning"><a href="<c:url value='/template/company.jsp'/>">location</a></span>
+				<span class="badge badge-pill badge-warning location"><a href="<c:url value='/template/company.jsp'/>">location</a></span>
 			</p>
 			<p class="cs">
 				<span class="name">BUSINESS LICENSE</span><span class="value">000-00-00000</span>

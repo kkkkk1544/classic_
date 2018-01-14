@@ -161,6 +161,9 @@
 			</div>		
 		</div>
 </div>
+<script>
+	window.open('/classic_shop/view/banner/openPop.html','_blank','top=100,left=200,width=400,height=400');
+</script>
 <!-- 
 	안 한 거
 		2. 이메일 인증 api
@@ -177,8 +180,7 @@
 			- qna reply 기능 아예 안함
 		6. product search
 		7. footer map
-			- 지도에 아이콘 띄우기
-			- 내용 채우기
+			- 지도에 아이콘 띄우기(==> modal로 구현할 것)
 		8. CSS 총정리(로그인, 회원가입, 게시판)
 			- 네비게이션 三
 			- 반응형
@@ -203,6 +205,12 @@
 	http://hunit.tistory.com/306
 	http://compunication.tistory.com/15
 	https://prezi.com/ggcv6bezgvmr/mvc/
+	
+	로그인 SSL 인증
+	RSA 암호화
+	
+	http://cofs.tistory.com/297
+	http://vip00112.tistory.com/40
  -->
 
  
