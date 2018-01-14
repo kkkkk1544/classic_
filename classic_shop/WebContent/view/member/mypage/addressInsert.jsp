@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<link rel="stylesheet" href="<c:url value='/public/css/member.css' />">
+</head>
+<body> 
 <div class="member_body">
 	<div class="container">
 		<div class="address_wrap">
 			<h2 class="addressBookTitle">ADDRESS BOOK</h2>
-				<form>
+				<form name="addrForm" method="post" action="<c:url value='/addresslist/insert.do'/>">
 					<div>
 						<div class="boardWrite">
 							<table class="table table-bordered addressBook_table">
@@ -31,20 +33,21 @@
 										<td>
 											<div class="zip_code_wrap">
 												<div class="col-sm-3">
-													<input type="text" name="" value="" class="form-control">
+													<input type="text" name="addrZip" class="form-control">
 												</div>
 												<button class="btn btn-default" type="button">우편번호</button>
+
 											</div>
 											
 											<div class="addrbase_wrap">
 												<div class="col-sm-5">
-													<input type="text" name="" value="" class="form-control">
+													<input type="text" name="addrBase" class="form-control">
 												</div>
 											</div>
 
 											<div class="addrdetail_wrap">
 												<div class="col-sm-5">
-													<input type="text" name="" value="" class="form-control">
+													<input type="text" name="addrDetail" class="form-control">
 												</div>
 											</div>
 										</td>
@@ -77,11 +80,40 @@
 						<!-- -->
 				
 						<div class="modify_btn_group">
-							<button class="btn btn-default" type="button">등록</button>
-							<button class="btn btn-default" type="button" onclick="location.href='<c:url value='/address/list.do?num=${loginMem.num}'/>'">취소</button>
+							<button class="btn btn-default" type="button" onclick="addrJson(this.form)">등록</button>
+							<button class="btn btn-default" type="button" onclick="location.href='<c:url value='/addresslist.do?mem_num=${loginMem.num}'/>'">취소</button>
 						</div>
 					</div>
 				</form>
 		</div>
 	</div>
 </div>
+
+
+<script>
+	var addrJson = function(addrForm){
+		var azip = addrForm.addrZip.value;
+		var abase = addrForm.addrBase.value;
+		var adetail = addrForm.addrDetail.value;
+		var url = "/classic_shop/addresslist/insert.do"
+		var method = "POST";
+		var data = "azip="+azip+"&abase="+abase+"&adetail="+adetail;
+		console.log(data);
+		var http = new XMLHttpRequest();
+		http.open(method, url, true);
+		http.onreadystatechange = function(){
+			if(this.readyState==4 && this.status==200){
+				var register = JSON.parse(this.responseText)["register"];
+				if(register){
+					alert("등록");
+					/*location.href="/classic_shop/addresslist.do?mem_num=${loginMem.num}"; */
+				}else{
+					alert("다시 시도");
+				}
+			}
+		}
+		http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		http.send(data);
+	}
+
+</script>

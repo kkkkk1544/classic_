@@ -11,29 +11,32 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.classic.member.dao.AddrBookDAO;
-import com.classic.member.daoImp.AddrBookDAOImp;
-import com.classic.member.dto.AddrBookDTO;
+import com.classic.member.dao.MileageDAO;
+import com.classic.member.daoImp.MileageDAOImp;
+import com.classic.member.dto.MileageDTO;
 import com.classic.util.ClassicDBConnection;
 
-@WebServlet("/addresslist.do")
-public class AddrBookListController extends HttpServlet{
+@WebServlet("/mileagelist.do")
+public class MileageListController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String mem_num = req.getParameter("mem_num");
 		Connection conn = null;
-		List<AddrBookDTO> addrList = new ArrayList<AddrBookDTO>();
+		List<MileageDTO> mileageList = new ArrayList<MileageDTO>();
 		try {
-			conn= ClassicDBConnection.getConnection();
-			AddrBookDAO addrDAO = new AddrBookDAOImp(conn);
-			addrList = addrDAO.addrBookSelect(Integer.parseInt(mem_num));
+			conn = ClassicDBConnection.getConnection();
+			MileageDAO mileageDAO = new MileageDAOImp(conn);
+			mileageList = mileageDAO.mileageSelect(Integer.parseInt(mem_num));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
 			ClassicDBConnection.close(conn);
 		}
-		System.out.println(addrList);
-		req.setAttribute("addrList", addrList);
-		req.getRequestDispatcher("/view/member/mypage/address.jsp").forward(req, resp);
+		System.out.println(mileageList);
+		req.setAttribute("mileageList", mileageList);
+		req.getRequestDispatcher("/view/member/mypage/mileage.jsp").forward(req, resp);
+		
+	
 	}
+
 }

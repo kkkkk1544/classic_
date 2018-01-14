@@ -20,17 +20,15 @@ public class AddrBookDAOImp implements AddrBookDAO {
 	@Override
 	public List<AddrBookDTO> addrBookSelect(int mem_num) throws Exception {
 		List<AddrBookDTO> addrBookList = new ArrayList<AddrBookDTO>();
-		PreparedStatement pstmt=null;
-		ResultSet rs = null;
-		String sql="select a.num, a.zip_code, a.base_addr, a.mem_num, a.detail_addr from addr_book a, member m where a.mem_num=m.num and m.num=?";
-		pstmt = conn.prepareStatement(sql);
+		String sql="select * from addr_book a, member m where a.mem_num=m.num and a.mem_num=?";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, mem_num);
-		rs = pstmt.executeQuery();
+		ResultSet rs = pstmt.executeQuery();
 		while(rs.next()) {
 			AddrBookDTO addrBookDTO = new AddrBookDTO();
 			addrBookDTO.setNum(rs.getInt("num"));
-			addrBookDTO.setZip_code(rs.getString("zip_code"));
 			addrBookDTO.setMem_num(rs.getInt("mem_num"));
+			addrBookDTO.setZip_code(rs.getString("zip_code"));
 			addrBookDTO.setBase_addr(rs.getString("base_addr"));
 			addrBookDTO.setDetail_addr(rs.getString("detail_addr"));
 			addrBookList.add(addrBookDTO);
@@ -51,5 +49,16 @@ public class AddrBookDAOImp implements AddrBookDAO {
 		pstmt.setString(4, addrBookDTO.getDetail_addr());
 		insert = pstmt.executeUpdate();
 		return insert;
+	}
+
+	@Override
+	public int addrBookDelete(int num) throws Exception {
+		int delete = 0;
+		String sql ="delete from addr_book where num=?";
+		PreparedStatement pstmt = null;
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, num);
+		delete = pstmt.executeUpdate();
+		return delete;
 	}
 }

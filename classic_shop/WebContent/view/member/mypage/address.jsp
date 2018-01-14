@@ -1,9 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<link rel="stylesheet" href="<c:url value='/public/css/member.css' />">
+</head>
+<body>
 <div class="member_body">
 	<div class="container">
 		<div class="address_wrap">
+		${addrList}
 			<h2 class="addressTitle">ADRESS LIST</h2>
 			<table class="table address_table">
 			
@@ -22,7 +25,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach var="addr" items="${addrBookList}">
+					<c:forEach var="addr" items="${addrList}">
 						<tr>
 							<td>
 								<label>
@@ -41,7 +44,9 @@
  			<div class="adress_btn_group">
 				<button class="btn btn-default" type="button">전체 선택</button>
 				<button class="btn btn-default" type="button">선택 삭제</button>
-				<button class="btn btn-default" type="button" onclick="location.href='<c:url value='/member/mypage/addressInsert.jsp'/>'">주소 등록</button>
+				<c:if test="${loginMem ne null}">
+					<button class="btn btn-default" type="button" onclick="location.href='<c:url value='/addresslist/insert.do'/>'">주소 등록</button>
+				</c:if>
 			</div>
 		</div>
 		<!-- RECENT ADDRESS -->

@@ -6,6 +6,6 @@ import com.classic.member.dto.CouponDTO;
 import com.classic.member.dto.CouponLogDTO;
 
 public interface CouponLogDAO {
-	public List<CouponLogDTO> addrBookSelect() throws Exception; //리스트 출력
+	public List<CouponLogDTO> couponLogSelect() throws Exception; //리스트 출력
 
 }
