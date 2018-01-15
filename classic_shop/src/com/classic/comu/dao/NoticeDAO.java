@@ -2,7 +2,7 @@ package com.classic.comu.dao;
 
 import java.util.List;
 
-import com.classic.common.dto.PagingDTO_syj;
+
 import com.classic.comu.dto.NoticeDTO;
 
 

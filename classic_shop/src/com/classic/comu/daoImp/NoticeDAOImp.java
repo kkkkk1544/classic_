@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.classic.common.dto.PagingDTO_syj;
+
 import com.classic.comu.dao.NoticeDAO;
 import com.classic.comu.dto.NoticeDTO;
 
@@ -65,11 +65,7 @@ public class NoticeDAOImp implements NoticeDAO{
 		return noticeDTO;
 	}
 
-	@Override
-	public List<NoticeDTO> selectNotice() throws Exception {
-	
-		return null;
-	}
+
 	
 //유정이가 전에 해놓은 거
 /*	@Override
