@@ -9,10 +9,9 @@
 			<tbody id="cartTitle">
 				<tr>
 					<th width="5%"><input type="checkbox"></th>
-					<th width="35%">상품정보</th>
+					<th width="45%">상품정보</th>
 					<th width="10%">판매가</th>
 					<th width="10%">수량</th>
-					<th width="10%">적립금</th>
 					<th width="10%">배송비</th>
 					<th width="10%">합계</th>
 					<th width="10%">선택</th>
@@ -131,7 +130,7 @@
 	var pNum;
 	/* var pInfo;
 	var value; */
-	var temp = 0; 
+	//var temp = 0; 
 	for(i=0; i<cookies.length; i++){
 		var key = cookies[i].split("=")[0].trim();
 		//console.log(key);
@@ -141,21 +140,28 @@
 			var pInfo = key.split("_")[2].trim();			//productInfo
 			var value = cookies[i].split("=")[1].trim();
 			//console.log(pNum+"="+pInfo+"="+value);
-			if(temp!=pNum){
-				temp = pNum;
-				/* console.log("temp : "+temp);
-				console.log(pInfo);
-				console.log(value);  */
+			if(eval("typeof(c"+pNum+")=='undefined'")){
 				eval("var c"+pNum+"= {}");
 				eval("c"+pNum+"."+pInfo+"=\""+value+"\"");
-				//console.log(eval("c"+pNum));
-			}else{
-				/* console.log(pNum);
-				console.log(pInfo);
-				console.log(value);  */
+			} else {
 				eval("c"+pNum+"."+pInfo+"=\""+value+"\"");
 			}
+			/* if(temp!=pNum){
+				temp = pNum;
+				console.log("temp : "+temp);
+				console.log(pInfo);
+				console.log(value);  
+				eval("var c"+pNum+"= {}");
+				eval("c"+pNum+"."+pInfo+"=\""+value+"\"");
+				console.log(eval("c"+pNum));
+			}else{
+				console.log(pNum);
+				console.log(pInfo);
+				console.log(value);  
+				eval("c"+pNum+"."+pInfo+"=\""+value+"\"");
+			} */
 		}
+		//이미지 경로 붙은면 length가 4가 될수도
 		if(eval("Object.keys(c"+pNum+").length==3")){
 			product[pNum]=eval("c"+pNum);
 		} else if(eval("Object.keys(c"+pNum+").length==5")){
@@ -165,32 +171,56 @@
 	//console.log(product);
 	//product[pNum] = info;
 	//console.log(product);
-	var i;
 	var table = document.getElementById("cartContents");
-	console.log(table);
-	for(var key in product){ 
-		var innerText ="";
-		 innerText += "<tr><td><input type='checkbox' value= '"+key+"'></td>";
-		 innerText += "<td class ='cartDetailList'><div class='cartDetailListDiv'>";
-		 innerText += "<div><p><a href='#'>이미지임</a></p></div>";
-		 innerText += "<div><ul class='list-group'><li class='list-group-item'><strong><a href='#'>"+product[key].name+"</a></strong></li>";
-		 innerText += "<li class='list-group-item'><strong><a href='#'id='optionList+"key">/a></strong></li>";
-		 innerText += "<li class='list-group-item'><button type='button' class='btn'>옵션변경</button></li>";
-		 innerText += "</ul></div></div></td><td>"+product[key].price+"</td>";
-		 innerText += "=<td><div class='productQuantity'><div><input type='number' value="+product[key].count+" min="1"></div><div>";
-		 innerText += "<button class='btn' >변경</button>	</div></div></td>";
-		table.innerHtml = innerHTML(innerText);
-		
-		 <td>20원</td>
-		<td>0원</td>
-		<td>100000원</td>
-		<td>
-			<div class="btn-group" id="cartListBtn">
-				<button type="button" class="btn" >주문하기</button>
-				<button type="button" class="btn">WISH LIST 등록</button>
-				<button type="button" class="btn">삭제</button>
-			</div>
-		</td>
-	</tr>	 */ 
+	//console.log(table);
+	/* console.log(product);
+	console.log(Object.keys(product).length); */
+	var innerText ="";
+	var key ;
+	for(key in product){
+		//if(product[key].size==undefined){console.log("eld");}
+		innerText +='<tr>';
+		innerText +='	<td><input type="checkbox"></td>';
+		innerText +='	<td id ="cartDetailList">';
+		innerText +='		<div id="cartDetailListDiv">';
+		innerText +='			<div>';
+		innerText +='				<p><a href="#">이미지임</a></p>';
+		innerText +='			</div>';
+		innerText +='			<div>';
+		innerText +='				<ul class="list-group" >';
+		innerText +='					<li class="list-group-item"><a href="#">'+product[key].name+'</a></li>';
+		innerText +='					<li class="list-group-item">';
+		innerText += (product[key].colour==undefined)?"":"color"+product[key].colour;
+		innerText += (product[key].sizu==undefined)?"":"sizu"+product[key].sizu;
+		innerText +='					</li>';
+		innerText +='					<li class="list-group-item"><button type="button" class="btn btn-default">옵션변경</button></li>';
+		innerText +='				</ul>';
+		innerText +='			</div>';
+		innerText +='		</div>';
+		innerText +='	</td>';
+		innerText +='	<td>'+product[key].price+'</td>';
+		innerText +='	<td>';
+		innerText +='		<div id="productQuantity">';
+		innerText +='			<div>';
+		innerText +='				<input type="number" value="'+product[key].count+'" min="1">';
+		innerText +='			</div>';
+		innerText +='			<div>';
+		innerText +='				<button class="btn btn-default" >변경</button>';
+		innerText +='			</div>';					
+		innerText +='		</div>';
+		innerText +='	</td>'
+		innerText +='	<td>';
+		innerText += (product[key].price>50000)?"무료":"2500원";
+		innerText +='	</td>';
+		innerText +='	<td>'+product[key].price+'</td>';
+		innerText +='	<td>';
+		innerText +='		<div class="btn-group" id="cartListBtn">';
+		innerText +='			<button type="button" class="btn btn-default" >주문하기</button>';
+		innerText +='			<button type="button" class="btn btn-default">WISH LIST 등록</button>';
+		innerText +='			<button type="button" class="btn btn-default">삭제</button>';
+		innerText +='		</div>';
+		innerText +='	</td>';
+		innerText +='</tr>';
 	}
+	table.innerHTML =innerText;
 </script>

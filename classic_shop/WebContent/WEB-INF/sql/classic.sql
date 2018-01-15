@@ -204,7 +204,9 @@ create table wish(
 	num number(8) constraint wish_pk_num primary key,
 	product_num number(8) constraint wish_fk_product_num references product(num),
 	mem_num number(8) constraint wish_fk_mem_num references member(num),
-	indate date
+	indate date,
+	sizu_num number(8) not null constraint wish_fk_sizu_num references sizu(num),
+	colour_num number(8) not null constraint wish_fk_colour_num references colour(num)
 );
 
 create sequence bank_seq start with 1 increment by 1;
