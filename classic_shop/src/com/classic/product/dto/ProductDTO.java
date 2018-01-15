@@ -44,6 +44,17 @@ public class ProductDTO {
 	private Date indate;
 	private int sale;
 	private Date out_time;
+	
+	private int row_num;
+	
+	
+	
+	public int getRow_num() {
+		return row_num;
+	}
+	public void setRow_num(int row_num) {
+		this.row_num = row_num;
+	}
 	public int getNum() {
 		return num;
 	}

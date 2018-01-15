@@ -1,8 +1,7 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>CLASSIC</title>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<link rel="stylesheet" href="<c:url value='/public/css/comu.css' />">
+<script src="<c:url value='/public/js/comu.js'/>"></script>
 </head>
 <body>
 	<div class="container">
@@ -21,5 +20,3 @@
 			</div>
 		</form>
 	</div>
-</body>
-</html> -->

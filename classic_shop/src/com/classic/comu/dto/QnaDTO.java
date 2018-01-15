@@ -29,6 +29,16 @@ public class QnaDTO {
 	private String name;
 	private int img_num;
 	private String img_name;
+	private int row_num;
+	
+	
+	
+	public int getRow_num() {
+		return row_num;
+	}
+	public void setRow_num(int row_num) {
+		this.row_num = row_num;
+	}
 	public int getNum() {
 		return num;
 	}
@@ -100,6 +110,7 @@ public class QnaDTO {
 		return "{\"num\":\"" + num + "\", \"mem_num\":\"" + mem_num + "\", \"subject\":\"" + subject
 				+ "\", \"content\":\"" + content + "\", \"count\":\"" + count + "\", \"secure\":\"" + secure
 				+ "\", \"pwd\":\"" + pwd + "\", \"indate\":\"" + indate + "\", \"name\":\"" + name
-				+ "\", \"img_num\":\"" + img_num + "\", \"img_name\":\"" + img_name + "\"} ";
+				+ "\", \"img_num\":\"" + img_num + "\", \"img_name\":\"" + img_name + "\", \"row_num\":\"" + row_num
+				+ "\"} ";
 	}
 }

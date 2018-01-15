@@ -8,12 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-@WebServlet("/main.do")
-public class MainController extends HttpServlet{
+@WebServlet("/introduce.do")
+public class ProjectInfoController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher("/view/main.jsp").forward(req, resp);
+		req.getRequestDispatcher("/view/project.jsp").forward(req, resp);
 	}
-
 }

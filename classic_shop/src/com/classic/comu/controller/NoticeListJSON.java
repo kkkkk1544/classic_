@@ -19,7 +19,7 @@ public class NoticeListJSON extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		List<NoticeDTO> noticeList = new NoticeServiceImp().readNotice();
 		req.setAttribute("noticeList", noticeList);
-		req.getRequestDispatcher("/view/comu/noticeListView.jsp").forward(req, resp);
+		req.getRequestDispatcher("/view/comu/noticeList.jsp").forward(req, resp);
 	}
 
 }

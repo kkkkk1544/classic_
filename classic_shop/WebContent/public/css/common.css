@@ -118,12 +118,25 @@
 	padding: 0 13%;
 }
 
-.cs>.badge-warning>a{
+.cs .project{
+	background-color: #de3131cf;
+}
+
+.cs .project>a{
 	text-decoration: none;
 	color: #fff;
 }
 
-.cs>.badge-warning>a:hover {
+.cs .project>a:hover {
+	color: #000;
+}
+
+.cs .location>a{
+	text-decoration: none;
+	color: #fff;
+}
+
+.cs .location>a:hover {
 	color: #000;
 }
 
@@ -131,24 +144,23 @@
 
 .map_body{
 	width: 100%;
-	padding: 8% 12% 2% 12%;
+	padding: 8% 3% 2% 3%;
+}
+#map{
+	border: 1px solid #000;
+}
+.company_project .table_title, .company_project .table_content{
+	padding: 5px;
 }
 
-.company{
-	display: inline-block;
+.company_project .table_title{
+	text-align: right;
 }
 
-.container>#map{
-	width: 50%;
+.company_project>h2{
+	border-bottom: 1px solid #000;
+	padding-bottom: 15px;
 }
-
-.container>#info{
-	width: 50%;
-}
-
-
-
-
 
 
 

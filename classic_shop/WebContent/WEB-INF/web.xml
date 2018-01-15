@@ -11,7 +11,7 @@
       <include-prelude>/WEB-INF/include/include_tag.jsp</include-prelude>
     </jsp-property-group>
     <jsp-property-group>
-      <url-pattern>*.jsp</url-pattern>
+      <url-pattern>/view/*</url-pattern>
       <include-prelude>/template/header.jsp</include-prelude>
       <include-coda>/template/footer.jsp</include-coda>
     </jsp-property-group>

@@ -82,4 +82,29 @@ public class MemberServiceImp implements MemberService{
 	}
 //주연 끝
 
+	@Override
+	public boolean modifyMember(MemberDTO memDTO) {
+		boolean modify = false;
+		try {
+			conn = ClassicDBConnection.getConnection();
+			conn.setAutoCommit(false);
+			conn.commit();
+			int update = new MemberDAOImp(conn).memberUpdate(memDTO);
+			if(update==1) {
+				modify = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			try {
+				conn.rollback();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		} finally {
+			ClassicDBConnection.close(conn);
+		}
+		return modify;
+	}
+
+
 }

@@ -17,6 +17,8 @@
 <!-- jQuery lib -->
 <script src='<c:url value="/public/js/jquery/jquery-3.2.1.min.js"/>'></script>
 <script src='<c:url value="/public/js/jquery-ui/jquery-ui.min.js"/>'></script>
+<!-- kakao 지도 api -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9634cbc392b8b80779d4f419ee72bf3a"></script>
 <title>CLASSIC</title>
 <script>
 	if("${msg}"!=""){
@@ -84,7 +86,7 @@
 							<c:choose>
 								<c:when test="${loginMem ne null}">
 										<c:if test="${loginMem.grade==0}">
-											<li><a href="#"><strong style="color: navy;">관리자 페이지 이동</strong></a></li>
+											<li><button type="button" class="btn btn-danger">관리자 페이지 이동</button></li>
 										</c:if>
 									<li><a><strong style="color: #000;">${loginMem.id} 님 접속</strong></a></li>
 									<li><a href="<c:url value='/logout.do' />">LOGOUT</a></li>
@@ -101,9 +103,9 @@
 						<c:choose>
 							<c:when test="${loginMem ne null}">
 								<li role="presentation" class="dropdown">
-									<a class="dropdown-toggle" href="<c:url value='/view/member/mypage/detail.jsp'/>" role="button" aria-expanded="false">MY PAGE</a>
+									<a class="dropdown-toggle" href="<c:url value='/mypage.do?id=${loginMem.id}'/>" role="button" aria-expanded="false">MY PAGE</a>
 									<ul class="dropdown-menu" role="menu">
-										<li><a href="<c:url value='/view/member/mypage/modify.jsp'/>">회원정보수정</a></li>
+										<li><a href="<c:url value='/mypage/modify.do?id=${loginMem.id}'/>">회원정보수정</a></li>
 										<li><a href="<c:url value='/view/address/list.do?num=${loginMem.num}'/>">배송주소록</a></li>
 										<li><a href="<c:url value='/view/member/mypage/mileage.jsp'/>">적립금</a></li>
 										<li><a href="<c:url value='/view/member/mypage/coupon.jsp'/>">쿠폰</a></li>
