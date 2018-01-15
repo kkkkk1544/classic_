@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="<c:url value='/public/css/member.css' />">
+<link rel="stylesheet" href="<c:url value='/public/css/comu.css' />">
 <script src="<c:url value='/public/js/member.js'/>"></script>
+<script src="<c:url value='/public/js/comu.js'/>"></script>
 </head>
 <body>	
 <div class="member_body">
@@ -30,7 +32,7 @@
 				</div>
 			</div>
 			<div class="mypage_btn_group">
-				<button class="btn btn-default" type="button" onclick="location.href='<c:url value='/mypage/modify.do'/>'">회원정보 수정</button>
+				<button class="btn btn-default" type="button" onclick="location.href='<c:url value='/mypage/modify.do?num=${memDTO.num}'/>'">회원정보 수정</button>
 				<button class="btn btn-default" type="button" onclick="location.href='<c:url value='/member/mypage/address.jsp'/>'">배송주소록 관리</button>
 			</div>
 		</div>
@@ -100,7 +102,7 @@
 			<div class="myPosting_titleandbtn">
 				<h2 class="myPostingTitle">MY POSTING</h2>
 				<p>
-					<a href="<c:url value='/member/mypage/myposting.jsp'/>">
+					<a href="<c:url value='/mypage/myposting.do?num=${memDTO.num}'/>">
 						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 					</a>
 				</p>
@@ -141,10 +143,25 @@
 							</tr>
 						</thead>
 						<tbody>
-						<c:forEach var="qna" items="${qnaList}" begin="1" end="5">
+						<c:forEach var="qna" items="${memQnaList}" end="4">
 							<tr>
-								<td class="col-sm-1">${qna.num}</td>
-								<td class="col-sm-4"><a href="#">${qna.subject}</a></td>
+								<td class="col-sm-1">${qna.row_num}</td>
+								<td class="col-sm-4">
+									<a href="<c:url value='/community/qna/read.do?num=${qna.num}'/>">
+									<%-- <a href="javascript:readQna('${qna.num}')"> --%>
+										<c:choose>
+											<c:when test="${qna.subject==0}">상품 문의</c:when>
+											<c:when test="${qna.subject==1}">배송 문의</c:when>
+											<c:when test="${qna.subject==2}">배송 전 변경</c:when>
+											<c:when test="${qna.subject==3}">입금 문의</c:when>
+											<c:when test="${qna.subject==4}">교환/환불 문의</c:when>
+											<c:when test="${qna.subject==5}">기타 문의</c:when>
+										</c:choose>
+									</a>
+									<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+									<c:if test="${qna.secure==1}">
+										<span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+									</c:if>
 								<td class="col-sm-1">${qna.name}</td>
 								<td class="col-sm-1">${qna.indate}</td>
 							</tr>
@@ -156,6 +173,8 @@
 		</div>
 	</div>
 </div>
+
+
 
 <!-- 
 table 맨 밑줄 border -> 어떤 테이블의 맨 밑에 border를 넣는건가여?

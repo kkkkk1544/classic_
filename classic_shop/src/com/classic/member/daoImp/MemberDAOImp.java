@@ -13,11 +13,9 @@ public class MemberDAOImp implements MemberDAO{
 	public MemberDAOImp(Connection conn) {
 		this.conn = conn;
 	}
-
-//주연 시작
-	//로그인
+	
 	@Override
-	public MemberDTO memberSelect(String id, String pw) throws Exception{
+	public MemberDTO memberSelect(String id, String pw) throws Exception {
 		MemberDTO memDTO = null;
 		String sql = "SELECT * FROM member WHERE id=? AND pw=?";
 		PreparedStatement pstmt = null;
@@ -38,15 +36,15 @@ public class MemberDAOImp implements MemberDAO{
 		}
 		return memDTO;
 	}
-	//detail
+	
 	@Override
-	public MemberDTO memberSelect(String id) throws Exception {
+	public MemberDTO memberSelect(int num) throws Exception {
 		MemberDTO memDTO = null;
-		String sql = "SELECT * FROM member WHERE id=?";
+		String sql = "SELECT * FROM member WHERE num=?";
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		pstmt = conn.prepareStatement(sql);
-		pstmt.setString(1, id);
+		pstmt.setInt(1, num);
 		rs = pstmt.executeQuery();
 		if(rs.next()) {
 			memDTO = new MemberDTO();
@@ -60,7 +58,35 @@ public class MemberDAOImp implements MemberDAO{
 		}
 		return memDTO;
 	}
-	//회원가입
+	
+	@Override
+	public int selectMemId(String id) throws Exception {
+		int idNumber = 0;
+		String sql = "SELECT * FROM member WHERE id=?";
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, id);
+		rs = pstmt.executeQuery();
+		if(rs.next()) {
+			idNumber = 1;
+		}
+		return idNumber;
+	}
+	@Override
+	public int selectMemMail(String mail) throws Exception {
+		int mailNumber = 0;
+		String sql = "SELECT * FROM member WHERE mail=?";
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, mail);
+		rs = pstmt.executeQuery();
+		if(rs.next()) {
+			mailNumber = 1;
+		}
+		return mailNumber;
+	}
 	@Override
 	public int memberInsert(MemberDTO memDTO) throws Exception {
 		int insert = 0;
@@ -75,22 +101,6 @@ public class MemberDAOImp implements MemberDAO{
 		insert = pstmt.executeUpdate();
 		return insert;
 	}
-
-	@Override
-	public int selectMail(String mail) throws Exception {
-		int mailNumber = 0;
-		String sql = "SELECT * FROM member WHERE mail=?";
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		pstmt = conn.prepareStatement(sql);
-		pstmt.setString(1, mail);
-		rs = pstmt.executeQuery();
-		if(rs.next()) {
-			mailNumber = 1;
-		}
-		return mailNumber;
-	}
-
 	@Override
 	public int memberUpdate(MemberDTO memDTO) throws Exception {
 		int update = 0;
@@ -103,6 +113,5 @@ public class MemberDAOImp implements MemberDAO{
 		update = pstmt.executeUpdate();
 		return update;
 	}
-
 
 }

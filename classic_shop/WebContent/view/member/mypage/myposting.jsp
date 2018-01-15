@@ -25,40 +25,42 @@
 					</tr>
 				</thead>
 				<tbody>
+			<c:forEach var="qna" items="${memQnaList}">
 					<tr>
 						<td>
 							<label>
 								<input type="checkbox" id="blankCheckbox" value="option1" aria-label="checkbox">
 							</label>
 						</td>
-						<td>1</td>
-						<td><a href="#">배송 문의입니다.</a></td>
-						<td>나야나</td>
-						<td>18-01-03</td>
-						<td>1</td>
+						<td class="col-sm-1">${qna.row_num}</td>
+								<td class="col-sm-4">
+									<a href="<c:url value='/community/qna/read.do?num=${qna.num}'/>">
+										<c:choose>
+											<c:when test="${qna.subject==0}">상품 문의</c:when>
+											<c:when test="${qna.subject==1}">배송 문의</c:when>
+											<c:when test="${qna.subject==2}">배송 전 변경</c:when>
+											<c:when test="${qna.subject==3}">입금 문의</c:when>
+											<c:when test="${qna.subject==4}">교환/환불 문의</c:when>
+											<c:when test="${qna.subject==5}">기타 문의</c:when>
+										</c:choose>
+									</a>
+									<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+									<c:if test="${qna.secure==1}">
+										<span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+									</c:if>
+								<td class="col-sm-1">${qna.name}</td>
+								<td class="col-sm-1">${qna.indate}</td>
+								<td class="col-sm-1">${qna.count}</td>
 					</tr>
+					</c:forEach>
 				</tbody>
 			</table>
  			<div class="myposting_btn_group">
 				<button class="btn btn-default" type="button">전체 선택</button>
 				<button class="btn btn-default" type="button">선택 삭제</button>
 			</div>
-			<div class="row">
-				<div class="col-xs-12">
-					<div class="myposting_paging">
-					  <ul class="pagination pagination-sm">
-					    <li><a href="#"><span aria-hidden="true">«</span><span class="sr-only">Previous</span></a></li>
-					    <li><a href="#">1</a></li>
-					    <li><a href="#">2</a></li>
-					    <li><a href="#">3</a></li>
-					    <li><a href="#">4</a></li>
-					    <li><a href="#">5</a></li>
-					    <li><a href="#"><span aria-hidden="true">»</span><span class="sr-only">Next</span></a></li>
-					  </ul>
-					</div>
-         		</div>
-			</div>
-		</div>
+<!-- 페이징 -->
+	<jsp:include page="/common/paging.jsp"/>
 
 		<!-- My review -->
 		<div class="myReview_wrap">

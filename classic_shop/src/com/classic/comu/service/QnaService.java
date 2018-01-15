@@ -10,10 +10,12 @@ public interface QnaService {
 	
 	//public List<QnaDTO> listQna();
 	public List<QnaDTO> listQna(PagingDTO pagingDTO);
+	public List<QnaDTO> readMemQna(int mem_num, PagingDTO pagingDTO);
 	public QnaDTO readQna(int num);
 	public boolean registerQna(QnaDTO qnaDTO);
 	public boolean modifyQna(QnaDTO qnaDTO);
 	public boolean removeQna(int num);
 	public int recordTotal();
-	public List<QnaDTO> readQnaMem(int mem_num);
+	public int memRecordTotal(int mem_num);
 }
+

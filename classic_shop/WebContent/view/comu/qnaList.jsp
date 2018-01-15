@@ -33,7 +33,7 @@
 						<tr>
 							<td>${qnaList.num}</td>
 								<td style="text-align: left;">
-									<a href="javascript:readQna('${qnaList.num}')">
+									<a href="<c:url value='/community/qna/read.do?num=${qnaList.num}'/>">
 										<c:choose>
 											<c:when test="${qnaList.subject==0}">상품 문의</c:when>
 											<c:when test="${qnaList.subject==1}">배송 문의</c:when>
@@ -78,19 +78,3 @@
 		</div>
 </div>
 
-
-
-
-
-
-
-<!-- 
-<select name="subjectValue" class="form-control optionField">
-						<option value="">선택</option>
-						<option value="0">상품 문의</option>
-						<option value="1">배송 문의</option>
-						<option value="2">배송 전 변경</option>
-						<option value="3">입금 문의</option>
-						<option value="4">교환/환불 문의</option>
-						<option value="5">기타 문의</option>
-					</select> -->

@@ -2,7 +2,6 @@ package com.classic.member.serviceImp;
 
 import java.sql.Connection;
 
-import com.classic.member.dao.MemberDAO;
 import com.classic.member.daoImp.MemberDAOImp;
 import com.classic.member.dto.MemberDTO;
 import com.classic.member.service.MemberService;
@@ -10,7 +9,7 @@ import com.classic.util.ClassicDBConnection;
 
 public class MemberServiceImp implements MemberService{
 	static Connection conn = null;
-//주연 시작
+
 	@Override
 	public MemberDTO readMember(String id, String pw) {
 		MemberDTO memDTO = null;
@@ -26,11 +25,11 @@ public class MemberServiceImp implements MemberService{
 	}
 
 	@Override
-	public MemberDTO readMember(String id) {
+	public MemberDTO readMember(int num) {
 		MemberDTO memDTO = null;
 		try {
 			conn = ClassicDBConnection.getConnection();
-			memDTO = new MemberDAOImp(conn).memberSelect(id);
+			memDTO = new MemberDAOImp(conn).memberSelect(num);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -39,6 +38,39 @@ public class MemberServiceImp implements MemberService{
 		return memDTO;
 	}
 
+	@Override
+	public boolean checkMemId(String id) {
+		boolean checkIdMsg = false;
+		try {
+			conn = ClassicDBConnection.getConnection();
+			int idNumber = new MemberDAOImp(conn).selectMemId(id);
+			if(idNumber==1) {
+				checkIdMsg = true; //true인 경우 id 중복
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			ClassicDBConnection.close(conn);
+		}
+		return checkIdMsg;
+	}
+
+	@Override
+	public boolean checkMemMail(String mail) {
+		boolean checkEmailMsg = false;
+		try {
+			conn = ClassicDBConnection.getConnection();
+			int mailNumber = new MemberDAOImp(conn).selectMemMail(mail);
+			if(mailNumber==1) {
+				checkEmailMsg = true; //true인 경우 email 중복
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			ClassicDBConnection.close(conn);
+		}
+		return checkEmailMsg;
+	}
 
 	@Override
 	public boolean registerMember(MemberDTO memDTO) {
@@ -65,24 +97,6 @@ public class MemberServiceImp implements MemberService{
 	}
 
 	@Override
-	public boolean checkMail(String mail) {
-		boolean checkEmailMsg = false;
-		try {
-			conn = ClassicDBConnection.getConnection();
-			int mailNumber = new MemberDAOImp(conn).selectMail(mail);
-			if(mailNumber==1) {
-				checkEmailMsg = true; //true인 경우 email 중복
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			ClassicDBConnection.close(conn);
-		}
-		return checkEmailMsg;
-	}
-//주연 끝
-
-	@Override
 	public boolean modifyMember(MemberDTO memDTO) {
 		boolean modify = false;
 		try {
@@ -105,6 +119,5 @@ public class MemberServiceImp implements MemberService{
 		}
 		return modify;
 	}
-
 
 }

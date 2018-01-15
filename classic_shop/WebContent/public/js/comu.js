@@ -80,7 +80,7 @@ var qnaListBtn = function(){
 var removeQna = function(num){
 	var removeNum = num;
 	var setting={
-			url: "/classic_shop/qna/readRemove.do?num="+removeNum,
+			url: "/classic_shop/community/qna/read.do?num="+removeNum,
 			type: "DELETE",
 			dataType: "json",
 			success: function(data){
@@ -96,7 +96,7 @@ var removeQna = function(num){
 }
 
 //readQna
-var readQna = function(num){
+/*var readQna = function(num){
 	var setting={
 			url: "/classic_shop/qna/readRemove.do?num="+num,
 			data: "GET",
@@ -165,7 +165,7 @@ var readQna = function(num){
 	}
 		return subjectStr;
 	}
-}
+}*/
 
 //qnaModify
 var modifyQnaForm = function(num){

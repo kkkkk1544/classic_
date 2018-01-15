@@ -52,7 +52,7 @@ $(function(){
 					type: "GET",
 					dataType: "json",
 					success: function(data){
-						if(data.checkIdMsg){ //checkIdMsg == true
+						if(!(data.checkIdMsg)){ //checkIdMsg == false
 							$("#checkIdMsg").html("사용 가능한 아이디입니다.").css("color","blue");
 							idStrFlag = true;
 						}else{
@@ -157,9 +157,9 @@ var joinJson = function(joinForm){
 	}
 }
 
-var returnMypage = function(){
-	//일단은 main으로
-	location.href="/classic_shop/main.do";
+var returnMypage = function(modifyForm){
+	var num = modifyForm.num.value;
+	location.href="/classic_shop/mypage.do?num="+num;
 }
 
 //회원정보수정

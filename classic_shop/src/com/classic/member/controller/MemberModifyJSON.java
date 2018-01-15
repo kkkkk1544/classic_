@@ -15,8 +15,8 @@ import com.classic.member.serviceImp.MemberServiceImp;
 public class MemberModifyJSON extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String id = req.getParameter("id");
-		MemberDTO memDTO = new MemberServiceImp().readMember(id);
+		String str_num = req.getParameter("num");
+		MemberDTO memDTO = new MemberServiceImp().readMember(Integer.parseInt(str_num));
 		req.setAttribute("modifyMem", memDTO);
 		req.getRequestDispatcher("/view/member/mypage/modify.jsp").forward(req, resp);
 	}

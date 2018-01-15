@@ -28,6 +28,7 @@ public class QnaServiceImp implements QnaService{
 		}
 		return qnaList;
 	}*/
+
 	@Override
 	public List<QnaDTO> listQna(PagingDTO pagingDTO) {
 		List<QnaDTO> qnaList = new ArrayList<QnaDTO>();
@@ -47,6 +48,27 @@ public class QnaServiceImp implements QnaService{
 			ClassicDBConnection.close(conn);
 		}
 		return qnaList;
+	}
+
+	@Override
+	public List<QnaDTO> readMemQna(int mem_num, PagingDTO pagingDTO) {
+		List<QnaDTO> memQnaList = new ArrayList<QnaDTO>();
+		try {
+			conn = ClassicDBConnection.getConnection();
+			conn.setAutoCommit(false);
+			conn.commit();
+			memQnaList = new QnaDAOImp(conn).selectMemQna(mem_num, pagingDTO);
+		} catch (Exception e) {
+			e.printStackTrace();
+			try{
+				conn.rollback();
+			} catch (Exception e2){
+				e2.printStackTrace();
+			}
+		} finally {
+			ClassicDBConnection.close(conn);
+		}
+		return memQnaList;
 	}
 
 	@Override
@@ -158,16 +180,25 @@ public class QnaServiceImp implements QnaService{
 	}
 
 	@Override
-	public List<QnaDTO> readQnaMem(int mem_num) {
-		List<QnaDTO> qnaList = new ArrayList<QnaDTO>();
+	public int memRecordTotal(int mem_num) {
+		int memTotalRecord = 0;
 		try {
 			conn = ClassicDBConnection.getConnection();
-			qnaList = new QnaDAOImp(conn).selectQna(mem_num);
+			conn.setAutoCommit(false);
+			conn.commit();
+			memTotalRecord = new QnaDAOImp(conn).qnaMemTotalRecord(mem_num);
 		} catch (Exception e) {
 			e.printStackTrace();
+			try {
+				conn.rollback();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
 		} finally {
 			ClassicDBConnection.close(conn);
 		}
-		return qnaList;
+		return memTotalRecord;
 	}
+
+
 }

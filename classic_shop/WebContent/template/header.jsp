@@ -103,16 +103,16 @@
 						<c:choose>
 							<c:when test="${loginMem ne null}">
 								<li role="presentation" class="dropdown">
-									<a class="dropdown-toggle" href="<c:url value='/mypage.do?id=${loginMem.id}'/>" role="button" aria-expanded="false">MY PAGE</a>
+									<a class="dropdown-toggle" href="<c:url value='/mypage.do?num=${loginMem.num}'/>" role="button" aria-expanded="false">MY PAGE</a>
 									<ul class="dropdown-menu" role="menu">
-										<li><a href="<c:url value='/mypage/modify.do?id=${loginMem.id}'/>">회원정보수정</a></li>
+										<li><a href="<c:url value='/mypage/modify.do?num=${loginMem.num}'/>">회원정보수정</a></li>
 										<li><a href="<c:url value='/view/address/list.do?num=${loginMem.num}'/>">배송주소록</a></li>
 										<li><a href="<c:url value='/view/member/mypage/mileage.jsp'/>">적립금</a></li>
 										<li><a href="<c:url value='/view/member/mypage/coupon.jsp'/>">쿠폰</a></li>
 										<li><a href="<c:url value='/view/order/cart/cart.jsp'/>">장바구니</a></li>
 										<li><a href="<c:url value='/view/order/wishlist.do?num=${loginMem.num}'/>">위시리스트</a></li>
 										<li><a href="#">주문내역</a></li>
-										<li><a href="<c:url value='/view/member/mypage/myposting.jsp'/>">내가쓴글</a></li>
+										<li><a href="<c:url value='/mypage/myposting.do?num=${loginMem.num}'/>">내가쓴글</a></li>
 									</ul>
 								</li>
 								<li>

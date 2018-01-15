@@ -28,7 +28,6 @@
 			- 아코디언
 			- 비밀번호 입력창 / 로그인 id/pw 찾기창
 			- footer Map CSS
-		9. mypage, memUpdate == num으로 받아서 고치기
  -->
 <!-- 
 	한 거
@@ -39,6 +38,9 @@
 		5. banner cookie 구현
 		7. footer map
 			- 지도에 아이콘 띄우기(==> modal로 구현할 것)
+		9. mypage, memUpdate == num으로 받아서 고치기
+		10. 마이페이지 - 회원정보/QNA 리스트 출력
+		11. 내가 쓴 글 - QNA 리스트 출력 페이징O
  -->
 <!-- 
 	이메일 인증 참고자료
