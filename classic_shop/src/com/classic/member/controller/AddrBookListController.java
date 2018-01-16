@@ -32,8 +32,25 @@ public class AddrBookListController extends HttpServlet{
 		}finally {
 			ClassicDBConnection.close(conn);
 		}
-		System.out.println(addrList);
 		req.setAttribute("addrList", addrList);
 		req.getRequestDispatcher("/view/member/mypage/address.jsp").forward(req, resp);
+	}
+	@Override
+	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		Connection conn = null;
+		int delete = 0;
+		String str_num = req.getParameter("num");
+		try {
+			conn=ClassicDBConnection.getConnection();
+			AddrBookDAO addrDAO = new AddrBookDAOImp(conn);
+			delete = addrDAO.addrBookDelete(Integer.parseInt(str_num));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			ClassicDBConnection.close(conn);
+		}
+		resp.setCharacterEncoding("utf-8");
+		resp.setContentType("application/json");
+		resp.getWriter().append("{\"delete\":"+delete+"}");
 	}
 }

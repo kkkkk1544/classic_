@@ -12,6 +12,7 @@
 						<div class="boardWrite">
 							<table class="table table-bordered addressBook_table">
 								<tbody>
+<!-- 										배송지명x
 									<tr>
 										<th scope="row">배송지명</th>
 										<td>
@@ -21,14 +22,16 @@
 										</td>
 									</tr>
 									<tr>
+										성명x
 										<th scope="row">성명</th>
 										<td>
 											<div class="col-sm-3">
 												<input type="text" name="name" value="" class="form-control">
 											</div>
 										</td>
-									</tr>
+									</tr> -->
 									<tr>
+										<!-- 주소 -->
 										<th scope="row">주소</th>
 										<td>
 											<div class="zip_code_wrap">
@@ -52,7 +55,8 @@
 											</div>
 										</td>
 									</tr>
-									<tr>
+									<!-- <tr>
+										전화x
 										<th scope="row">일반전화</th>
 										<td>
 											<div class="col-sm-3">
@@ -67,18 +71,12 @@
 												<input type="text" name="name" value="" class="form-control">
 											</div>
 										</td>
-									</tr>
-									
-									
-									
-									
+									</tr> -->
 								</tbody>
-							
 							</table>
-						
 						</div>
-						<!-- -->
-				
+						<input type="hidden" name="memNum" value="${loginMem.num}">
+						<!-- 버튼 -->
 						<div class="modify_btn_group">
 							<button class="btn btn-default" type="button" onclick="addrJson(this.form)">등록</button>
 							<button class="btn btn-default" type="button" onclick="location.href='<c:url value='/addresslist.do?mem_num=${loginMem.num}'/>'">취소</button>
@@ -92,21 +90,23 @@
 
 <script>
 	var addrJson = function(addrForm){
-		var azip = addrForm.addrZip.value;
-		var abase = addrForm.addrBase.value;
-		var adetail = addrForm.addrDetail.value;
+		var mem_num = addrForm.memNum.value;
+		var zip_code = addrForm.addrZip.value;
+		var base_addr = addrForm.addrBase.value;
+		var detail_addr = addrForm.addrDetail.value;
 		var url = "/classic_shop/addresslist/insert.do"
 		var method = "POST";
-		var data = "azip="+azip+"&abase="+abase+"&adetail="+adetail;
+		var data = "mem_num="+mem_num+"&zip_code="+zip_code+"&base_addr="+base_addr+"&detail_addr="+detail_addr;
 		console.log(data);
 		var http = new XMLHttpRequest();
 		http.open(method, url, true);
 		http.onreadystatechange = function(){
 			if(this.readyState==4 && this.status==200){
-				var register = JSON.parse(this.responseText)["register"];
+				var register = JSON.parse(this.response)["register"];
 				if(register){
 					alert("등록");
-					/*location.href="/classic_shop/addresslist.do?mem_num=${loginMem.num}"; */
+					location.href="/classic_shop/addresslist.do?mem_num=${loginMem.num}";
+					
 				}else{
 					alert("다시 시도");
 				}

@@ -20,7 +20,7 @@ public class AddrBookDAOImp implements AddrBookDAO {
 	@Override
 	public List<AddrBookDTO> addrBookSelect(int mem_num) throws Exception {
 		List<AddrBookDTO> addrBookList = new ArrayList<AddrBookDTO>();
-		String sql="select * from addr_book a, member m where a.mem_num=m.num and a.mem_num=?";
+		String sql="select * from addr_book a, member m where a.mem_num=m.num and a.mem_num=? order by a.num desc";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, mem_num);
 		ResultSet rs = pstmt.executeQuery();
@@ -39,8 +39,7 @@ public class AddrBookDAOImp implements AddrBookDAO {
 	@Override
 	public int addrBookInsert(AddrBookDTO addrBookDTO) throws Exception {
 		int insert=0;
-		String sql="INSERT INTO addr_book(num, mem_num, zip_code, base_addr, detail_addr)"
-				+ " VALUES(addr_book_seq.nextval, ?, ?, ?, ?)";
+		String sql="INSERT INTO addr_book(num, mem_num, zip_code, base_addr, detail_addr) VALUES(addr_book_seq.nextval, ?, ?, ?, ?)";
 		PreparedStatement pstmt = null;
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, addrBookDTO.getMem_num());
