@@ -56,12 +56,12 @@ public class QnaDAOImp implements QnaDAO{
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		pstmt = conn.prepareStatement(sql);
-		pstmt.setInt(1, pagingDTO.getEndRecord());
-		pstmt.setInt(2, pagingDTO.getStartRecord());
+		pstmt.setInt(1, pagingDTO.getEndRecord()); //끝 게시물
+		pstmt.setInt(2, pagingDTO.getStartRecord()); //시작 게시물
 		rs = pstmt.executeQuery();
 		while(rs.next()) {
 			QnaDTO qnaDTO = new QnaDTO();
-			qnaDTO.setRow_num(rs.getInt("row_num"));
+			qnaDTO.setRow_num(rs.getInt("row_num")); //DTO에 row_num 추가하기 & 맨 밑에 보면 total 레코드 구하는 메소드 있음
 			qnaDTO.setNum(rs.getInt("num"));
 			qnaDTO.setName(rs.getString("name"));
 			qnaDTO.setSubject(rs.getInt("subject"));
@@ -174,7 +174,7 @@ public class QnaDAOImp implements QnaDAO{
 		return delete;
 	}
 	@Override
-	public int qnaTotalRecord() throws Exception {
+	public int qnaTotalRecord() throws Exception { //페이징에 사용할 totalRecord
 		int totalRecord = 0;
 		String sql = "SELECT COUNT(*) as total FROM qna";
 		PreparedStatement pstmt = null;

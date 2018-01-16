@@ -43,4 +43,5 @@
 			</table>
 		</div>
 <!-- PAGING -->
+	<jsp:include page="/common/paging.jsp"/>
 </div>

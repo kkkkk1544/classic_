@@ -50,6 +50,10 @@
 	http://compunication.tistory.com/15
 	https://prezi.com/ggcv6bezgvmr/mvc/
 	
+	
+	http://drsggg.tistory.com/47
+	https://shj7242.github.io/2017/12/04/Spring28/
+	
 	로그인 SSL 인증
 	RSA 암호화
 	

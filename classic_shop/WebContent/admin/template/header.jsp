@@ -38,9 +38,16 @@
 	<!-- 관리자 관련 메뉴 -->
 		<div class="collapse navbar-collapse">
 			<ul class="navbar-nav ml-auto">
-				<li class="nav-item"><a class="nav-link" href="#">admin1 님 로그인(관리자)</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">LOGIN</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">LOGOUT</a></li>
+				<!-- 관리자 로그인 -->
+				<c:choose>
+					<c:when test="${loginMem ne null}">
+						<li class="nav-item"><a class="nav-link" href="#">${loginMem.id}님 접속(관리자)</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">LOGOUT</a></li>
+					</c:when>
+					<c:otherwise>
+						<li class="nav-item"><a class="nav-link" href="#">LOGIN</a></li>
+					</c:otherwise>
+				</c:choose>
 				<li class="nav-item"><a class="nav-link" href="#">MY SHOP</a></li>
 			</ul>
 		</div>

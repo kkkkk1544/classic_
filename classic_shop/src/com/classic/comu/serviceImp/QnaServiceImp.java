@@ -36,7 +36,7 @@ public class QnaServiceImp implements QnaService{
 			conn = ClassicDBConnection.getConnection();
 			conn.setAutoCommit(false);
 			conn.commit();
-			qnaList = new QnaDAOImp(conn).selectQna(pagingDTO);
+			qnaList = new QnaDAOImp(conn).selectQna(pagingDTO); //daoImp 호출
 		} catch (Exception e) {
 			e.printStackTrace();
 			try{
@@ -165,7 +165,7 @@ public class QnaServiceImp implements QnaService{
 			conn = ClassicDBConnection.getConnection();
 			conn.setAutoCommit(false);
 			conn.commit();
-			totalRecord = new QnaDAOImp(conn).qnaTotalRecord();
+			totalRecord = new QnaDAOImp(conn).qnaTotalRecord(); //record 호출
 		} catch (Exception e) {
 			e.printStackTrace();
 			try {

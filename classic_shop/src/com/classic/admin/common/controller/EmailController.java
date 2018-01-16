@@ -1,5 +1,6 @@
 package com.classic.admin.common.controller;
 
-public class TestClass {
-
+public class EmailController{
+	
+	
 }
