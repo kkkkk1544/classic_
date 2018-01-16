@@ -44,7 +44,7 @@
 							<div class="modal-body" style="display: inline-block;">
 								<div id="map" style="width:500px;height:500px; display: inline-block;"></div>
 									<script>
-										$("#mapModal").click(function(){
+										$("#mapModal").on('shown.bs.modal', function () {
 											daum.maps.load(function() {
 												var container = document.getElementById('map');
 												var options = {
