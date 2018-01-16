@@ -35,6 +35,23 @@
 								<div>
 									<ul class="list-group">
 										<li class="list-group-item"><strong><a><input type="hidden" name="product_name" value="${wish.productName}" class="paramValue">${wish.productName}</a></strong></li>
+										<li class="list-group-item"><strong>color : ${wish.colour}   <input type="hidden" name="product_colour" value="${wish.colour}" class="paramValue">size : ${wish.sizu}<input type="hidden" name="product_sizu" value="${wish.sizu}" class="paramValue"> </strong></li>
+										<li class="list-group-item"><button class="btn btn-default" data-toggle = "modal" data-target = "#wishOption${wish.productNum}" type="button">옵션변경</button></li>
+										<div class="modal modal-center fade">
+											<div class="modal-dialog modal-sm">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h3 class="modal-title"><strong>옵션변경</strong></h3><hr>
+														<select class= "form-control" id="colourOption${wish.productNum}">
+																
+														</select>
+														<select class= "form-control">
+																
+														</select>
+													</div>
+												</div>
+											</div>
+										</div>	
 									</ul>
 								</div>
 							</td>
@@ -189,6 +206,7 @@
 		</div>
 	</div>
 <script>
+
 $("#allCheck").click(function(){
 	if(this.checked){
 		$('input:checkbox[class*="checkWish"]').each(function(){
