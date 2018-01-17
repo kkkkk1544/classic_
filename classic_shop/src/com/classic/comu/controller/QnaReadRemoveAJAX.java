@@ -17,8 +17,11 @@ public class QnaReadRemoveAJAX extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//qna Detail
 		req.setCharacterEncoding("UTF-8");
+		QnaDTO qnaDTO = null;
 		String str_num = req.getParameter("num");
-		QnaDTO qnaDTO = new QnaServiceImp().readQna(Integer.parseInt(str_num));
+		int count = new QnaServiceImp().count(Integer.parseInt(str_num));
+		qnaDTO = new QnaServiceImp().readQna(Integer.parseInt(str_num));
+		qnaDTO.setCount(count);
 		req.setAttribute("qnaDTO", qnaDTO);
 		req.getRequestDispatcher("/view/comu/qna/read.jsp").forward(req, resp);
 	}

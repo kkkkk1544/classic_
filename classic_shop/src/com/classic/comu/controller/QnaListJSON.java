@@ -18,6 +18,7 @@ import com.classic.comu.serviceImp.QnaServiceImp;
 public class QnaListJSON extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("UTF-8");
 		//qnaList
 		PagingDTO pagingDTO = new PagingDTO(); //dto 호출
 		String pageNum_temp = req.getParameter("pageNum"); //view에서 pageNum 받아오기

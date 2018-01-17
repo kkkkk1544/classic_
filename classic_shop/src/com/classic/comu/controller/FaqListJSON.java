@@ -17,6 +17,7 @@ import com.classic.comu.serviceImp.FaqServiceImp;
 public class FaqListJSON extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("UTF-8");
 		List<FaqDTO> faqList = new FaqServiceImp().readFaq();
 		req.setAttribute("faqList", faqList);
 		req.getRequestDispatcher("/view/comu/faqList.jsp").forward(req, resp);
