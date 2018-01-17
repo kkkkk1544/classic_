@@ -12,11 +12,14 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- 개인 lib -->
 <link rel="stylesheet" href="<c:url value='/public/css/common.css' />">
+<script src='<c:url value="/public/js/script_header.js"/>'></script>
 <!-- jQuery ui CSS -->
 <link rel="stylesheet" href="<c:url value='/public/js/jquery-ui/jquery-ui.min.css' />">
 <!-- jQuery lib -->
 <script src='<c:url value="/public/js/jquery/jquery-3.2.1.min.js"/>'></script>
 <script src='<c:url value="/public/js/jquery-ui/jquery-ui.min.js"/>'></script>
+<!-- kakao 지도 api -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9634cbc392b8b80779d4f419ee72bf3a"></script>
 <title>CLASSIC</title>
 <script>
 	if("${msg}"!=""){
@@ -29,14 +32,14 @@
 				<!-- 상품 Nav -->
 				<div id="productNav">
 					<div class="nav navbar-nav navbar-left">
-						<ul class="nav nav-pills">
-							<li><a href="<c:url value='/main.do' />">CLASSIC</a></li>
+						<ul class="nav nav-pills" id="cateNavbar">
+						<%-- <li><a href="<c:url value='/main.do' />">CLASSIC</a></li>
 							<li><a href="#">NEW</a></li>
 							<li><a href="#">BEST</a></li>
 							<li role="presentation" class="dropdown">
-								<a class="dropdown-toggle" href="<c:url value='/view/product/list.jsp' />" role="button" aria-expanded="false">OUTER</a>
-								<%-- <a class="dropdown-toggle" data-toggle="dropdown" href="<c:url value='/product/list/outerList.jsp' />" role="button" aria-expanded="false">OUTER</a>
-								 --%>
+								<a class="dropdown-toggle" href="<c:url value='/view/product/list.do' />" role="button" aria-expanded="false">${cate.name}</a>
+								<a class="dropdown-toggle" data-toggle="dropdown" href="<c:url value='/product/list/outerList.jsp' />" role="button" aria-expanded="false">OUTER</a>
+								
 								 <ul class="dropdown-menu" role="menu">
 									<li><a href="#">COAT</a></li>
 									<li><a href="#">JACKET</a></li>
@@ -45,7 +48,7 @@
 								</ul>
 							</li>
 							<li role="presentation" class="dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">TOP</a>
+								<a class="dropdown-toggle" data-toggle="dropdown" href="<c:url value='/view/product/list.do?cate=TOP' />" role="button" aria-expanded="false">TOP</a>
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="#">T-SHIRT</a></li>
 									<li><a href="#">BLOUSE</a></li>
@@ -53,7 +56,7 @@
 								</ul>
 							</li>
 							<li role="presentation" class="dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">BOTTOM</a>
+								<a class="dropdown-toggle" data-toggle="dropdown" href="<c:url value='/view/product/list.do?cate=BOTTOM' />" role="button" aria-expanded="false">BOTTOM</a>
 								<ul class="dropdown-menu" role="menu">
 									<li role=""><a href="#">SKIRTS</a></li>
 									<li><a href="#">PANTS</a></li>
@@ -61,7 +64,7 @@
 								</ul>
 							</li>
 							<li role="presentation" class="dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">SHOES&amp;BAG</a>
+								<a class="dropdown-toggle" data-toggle="dropdown" href="<c:url value='/view/product/list.do?cate=SHOESNBAG' />" role="button" aria-expanded="false">SHOES&amp;BAG</a>
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="#">SHOES</a></li>
 									<li><a href="#">BAG</a></li>
@@ -72,7 +75,7 @@
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="#">ACC</a></li>
 								</ul>
-							</li>
+							</li> --%>
 						</ul>
 					</div>
 				</div>
@@ -84,7 +87,7 @@
 							<c:choose>
 								<c:when test="${loginMem ne null}">
 										<c:if test="${loginMem.grade==0}">
-											<li><a href="#"><strong style="color: navy;">관리자 페이지 이동</strong></a></li>
+											<li><button type="button" class="btn btn-danger" onclick="location.href='/classic_shop/admin/main.do'">MY ADMIN</button></li>
 										</c:if>
 									<li><a><strong style="color: #000;">${loginMem.id} 님 접속</strong></a></li>
 									<li><a href="<c:url value='/logout.do' />">LOGOUT</a></li>
@@ -101,16 +104,16 @@
 						<c:choose>
 							<c:when test="${loginMem ne null}">
 								<li role="presentation" class="dropdown">
-									<a class="dropdown-toggle" href="<c:url value='/view/member/mypage/detail.jsp'/>" role="button" aria-expanded="false">MY PAGE</a>
+									<a class="dropdown-toggle" href="<c:url value='/mypage.do?num=${loginMem.num}'/>" role="button" aria-expanded="false">MY PAGE</a>
 									<ul class="dropdown-menu" role="menu">
-										<li><a href="<c:url value='/view/member/mypage/modify.jsp'/>">회원정보수정</a></li>
+										<li><a href="<c:url value='/mypage/modify.do?num=${loginMem.num}'/>">회원정보수정</a></li>
 										<li><a href="<c:url value='/view/address/list.do?num=${loginMem.num}'/>">배송주소록</a></li>
 										<li><a href="<c:url value='/view/member/mypage/mileage.jsp'/>">적립금</a></li>
 										<li><a href="<c:url value='/view/member/mypage/coupon.jsp'/>">쿠폰</a></li>
 										<li><a href="<c:url value='/view/order/cart/cart.jsp'/>">장바구니</a></li>
-										<li><a href="<c:url value='/view/order/wishlist.do?num=${loginMem.num}'/>">위시리스트</a></li>
+										<li><a href="<c:url value='/view/wish.do?num=${loginMem.num}'/>">위시리스트</a></li>
 										<li><a href="#">주문내역</a></li>
-										<li><a href="<c:url value='/view/member/mypage/myposting.jsp'/>">내가쓴글</a></li>
+										<li><a href="<c:url value='/mypage/myposting.do?num=${loginMem.num}'/>">내가쓴글</a></li>
 									</ul>
 								</li>
 								<li>
@@ -118,7 +121,7 @@
 										<span class="badge badge-pill badge-secondary" style="background-color: #ccc;">0</span>
 									</a>
 								</li>
-								<li><a href="<c:url value='/order/list.do?mem_num=${loginMem.num}' />">ORDER</a></li>
+								<li><a href="<c:url value='/order/list.do?num=${loginMem.num}' />">ORDER</a></li>
 							</c:when>
 							<c:otherwise>
 								<li role="presentation" class="dropdown">

@@ -45,7 +45,7 @@ public class Paging {
 		return pagingDTO;
 	}
 	//이제 pagingDTO와 얘를 가지고 백단으로 감
-	//사용 예시는 Qna list 참고하시면 됨
+	//사용 예시는 Qna list 구현 흐름 참고하시면 됨(dao, daoImp, serviceImp, controller) 주석 달아놓음 
 	//prev, next는 별 거 없으므로 view에서 구현하였음
 	//이 페이지에 있는 주석을 포함하여, 페이징 관련된 주석은 언젠가 사라짐..
 }

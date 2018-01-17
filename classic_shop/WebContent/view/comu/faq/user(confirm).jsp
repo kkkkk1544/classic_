@@ -7,7 +7,7 @@
 		aria-multiselectable="true">
 		<div class="panel panel-default">
 
-			<a href="register(alert).jsp">
+			<a href="user(register).jsp">
 				<button class="btn pull-right" data-toggle="modal"
 					data-target="#contactModal">글 등록</button>
 			</a>
@@ -43,13 +43,7 @@
 
 
 							<textarea class="form-control" id="contactComments"
-								placeholder="글내용 출력" rows="10" form="100" style="width: 100%;">
-								[울50%]  달리스 - 앙고라니트(knit)
-
-								
-								
-								
-								</textarea>
+								placeholder="글내용 출력" rows="10" form="100" style="width: 100%;"></textarea>
 
 
 
@@ -63,7 +57,7 @@
 							</div>
 
 							<!-- contact modal button -->
-							<a href="list.jsp">
+							<a href="user(register).jsp">
 								<button class="btn pull-right" data-toggle="modal"
 									data-target="#contactModal">수정</button>
 							</a>
@@ -72,7 +66,7 @@
 
 							<!-- alert창에서 삭제 알람은 아직 못햇네요~ -->
 							<!-- contact modal button -->
-							<a href="register(alert).jsp">
+							<a href="user(alert).jsp">
 								<button class="btn pull-right" data-toggle="modal"
 									data-target="#contactModal">삭제</button>
 							</a>
@@ -101,5 +95,7 @@
 
 				<div class="container">
 
+					<!-- table -->
 
 
+					<!-- contact -->

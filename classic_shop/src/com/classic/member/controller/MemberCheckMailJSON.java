@@ -20,10 +20,12 @@ public class MemberCheckMailJSON extends HttpServlet{
 		String mail = req.getParameter("mail");
 		boolean checkEmailMsg = false; //email 사용 가능
 		if(mail!=null && mail.trim()!="") {
-			checkEmailMsg = new MemberServiceImp().checkMail(mail);
+			checkEmailMsg = new MemberServiceImp().checkMemMail(mail);
+		} else {
+			checkEmailMsg = true;
 		}
 		resp.setCharacterEncoding("UTF-8");
 		resp.setContentType("application/json");
-		resp.getWriter().append("{\"checkEmailMsg\":\""+checkEmailMsg+"\"}");
+		resp.getWriter().append("{\"checkEmailMsg\":"+checkEmailMsg+"}");
 	}
 }

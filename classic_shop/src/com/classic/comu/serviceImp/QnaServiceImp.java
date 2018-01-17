@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.classic.common.dto.PagingDTO;
-import com.classic.comu.dao.QnaDAO;
 import com.classic.comu.daoImp.QnaDAOImp;
 import com.classic.comu.dto.QnaDTO;
 import com.classic.comu.service.QnaService;
@@ -28,6 +27,7 @@ public class QnaServiceImp implements QnaService{
 		}
 		return qnaList;
 	}*/
+
 	@Override
 	public List<QnaDTO> listQna(PagingDTO pagingDTO) {
 		List<QnaDTO> qnaList = new ArrayList<QnaDTO>();
@@ -35,7 +35,7 @@ public class QnaServiceImp implements QnaService{
 			conn = ClassicDBConnection.getConnection();
 			conn.setAutoCommit(false);
 			conn.commit();
-			qnaList = new QnaDAOImp(conn).selectQna(pagingDTO);
+			qnaList = new QnaDAOImp(conn).selectQna(pagingDTO); //daoImp 호출
 		} catch (Exception e) {
 			e.printStackTrace();
 			try{
@@ -47,6 +47,27 @@ public class QnaServiceImp implements QnaService{
 			ClassicDBConnection.close(conn);
 		}
 		return qnaList;
+	}
+
+	@Override
+	public List<QnaDTO> readMemQna(int mem_num, PagingDTO pagingDTO) {
+		List<QnaDTO> memQnaList = new ArrayList<QnaDTO>();
+		try {
+			conn = ClassicDBConnection.getConnection();
+			conn.setAutoCommit(false);
+			conn.commit();
+			memQnaList = new QnaDAOImp(conn).selectMemQna(mem_num, pagingDTO);
+		} catch (Exception e) {
+			e.printStackTrace();
+			try{
+				conn.rollback();
+			} catch (Exception e2){
+				e2.printStackTrace();
+			}
+		} finally {
+			ClassicDBConnection.close(conn);
+		}
+		return memQnaList;
 	}
 
 	@Override
@@ -143,7 +164,7 @@ public class QnaServiceImp implements QnaService{
 			conn = ClassicDBConnection.getConnection();
 			conn.setAutoCommit(false);
 			conn.commit();
-			totalRecord = new QnaDAOImp(conn).qnaTotalRecord();
+			totalRecord = new QnaDAOImp(conn).qnaTotalRecord(); //record 호출
 		} catch (Exception e) {
 			e.printStackTrace();
 			try {
@@ -155,6 +176,27 @@ public class QnaServiceImp implements QnaService{
 			ClassicDBConnection.close(conn);
 		}
 		return totalRecord;
+	}
+
+	@Override
+	public int memRecordTotal(int mem_num) {
+		int memTotalRecord = 0;
+		try {
+			conn = ClassicDBConnection.getConnection();
+			conn.setAutoCommit(false);
+			conn.commit();
+			memTotalRecord = new QnaDAOImp(conn).qnaMemTotalRecord(mem_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+			try {
+				conn.rollback();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		} finally {
+			ClassicDBConnection.close(conn);
+		}
+		return memTotalRecord;
 	}
 
 

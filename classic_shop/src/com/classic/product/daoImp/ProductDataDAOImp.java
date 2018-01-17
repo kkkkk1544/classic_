@@ -13,10 +13,10 @@ import com.classic.util.ClassicDBConnection;
 
 public class ProductDataDAOImp implements ProductDataDAO{
 	
-	Connection conn = null;
+	private Connection conn = null;
 	
-	public ProductDataDAOImp() throws Exception {
-		conn=ClassicDBConnection.getConnection();
+	public ProductDataDAOImp(Connection conn) throws Exception {
+		this.conn=conn;
 	}
 
 	@Override
@@ -77,7 +77,7 @@ public class ProductDataDAOImp implements ProductDataDAO{
 		
 		return productDataDTO;
 	}
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		try {
 			System.out.println(new ProductDataDAOImp().selectProductData(1));
 		} catch (Exception e) {
@@ -85,6 +85,6 @@ public class ProductDataDAOImp implements ProductDataDAO{
 			e.printStackTrace();
 		}
 		
-	}
+	}*/
 
 }

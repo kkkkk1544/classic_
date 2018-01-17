@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+.main-container{
+	/* margin-right: 3%;
+	margin-left: 3%; */
+	padding-top: 115px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.main-row{
+	margin: 1%;
+}
+
+.main-contents{
+	margin: 2%;
+	width: 50%;
+	height: 600px;
+	border: 1px solid #000
+}
+
+.common-body-container{
+	margin-top: 30px;
+	margin-bottom: 30px;
+	padding-top: 115px;
+}
+
+.common-header{
+	padding-bottom: 115px;
+}
+
+.common-footer{
+	height: 70px;
+	color: #fff;
+}
+
+/* 나중에 border 지울 것 */
+.common-left-nav{
+	border: 1px solid #000;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.left-nav-outer-title{
+	margin-top: 1rem;
+}
+
+.left-nav-inner-title{
+	list-style: none;
+}
+.left-nav-inner-title a{
+	text-decoration: none;
+	color: #000;
+}
+/* 나중에 border 지울 것 */
+.common-right-body{
+	border: 1px solid #000;
+}
+
+.common-right-title{
+	border-bottom: 1px solid #000;
+}
+
+.common-title>p{
+	padding: 10px;
+}
+
+/* 나중에 border 지울 것 */
+.common-inner-body{
+	padding: 15px;
+	border: 1px solid #000;
+}

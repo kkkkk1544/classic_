@@ -17,7 +17,7 @@ public class QnaRegisterJSON extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//request qna form
-		req.getRequestDispatcher("/view/comu/qna/register.jsp").forward(req, resp);
+		req.getRequestDispatcher("/view/comu/qnaRegister.jsp").forward(req, resp);
 	}
 	
 	@Override

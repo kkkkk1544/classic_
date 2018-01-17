@@ -21,7 +21,6 @@ public class WishDeleteController extends HttpServlet{
 		String strMemNum = req.getParameter("num");
 		Connection conn = null;
 		WishListDAO wish = null;
-		//띵호와
 		int delete = 0;
 		try {
 			conn = ClassicDBConnection.getConnection();
@@ -30,7 +29,7 @@ public class WishDeleteController extends HttpServlet{
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			ClassicDBConnection.close(null, null, conn);
+			ClassicDBConnection.close(conn);
 		}
 		resp.setContentType("application/json");
 		resp.setCharacterEncoding("utf-8");
@@ -51,7 +50,7 @@ public class WishDeleteController extends HttpServlet{
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			ClassicDBConnection.close(null, null, conn);
+			ClassicDBConnection.close(conn);
 		}
 		resp.setContentType("application/json");
 		resp.setCharacterEncoding("utf-8");
@@ -75,7 +74,7 @@ public class WishDeleteController extends HttpServlet{
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			ClassicDBConnection.close(null, null, conn);
+			ClassicDBConnection.close(conn);
 		}
 		resp.setContentType("application/json");
 		resp.setCharacterEncoding("utf-8");

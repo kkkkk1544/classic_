@@ -80,7 +80,7 @@ var qnaListBtn = function(){
 var removeQna = function(num){
 	var removeNum = num;
 	var setting={
-			url: "/classic_shop/qna/readRemove.do?num="+removeNum,
+			url: "/classic_shop/community/qna/read.do?num="+removeNum,
 			type: "DELETE",
 			dataType: "json",
 			success: function(data){
@@ -96,7 +96,7 @@ var removeQna = function(num){
 }
 
 //readQna
-var readQna = function(num){
+/*var readQna = function(num){
 	var setting={
 			url: "/classic_shop/qna/readRemove.do?num="+num,
 			data: "GET",
@@ -165,7 +165,7 @@ var readQna = function(num){
 	}
 		return subjectStr;
 	}
-}
+}*/
 
 //qnaModify
 var modifyQnaForm = function(num){
@@ -229,3 +229,23 @@ var registerQna = function(qnaRegisterForm){
 	http.send(data);
 }
 
+//qna 검색
+var qnaSearch = function(searchForm){
+	var subject = searchForm.subject.value;
+	var name = searchForm.name.value;
+}
+
+$(function(){
+	$("#qnaSearchField").change(function(){
+		var selectedVal = $("#qnaSearchField").find(":selected").val;
+		alert(selectedVal);
+	});
+});
+
+
+/*
+	1. qna 옵션 셀렉트 선택
+		- subject 선택하면, input -> option창으로 변경
+		- 그 후, option에 value를 int로 설정
+		- DB 돌리고
+ * */

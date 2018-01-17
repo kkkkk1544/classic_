@@ -15,7 +15,6 @@ A_CONTENT		NOT NULL 	VARCHAR2(4000)
 	private int mem_num;
 	private String q_title;
 	private String a_content;
-	
 	public int getNum() {
 		return num;
 	}

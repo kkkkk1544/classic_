@@ -11,16 +11,16 @@ import javax.servlet.http.HttpServletResponse;
 import com.classic.comu.dto.QnaDTO;
 import com.classic.comu.serviceImp.QnaServiceImp;
 
-@WebServlet("/qna/readRemove.do")
+@WebServlet("/community/qna/read.do")
 public class QnaReadRemoveAJAX extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//qna Detail
+		req.setCharacterEncoding("UTF-8");
 		String str_num = req.getParameter("num");
 		QnaDTO qnaDTO = new QnaServiceImp().readQna(Integer.parseInt(str_num));
-		resp.setCharacterEncoding("UTF-8");
-		resp.setContentType("application/json");
-		resp.getWriter().append(qnaDTO.toString());
+		req.setAttribute("qnaDTO", qnaDTO);
+		req.getRequestDispatcher("/view/comu/qna/read.jsp").forward(req, resp);
 	}
 	
 	@Override

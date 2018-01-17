@@ -4,8 +4,6 @@
 <link rel="stylesheet" href="<c:url value='/public/css/order.css' />">
 </head>
 <body>
-<!-- <input type="hidden" value="여기에 고객이 담은 정보가 일시적으로 들어가는 것">
-<input type="text" value="마찬가지" style="display:none;"> -->
 <body>
 	<div class="container" id="mainDiv">
 		<h2 class="text-left" id="wishName">WISH LIST</h2>
@@ -13,10 +11,9 @@
 			<thead id="wishTitle">
 				<tr>
 					<th width="5%"><input type="checkbox" id="allCheck"></th>
-					<th width="35%">상품정보</th>
+					<th width="45%">상품정보</th>
 					<th width="10%">판매가</th>
 					<th width="10%">수량</th>
-					<th width="10%">적립금</th>
 					<th width="10%">배송비</th>
 					<th width="10%">합계</th>
 					<th width="10%">선택</th>
@@ -37,13 +34,30 @@
 								<div>
 									<ul class="list-group">
 										<li class="list-group-item"><strong><a><input type="hidden" name="product_name" value="${wish.productName}" class="paramValue">${wish.productName}</a></strong></li>
+										<li class="list-group-item"><strong>color : ${wish.colour}   <input type="hidden" name="product_colour" value="${wish.colour}" class="paramValue">size : ${wish.sizu}<input type="hidden" name="product_sizu" value="${wish.sizu}" class="paramValue"> </strong></li>
+										<li class="list-group-item"><button class="btn btn-default" data-toggle = "modal" data-target = "#wishOption${wish.productNum}" type="button">옵션변경</button></li>
+										<div class="modal fade" id="wishOption${wish.productNum}">
+											<div class="modal-dialog">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h3 class="modal-title"> 옵션변경 </h3><hr>
+														<select class="form-control">
+														
+														</select>
+														<select class="form-control">
+														
+														</select>
+													</div>
+												</div>
+											</div>
+										</div>
 									</ul>
 								</div>
 							</td>
 							<td><input type="hidden" name="price" value="${wish.price}" class="paramValue">${wish.price}원</td>
 							<td><input type="hidden" name="wishQuantity" value="${wish.wishQuantity}" class="paramValue">${wish.wishQuantity}개</td>
-							<fmt:parseNumber var="percent" value="${((wish.price*wish.wishQuantity)*0.02)}" integerOnly="true" />
-							<td>${percent}</td>
+							<%-- <fmt:parseNumber var="percent" value="${((wish.price*wish.wishQuantity)*0.02)}" integerOnly="true" />
+							<td>${percent}</td> --%>
 							<c:choose>
 								<c:when test="${wish.price>50000}">
 									<td>무료</td>
@@ -56,7 +70,7 @@
 							</c:choose>
 							<td>
 								<div class="buttonGroup">
-									<button type="button" class="btn btn-default partOrder">주문하기</button>									
+									<a type="button" class="btn btn-default partOrder" href="<c:url value='/view/cart.do?num=${loginMem.num}&productNum=${wish.productNum}'/>">주문하기</a>									
 									<button type="button" class="btn btn-default" onclick="pickWishDel(${loginMem.num},${wish.productNum})">삭제</button>
 								</div>
 							</td>
@@ -191,14 +205,7 @@
 		</div>
 	</div>
 <script>
-$(".partOrder").click(function(){
-	url="http://localhost:9999/classic_shop/order/order_sheet/order_sheet.jsp?";
-	$('input[class*="paramValue"]').each(function(){
-		console.log(this.value);
-		
-	});
-	
-});
+
 $("#allCheck").click(function(){
 	if(this.checked){
 		$('input:checkbox[class*="checkWish"]').each(function(){

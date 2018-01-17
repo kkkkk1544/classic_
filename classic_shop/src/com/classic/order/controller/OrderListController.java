@@ -12,30 +12,29 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.classic.order.dao.OrderDAO;
-import com.classic.order.daoImp.ClassicConnection;
 import com.classic.order.daoImp.OrderDaoImp;
-import com.classic.order.dto.ListDTO;
 import com.classic.order.dto.PaidDTO;
+import com.classic.util.ClassicDBConnection;
 
 @WebServlet("/order/list.do")
 public class OrderListController extends HttpServlet {
-	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		Connection conn=null;
-		OrderDAO orderDAO = new OrderDaoImp(conn);
-		List<ListDTO> orderList=new ArrayList<ListDTO>();
-		String str_mem_num = req.getParameter("mem_num");
+		String str_memnum=req.getParameter("num");
+		Connection conn = null;
+		List<PaidDTO> orderList = new ArrayList<PaidDTO>();
 		try {
-			conn=ClassicConnection.getConnection();
-			orderList = orderDAO.ListSelect(Integer.parseInt(str_mem_num));
+			conn=ClassicDBConnection.getConnection();
+			OrderDAO orderDAO = new OrderDaoImp(conn);
+			orderList = orderDAO.ListSelect(Integer.parseInt(str_memnum));
 		} catch (Exception e) {
 			e.printStackTrace();
-		} finally {
-			ClassicConnection.close(conn, null, null); //???
+		}finally {
+			ClassicDBConnection.close(conn);
 		}
-		req.setAttribute("orderList", orderList);
-		req.getRequestDispatcher("/view/order/list.jsp").forward(req, resp);	
 		
+		req.setAttribute("orderList", orderList);
+		req.getRequestDispatcher("/view/order/list.jsp").forward(req, resp);
 	}
+	
 }

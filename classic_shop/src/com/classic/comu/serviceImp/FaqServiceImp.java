@@ -18,7 +18,7 @@ public class FaqServiceImp implements FaqService{
 		List<FaqDTO> faqList = new ArrayList<FaqDTO>();
 		try {
 			conn = ClassicDBConnection.getConnection();
-		//	faqList = new FaqDAOImp(conn).selectFaq();
+			faqList = new FaqDAOImp(conn).selectFaq();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -32,7 +32,7 @@ public class FaqServiceImp implements FaqService{
 		FaqDTO faqDTO = null;
 		try {
 			conn = ClassicDBConnection.getConnection();
-			//faqDTO = new FaqDAOImp(conn).selectFaq(num);
+			faqDTO = new FaqDAOImp(conn).selectFaq(num);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
