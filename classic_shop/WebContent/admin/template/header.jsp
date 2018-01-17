@@ -42,17 +42,16 @@
 				<c:choose>
 					<c:when test="${loginMem ne null}">
 						<li class="nav-item"><a class="nav-link" href="#">${loginMem.id}님 접속(관리자)</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">LOGOUT</a></li>
+						<li class="nav-item"><a class="nav-link" href="<c:url value='/logout.do'/>">LOGOUT</a></li>
 					</c:when>
 					<c:otherwise>
 						<li class="nav-item"><a class="nav-link" href="#">LOGIN</a></li>
 					</c:otherwise>
 				</c:choose>
-				<li class="nav-item"><a class="nav-link" href="#">MY SHOP</a></li>
+						<li class="nav-item"><button type="button" class="btn btn-outline-light btn-sm" onclick="location.href='/classic_shop/main.do'">MY SHOP</button></li>
 			</ul>
 		</div>
 	</nav>
 </div>
-
 
 

@@ -69,7 +69,7 @@
 									</script>
 									<div id="locationInfo" style="display: inline-block;">
 										<p>주소 및 연락처</p>
-										<p>서울특별시 종로구 종로 69 YMCA빌딩 7층</p>
+										<p>서울특별시 종로구 종로 69 YMCA빌딩 7층 BITCAMP</p>
 										<p>TEL) 000-0000-0000</p>
 										<p>FAX) 00-000-0000</p>
 										<p>찾아오시는 길 안내</p>
@@ -92,16 +92,16 @@
 		<div class="bank">
 			<p class="footer_title">ACCOUNT INFO</p>
 				<p class="bank_info">
-					<span>bank_name</span><span>bank_num</span>
+					<span class="name">신한</span><span> 000-000-000000</span>
 				</p>
 				<p class="bank_info">
-					<span>bank_name</span><span>bank_num</span>
+					<span class="name">국민</span><span> 000000-00-000000</span>
 				</p>
 				<p class="bank_info">
-					<span>bank_name</span><span>bank_num</span>
+					<span class="name">우리</span><span> 0000-000-000000</span>
 				</p>
 				<p class="bank_info">
-					<span class="name">NAME</span><span>name</span>
+					<span class="name">NAME</span><span>CLASSIC</span>
 				</p>
 		</div>
 	</div><!-- left_footer END -->
@@ -110,12 +110,11 @@
 		<!-- 교환/환불 -->
 		<div class="return_exchange">
 			<p class="footer_title"> RETURN / EXCHANGE</p>
-			<p><span>서울특별시 종로구 종로 69 YMCA빌딩 7층</span></p>
+			<p><span>서울특별시 종로구 종로 69 YMCA빌딩 7층 BITCAMP</span></p>
 			<p><small>자세한 교환/반품 절차 안내는 QNA 및 NOTICE를 참고해주세요</small></p>
 		</div>
 	</div>
 </div>
-
 <!-- 부트스트랩 lib -->
 <script src='<c:url value="/public/bootstrap/js/bootstrap.min.js"/>'></script> 
 </body>

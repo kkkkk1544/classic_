@@ -86,7 +86,7 @@
 							<c:choose>
 								<c:when test="${loginMem ne null}">
 										<c:if test="${loginMem.grade==0}">
-											<li><button type="button" class="btn btn-danger" onclick="location.href='/classic_shop/admin/main.do'">관리자 페이지 이동</button></li>
+											<li><button type="button" class="btn btn-danger" onclick="location.href='/classic_shop/admin/main.do'">MY ADMIN</button></li>
 										</c:if>
 									<li><a><strong style="color: #000;">${loginMem.id} 님 접속</strong></a></li>
 									<li><a href="<c:url value='/logout.do' />">LOGOUT</a></li>
