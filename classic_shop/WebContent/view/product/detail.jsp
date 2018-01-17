@@ -15,9 +15,9 @@ $(function(){
 });//ready
 
 </script>
-<link rel="stylesheet" href="<c:url value='/public/css/product.css' />">
 
 </head>
+<link rel="stylesheet" href="<c:url value='/public/css/product.css' />">
 <body>
 
 

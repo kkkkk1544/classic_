@@ -10,9 +10,6 @@
 <link rel="stylesheet" href="<c:url value='/public/bootstrap/css/bootstrap.css' />">
 <!-- awesome Icon -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- 개인 lib -->
-<link rel="stylesheet" href="<c:url value='/public/css/common.css' />">
-<script src='<c:url value="/public/js/script_header.js"/>'></script>
 <!-- jQuery ui CSS -->
 <link rel="stylesheet" href="<c:url value='/public/js/jquery-ui/jquery-ui.min.css' />">
 <!-- jQuery lib -->
@@ -20,6 +17,9 @@
 <script src='<c:url value="/public/js/jquery-ui/jquery-ui.min.js"/>'></script>
 <!-- kakao 지도 api -->
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9634cbc392b8b80779d4f419ee72bf3a"></script>
+<!-- 개인 lib -->
+<link rel="stylesheet" href="<c:url value='/public/css/common.css' />">
+<script src='<c:url value="/public/js/script_header.js"/>'></script>
 <title>CLASSIC</title>
 <script>
 	if("${msg}"!=""){
