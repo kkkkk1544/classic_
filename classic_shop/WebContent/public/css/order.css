@@ -265,7 +265,7 @@ margin: 50px 50px;
 	text-align: center;
 	vertical-align: middle;
 }
-#wishContents div{
+.infoListDiv{
 	width:auto;
 	float:left;
 }
@@ -300,17 +300,16 @@ margin: 50px 50px;
 	font-size: 12px!important;
 	padding-top: 0px;
 	padding-bottom: 0px;
-}
-#pagingBtn{
+}#pagingBtn{
 	text-align: center;
 }
 #pagingBtn ul li a{
 	color: #000;
 	border: hidden;
 }
-
-
-
+.wishOptionSelect div {
+	display: inline-block;
+}
 
 
 
