@@ -4,7 +4,8 @@ import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.classic.common.dto.pagingTest;
+import com.classic.common.dto.PagingDTO;
+import com.classic.comu.dao.QnaDAO;
 import com.classic.comu.daoImp.QnaDAOImp;
 import com.classic.comu.dto.QnaDTO;
 import com.classic.comu.service.QnaService;
@@ -14,7 +15,7 @@ public class QnaServiceImp implements QnaService{
 	
 	static Connection conn = null;
 
-	@Override
+/*	@Override
 	public List<QnaDTO> listQna() {
 		List<QnaDTO> qnaList = new ArrayList<QnaDTO>();
 		try {
@@ -26,23 +27,28 @@ public class QnaServiceImp implements QnaService{
 			ClassicDBConnection.close(conn);
 		}
 		return qnaList;
-	}
-	
-/*	
+	}*/
 	@Override
-	public List<QnaDTO> listQna(pagingTest pagingDTO) {
+	public List<QnaDTO> listQna(PagingDTO pagingDTO) {
 		List<QnaDTO> qnaList = new ArrayList<QnaDTO>();
 		try {
 			conn = ClassicDBConnection.getConnection();
+			conn.setAutoCommit(false);
+			conn.commit();
 			qnaList = new QnaDAOImp(conn).selectQna(pagingDTO);
 		} catch (Exception e) {
 			e.printStackTrace();
+			try{
+				conn.rollback();
+			} catch (Exception e2){
+				e2.printStackTrace();
+			}
 		} finally {
 			ClassicDBConnection.close(conn);
 		}
 		return qnaList;
 	}
-*/
+
 	@Override
 	public QnaDTO readQna(int num) {
 		QnaDTO qnaDTO = null;
@@ -131,9 +137,25 @@ public class QnaServiceImp implements QnaService{
 	}
 
 	@Override
-	public boolean viewQna() {
-		// TODO Auto-generated method stub
-		return false;
+	public int recordTotal() {
+		int totalRecord = 0;
+		try {
+			conn = ClassicDBConnection.getConnection();
+			conn.setAutoCommit(false);
+			conn.commit();
+			totalRecord = new QnaDAOImp(conn).qnaTotalRecord();
+		} catch (Exception e) {
+			e.printStackTrace();
+			try {
+				conn.rollback();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		} finally {
+			ClassicDBConnection.close(conn);
+		}
+		return totalRecord;
 	}
+
 
 }

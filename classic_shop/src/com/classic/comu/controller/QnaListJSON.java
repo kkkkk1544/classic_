@@ -9,7 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.classic.common.dto.pagingTest;
+import com.classic.common.controller.Paging;
+import com.classic.common.dto.PagingDTO;
 import com.classic.comu.dto.QnaDTO;
 import com.classic.comu.serviceImp.QnaServiceImp;
 
@@ -18,10 +19,18 @@ public class QnaListJSON extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//qnaList
-		//pagingTest pagingDTO = new pagingTest();
-		//List<QnaDTO> qnaList = new QnaServiceImp().listQna(pagingDTO);
-		List<QnaDTO> qnaList = new QnaServiceImp().listQna();
+		PagingDTO pagingDTO = new PagingDTO();
+		String pageNum_temp = req.getParameter("pageNum");
+		int totalRecord = new QnaServiceImp().recordTotal();
+		pagingDTO.setPageNum_temp(pageNum_temp);
+		pagingDTO.setTotalRecord(totalRecord);
+		pagingDTO = Paging.setPaging(pagingDTO);
+		
+		String url=req.getContextPath()+"/community/qna.do?pageNum=";
+		List<QnaDTO> qnaList = new QnaServiceImp().listQna(pagingDTO);
+		req.setAttribute("url", url);
+		req.setAttribute("p", pagingDTO);
 		req.setAttribute("qnaList", qnaList);
-		req.getRequestDispatcher("/comu/qnaListView.jsp").forward(req, resp);
+		req.getRequestDispatcher("/view/comu/qnaListView.jsp").forward(req, resp);
 	}
 }

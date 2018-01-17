@@ -18,7 +18,7 @@ public class NoticeDAOImp implements NoticeDAO{
 	}
 	
 	@Override
-	public List<NoticeDTO> selectNotice() throws Exception {
+	public List<NoticeDTO> selectNotice() throws Exception{
 		List<NoticeDTO> noticeList = new ArrayList<NoticeDTO>();
 		String sql = "SELECT n.num, m.id as name, n.title, n.count, n.indate"
 				+ " FROM notice n, member m"
@@ -63,8 +63,6 @@ public class NoticeDAOImp implements NoticeDAO{
 		}
 		return noticeDTO;
 	}
-	
-	
 	
 //유정이가 전에 해놓은 거
 /*	@Override

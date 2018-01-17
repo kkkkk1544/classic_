@@ -3,7 +3,7 @@
 <div id="mainFooter">
 	<!-- 저작권 표시 -->
 	<div class="footer_logo">
-		<h3><a href="<c:url value='/index.jsp' />">CLASSIC</a></h3>
+		<h3><a href="<c:url value='/main.do' />">CLASSIC</a></h3>
 		<p><small>COPYRIGHT © <span>CLASSIC</span> ALL RIGHTS RESERVED.</small></p>
 	</div>
 	<!-- left Start -->
@@ -68,8 +68,5 @@
 
 <!-- 부트스트랩 lib -->
 <script src='<c:url value="/public/bootstrap/js/bootstrap.min.js"/>'></script> 
-<!-- 개인 JS -->
-<script src="<c:url value='/public/js/comu.js'/>"></script>
-<script src="<c:url value='/public/js/member.js'/>"></script>
 </body>
 </html> 

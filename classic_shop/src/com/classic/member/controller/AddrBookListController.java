@@ -20,13 +20,14 @@ import com.classic.util.ClassicDBConnection;
 public class AddrBookListController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String strMemNum = req.getParameter("num");
 		req.setCharacterEncoding("UTF-8");
 		Connection conn=null;
 		List<AddrBookDTO> addrBookList = new ArrayList<AddrBookDTO>();
 		try {
 			conn=ClassicDBConnection.getConnection();
 			AddrBookDAO addrBookDAO = new AddrBookDAOImp(conn);
-			addrBookList = addrBookDAO.addrBookSelect();
+			addrBookList = addrBookDAO.addrBookSelect(Integer.parseInt(strMemNum));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -34,6 +35,6 @@ public class AddrBookListController extends HttpServlet{
 		}
 		System.out.println(addrBookList);
 		req.setAttribute("addrBookList", addrBookList);
-		req.getRequestDispatcher("/member/mypage/address.jsp");
+		req.getRequestDispatcher("/view/member/mypage/address.jsp").forward(req, resp);
 	}
 }

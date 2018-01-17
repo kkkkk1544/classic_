@@ -1,0 +1,18 @@
+
+1/10 faq 수정사항
+
+FaqDTO
+- setSelect 메소드 쓰지마세요 귀찮아도 Dao에 써주세요!
+ mainx
+1/12
+paging vo,만들지 말고 controller와 dao에서만 페이징 하기
+
+view에서el테그 걸지 말것
+
+faqListView참조해서 만듦
+
+select 이외에는 전부  관리자모드 입니다(spring)
+
+에러때문에 선생님이 WEB.XML수정하심
+
+TABLESPACE반드시 삭제 하고 할것!!!
