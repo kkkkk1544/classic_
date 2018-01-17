@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="<c:url value='/public/css/order.css' />">
+<script src="<c:url value='/public/js/order.js'/>"></script>
 </head>
 <body>
 <div class="order_list_body">
@@ -41,83 +42,81 @@
 					<th>상품정보</th>
 					<th>수량</th>
 					<th>상품구매금액</th>
-					<th>주문처리상태</th>
+					<th>처리상태(통합)</th> <!-- 이것만 남길 예정 -->
+					<th>주문상태</th> <!-- 테스트 후 삭제예정  -->
+					<th>배송상태</th> <!-- 테스트 후 삭제예정  -->
 					<th>선택</th>
 				</tr>
 			</tbody>
-			<tr>
-				<td>
-					<a href="<c:url value='/order/detail.jsp' />">
-						order_num
-					</a>
-				</td> <!-- 주문번호 누르면 디테일로 -->
-				<td>
-					<img alt="images" src=""  align="left" hspace="10">
-					<label><a href="#">상품명:product_name</a></label><br><!-- 상품명 누르면 상품상세정보로 -->
-					[옵션]색상:color_name, 사이즈:product_sizu
-				</td>
-				<td>1</td>
-				<td>order_money</td>
-				<td>delivery_state:2배송완료</td>
-				<td>
-					<button type="button" class="btn btn-default">수취확인</button><br>
-					<button type="button" class="btn btn-default">리뷰작성</button><br>
-					<button type="button" class="btn btn-default">교환/반품</button>	
-				</td>
-			</tr>
-			 <tr>
-				<td><a href="#">order_num</a></td>
-				<td>
-					<img alt="" src=""  align="left" hspace="10">
-					<label><a href="#">상품명:product_name</a></label><br>
-					[옵션]색상:color_name, 사이즈:product_sizu
-				</td>
-				<td>2</td>
-				<td>order_money</td>
-				<td>delivery_state:0배송준비</td>
-				<td><button type="button" class="btn btn-default">주문취소</button></td>
-			</tr>
-			<tr>
-				<td><a href="#">order_num</a></td>
-				<td>
-					<img alt="" src="" align="left" hspace="10">
-					<label><a href="#">상품명:product_name</a></label><br>
-					[옵션]색상:color_name, 사이즈:product_sizu
-				</td>
-				<td>1</td>
-				<td>order_money</td>
-				<td>delivery_state:1배송중</td>
-				<td>
-					<button type="button" class="btn btn-default">송장번호 확인</button><br>
-					<button type="button" class="btn btn-default">수취확인</button>
-				</td>
-			</tr>
-			<tr>
-				<td><a href="#">order_num</a></td>
-				<td>
-					<p>
-						<img alt="" src=""  align="left" hspace="10">
-						<label><a href="#">상품명:product_name</a></label><br>
-						[옵션]색상:color_name, 사이즈:product_sizu
-					</p>
-					<p>
-						<img alt="" src=""  align="left" hspace="10">
-						<label><a href="#">상품명:product_name</a></label><br>
-						[옵션]색상:color_name, 사이즈:product_sizu
-					</p>
-				</td>
-				<td>
-					<p>3</p>
-					<p>1</p>
-				</td>
-				<td>order_money</td>
-				<td>delivery_state:3수취확인</td>
-				<td>
-					<label>구매확정</label>
-				</td>
-			</tr>
+			<tbody>
+				<c:forEach items="${orderList}" var="list">
+					<tr>
+						<td><a href="<c:url value='/view/order/detail.jsp'/>">${list.order_num}</a></td>
+						<td>${list.g_name}</td>
+						<td>1(임시)</td>
+						<td>${list.payment}</td>
+						<!-- 처리상태 (통합) 최종 결과물 -->
+						<td>
+							<c:if test="${list.order_state==-2 && list.deliv_state==0}">주문취소</c:if>
+							<c:if test="${list.order_state==-1 && list.deliv_state==0}">교환/반품</c:if>
+							<c:if test="${list.order_state==0 && list.deliv_state==0}">배송준비</c:if>
+							<c:if test="${list.order_state==1 && list.deliv_state==0}">배송준비</c:if>
+							<c:if test="${list.order_state==1 && list.deliv_state==1}">배송중</c:if>
+							<c:if test="${list.order_state==1 && list.deliv_state==2}">배송완료</c:if>
+							<c:if test="${list.order_state==3 && list.deliv_state==3}">수취확인</c:if>
+							<!-- 있을 수 없는 상태...테스트데이터 미쓰테이쿠 업뎃으로 바꿧는데 왜 적용 안되G-->
+							<c:if test="${list.order_state==0 && list.deliv_state==1}">오류오류ㅠ_ㅠ</c:if>
+							<c:if test="${list.order_state==0 && list.deliv_state==2}">DB업뎃했는데?</c:if>
+							<c:if test="${list.order_state==0 && list.deliv_state==3}">왜안바뀜....</c:if>
+						</td>
+						
+						<!-- 테스트 후 삭제예정 -->
+						<td><!-- 주문상태 검사 order_state상태 확인 -->
+							<c:if test="${list.order_state==-2}">${list.order_state}주문취소</c:if>
+							<c:if test="${list.order_state==-1}">${list.order_state}교환/반품</c:if>
+							<c:if test="${list.order_state==0}">${list.order_state}결제대기</c:if>
+							<c:if test="${list.order_state==1}">${list.order_state}결제완료</c:if>
+							<c:if test="${list.order_state==2}">${list.order_state}주문확인</c:if>
+							<c:if test="${list.order_state==3}">${list.order_state}주문완료</c:if>
+						</td>
+						<!-- 테스트 후 삭제예정 -->
+						<td><!-- 배송상태 검사 -->
+							<c:if test="${list.deliv_state==0}">${list.deliv_state}배송준비</c:if>
+							<c:if test="${list.deliv_state==1}">${list.deliv_state}배송중</c:if>
+							<c:if test="${list.deliv_state==2}">${list.deliv_state}배송완료</c:if>
+							<c:if test="${list.deliv_state==3}">${list.deliv_state}수취확인</c:if>
+							
+						</td>
+						<!-- 배송상태에 따른 버튼 출력 0배송준비 1배송중 2배송완료 3수취확인 -->
+						<c:if test="${list.order_state==0 && list.deliv_state==0 || list.order_state==1 && list.deliv_state==0}">
+							<td><button type="button" class="btn btn-default">주문취소</button></td>
+						</c:if> <!-- 주문취소하면 버튼 사라져야 함 -->
+						
+						<c:if test="${list.deliv_state==1}">
+							<td><button type="button" class="btn btn-default" 
+									onclick="window.open('https://www.doortodoor.co.kr/parcel/pa_004.jsp','CJ대한통운 배송조회','width=430,height=550,location=no,status=no,scrollbars=yes');">배송조회</button><br>
+								<button type="button" class="btn btn-default">수취확인</button>
+							</td>
+						</c:if>
+						<c:if test="${list.deliv_state==2}">
+							<td>
+								<button type="button" class="btn btn-default">수취확인</button><br>
+								<button type="button" class="btn btn-default">리뷰작성</button><br>
+								<button type="button" class="btn btn-default">교환/반품</button>
+							</td>
+						</c:if>
+						<c:if test="${list.deliv_state==3}">
+							<td>
+								<button type="button" class="btn btn-default">리뷰작성</button>
+							</td>
+						</c:if>
+						
+					</tr>
+				</c:forEach>		
+			</tbody>
 		  </table>
 		</div>
+		
 		<div id="listPage">
 			<nav>
 			  <ul class="pagination">

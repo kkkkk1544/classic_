@@ -8,8 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.classic.comu.dto.NoticeDTO;
-import com.classic.comu.serviceImp.NoticeServiceImp;
 import com.classic.product.daoImp.ProductDAOImp;
 import com.classic.product.dto.ProductDTO;
 

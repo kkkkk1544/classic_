@@ -6,14 +6,13 @@ import java.util.List;
 
 import com.classic.comu.daoImp.NoticeDAOImp;
 import com.classic.comu.dto.NoticeDTO;
-import com.classic.comu.service.NoticeService;
 import com.classic.util.ClassicDBConnection;
 
-public class NoticeServiceImp implements NoticeService{
+public class NoticeServiceImp{
 	
 	static Connection conn = null;
 
-	@Override
+	/*@Override
 	public List<NoticeDTO> readNotice() {
 		List<NoticeDTO> noticeList = new ArrayList<NoticeDTO>();
 		try {
@@ -39,6 +38,6 @@ public class NoticeServiceImp implements NoticeService{
 			ClassicDBConnection.close(conn);
 		}
 		return noticeDTO;
-	}
+	}*/
 
 }

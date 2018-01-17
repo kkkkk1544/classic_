@@ -1,19 +1,12 @@
 package com.classic.comu.serviceImp;
 
 import java.sql.Connection;
-import java.util.ArrayList;
-import java.util.List;
 
-import com.classic.comu.daoImp.FaqDAOImp;
-import com.classic.comu.dto.FaqDTO;
-import com.classic.comu.service.FaqService;
-import com.classic.util.ClassicDBConnection;
-
-public class FaqServiceImp implements FaqService{
+public class FaqServiceImp{
 
 	static Connection conn = null;
 	
-	@Override
+	/*@Override
 	public List<FaqDTO> readFaq() {
 		List<FaqDTO> faqList = new ArrayList<FaqDTO>();
 		try {
@@ -39,6 +32,6 @@ public class FaqServiceImp implements FaqService{
 			ClassicDBConnection.close(conn);
 		}
 		return faqDTO;
-	}
+	}*/
 
 }

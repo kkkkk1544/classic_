@@ -2,7 +2,6 @@ package com.classic.comu.service;
 
 import java.util.List;
 
-import com.classic.common.dto.pagingTest;
 import com.classic.comu.dto.QnaDTO;
 
 

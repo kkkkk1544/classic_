@@ -15,11 +15,11 @@ import com.classic.comu.serviceImp.NoticeServiceImp;
 @WebServlet("/community/notice.do")
 public class NoticeListJSON extends HttpServlet{
 	
-	@Override
+	/*@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		List<NoticeDTO> noticeList = new NoticeServiceImp().readNotice();
 		req.setAttribute("noticeList", noticeList);
 		req.getRequestDispatcher("/view/comu/noticeListView.jsp").forward(req, resp);
 	}
-
+*/
 }

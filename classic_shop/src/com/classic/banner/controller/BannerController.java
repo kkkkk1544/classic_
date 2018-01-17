@@ -14,12 +14,12 @@ import com.classic.banner.serviceImp.BannerServiceImp;
 
 @WebServlet("/event.do")
 public class BannerController extends HttpServlet{
-	@Override
+	/*@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
 		List<BannerDTO> bannerDTO = new BannerServiceImp().readBanner();
 		req.setAttribute("bannerDTO", bannerDTO);
 		req.getRequestDispatcher("/view/banner/openPop.html").forward(req, resp);
-	}
+	}*/
 
 }

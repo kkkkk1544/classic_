@@ -1,4 +1,4 @@
-package com.classic.order.controller;
+/*package com.classic.order.controller;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.classic.order.dao.WishListDAO;
-import com.classic.order.daoImp.WishListDAOImp;
+//import com.classic.order.dao.WishListDAO;
+//import com.classic.order.daoImp.WishListDAOImp;
 import com.classic.order.dto.WishDTO;
 import com.classic.util.ClassicDBConnection;
 
@@ -43,3 +43,4 @@ public class WIshListController extends HttpServlet{
 	}
 	
 }
+*/

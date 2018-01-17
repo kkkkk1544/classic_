@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.classic.common.dto.pagingTest;
 import com.classic.comu.daoImp.QnaDAOImp;
 import com.classic.comu.dto.QnaDTO;
 import com.classic.comu.service.QnaService;
