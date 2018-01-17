@@ -110,7 +110,7 @@
 										<li><a href="<c:url value='/view/member/mypage/mileage.jsp'/>">적립금</a></li>
 										<li><a href="<c:url value='/view/member/mypage/coupon.jsp'/>">쿠폰</a></li>
 										<li><a href="<c:url value='/view/order/cart/cart.jsp'/>">장바구니</a></li>
-										<li><a href="<c:url value='/view/order/wishlist.do?num=${loginMem.num}'/>">위시리스트</a></li>
+										<li><a href="<c:url value='/view/wish.do?num=${loginMem.num}'/>">위시리스트</a></li>
 										<li><a href="#">주문내역</a></li>
 										<li><a href="<c:url value='/mypage/myposting.do?num=${loginMem.num}'/>">내가쓴글</a></li>
 									</ul>

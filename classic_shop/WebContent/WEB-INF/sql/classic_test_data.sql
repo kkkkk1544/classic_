@@ -388,89 +388,130 @@ INSERT INTO product VALUES(product_seq.nextval, '0000001', (SELECT num FROM mini
 
 -- 상품색상DB
 INSERT INTO colour VALUES(colour_seq.nextval, 1, 'F0F8FF', '색상1');
-INSERT INTO colour VALUES(colour_seq.nextval, 2, 'F0F8F1', '색상2');
-INSERT INTO colour VALUES(colour_seq.nextval, 3, 'F0F8F2', '색상3');
-INSERT INTO colour VALUES(colour_seq.nextval, 4, 'F0F8F3', '색상4');
-INSERT INTO colour VALUES(colour_seq.nextval, 5, 'F0F8F4', '색상5');
+INSERT INTO colour VALUES(colour_seq.nextval, 1, 'F0F8F1', '색상2');
+INSERT INTO colour VALUES(colour_seq.nextval, 1, 'F0F8F2', '색상3');
+INSERT INTO colour VALUES(colour_seq.nextval, 1, 'F0F8F3', '색상4');
+INSERT INTO colour VALUES(colour_seq.nextval, 2, 'F0F8F4', '색상5');
+INSERT INTO colour VALUES(colour_seq.nextval, 2, 'F0F8F5', '색상6');
+INSERT INTO colour VALUES(colour_seq.nextval, 2, 'F0F8F6', '색상7');
+INSERT INTO colour VALUES(colour_seq.nextval, 2, 'F0F8F7', '색상8');
+INSERT INTO colour VALUES(colour_seq.nextval, 3, 'F0F8F8', '색상9');
+INSERT INTO colour VALUES(colour_seq.nextval, 3, 'F0F8F9', '색상10');
+INSERT INTO colour VALUES(colour_seq.nextval, 3, 'F0F810', '색상11');
+INSERT INTO colour VALUES(colour_seq.nextval, 4, 'F0F811', '색상12');
+INSERT INTO colour VALUES(colour_seq.nextval, 4, 'F0F812', '색상13');
+INSERT INTO colour VALUES(colour_seq.nextval, 4, 'F0F813', '색상14');
+INSERT INTO colour VALUES(colour_seq.nextval, 5, 'F0F8FF', '색상1');
+INSERT INTO colour VALUES(colour_seq.nextval, 5, 'F0F8F1', '색상2');
+INSERT INTO colour VALUES(colour_seq.nextval, 5, 'F0F8F2', '색상3');
+INSERT INTO colour VALUES(colour_seq.nextval, 6, 'F0F8F3', '색상4');
+INSERT INTO colour VALUES(colour_seq.nextval, 6, 'F0F8F4', '색상5');
 INSERT INTO colour VALUES(colour_seq.nextval, 6, 'F0F8F5', '색상6');
 INSERT INTO colour VALUES(colour_seq.nextval, 7, 'F0F8F6', '색상7');
-INSERT INTO colour VALUES(colour_seq.nextval, 8, 'F0F8F7', '색상8');
-INSERT INTO colour VALUES(colour_seq.nextval, 9, 'F0F8F8', '색상9');
-INSERT INTO colour VALUES(colour_seq.nextval, 10, 'F0F8F9', '색상10');
-INSERT INTO colour VALUES(colour_seq.nextval, 11, 'F0F810', '색상11');
-INSERT INTO colour VALUES(colour_seq.nextval, 12, 'F0F811', '색상12');
-INSERT INTO colour VALUES(colour_seq.nextval, 13, 'F0F812', '색상13');
-INSERT INTO colour VALUES(colour_seq.nextval, 14, 'F0F813', '색상14');
-INSERT INTO colour VALUES(colour_seq.nextval, 1, 'F0F8FF', '색상1');
-INSERT INTO colour VALUES(colour_seq.nextval, 2, 'F0F8F1', '색상2');
-INSERT INTO colour VALUES(colour_seq.nextval, 3, 'F0F8F2', '색상3');
-INSERT INTO colour VALUES(colour_seq.nextval, 4, 'F0F8F3', '색상4');
-INSERT INTO colour VALUES(colour_seq.nextval, 5, 'F0F8F4', '색상5');
-INSERT INTO colour VALUES(colour_seq.nextval, 6, 'F0F8F5', '색상6');
-INSERT INTO colour VALUES(colour_seq.nextval, 7, 'F0F8F6', '색상7');
-INSERT INTO colour VALUES(colour_seq.nextval, 8, 'F0F8F7', '색상8');
-INSERT INTO colour VALUES(colour_seq.nextval, 9, 'F0F8F8', '색상9');
-INSERT INTO colour VALUES(colour_seq.nextval, 10, 'F0F8F9', '색상10');
-INSERT INTO colour VALUES(colour_seq.nextval, 11, 'F0F810', '색상11');
-INSERT INTO colour VALUES(colour_seq.nextval, 12, 'F0F811', '색상12');
-INSERT INTO colour VALUES(colour_seq.nextval, 13, 'F0F812', '색상13');
-INSERT INTO colour VALUES(colour_seq.nextval, 14, 'F0F813', '색상14');
-INSERT INTO colour VALUES(colour_seq.nextval, 15, 'F0F8FF', '색상1');
-INSERT INTO colour VALUES(colour_seq.nextval, 16, 'F0F8F1', '색상2');
-INSERT INTO colour VALUES(colour_seq.nextval, 17, 'F0F8F2', '색상3');
-INSERT INTO colour VALUES(colour_seq.nextval, 18, 'F0F8F3', '색상4');
-INSERT INTO colour VALUES(colour_seq.nextval, 19, 'F0F8F4', '색상5');
-INSERT INTO colour VALUES(colour_seq.nextval, 20, 'F0F8F5', '색상6');
-INSERT INTO colour VALUES(colour_seq.nextval, 21, 'F0F8F6', '색상7');
-INSERT INTO colour VALUES(colour_seq.nextval, 22, 'F0F8F7', '색상8');
-INSERT INTO colour VALUES(colour_seq.nextval, 23, 'F0F8F8', '색상9');
-INSERT INTO colour VALUES(colour_seq.nextval, 24, 'F0F8F9', '색상10');
-INSERT INTO colour VALUES(colour_seq.nextval, 25, 'F0F810', '색상11');
-INSERT INTO colour VALUES(colour_seq.nextval, 26, 'F0F811', '색상12');
-INSERT INTO colour VALUES(colour_seq.nextval, 27, 'F0F812', '색상13');
-INSERT INTO colour VALUES(colour_seq.nextval, 28, 'F0F813', '색상14');
-INSERT INTO colour VALUES(colour_seq.nextval, 1, 'F0F8FF', '색상1');
-INSERT INTO colour VALUES(colour_seq.nextval, 2, 'F0F8F1', '색상2');
-INSERT INTO colour VALUES(colour_seq.nextval, 3, 'F0F8F2', '색상3');
-INSERT INTO colour VALUES(colour_seq.nextval, 4, 'F0F8F3', '색상4');
-INSERT INTO colour VALUES(colour_seq.nextval, 5, 'F0F8F4', '색상5');
-INSERT INTO colour VALUES(colour_seq.nextval, 6, 'F0F8F5', '색상6');
-INSERT INTO colour VALUES(colour_seq.nextval, 7, 'F0F8F6', '색상7');
-INSERT INTO colour VALUES(colour_seq.nextval, 8, 'F0F8F7', '색상8');
-INSERT INTO colour VALUES(colour_seq.nextval, 9, 'F0F8F8', '색상9');
-INSERT INTO colour VALUES(colour_seq.nextval, 10, 'F0F8F9', '색상10');
-INSERT INTO colour VALUES(colour_seq.nextval, 11, 'F0F810', '색상11');
-INSERT INTO colour VALUES(colour_seq.nextval, 12, 'F0F811', '색상12');
-INSERT INTO colour VALUES(colour_seq.nextval, 13, 'F0F812', '색상13');
-INSERT INTO colour VALUES(colour_seq.nextval, 14, 'F0F813', '색상14');
-INSERT INTO colour VALUES(colour_seq.nextval, 1, 'F0F8FF', '색상1');
-INSERT INTO colour VALUES(colour_seq.nextval, 2, 'F0F8F1', '색상2');
-INSERT INTO colour VALUES(colour_seq.nextval, 3, 'F0F8F2', '색상3');
-INSERT INTO colour VALUES(colour_seq.nextval, 4, 'F0F8F3', '색상4');
-INSERT INTO colour VALUES(colour_seq.nextval, 5, 'F0F8F4', '색상5');
-INSERT INTO colour VALUES(colour_seq.nextval, 6, 'F0F8F5', '색상6');
-INSERT INTO colour VALUES(colour_seq.nextval, 7, 'F0F8F6', '색상7');
-INSERT INTO colour VALUES(colour_seq.nextval, 8, 'F0F8F7', '색상8');
-INSERT INTO colour VALUES(colour_seq.nextval, 9, 'F0F8F8', '색상9');
-INSERT INTO colour VALUES(colour_seq.nextval, 10, 'F0F8F9', '색상10');
-INSERT INTO colour VALUES(colour_seq.nextval, 11, 'F0F810', '색상11');
-INSERT INTO colour VALUES(colour_seq.nextval, 12, 'F0F811', '색상12');
-INSERT INTO colour VALUES(colour_seq.nextval, 13, 'F0F812', '색상13');
+INSERT INTO colour VALUES(colour_seq.nextval, 7, 'F0F8F7', '색상8');
+INSERT INTO colour VALUES(colour_seq.nextval, 7, 'F0F8F8', '색상9');
+INSERT INTO colour VALUES(colour_seq.nextval, 8, 'F0F8F9', '색상10');
+INSERT INTO colour VALUES(colour_seq.nextval, 8, 'F0F810', '색상11');
+INSERT INTO colour VALUES(colour_seq.nextval, 8, 'F0F811', '색상12');
+INSERT INTO colour VALUES(colour_seq.nextval, 9, 'F0F812', '색상13');
+INSERT INTO colour VALUES(colour_seq.nextval, 9, 'F0F813', '색상14');
+INSERT INTO colour VALUES(colour_seq.nextval, 9, 'F0F8FF', '색상1');
+INSERT INTO colour VALUES(colour_seq.nextval, 10, 'F0F8F1', '색상2');
+INSERT INTO colour VALUES(colour_seq.nextval, 10, 'F0F8F2', '색상3');
+INSERT INTO colour VALUES(colour_seq.nextval, 10, 'F0F8F3', '색상4');
+INSERT INTO colour VALUES(colour_seq.nextval, 11, 'F0F8F4', '색상5');
+INSERT INTO colour VALUES(colour_seq.nextval, 11, 'F0F8F5', '색상6');
+INSERT INTO colour VALUES(colour_seq.nextval, 11, 'F0F8F6', '색상7');
+INSERT INTO colour VALUES(colour_seq.nextval, 12, 'F0F8F7', '색상8');
+INSERT INTO colour VALUES(colour_seq.nextval, 12, 'F0F8F8', '색상9');
+INSERT INTO colour VALUES(colour_seq.nextval, 12, 'F0F8F9', '색상10');
+INSERT INTO colour VALUES(colour_seq.nextval, 13, 'F0F810', '색상11');
+INSERT INTO colour VALUES(colour_seq.nextval, 13, 'F0F811', '색상12');
+INSERT INTO colour VALUES(colour_seq.nextval, 14, 'F0F812', '색상13');
 INSERT INTO colour VALUES(colour_seq.nextval, 14, 'F0F813', '색상14');
 INSERT INTO colour VALUES(colour_seq.nextval, 15, 'F0F8FF', '색상1');
-INSERT INTO colour VALUES(colour_seq.nextval, 16, 'F0F8F1', '색상2');
-INSERT INTO colour VALUES(colour_seq.nextval, 17, 'F0F8F2', '색상3');
-INSERT INTO colour VALUES(colour_seq.nextval, 18, 'F0F8F3', '색상4');
-INSERT INTO colour VALUES(colour_seq.nextval, 19, 'F0F8F4', '색상5');
-INSERT INTO colour VALUES(colour_seq.nextval, 20, 'F0F8F5', '색상6');
-INSERT INTO colour VALUES(colour_seq.nextval, 21, 'F0F8F6', '색상7');
-INSERT INTO colour VALUES(colour_seq.nextval, 22, 'F0F8F7', '색상8');
+INSERT INTO colour VALUES(colour_seq.nextval, 15, 'F0F8F1', '색상2');
+INSERT INTO colour VALUES(colour_seq.nextval, 16, 'F0F8F2', '색상3');
+INSERT INTO colour VALUES(colour_seq.nextval, 16, 'F0F8F3', '색상4');
+INSERT INTO colour VALUES(colour_seq.nextval, 16, 'F0F8F4', '색상5');
+INSERT INTO colour VALUES(colour_seq.nextval, 17, 'F0F8F5', '색상6');
+INSERT INTO colour VALUES(colour_seq.nextval, 17, 'F0F8F6', '색상7');
+INSERT INTO colour VALUES(colour_seq.nextval, 17, 'F0F8F7', '색상8');
+INSERT INTO colour VALUES(colour_seq.nextval, 18, 'F0F8F8', '색상9');
+INSERT INTO colour VALUES(colour_seq.nextval, 18, 'F0F8F9', '색상10');
+INSERT INTO colour VALUES(colour_seq.nextval, 18, 'F0F810', '색상11');
+INSERT INTO colour VALUES(colour_seq.nextval, 19, 'F0F811', '색상12');
+INSERT INTO colour VALUES(colour_seq.nextval, 19, 'F0F812', '색상13');
+INSERT INTO colour VALUES(colour_seq.nextval, 19, 'F0F813', '색상14');
+INSERT INTO colour VALUES(colour_seq.nextval, 20, 'F0F8FF', '색상1');
+INSERT INTO colour VALUES(colour_seq.nextval, 20, 'F0F8F1', '색상2');
+INSERT INTO colour VALUES(colour_seq.nextval, 21, 'F0F8F2', '색상3');
+INSERT INTO colour VALUES(colour_seq.nextval, 21, 'F0F8F3', '색상4');
+INSERT INTO colour VALUES(colour_seq.nextval, 22, 'F0F8F4', '색상5');
+INSERT INTO colour VALUES(colour_seq.nextval, 22, 'F0F8F5', '색상6');
+INSERT INTO colour VALUES(colour_seq.nextval, 22, 'F0F8F6', '색상7');
+INSERT INTO colour VALUES(colour_seq.nextval, 23, 'F0F8F7', '색상8');
 INSERT INTO colour VALUES(colour_seq.nextval, 23, 'F0F8F8', '색상9');
 INSERT INTO colour VALUES(colour_seq.nextval, 24, 'F0F8F9', '색상10');
-INSERT INTO colour VALUES(colour_seq.nextval, 25, 'F0F810', '색상11');
-INSERT INTO colour VALUES(colour_seq.nextval, 26, 'F0F811', '색상12');
-INSERT INTO colour VALUES(colour_seq.nextval, 27, 'F0F812', '색상13');
-INSERT INTO colour VALUES(colour_seq.nextval, 28, 'F0F813', '색상14');
+INSERT INTO colour VALUES(colour_seq.nextval, 24, 'F0F810', '색상11');
+INSERT INTO colour VALUES(colour_seq.nextval, 25, 'F0F811', '색상12');
+INSERT INTO colour VALUES(colour_seq.nextval, 25, 'F0F812', '색상13');
+INSERT INTO colour VALUES(colour_seq.nextval, 26, 'F0F813', '색상14');
+INSERT INTO colour VALUES(colour_seq.nextval, 26, 'F0F8FF', '색상1');
+INSERT INTO colour VALUES(colour_seq.nextval, 27, 'F0F8F1', '색상2');
+INSERT INTO colour VALUES(colour_seq.nextval, 27, 'F0F8F2', '색상3');
+INSERT INTO colour VALUES(colour_seq.nextval, 28, 'F0F8F3', '색상4');
+INSERT INTO colour VALUES(colour_seq.nextval, 28, 'F0F8F4', '색상5');
+INSERT INTO colour VALUES(colour_seq.nextval, 29, 'F0F8F5', '색상6');
+INSERT INTO colour VALUES(colour_seq.nextval, 29, 'F0F8F6', '색상7');
+INSERT INTO colour VALUES(colour_seq.nextval, 30, 'F0F8F7', '색상8');
+INSERT INTO colour VALUES(colour_seq.nextval, 30, 'F0F8F8', '색상9');
+INSERT INTO colour VALUES(colour_seq.nextval, 31, 'F0F8F9', '색상10');
+INSERT INTO colour VALUES(colour_seq.nextval, 31, 'F0F810', '색상11');
+INSERT INTO colour VALUES(colour_seq.nextval, 32, 'F0F811', '색상12');
+INSERT INTO colour VALUES(colour_seq.nextval, 32, 'F0F812', '색상13');
+INSERT INTO colour VALUES(colour_seq.nextval, 33, 'F0F813', '색상14');
+INSERT INTO colour VALUES(colour_seq.nextval, 33, 'F0F8FF', '색상1');
+INSERT INTO colour VALUES(colour_seq.nextval, 34, 'F0F8F1', '색상2');
+INSERT INTO colour VALUES(colour_seq.nextval, 34, 'F0F8F2', '색상3');
+INSERT INTO colour VALUES(colour_seq.nextval, 35, 'F0F8F3', '색상4');
+INSERT INTO colour VALUES(colour_seq.nextval, 35, 'F0F8F4', '색상5');
+INSERT INTO colour VALUES(colour_seq.nextval, 36, 'F0F8F5', '색상6');
+INSERT INTO colour VALUES(colour_seq.nextval, 36, 'F0F8F6', '색상7');
+INSERT INTO colour VALUES(colour_seq.nextval, 37, 'F0F8F7', '색상8');
+INSERT INTO colour VALUES(colour_seq.nextval, 37, 'F0F8F8', '색상9');
+INSERT INTO colour VALUES(colour_seq.nextval, 38, 'F0F8F9', '색상10');
+INSERT INTO colour VALUES(colour_seq.nextval, 38, 'F0F810', '색상11');
+INSERT INTO colour VALUES(colour_seq.nextval, 39, 'F0F811', '색상12');
+INSERT INTO colour VALUES(colour_seq.nextval, 39, 'F0F812', '색상13');
+INSERT INTO colour VALUES(colour_seq.nextval, 40, 'F0F813', '색상14');
+INSERT INTO colour VALUES(colour_seq.nextval, 40, 'F0F8FF', '색상1');
+INSERT INTO colour VALUES(colour_seq.nextval, 41, 'F0F8F1', '색상2');
+INSERT INTO colour VALUES(colour_seq.nextval, 41, 'F0F8F2', '색상3');
+INSERT INTO colour VALUES(colour_seq.nextval, 42, 'F0F8F3', '색상4');
+INSERT INTO colour VALUES(colour_seq.nextval, 42, 'F0F8F4', '색상5');
+INSERT INTO colour VALUES(colour_seq.nextval, 43, 'F0F8F5', '색상6');
+INSERT INTO colour VALUES(colour_seq.nextval, 43, 'F0F8F6', '색상7');
+INSERT INTO colour VALUES(colour_seq.nextval, 44, 'F0F8F7', '색상8');
+INSERT INTO colour VALUES(colour_seq.nextval, 44, 'F0F8F8', '색상9');
+INSERT INTO colour VALUES(colour_seq.nextval, 45, 'F0F8F9', '색상10');
+INSERT INTO colour VALUES(colour_seq.nextval, 45, 'F0F810', '색상11');
+INSERT INTO colour VALUES(colour_seq.nextval, 46, 'F0F811', '색상12');
+INSERT INTO colour VALUES(colour_seq.nextval, 46, 'F0F812', '색상13');
+INSERT INTO colour VALUES(colour_seq.nextval, 47, 'F0F813', '색상14');
+INSERT INTO colour VALUES(colour_seq.nextval, 47, 'F0F8FF', '색상1');
+INSERT INTO colour VALUES(colour_seq.nextval, 48, 'F0F8F1', '색상2');
+INSERT INTO colour VALUES(colour_seq.nextval, 48, 'F0F8F2', '색상3');
+INSERT INTO colour VALUES(colour_seq.nextval, 49, 'F0F8F3', '색상4');
+INSERT INTO colour VALUES(colour_seq.nextval, 49, 'F0F8F4', '색상5');
+INSERT INTO colour VALUES(colour_seq.nextval, 50, 'F0F8F5', '색상6');
+INSERT INTO colour VALUES(colour_seq.nextval, 50, 'F0F8F6', '색상7');
+INSERT INTO colour VALUES(colour_seq.nextval, 51, 'F0F8F7', '색상8');
+INSERT INTO colour VALUES(colour_seq.nextval, 51, 'F0F8F8', '색상9');
+INSERT INTO colour VALUES(colour_seq.nextval, 52, 'F0F8F9', '색상10');
+INSERT INTO colour VALUES(colour_seq.nextval, 52, 'F0F810', '색상11');
+
+
 
 --SIZE
 INSERT INTO sizu VALUES(sizu_seq.nextval, 'FREE', (Select num from product where name='상품명1'));
@@ -774,90 +815,91 @@ insert into qna_reply values(qna_reply_seq.nextval,39,41,'내용',sysdate);
 insert into qna_reply values(qna_reply_seq.nextval,40,40,'내용',sysdate);
 
 -- 주문 db
-insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,1,1,null,2017110812345678,'김경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','벨고장났어요',to_date('2017-11-09','yyyy-mm-dd'),0,100000,90000,to_date('2017-11-08','yyyy-mm-dd'),1,'김경미');
-insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,1,1,null,2017112900000001,'박경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','배송 전 연락 부탁드려요',null,0,100000,90000,to_date('2017-11-29','yyyy-mm-dd'),0,'함혜진');
-insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,1,1,null,2017120800000001,'최경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','부재 시 문 앞에 두고 가주세요',to_date('2017-12-08','yyyy-mm-dd'),0,100000,90000,to_date('2017-12-08','yyyy-mm-dd'),1,'최경미'); 
-insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,1,1,null,2017111800000001,'이경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','부재 시 경비실에 맡겨주세요',to_date('2017-11-19','yyyy-mm-dd'),0,100000,90000,to_date('2017-11-18','yyyy-mm-dd'),2,'이경미');
-insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,1,1,null,2017123000000001,'강경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호',null,null,0,100000,90000,to_date('2017-12-30','yyyy-mm-dd'),0,'송유정');
-insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,1,1,null,2017101900000001,'유경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','도착하셔서 연락 부탁드립니다',to_date('2017-10-20','yyyy-mm-dd'),0,100000,90000,to_date('2017-10-19','yyyy-mm-dd'),2,'유경미');
-insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,1,1,null,2017112400000011,'곽경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호',null,null,0,100000,90000,to_date('2017-11-24','yyyy-mm-dd'),0,'곽경미');
-insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,1,1,null,2017122800000011,'함경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','잘 부탁드립니다.',to_date('2017-12-29','yyyy-mm-dd'),0,100000,90000,to_date('2017-12-28','yyyy-mm-dd'),1,'곽은경');
-insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,1,1,null,2017082900000011,'송경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','감사합니다.',to_date('2017-08-29','yyyy-mm-dd'),0,100000,90000,to_date('2017-08-29','yyyy-mm-dd'),1,'송경미');
-insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,1,1,null,2018010100000011,'경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','출입문 앞에서 연락 부탁드려요',null,0,100000,90000,to_date('2018-01-01','yyyy-mm-dd'),0,'유반니');
-insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,1,1,null,2017110800000002,'미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','항상 감사합니다',to_date('2017-11-08','yyyy-mm-dd'),0,100000,90000,to_date('2017-11-08','yyyy-mm-dd'),1,'김주연');
-insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,1,1,null,2017112900000002,'송유정',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호',null,null,2,100000,100000,to_date('2017-11-29','yyyy-mm-dd'),0,'박보검');
-insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,1,1,null,2017120100000011,'김혜자',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','빠른배송 부탁드립니다.',to_date('2017-12-01','yyyy-mm-dd'),2,100000,97000,to_date('2017-12-01','yyyy-mm-dd'),1,'김혜자');
-insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,2,1,null,2017120300000001,'김창렬',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호',null,to_date('2017-12-04','yyyy-mm-dd'),0,100000,1000000,to_date('2017-12-01','yyyy-mm-dd'),1,'김창렬');
-insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,3,5,null,2017120500000123,'김종렬',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','노크부탁',to_date('2017-12-05','yyyy-mm-dd'),1,100000,1000000 ,to_date('2017-12-06','yyyy-mm-dd'),1,'김종렬');
-insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values(paid_seq.nextval,2,50,null,2017121200000011,'심수봉',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호',null,to_date('2017-12-12','yyyy-mm-dd'),0,100000,1000000,to_date('2017-12-12','yyyy-mm-dd'),1,'남진');
-insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,3,25,null,2017121300000012,'김지석',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호',null,to_date('2017-12-14','yyyy-mm-dd'),0,100000,1000000,to_date('2017-12-13','yyyy-mm-dd'),1,'김지석');
-insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,2,3,null,2017121500000012,'송지석',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','빠른배송ㄱㄱ',null,0,100000,1000000,to_date('2017-12-15','yyyy-mm-dd'),0,'송지석');
-insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,3,1,null,2017122200000123,'유정란',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','차조심',to_date('2017-12-22','yyyy-mm-dd'),0,100000,1000000,to_date('2017-12-22','yyyy-mm-dd'),2,'무정란');
-insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,1,35,null,2017122400000121,'유정',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','크리스마스조심',to_date('2017-12-24','yyyy-mm-dd'),0,100000,1000000,to_date('2017-12-25','yyyy-mm-dd'),1,'유정');
-insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,1,52,null,2017123000000122,'김상우',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','신년조심',to_date('2017-12-30','yyyy-mm-dd'),0,100000,1000000,to_date('2017-12-30','yyyy-mm-dd'),1,'김상우');
+insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name,sizu_num,colour_num) 
+values (paid_seq.nextval,1,1,null,2017110812345678,'김경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','벨고장났어요',to_date('2017-11-09','yyyy-mm-dd'),0,100000,90000,to_date('2017-11-08','yyyy-mm-dd'),1,'김경미',(select num from sizu where product_num =1 and sizu='L'),(select num from colour where product_num=1 and name='색상1'));
+insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name,sizu_num,colour_num) 
+values (paid_seq.nextval,1,1,null,2017112900000001,'박경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','배송 전 연락 부탁드려요',null,0,100000,90000,to_date('2017-11-29','yyyy-mm-dd'),0,'함혜진',(select num from sizu where product_num =1 and sizu='FREE'),(select num from colour where product_num=1 and name='색상2'));
+insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name,sizu_num,colour_num) 
+values (paid_seq.nextval,1,1,null,2017120800000001,'최경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','부재 시 문 앞에 두고 가주세요',to_date('2017-12-08','yyyy-mm-dd'),0,100000,90000,to_date('2017-12-08','yyyy-mm-dd'),1,'최경미',(select num from sizu where product_num =1 and sizu='S'),(select num from colour where product_num=1 and name='색상3')); 
+insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name,sizu_num,colour_num) 
+values (paid_seq.nextval,1,1,null,2017111800000001,'이경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','부재 시 경비실에 맡겨주세요',to_date('2017-11-19','yyyy-mm-dd'),0,100000,90000,to_date('2017-11-18','yyyy-mm-dd'),2,'이경미',(select num from sizu where product_num =1 and sizu='M'),(select num from colour where product_num=1 and name='색상4'));
+insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name,sizu_num,colour_num) 
+values (paid_seq.nextval,1,1,null,2017123000000001,'강경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호',null,null,0,100000,90000,to_date('2017-12-30','yyyy-mm-dd'),0,'송유정',(select num from sizu where product_num =1 and sizu='S'),(select num where product_num=1 and name='색상3'));
+insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name,sizu_num,colour_num) 
+values (paid_seq.nextval,1,1,null,2017101900000001,'유경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','도착하셔서 연락 부탁드립니다',to_date('2017-10-20','yyyy-mm-dd'),0,100000,90000,to_date('2017-10-19','yyyy-mm-dd'),2,'유경미',(select num from sizu where product_num =1 and sizu='FREE'),(select num from colour where product_num=1 and name='색상2'));
+insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name,sizu_num,colour_num) 
+values (paid_seq.nextval,1,1,null,2017112400000011,'곽경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호',null,null,0,100000,90000,to_date('2017-11-24','yyyy-mm-dd'),0,'곽경미',(select num from sizu where product_num =1 and sizu='S'),(select num from colour where product_num=1 and name='색상3'));
+insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name,sizu_num,colour_num) 
+values (paid_seq.nextval,1,1,null,2017122800000011,'함경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','잘 부탁드립니다.',to_date('2017-12-29','yyyy-mm-dd'),0,100000,90000,to_date('2017-12-28','yyyy-mm-dd'),1,'곽은경',(select num from sizu where product_num =1 and sizu='S'),(select num from colour where product_num=1 and name='색상3'));
+insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name,sizu_num,colour_num) 
+values (paid_seq.nextval,1,1,null,2017082900000011,'송경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','감사합니다.',to_date('2017-08-29','yyyy-mm-dd'),0,100000,90000,to_date('2017-08-29','yyyy-mm-dd'),1,'송경미',(select num from sizu where product_num =1 and sizu='S'),(select num from colour where product_num=1 and name='색상2'));
+insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name,sizu_num,colour_num) 
+values (paid_seq.nextval,1,1,null,2018010100000011,'경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','출입문 앞에서 연락 부탁드려요',null,0,100000,90000,to_date('2018-01-01','yyyy-mm-dd'),0,'유반니',(select num from sizu where product_num =1 and sizu='M'),(select num from colour where product_num=1 and name='색상1'));
+insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name,sizu_num,colour_num) 
+values (paid_seq.nextval,1,1,null,2017110800000002,'미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','항상 감사합니다',to_date('2017-11-08','yyyy-mm-dd'),0,100000,90000,to_date('2017-11-08','yyyy-mm-dd'),1,'김주연',(select num from sizu where product_num =1 and sizu='FREE'),(select num from colour where product_num=1 and name='색상4'));
+insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name,sizu_num,colour_num) 
+values (paid_seq.nextval,1,1,null,2017112900000002,'송유정',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호',null,null,2,100000,100000,to_date('2017-11-29','yyyy-mm-dd'),0,'박보검',(select num from sizu where product_num =1 and sizu='M'),(select num from colour where product_num=1 and name='색상3'));
+insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name,sizu_num,colour_num) 
+values (paid_seq.nextval,1,1,null,2017120100000011,'김혜자',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','빠른배송 부탁드립니다.',to_date('2017-12-01','yyyy-mm-dd'),2,100000,97000,to_date('2017-12-01','yyyy-mm-dd'),1,'김혜자',(select num from sizu where product_num =1 and sizu='FREE'),(select num from colour where product_num=1 and name='색상3'));
+insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name,sizu_num,colour_num) 
+values (paid_seq.nextval,2,1,null,2017120300000001,'김창렬',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호',null,to_date('2017-12-04','yyyy-mm-dd'),0,100000,1000000,to_date('2017-12-01','yyyy-mm-dd'),1,'김창렬',(select num from sizu where product_num =1 and sizu='S'),(select num from colour where product_num=1 and name='색상1'));
+insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name,sizu_num,colour_num) 
+values (paid_seq.nextval,3,1,null,2017122200000123,'유정란',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','차조심',to_date('2017-12-22','yyyy-mm-dd'),0,100000,1000000,to_date('2017-12-22','yyyy-mm-dd'),2,'무정란',(select num from sizu where product_num =1 and sizu='M'),(select num from colour where product_num=1 and name='색상3'));
+insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name,sizu_num,colour_num) 
+values (paid_seq.nextval,3,5,null,2017120500000123,'김종렬',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','노크부탁',to_date('2017-12-05','yyyy-mm-dd'),1,100000,1000000 ,to_date('2017-12-06','yyyy-mm-dd'),1,'김종렬',(select num from sizu where product_num =5 and sizu='FREE'),(select num from colour where product_num=5 and name='색상3'));
+insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name,sizu_num,colour_num) 
+values(paid_seq.nextval,2,50,null,2017121200000011,'심수봉',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호',null,to_date('2017-12-12','yyyy-mm-dd'),0,100000,1000000,to_date('2017-12-12','yyyy-mm-dd'),1,'남진',(select num from sizu where product_num =50 and sizu='M'),(select num from colour where product_num=50 and name='색상6'));
+insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name,sizu_num,colour_num) 
+values (paid_seq.nextval,3,25,null,2017121300000012,'김지석',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호',null,to_date('2017-12-14','yyyy-mm-dd'),0,100000,1000000,to_date('2017-12-13','yyyy-mm-dd'),1,'김지석',(select num from sizu where product_num =25 and sizu='FREE'),(select num from colour where product_num=25 and name='색상12'));
+insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name,sizu_num,colour_num) 
+values (paid_seq.nextval,2,3,null,2017121500000012,'송지석',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','빠른배송ㄱㄱ',null,0,100000,1000000,to_date('2017-12-15','yyyy-mm-dd'),0,'송지석',(select num from sizu where product_num =3 and sizu='L'),(select num from colour where product_num=3 and name='색상9'));
+insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name,sizu_num,colour_num) 
+values (paid_seq.nextval,1,35,null,2017122400000121,'유정',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','크리스마스조심',to_date('2017-12-24','yyyy-mm-dd'),0,100000,1000000,to_date('2017-12-25','yyyy-mm-dd'),1,'유정',(select num from sizu where product_num =35 and sizu='L'),(select num from colour where product_num=35 and name='색상5'));
+insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name,sizu_num,colour_num) 
+values (paid_seq.nextval,1,52,null,2017123000000122,'김상우',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','신년조심',to_date('2017-12-30','yyyy-mm-dd'),0,100000,1000000,to_date('2017-12-30','yyyy-mm-dd'),1,'김상우',(select num from sizu where product_num =52 and sizu='FREE'),(select num from colour where product_num=52 and name='색상11'));
 
 --wish db
-INSERT INTO wish VALUES(wish_seq.nextval ,1 , 1, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,2 , 1, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,3 , 1, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,4 , 1, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,5 , 1, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,6 , 2, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,7 , 2, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,8 , 2, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,9 , 2, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,10 , 2, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,1 , 3, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,2 , 3, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,3 , 3, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,4 , 3, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,5 , 3, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,6 , 4, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,7 , 4, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,8 , 4, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,9 , 4, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,10 , 4, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,1 , 5, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,2 , 5, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,3 , 5, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,4 , 5, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,5 , 5, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,6 , 6, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,7 , 6, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,8 , 6, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,9 , 6, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,10 , 6, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,1 , 7, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,2 , 7, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,3 , 7, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,4 , 7, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,5 , 7, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,6 , 8, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,7 , 8, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,8 , 8, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,9 , 8, sysdate);
-INSERT INTO wish VALUES(wish_seq.nextval ,10 , 8, sysdate);
+-- 							num, productNum, productNum, date, sizuNum, colourNum
+INSERT INTO wish VALUES(wish_seq.nextval ,1 , 1, sysdate, (select num from sizu where sizu='FREE' and product_num=1),(select num from colour where product_num=1 and name='색상1'));
+INSERT INTO wish VALUES(wish_seq.nextval ,1 , 3, sysdate, (select num from sizu where sizu='L' and product_num=1),(select num from colour where product_num=1 and name='색상2'));
+INSERT INTO wish VALUES(wish_seq.nextval ,1 , 5, sysdate, (select num from sizu where sizu='M' and product_num=1),(select num from colour where product_num=1 and name='색상3'));
+INSERT INTO wish VALUES(wish_seq.nextval ,1 , 7, sysdate, (select num from sizu where sizu='S' and product_num=1),(select num from colour where product_num=1 and name='색상4'));
+INSERT INTO wish VALUES(wish_seq.nextval ,2 , 1, sysdate, (select num from sizu where sizu='FREE' and product_num=2),(select num from colour where product_num=2 and name='색상5'));
+INSERT INTO wish VALUES(wish_seq.nextval ,2 , 3, sysdate, (select num from sizu where sizu='L' and product_num=2),(select num from colour where product_num=2 and name='색상6'));
+INSERT INTO wish VALUES(wish_seq.nextval ,2 , 5, sysdate, (select num from sizu where sizu='M' and product_num=2),(select num from colour where product_num=2 and name='색상7'));
+INSERT INTO wish VALUES(wish_seq.nextval ,2 , 7, sysdate, (select num from sizu where sizu='S' and product_num=2),(select num from colour where product_num=2 and name='색상8'));
+INSERT INTO wish VALUES(wish_seq.nextval ,3 , 1, sysdate, (select num from sizu where sizu='FREE' and product_num=3),(select num from colour where product_num=3 and name='색상9'));
+INSERT INTO wish VALUES(wish_seq.nextval ,3 , 3, sysdate, (select num from sizu where sizu='L' and product_num=3),(select num from colour where product_num=3 and name='색상10'));
+INSERT INTO wish VALUES(wish_seq.nextval ,3 , 5, sysdate, (select num from sizu where sizu='M' and product_num=3),(select num from colour where product_num=3 and name='색상10'));
+INSERT INTO wish VALUES(wish_seq.nextval ,3 , 7, sysdate, (select num from sizu where sizu='S' and product_num=3),(select num from colour where product_num=3 and name='색상11'));
+INSERT INTO wish VALUES(wish_seq.nextval ,4 , 1, sysdate, (select num from sizu where sizu='FREE' and product_num=4),(select num from colour where product_num=4 and name='색상12'));
+INSERT INTO wish VALUES(wish_seq.nextval ,4 , 3, sysdate, (select num from sizu where sizu='L' and product_num=4),(select num from colour where product_num=4 and name='색상12'));
+INSERT INTO wish VALUES(wish_seq.nextval ,4 , 5, sysdate, (select num from sizu where sizu='M' and product_num=4),(select num from colour where product_num=4 and name='색상13'));
+INSERT INTO wish VALUES(wish_seq.nextval ,4 , 7, sysdate, (select num from sizu where sizu='S' and product_num=4),(select num from colour where product_num=4 and name='색상14'));
+INSERT INTO wish VALUES(wish_seq.nextval ,5 , 1, sysdate, (select num from sizu where sizu='FREE' and product_num=5),(select num from colour where product_num=5 and name='색상1'));
+INSERT INTO wish VALUES(wish_seq.nextval ,5 , 3, sysdate, (select num from sizu where sizu='L' and product_num=5),(select num from colour where product_num=5 and name='색상2'));
+INSERT INTO wish VALUES(wish_seq.nextval ,5 , 5, sysdate, (select num from sizu where sizu='M' and product_num=5),(select num from colour where product_num=5 and name='색상2'));
+INSERT INTO wish VALUES(wish_seq.nextval ,5 , 7, sysdate, (select num from sizu where sizu='S' and product_num=5),(select num from colour where product_num=5 and name='색상3'));
+INSERT INTO wish VALUES(wish_seq.nextval ,6 , 2, sysdate, (select num from sizu where sizu='FREE' and product_num=6),(select num from colour where product_num=6 and name='색상4'));
+INSERT INTO wish VALUES(wish_seq.nextval ,6 , 4, sysdate, (select num from sizu where sizu='L' and product_num=6),(select num from colour where product_num=6 and name='색상4'));
+INSERT INTO wish VALUES(wish_seq.nextval ,6 , 6, sysdate, (select num from sizu where sizu='M' and product_num=6),(select num from colour where product_num=6 and name='색상5'));
+INSERT INTO wish VALUES(wish_seq.nextval ,6 , 8, sysdate, (select num from sizu where sizu='S' and product_num=6),(select num from colour where product_num=6 and name='색상6'));
+INSERT INTO wish VALUES(wish_seq.nextval ,7 , 2, sysdate, (select num from sizu where sizu='FREE' and product_num=7),(select num from colour where product_num=7 and name='색상7'));
+INSERT INTO wish VALUES(wish_seq.nextval ,7 , 4, sysdate, (select num from sizu where sizu='L' and product_num=7),(select num from colour where product_num=7 and name='색상7'));
+INSERT INTO wish VALUES(wish_seq.nextval ,7 , 6, sysdate, (select num from sizu where sizu='M' and product_num=7),(select num from colour where product_num=7 and name='색상8'));
+INSERT INTO wish VALUES(wish_seq.nextval ,7 , 8, sysdate, (select num from sizu where sizu='S' and product_num=7),(select num from colour where product_num=7 and name='색상9'));
+INSERT INTO wish VALUES(wish_seq.nextval ,8 , 2, sysdate, (select num from sizu where sizu='FREE' and product_num=8),(select num from colour where product_num=8 and name='색상10'));
+INSERT INTO wish VALUES(wish_seq.nextval ,8 , 4, sysdate, (select num from sizu where sizu='L' and product_num=8),(select num from colour where product_num=8 and name='색상10'));
+INSERT INTO wish VALUES(wish_seq.nextval ,8 , 6, sysdate, (select num from sizu where sizu='M' and product_num=8),(select num from colour where product_num=8 and name='색상11'));
+INSERT INTO wish VALUES(wish_seq.nextval ,8 , 8, sysdate, (select num from sizu where sizu='S' and product_num=8),(select num from colour where product_num=8 and name='색상12'));
+INSERT INTO wish VALUES(wish_seq.nextval ,9 , 2, sysdate, (select num from sizu where sizu='FREE' and product_num=9),(select num from colour where product_num=9 and name='색상13'));
+INSERT INTO wish VALUES(wish_seq.nextval ,9 , 4, sysdate, (select num from sizu where sizu='L' and product_num=9),(select num from colour where product_num=9 and name='색상13'));
+INSERT INTO wish VALUES(wish_seq.nextval ,9 , 6, sysdate, (select num from sizu where sizu='M' and product_num=9),(select num from colour where product_num=9 and name='색상14'));
+INSERT INTO wish VALUES(wish_seq.nextval ,9 , 8, sysdate, (select num from sizu where sizu='S' and product_num=9),(select num from colour where product_num=9 and name='색상1'));
+INSERT INTO wish VALUES(wish_seq.nextval ,10 , 2, sysdate, (select num from sizu where sizu='FREE' and product_num=10),(select num from colour where product_num=10 and name='색상2'));
+INSERT INTO wish VALUES(wish_seq.nextval ,10 , 4, sysdate, (select num from sizu where sizu='L' and product_num=10),(select num from colour where product_num=10 and name='색상3'));
+INSERT INTO wish VALUES(wish_seq.nextval ,10 , 6, sysdate, (select num from sizu where sizu='M' and product_num=10),(select num from colour where product_num=10 and name='색상4'));
+INSERT INTO wish VALUES(wish_seq.nextval ,10 , 8, sysdate, (select num from sizu where sizu='S' and product_num=10),(select num from colour where product_num=10 and name='색상4'));
 
 -- 상품후기DB
 INSERT INTO review VALUES(review_seq.nextval, 1, 1, '치수', '내용', 1, sysdate);
@@ -869,29 +911,29 @@ INSERT INTO review VALUES(review_seq.nextval, 1, 1, '치수', '내용', 5, sysda
 
 --마일리지
 INSERT INTO mileage VALUES(mileage_seq.nextval,1,1,200000,sysdate,2);
-INSERT INTO mileage VALUES(mileage_seq.nextval,1,1,null,200000,sysdate,2);
+INSERT INTO mileage VALUES(mileage_seq.nextval,1,1,200000,sysdate,2);
 
 -- bank
 INSERT INTO bank VALUES(bank_seq.nextval ,'우리은행' ,'1002536238755','클래식');
 INSERT INTO bank VALUES(bank_seq.nextval ,'신한은행' ,'22875504956326','클래식');
 INSERT INTO bank VALUES(bank_seq.nextval ,'국민은행' ,'5678920563257','클래식');
 
---delivery
-INSERT INTO delivery VALUES(delivery_seq.nextval ,41 ,'CJ택배','6898000144426575' ,1 ,sysdate , '');
-INSERT INTO delivery VALUES(delivery_seq.nextval ,52 ,'','' ,0 ,sysdate , '');
-INSERT INTO delivery VALUES(delivery_seq.nextval ,43 ,'대한통운','1111222233334444' ,2 ,sysdate , '');
+--delivery// 요 밑에 디비 못넣음 혜진 체크용 
+INSERT INTO delivery VALUES(delivery_seq.nextval ,41 ,'CJ택배','6898000144426575' ,1 ,sysdate , NULL);
+INSERT INTO delivery VALUES(delivery_seq.nextval ,52 ,NULL,NULL ,0 ,sysdate , NULL);
+INSERT INTO delivery VALUES(delivery_seq.nextval ,43 ,'대한통운','1111222233334444' ,2 ,sysdate , NULL);
 INSERT INTO delivery VALUES(delivery_seq.nextval ,47 ,'대한통운','6666222233335555' ,3 ,sysdate , '20180107');
 
 --trade
-INSERT INTO trade VALUES(trade_seq.nextval ,44,0,sysdate,'',0);
-INSERT INTO trade VALUES(trade_seq.nextval ,45,2,sysdate,'',2);
+INSERT INTO trade VALUES(trade_seq.nextval ,44,0,sysdate,NULL,0);
+INSERT INTO trade VALUES(trade_seq.nextval ,45,2,sysdate,NULL,2);
 
 --refund
-INSERT INTO refund VALUES(refund_seq.nextval ,46,sysdate,1,'',1,'카카오뱅크','12345678912','김다혜');
-INSERT INTO refund VALUES(refund_seq.nextval ,47,sysdate,5,'',2,'우리은행','12345678912','홍길동');
+INSERT INTO refund VALUES(refund_seq.nextval ,46,sysdate,1,NULL,1,'카카오뱅크','12345678912','김다혜');
+INSERT INTO refund VALUES(refund_seq.nextval ,47,sysdate,5,NULL,2,'우리은행','12345678912','홍길동');
 
 --cancel
-INSERT INTO cancel VALUES(cancel_seq.nextval ,48,sysdate,'');
+INSERT INTO cancel VALUES(cancel_seq.nextval ,48,sysdate,NULL);
 INSERT INTO cancel VALUES(cancel_seq.nextval ,49,sysdate,'20180109');
 
 --혜진 필요 DB

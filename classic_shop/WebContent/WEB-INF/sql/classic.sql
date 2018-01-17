@@ -204,7 +204,9 @@ create table wish(
 	num number(8) constraint wish_pk_num primary key,
 	product_num number(8) constraint wish_fk_product_num references product(num),
 	mem_num number(8) constraint wish_fk_mem_num references member(num),
-	indate date
+	indate date,
+	sizu_num number(8) not null constraint wish_fk_sizu_num references sizu(num),
+	colour_num number(8) not null constraint wish_fk_colour_num references colour(num)
 );
 
 create sequence bank_seq start with 1 increment by 1;
@@ -234,7 +236,9 @@ create table paid(
 	payment	number(12) not null,
 	order_date date not null,
 	order_state number(1) default 0 not null constraint paid_ck_order_state check(order_state between -2 and 3),
-	deposit_name varchar2(10) not null
+	deposit_name varchar2(10) not null,
+	sizu_num number(8) not null constraint paid_fk_sizu_num references sizu(num),
+	colour_num number(8) not null constraint paid_fk_colour_num references colour(num)
 );
 
 create sequence delivery_seq start with 1 increment by 1;
