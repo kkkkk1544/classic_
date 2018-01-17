@@ -11,10 +11,6 @@ $(function(){
 	console.log(${sizuList});
 	console.log(${reviewList});
 	$.ajax({
-		
-	
-		
-		
 	});//ajax
 });//ready
 
