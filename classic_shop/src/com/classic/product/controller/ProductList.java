@@ -15,9 +15,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.classic.product.dao.CateDAO;
+import com.classic.product.dao.ColourDAO;
+import com.classic.product.dao.MiniCateDAO;
 import com.classic.product.dao.ProductDAO;
+import com.classic.product.daoImp.CateDAIOImp;
+import com.classic.product.daoImp.ColourDAOImp;
+import com.classic.product.daoImp.MiniCateDAOImp;
 import com.classic.product.daoImp.ProductDAOImp;
+import com.classic.product.dto.CateDTO;
+import com.classic.product.dto.ColourDTO;
+import com.classic.product.dto.MiniCateDTO;
 import com.classic.product.dto.ProductDTO;
+import com.classic.util.ClassicDBConnection;
 
 @WebServlet("/product/list.do")
 public class ProductList extends HttpServlet {
@@ -26,59 +36,40 @@ public class ProductList extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("utf-8");
+		String str_cate=req.getParameter("num");
+		
 		List<ProductDTO> productList = new ArrayList<ProductDTO>();
-		ProductDAO productDAO=new ProductDAOImp();
-		
-		
-		/*StringBuffer products= new StringBuffer();
-		String className="oracle.jdbc.driver.OracleDriver";
-		String url="jdbc:oracle:thin:@192.168.0.2:1521:xe";
-		String user="classic_admin";
-		String password="admin1234";
-		String sql="select * from product";
-		//String sql="select num, name, sub_info, price, data_num from product";
-		
+		List<ColourDTO> coloursList = new ArrayList<ColourDTO>();
+		List<MiniCateDTO> miniCateList = new ArrayList<MiniCateDTO>();
+		CateDTO cateDTO = null;
 		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		products.append("[");
 		try {
-			Class.forName(className);
-			conn=DriverManager.getConnection(url, user, password);
-			pstmt=conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, 
-		             ResultSet.CONCUR_UPDATABLE);
-			rs=pstmt.executeQuery();
-			
-			while(rs.next()) {
-				products.append("{");
-				
-				products.append("\"num\":"+rs.getInt("num")+",");
-				products.append("\"name\":\""+rs.getString("name")+"\",");
-				products.append("\"sub_info\":\""+rs.getString("sub_info")+"\",");
-				products.append("\"price\":"+rs.getInt("price")+",");
-				products.append("\"data_num\":"+rs.getInt("data_num"));
-				products.append("}");
-				if(!rs.isLast()) {
-					products.append(",");
-					
-				}
-			}
-			
+			conn=ClassicDBConnection.getConnection();
+			int cate_num =Integer.parseInt(str_cate);
+			ProductDAO productDAO=new ProductDAOImp(conn);
+			ColourDAO colourDAO = new ColourDAOImp(conn); 
+			MiniCateDAO miniCateDAO = new MiniCateDAOImp(conn);
+			CateDAO cateDAO = new CateDAIOImp(conn);
+			productList=productDAO.selectProductList(cate_num);
+			coloursList=colourDAO.selectCateListColours(cate_num);
+			miniCateList=miniCateDAO.selectMiniCateList(cate_num);
+			cateDTO=cateDAO.selectCate(cate_num);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
-		} finally {
-			if(rs!=null) {try {rs.close();} catch (SQLException e) {e.printStackTrace();}}
-			if(pstmt!=null) {try {pstmt.close();} catch (SQLException e) {e.printStackTrace();}}
-			if(conn!=null) {try {conn.close();} catch (SQLException e) {e.printStackTrace();}}
 		}
-		products.append("]");
-		//System.out.println(products);
+		finally {
+			if(conn!=null) {
+				ClassicDBConnection.close(conn);
+			}
+		}
+		req.setAttribute("productList", productList); 
+		req.setAttribute("coloursList", coloursList);
+		req.setAttribute("miniCateList", miniCateList);
+		req.setAttribute("cate", cateDTO);
+		req.getRequestDispatcher("/view/product/list.jsp").forward(req, resp);
 		
-		resp.setCharacterEncoding("UTF-8");
-		resp.setContentType("application/json");
-		resp.getWriter().append(products.toString());
-		*/
+		
 	}
 	
 }

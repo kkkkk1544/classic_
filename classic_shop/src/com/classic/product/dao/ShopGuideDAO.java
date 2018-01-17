@@ -6,6 +6,6 @@ import com.classic.product.dto.ShopGuideDTO;
 
 public interface ShopGuideDAO {
 
-	public List<ShopGuideDTO> selectShopGuideList() throws Exception;
-	public String selectShopGuide() throws Exception;
+	public ShopGuideDTO selectShopGuide(int state) throws Exception;
+	//public String selectShopGuide() throws Exception;
 }

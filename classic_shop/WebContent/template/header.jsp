@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- 개인 lib -->
 <link rel="stylesheet" href="<c:url value='/public/css/common.css' />">
+<script src='<c:url value="/public/js/script_header.js"/>'></script>
 <!-- jQuery ui CSS -->
 <link rel="stylesheet" href="<c:url value='/public/js/jquery-ui/jquery-ui.min.css' />">
 <!-- jQuery lib -->
@@ -31,14 +32,14 @@
 				<!-- 상품 Nav -->
 				<div id="productNav">
 					<div class="nav navbar-nav navbar-left">
-						<ul class="nav nav-pills">
-							<li><a href="<c:url value='/main.do' />">CLASSIC</a></li>
+						<ul class="nav nav-pills" id="cateNavbar">
+						<%-- <li><a href="<c:url value='/main.do' />">CLASSIC</a></li>
 							<li><a href="#">NEW</a></li>
 							<li><a href="#">BEST</a></li>
 							<li role="presentation" class="dropdown">
-								<a class="dropdown-toggle" href="<c:url value='/view/product/list.jsp' />" role="button" aria-expanded="false">OUTER</a>
-								<%-- <a class="dropdown-toggle" data-toggle="dropdown" href="<c:url value='/product/list/outerList.jsp' />" role="button" aria-expanded="false">OUTER</a>
-								 --%>
+								<a class="dropdown-toggle" href="<c:url value='/view/product/list.do' />" role="button" aria-expanded="false">${cate.name}</a>
+								<a class="dropdown-toggle" data-toggle="dropdown" href="<c:url value='/product/list/outerList.jsp' />" role="button" aria-expanded="false">OUTER</a>
+								
 								 <ul class="dropdown-menu" role="menu">
 									<li><a href="#">COAT</a></li>
 									<li><a href="#">JACKET</a></li>
@@ -47,7 +48,7 @@
 								</ul>
 							</li>
 							<li role="presentation" class="dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">TOP</a>
+								<a class="dropdown-toggle" data-toggle="dropdown" href="<c:url value='/view/product/list.do?cate=TOP' />" role="button" aria-expanded="false">TOP</a>
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="#">T-SHIRT</a></li>
 									<li><a href="#">BLOUSE</a></li>
@@ -55,7 +56,7 @@
 								</ul>
 							</li>
 							<li role="presentation" class="dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">BOTTOM</a>
+								<a class="dropdown-toggle" data-toggle="dropdown" href="<c:url value='/view/product/list.do?cate=BOTTOM' />" role="button" aria-expanded="false">BOTTOM</a>
 								<ul class="dropdown-menu" role="menu">
 									<li role=""><a href="#">SKIRTS</a></li>
 									<li><a href="#">PANTS</a></li>
@@ -63,7 +64,7 @@
 								</ul>
 							</li>
 							<li role="presentation" class="dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">SHOES&amp;BAG</a>
+								<a class="dropdown-toggle" data-toggle="dropdown" href="<c:url value='/view/product/list.do?cate=SHOESNBAG' />" role="button" aria-expanded="false">SHOES&amp;BAG</a>
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="#">SHOES</a></li>
 									<li><a href="#">BAG</a></li>
@@ -74,7 +75,7 @@
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="#">ACC</a></li>
 								</ul>
-							</li>
+							</li> --%>
 						</ul>
 					</div>
 				</div>

@@ -31,8 +31,8 @@ public class SizuDTO {
 	}
 	@Override
 	public String toString() {
-		return "\"num\":\"" + num + "\", \"sizu\":\"" + sizu + "\", \"product_num\":\"" + product_num
-				+ "\"";
+		return "{\"num\":\"" + num + "\", \"sizu\":\"" + sizu + "\", \"product_num\":\"" + product_num
+				+ "\"}";
 	}
 	
 	

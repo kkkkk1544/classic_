@@ -12,9 +12,9 @@ import com.classic.product.dto.SizuDTO;
 import com.classic.util.ClassicDBConnection;
 
 public class SizuDAOImp implements SizuDAO {
-	Connection conn=null;
-	public SizuDAOImp() throws Exception {
-		conn=ClassicDBConnection.getConnection();
+	private Connection conn=null;
+	public SizuDAOImp(Connection conn) throws Exception {
+		this.conn=conn;
 	}
 	@Override
 	public List<SizuDTO> selectSizuList(int product_num) throws Exception {
@@ -37,22 +37,9 @@ public class SizuDAOImp implements SizuDAO {
 		return sizuList;
 	}
 
-	@Override
-	public String selectProductSizu(int product_num) throws Exception {
-		List<SizuDTO>sizuList =new SizuDAOImp().selectSizuList(product_num);
-		String sizu="";
-		for(int i=0; i<sizuList.size(); i++) {
-			sizu+= sizuList.get(i).getSizu();
-			if(i!=sizuList.size()-1) {
-				sizu+=",";
-			}
-		}
-		return sizu;
-	}
-
 	/*public static void main(String[] args) {
 		try {
-			System.out.println(new SizuDAOImp().selectProductSizu(1));
+			System.out.println(new SizuDAOImp().selectSizuList(1));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

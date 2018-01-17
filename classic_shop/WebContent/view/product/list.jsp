@@ -5,45 +5,60 @@
 <body>
 <div class="product_body container">
 <div id="productTitle">
-	<h2>Outer List <!--Custom content--></h2>
-  <p><!--With a bit of extra markup, it's possible to add any kind of HTML content like headings, paragraphs, or buttons into thumbnails.-->
-  	<a href="#" class="cate" style="text-align: right">코트</a>
-  	<a href="#" class="cate">자켓</a>
-  	<a href="#" class="cate">점퍼</a> 
-  	<a href="#" class="cate">가디건</a> 
+	<h2>${cate.name}<!-- Cate --></h2>
+	
+  <p> <!-- miniCate -->
+	<c:forEach var="mini" items="${miniCateList}">
+  		<a href="<c:url value='/product/miniCateList.do?num=${mini.num}' />" class="cate">${mini.name}</a>
+	</c:forEach>
   </p>
 </div>
  
+ <script>
+ //console.log(${coloursList});
+ </script>
 <div class="product_list" data-example-id="thumbnails-with-custom-content">
 	<div class="row">
+		<c:forEach var="list" items="${productList}">
 		<div class="col-sm-6 col-md-4">
+
 			<div class="thumbnail">
-			<a href="<c:url value='/product/detail.do?num=1' />">
+			<a href="<c:url value='/product/detail.do?num=${list.num}' />">
 			<img data-src="holder.js/100%x200" alt="400x400" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzE5IiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMxOSAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxkZWZzLz48cmVjdCB3aWR0aD0iMzE5IiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjEyMC41NzAzMTI1IiB5PSIxMDAiIHN0eWxlPSJmaWxsOiNBQUFBQUE7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LWZhbWlseTpBcmlhbCwgSGVsdmV0aWNhLCBPcGVuIFNhbnMsIHNhbnMtc2VyaWYsIG1vbm9zcGFjZTtmb250LXNpemU6MTVwdDtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsIj4zMTl4MjAwPC90ZXh0PjwvZz48L3N2Zz4=" data-holder-rendered="true" style="height: 400px; width: 400px; display: block;">
+<!-- 			<img data-src="holder.js/100%x200" alt="400x400" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzE5IiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMxOSAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxkZWZzLz48cmVjdCB3aWR0aD0iMzE5IiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjEyMC41NzAzMTI1IiB5PSIxMDAiIHN0eWxlPSJmaWxsOiNBQUFBQUE7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LWZhbWlseTpBcmlhbCwgSGVsdmV0aWNhLCBPcGVuIFNhbnMsIHNhbnMtc2VyaWYsIG1vbm9zcGFjZTtmb250LXNpemU6MTVwdDtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsIj4zMTl4MjAwPC90ZXh0PjwvZz48L3N2Zz4=" data-holder-rendered="true" style="height: 400px; width: 400px; display: block;"> -->			
 			</a>
 			
 				<div class="product_caption">
-				  <p class="product_name">
-				  <a href="<c:url value='/product/detail.jsp' />">ProductName
-				   <!-- 컬러칩 html으로 사각형 그려서 거기다 span 먹이는 거~ -->
-		          
-		          
-		          </a></p>
-		          <p class="product_colorchip">
-			          <button type="button" class="colorbtn"></button>
-			          <button type="button" class="colorbtn2"></button>
+				  <p class="product_name product_colorchip">
+				  	<table style="width: 100%; height: 50px">
+				  		<tr style="border-bottom: 1px solid #ced4da;"> <!-- 마진을 div 넓이만큼 -->
+				  			<td>
+					  			<a href="<c:url value='/product/detail.do?num=${list.num}' />" class="cate">${list.name}</a> <!--css랑 링크 색상 없애는 거 잘봐 이름 바꾸거나 새로 추가한게 안된다. -->
+					  		</td>
+					  		<td style="text-align: right;">
+			          			<c:forEach var="colour" items="${coloursList}">
+			          				<c:if test="${list.num eq colour.product_num}">
+										<span style="display: inline-block; width:10px; height:10px; background-color:#${colour.code};"></span>
+			          				</c:if>
+							
+			          			</c:forEach>
+		          			</td>
+				  		</tr>
+				  	</table>
+		          	
 		          </p>
-		          <hr>
-		          <p class="product_price">Product Price</p>
-		          <p class="product_description">Product Description Line1</p>
+		          <p class="product_price">	<fmt:formatNumber type="Number" pattern="#,###" value="${list.price}" /></p>
+		          <p class="product_description">${list.main_info }</p>
 				</div>
 			 </div>
 		 </div>
-		 
+		 </c:forEach>
 	</div><!-- row -->
     
 </div>
+<!--  
 <script>
+console.log(${productList});
 $(function(){
 	
 	$.ajax({
@@ -85,6 +100,7 @@ $(function(){
 
 });//ready
 </script>
+-->
   
   <!-- /.bs-example -->
   

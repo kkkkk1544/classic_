@@ -82,11 +82,7 @@
 	color:#000000;
 	text-decoration:none !important;
 }
-.product_name>a{
-	text-decoration:none;
-	color:#000000;
-	text-decoration:none !important;
-}
+
 
 .product_colorchip{
 	float: right;
@@ -121,6 +117,17 @@
 .detail_top_right{
 	max-width: 100%
 }
+/* #sidebox { 
+	background-color:#F0F0F0; 
+	position:absolute; 
+	width:84%;
+	text-align:center;
+	top:50%; 
+} */
+/* .bs-example{
+	width:100%;
+	text-align: center;
+} */
 
 .mySlides {display:none}
 .w3-left, .w3-right, .w3-badge {cursor:pointer}

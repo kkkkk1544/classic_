@@ -68,10 +68,10 @@ public class ShopGuideDTO {
 	}
 	@Override
 	public String toString() {
-		return "\"num\":\"" + num + "\", \"state\":\"" + state + "\", \"subject\":\"" + subject
+		return "{\"num\":\"" + num + "\", \"state\":\"" + state + "\", \"subject\":\"" + subject
 				+ "\", \"deliv_info\":\"" + deliv_info + "\", \"refund_info\":\"" + refund_info
 				+ "\", \"trade_info\":\"" + trade_info + "\", \"as_info\":\"" + as_info
-				+ "\", \"unregi_info\":\"" + unregi_info + "\"";
+				+ "\", \"unregi_info\":\"" + unregi_info + "\"}";
 	}
 	
 	
