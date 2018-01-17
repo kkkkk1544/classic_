@@ -9,6 +9,8 @@ import java.util.List;
 
 import com.classic.comu.dao.NoticeDAO;
 import com.classic.comu.dto.NoticeDTO;
+import com.classic.util.ClassicDBConnection;
+
 
 
 public class NoticeDAOImp implements NoticeDAO{
@@ -64,7 +66,8 @@ public class NoticeDAOImp implements NoticeDAO{
 		}
 		return noticeDTO;
 	}
-
+}
+	
 
 	
 //유정이가 전에 해놓은 거
@@ -106,4 +109,3 @@ public class NoticeDAOImp implements NoticeDAO{
 		return notice;
 	}*/
 
-}
