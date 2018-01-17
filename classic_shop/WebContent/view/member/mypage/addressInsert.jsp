@@ -80,7 +80,7 @@
 						<!-- 버튼 -->
 						<div class="modify_btn_group">
 							<button class="btn btn-default" type="button" onclick="addrJson(this.form)">등록</button>
-							<button class="btn btn-default" type="button" onclick="location.href='<c:url value='addresslist.do?mem_num=${loginMem.num}'/>'">취소</button>
+							<button class="btn btn-default" type="button" onclick="location.href='<c:url value='/view/address/list.do?mem_num=${loginMem.num}'/>'">취소</button>
 						</div>
 					</div>
 				</form>
@@ -95,7 +95,7 @@
 		var zip_code = addrForm.addrZip.value;
 		var base_addr = addrForm.addrBase.value;
 		var detail_addr = addrForm.addrDetail.value;
-		var url = "/classic_shop/addresslist/insert.do"
+		var url = "http://localhost:9999/classic_shop/view/address/register.do"
 		var method = "POST";
 		var data = "mem_num="+mem_num+"&zip_code="+zip_code+"&base_addr="+base_addr+"&detail_addr="+detail_addr;
 		console.log(data);
@@ -105,15 +105,16 @@
 			if(this.readyState==4 && this.status==200){
 				var register = JSON.parse(this.response)["register"];
 				if(register){
-					alert("등록");
-					location.href="/classic_shop/addresslist.do?mem_num=${loginMem.num}";
+					alert("등록했당");
+					location.href="http://localhost:9999/classic_shop/view/address/list.do?mem_num="+mem_num;
 					
 				}else{
 					alert("다시 시도");
 				}
 			}
 		}
-		http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		http.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
+		/* charset=UTF-8 을 추가하지 않으면 ajax 전송시 한글이 깨짐...... */
 		http.send(data);
 	}
 

@@ -10,9 +10,6 @@
 <link rel="stylesheet" href="<c:url value='/public/bootstrap/css/bootstrap.css' />">
 <!-- awesome Icon -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- 개인 lib -->
-<link rel="stylesheet" href="<c:url value='/public/css/common.css' />">
-<script src='<c:url value="/public/js/script_header.js"/>'></script>
 <!-- jQuery ui CSS -->
 <link rel="stylesheet" href="<c:url value='/public/js/jquery-ui/jquery-ui.min.css' />">
 <!-- jQuery lib -->
@@ -20,6 +17,10 @@
 <script src='<c:url value="/public/js/jquery-ui/jquery-ui.min.js"/>'></script>
 <!-- kakao 지도 api -->
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9634cbc392b8b80779d4f419ee72bf3a"></script>
+<!-- 개인 js lib -->
+<!-- 개인 css lib -->
+<link rel="stylesheet" href="<c:url value='/public/css/common.css' />">
+<script src='<c:url value="/public/js/script_header.js"/>'></script>
 <title>CLASSIC</title>
 <script>
 	if("${msg}"!=""){
@@ -107,7 +108,7 @@
 									<a class="dropdown-toggle" href="<c:url value='/mypage.do?num=${loginMem.num}'/>" role="button" aria-expanded="false">MY PAGE</a>
 									<ul class="dropdown-menu" role="menu">
 										<li><a href="<c:url value='/mypage/modify.do?num=${loginMem.num}'/>">회원정보수정</a></li>
-										<li><a href="<c:url value='/view/address/list.do?num=${loginMem.num}'/>">배송주소록</a></li>
+										<li><a href="<c:url value='/view/address/list.do?mem_num=${loginMem.num}'/>">배송주소록</a></li>
 										<li><a href="<c:url value='/view/member/mypage/mileage.jsp'/>">적립금</a></li>
 										<li><a href="<c:url value='/view/member/mypage/coupon.jsp'/>">쿠폰</a></li>
 										<li><a href="<c:url value='/view/order/cart/cart.jsp'/>">장바구니</a></li>
