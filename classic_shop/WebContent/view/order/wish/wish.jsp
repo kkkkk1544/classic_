@@ -11,10 +11,9 @@
 			<thead id="wishTitle">
 				<tr>
 					<th width="5%"><input type="checkbox" id="allCheck"></th>
-					<th width="35%">상품정보</th>
+					<th width="45%">상품정보</th>
 					<th width="10%">판매가</th>
 					<th width="10%">수량</th>
-					<th width="10%">적립금</th>
 					<th width="10%">배송비</th>
 					<th width="10%">합계</th>
 					<th width="10%">선택</th>
@@ -37,28 +36,28 @@
 										<li class="list-group-item"><strong><a><input type="hidden" name="product_name" value="${wish.productName}" class="paramValue">${wish.productName}</a></strong></li>
 										<li class="list-group-item"><strong>color : ${wish.colour}   <input type="hidden" name="product_colour" value="${wish.colour}" class="paramValue">size : ${wish.sizu}<input type="hidden" name="product_sizu" value="${wish.sizu}" class="paramValue"> </strong></li>
 										<li class="list-group-item"><button class="btn btn-default" data-toggle = "modal" data-target = "#wishOption${wish.productNum}" type="button">옵션변경</button></li>
-										<div class="modal modal-center fade">
-											<div class="modal-dialog modal-sm">
+										<div class="modal fade" id="wishOption${wish.productNum}">
+											<div class="modal-dialog">
 												<div class="modal-content">
 													<div class="modal-header">
-														<h3 class="modal-title"><strong>옵션변경</strong></h3><hr>
-														<select class= "form-control" id="colourOption${wish.productNum}">
-																
+														<h3 class="modal-title"> 옵션변경 </h3><hr>
+														<select class="form-control">
+														
 														</select>
-														<select class= "form-control">
-																
+														<select class="form-control">
+														
 														</select>
 													</div>
 												</div>
 											</div>
-										</div>	
+										</div>
 									</ul>
 								</div>
 							</td>
 							<td><input type="hidden" name="price" value="${wish.price}" class="paramValue">${wish.price}원</td>
 							<td><input type="hidden" name="wishQuantity" value="${wish.wishQuantity}" class="paramValue">${wish.wishQuantity}개</td>
-							<fmt:parseNumber var="percent" value="${((wish.price*wish.wishQuantity)*0.02)}" integerOnly="true" />
-							<td>${percent}</td>
+							<%-- <fmt:parseNumber var="percent" value="${((wish.price*wish.wishQuantity)*0.02)}" integerOnly="true" />
+							<td>${percent}</td> --%>
 							<c:choose>
 								<c:when test="${wish.price>50000}">
 									<td>무료</td>
