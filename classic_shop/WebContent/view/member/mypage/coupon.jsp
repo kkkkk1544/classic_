@@ -5,6 +5,7 @@
 </head>
 <body>   
 <div class="member_body">
+	${couponList }
 	<div class="container">
 		<div class="coupon_wrap">
 			<h2 id="couponTitle">COUPON</h2>
@@ -20,14 +21,16 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>1</td>
-						<td>50% 쿠폰</td>
-						<td>50,000원 이상 구매시 50% 할인</td>
-						<td>의류</td>
-						<td>18/02/02</td>
-						<td>사용안함</td>
-					</tr>
+					<c:forEach var="coupon" items="${couponList}">
+						<tr>
+							<td>1</td>
+							<td>50% 쿠폰</td>
+							<td>50,000원 이상 구매시 50% 할인</td>
+							<td>의류</td>
+							<td>18/02/02</td>
+							<td>사용안함</td>
+						</tr>
+					</c:forEach>
 				</tbody>
 			</table>
 			<div class="row">

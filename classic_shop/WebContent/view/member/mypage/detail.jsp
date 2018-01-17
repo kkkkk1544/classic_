@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="<c:url value='/public/css/member.css' />">
-<link rel="stylesheet" href="<c:url value='/public/css/comu.css' />">
 <script src="<c:url value='/public/js/member.js'/>"></script>
 <script src="<c:url value='/public/js/comu.js'/>"></script>
 </head>
