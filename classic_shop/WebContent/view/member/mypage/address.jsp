@@ -32,13 +32,13 @@
 							</td>
 							<td>${addr.num }</td>
 							<td><a href="#">${addr.zip_code} ${addr.base_addr} ${addr.detail_addr}</a></td>
-							<td><button class="btn btn-default" type="button" id="addrDelBtn">삭제</button></td>
+							<td><button class="btn btn-default" type="button" onclick="addrDelBtn('${addr.num}')">삭제</button></td>
 						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
  			<div class="adress_btn_group">
-				<button class="btn btn-default" type="button" onclick="location.href='<c:url value='/addresslist/insert.do'/>'">주소 등록</button>
+				<button class="btn btn-default" type="button" onclick="location.href='<c:url value='addresslist/insert.do'/>'">주소 등록</button>
 			</div>
 		</div>
 <%-- 		<!-- RECENT ADDRESS -->
@@ -86,16 +86,14 @@
 </div>
 <script>
 
- 	var deleteAddr = function(num){
-		var delNum = num;
-		var url="/classic_shop/addresslist.do"+"?num="+delNum;
-		var method = "DELETE";
+ 	var addrDelBtn = function(num){
+		var url="/classic_shop/addrBook/delete.do?num="+num;
 		var http= new XMLHttpRequest();
 		http.onreadystatechange=function(){
 			if(this.readyState==4 && this.status==200){
-				var delete_json = JSON.parse(this.response);
+				var del = JSON.parse(this.responseText)["delete"];
 				console.log(delete_json["delete"]);
-				if(delete_json["delete"]){
+				if(del=="1"){
 					alert("삭제성공");
 				}else{
 					alert("삭제 실패");
@@ -104,9 +102,9 @@
 		}
 		
 	}
-	http.open(method,url,true);
-	http.send(data);
-
+	http.open("GET",url,true);
+	http.send();
+ 
 
 
 

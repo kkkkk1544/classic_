@@ -2,8 +2,6 @@ package com.classic.member.controller;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,30 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.classic.member.dao.AddrBookDAO;
 import com.classic.member.daoImp.AddrBookDAOImp;
-import com.classic.member.dto.AddrBookDTO;
 import com.classic.util.ClassicDBConnection;
 
-@WebServlet("/addresslist.do")
-public class AddrBookListController extends HttpServlet{
+@WebServlet("/addresslist/delete.do")
+public class AddrBookDeleteController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String mem_num = req.getParameter("mem_num");
-		Connection conn = null;
-		List<AddrBookDTO> addrList = new ArrayList<AddrBookDTO>();
-		try {
-			conn= ClassicDBConnection.getConnection();
-			AddrBookDAO addrDAO = new AddrBookDAOImp(conn);
-			addrList = addrDAO.addrBookSelect(Integer.parseInt(mem_num));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}finally {
-			ClassicDBConnection.close(conn);
-		}
-		req.setAttribute("addrList", addrList);
-		req.getRequestDispatcher("/view/member/mypage/address.jsp").forward(req, resp);
-	}
-/*	@Override
-	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		resp.setContentType("application/json");
 		Connection conn = null;
 		int delete = 0;
 		String str_num = req.getParameter("num");
@@ -50,7 +31,8 @@ public class AddrBookListController extends HttpServlet{
 			ClassicDBConnection.close(conn);
 		}
 		resp.setCharacterEncoding("utf-8");
-		resp.setContentType("application/json");
-		resp.getWriter().append("{\"delete\":"+delete+"}");
-	}*/
+		resp.getWriter().append("{\"delete\":\""+delete+"\"}");
+	
+	}
+
 }

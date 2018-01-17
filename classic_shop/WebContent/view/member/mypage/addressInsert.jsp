@@ -79,7 +79,7 @@
 						<!-- 버튼 -->
 						<div class="modify_btn_group">
 							<button class="btn btn-default" type="button" onclick="addrJson(this.form)">등록</button>
-							<button class="btn btn-default" type="button" onclick="location.href='<c:url value='/addresslist.do?mem_num=${loginMem.num}'/>'">취소</button>
+							<button class="btn btn-default" type="button" onclick="location.href='<c:url value='addresslist.do?mem_num=${loginMem.num}'/>'">취소</button>
 						</div>
 					</div>
 				</form>
