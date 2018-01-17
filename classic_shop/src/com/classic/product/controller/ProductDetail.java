@@ -11,11 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.classic.comu.dto.NoticeDTO;
-import com.classic.comu.serviceImp.NoticeServiceImp;
 import com.classic.product.daoImp.ColourDAOImp;
 import com.classic.product.daoImp.ProductDAOImp;
-import com.classic.product.daoImp.ProductDataDAOImp;
 import com.classic.product.daoImp.ReviewDAOImp;
 import com.classic.product.daoImp.ShopGuideDAOImp;
 import com.classic.product.daoImp.SizuDAOImp;
@@ -25,6 +22,7 @@ import com.classic.product.dto.ReviewDTO;
 import com.classic.product.dto.ShopGuideDTO;
 import com.classic.product.dto.SizuDTO;
 import com.classic.util.ClassicDBConnection;
+
 
 @WebServlet("/product/detail.do")
 public class ProductDetail extends HttpServlet{

@@ -121,7 +121,7 @@
 										<span class="badge badge-pill badge-secondary" style="background-color: #ccc;">0</span>
 									</a>
 								</li>
-								<li><a href="<c:url value='/order/list.do?mem_num=${loginMem.num}' />">ORDER</a></li>
+								<li><a href="<c:url value='/order/list.do?num=${loginMem.num}' />">ORDER</a></li>
 							</c:when>
 							<c:otherwise>
 								<li role="presentation" class="dropdown">

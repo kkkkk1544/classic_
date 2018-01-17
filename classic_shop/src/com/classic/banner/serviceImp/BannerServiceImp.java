@@ -10,7 +10,7 @@ import com.classic.util.ClassicDBConnection;
 public class BannerServiceImp implements BannerService{
 
 	static Connection conn = null;
-
+	
 	@Override
 	public BannerDTO readBanner() {
 		BannerDTO bannerDTO = null;
@@ -24,20 +24,6 @@ public class BannerServiceImp implements BannerService{
 		}
 		return bannerDTO;
 	}
-	
-/*	@Override
-	public List<BannerDTO> readBanner() {
-		List<BannerDTO> bannerList = new ArrayList<BannerDTO>();
-		try {
-			conn = ClassicDBConnection.getConnection();
-			bannerList = new BannerDAOImp(conn).selectBanner();
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			ClassicDBConnection.close(conn);
-		}
-		return bannerList;
-	}*/
 	
 
 }
