@@ -29,29 +29,32 @@ import com.classic.product.dto.MiniCateDTO;
 import com.classic.product.dto.ProductDTO;
 import com.classic.util.ClassicDBConnection;
 
-@WebServlet("/product/list.do")
-public class ProductList extends HttpServlet {
+@WebServlet("/product/miniCateList.do")
+public class MiniCateProductList extends HttpServlet {
 	//!!!나중에 ctroller, dto, dao, servie... 분리 해서 만들거임! 참고할 사람은 이거 참고하지마세요
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("utf-8");
-		String str_cate=req.getParameter("num");
+		String str_mini=req.getParameter("num");
 		
 		List<ProductDTO> productList = new ArrayList<ProductDTO>();
 		List<ColourDTO> coloursList = new ArrayList<ColourDTO>();
 		List<MiniCateDTO> miniCateList = new ArrayList<MiniCateDTO>();
+		
 		CateDTO cateDTO = null;
 		Connection conn = null;
 		try {
 			conn=ClassicDBConnection.getConnection();
-			int cate_num =Integer.parseInt(str_cate);
+			int mini_num =Integer.parseInt(str_mini);
 			ProductDAO productDAO=new ProductDAOImp(conn);
 			ColourDAO colourDAO = new ColourDAOImp(conn); 
 			MiniCateDAO miniCateDAO = new MiniCateDAOImp(conn);
 			CateDAO cateDAO = new CateDAIOImp(conn);
-			productList=productDAO.selectProductList(cate_num);
-			coloursList=colourDAO.selectCateListColours(cate_num);
+			productList=productDAO.selectMiniCateProductList(mini_num);
+			coloursList=colourDAO.selectMiniCateListColours(mini_num);
+			
+			int cate_num=cateDAO.selectCateNum(mini_num);
 			miniCateList=miniCateDAO.selectMiniCateList(cate_num);
 			cateDTO=cateDAO.selectCate(cate_num);
 			
@@ -67,7 +70,7 @@ public class ProductList extends HttpServlet {
 		req.setAttribute("coloursList", coloursList);
 		req.setAttribute("miniCateList", miniCateList);
 		req.setAttribute("cate", cateDTO);
-		req.getRequestDispatcher("/view/product/list.jsp").forward(req, resp);
+		req.getRequestDispatcher("/view/product/miniCateList.jsp").forward(req, resp);
 		
 		
 	}

@@ -9,7 +9,16 @@
 	
   <p> <!-- miniCate -->
 	<c:forEach var="mini" items="${miniCateList}">
-  		<a href="<c:url value='/product/miniCateList.do?num=${mini.num}' />" class="cate">${mini.name}</a>
+  		<a href="<c:url value='/product/miniCateList.do?num=${mini.num}' />" class="cate">
+  		<c:choose>
+  			<c:when test="${param.num eq mini.num }">
+  				<strong>${mini.name}</strong>
+  			</c:when>
+  			<c:otherwise>
+  				${mini.name}
+  			</c:otherwise>
+  		</c:choose>
+  		</a>
 	</c:forEach>
   </p>
 </div>

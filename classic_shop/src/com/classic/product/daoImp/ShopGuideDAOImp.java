@@ -11,20 +11,21 @@ import com.classic.product.dto.ShopGuideDTO;
 import com.classic.util.ClassicDBConnection;
 
 public class ShopGuideDAOImp implements ShopGuideDAO{
-	Connection conn =null;
-	public ShopGuideDAOImp() throws Exception {
-		conn=ClassicDBConnection.getConnection();
+	private Connection conn =null;
+	public ShopGuideDAOImp(Connection conn) throws Exception {
+		this.conn=conn;
 	}
 
 	@Override
-	public List<ShopGuideDTO> selectShopGuideList() throws Exception {
-		List<ShopGuideDTO> shopGuideList = new ArrayList<ShopGuideDTO>();
+	public ShopGuideDTO selectShopGuide(int state) throws Exception {
 		
-		String sql="select * from shop_guide";
+		ShopGuideDTO shopGuideDTO =null;
+		String sql="select * from shop_guide where num=?"; //나중에 num을 state로 바꿔줘야 해 
 		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, state);
 		ResultSet rs =pstmt.executeQuery();
 		while(rs.next()) {
-			ShopGuideDTO shopGuideDTO = new ShopGuideDTO();
+			shopGuideDTO = new ShopGuideDTO();
 			shopGuideDTO.setAs_info(rs.getString("as_info"));
 			shopGuideDTO.setDeliv_info(rs.getString("deliv_info"));
 			shopGuideDTO.setNum(rs.getInt("num"));
@@ -33,23 +34,18 @@ public class ShopGuideDAOImp implements ShopGuideDAO{
 			shopGuideDTO.setSubject(rs.getInt("subject"));
 			shopGuideDTO.setTrade_info(rs.getString("trade_info"));
 			shopGuideDTO.setUnregi_info(rs.getString("unregi_info"));
-			shopGuideList.add(shopGuideDTO);
 		}
-		return shopGuideList;
+		return shopGuideDTO;
 	}
 
-	@Override
-	public String selectShopGuide() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	public static void main(String[] args) {
+	
+/*	public static void main(String[] args) {
 		try {
-			System.out.println(new ShopGuideDAOImp().selectShopGuideList());
+			System.out.println(new ShopGuideDAOImp().selectShopGuide(21));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
+	}*/
 
 }

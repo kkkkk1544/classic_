@@ -1062,4 +1062,7 @@ INSERT INTO wish VALUES(wish_seq.nextval ,(select num from product where code='0
 INSERT INTO wish VALUES(wish_seq.nextval ,(select num from product where code='0000057'), (select num from member where id='member4'), sysdate);
 INSERT INTO wish VALUES(wish_seq.nextval ,(select num from product where code='0000057'), (select num from member where id='member4'), sysdate);
 
+--shop guide temporary data insert
+insert into shop_guide values(shop_guide_seq.nextval, 1, 0, '배송안내 샵가이드 테스트 데이터 입니다.', '환불규정 안내 샵가이드 테스트 데이터입니다.','교환 안내 샵가이드 테스트 데이터입니다.', '고장수리 안내 샵가이드 테스트 데이터입니다.','탈퇴 안내 샵가이드 테스트 데이터입니다.' )
+
 

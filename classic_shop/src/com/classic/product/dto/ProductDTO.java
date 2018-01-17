@@ -160,17 +160,17 @@ public class ProductDTO {
 		this.setSub_info(rs.getString("sub_info"));
 		this.setTotal_pcs(rs.getInt("total_pcs"));	
 	}
-	
 	@Override
 	public String toString() {
-		return "\"num\":\"" + num + "\", \"code\":\"" + code + "\", \"cate_num\":\"" + cate_num
+		return "{\"num\":\"" + num + "\", \"code\":\"" + code + "\", \"cate_num\":\"" + cate_num
 				+ "\", \"name\":\"" + name + "\", \"sub_info\":\"" + sub_info + "\", \"main_info\":\""
 				+ main_info + "\", \"price\":\"" + price + "\", \"buy_price\":\"" + buy_price
-				+ "\", \"total_pcs\":\"" + total_pcs + "\", \"guide_num\":\""
-				+ guide_num + "\", \"data_num\":\"" + data_num + "\", \"sell_ox\":\"" + sell_ox
-				+ "\", \"out_ox\":\"" + out_ox + "\", \"indate\":\"" + indate + "\", \"sale\":\"" + sale
-				+ "\", \"out_time\":\"" + out_time + "\"";
+				+ "\", \"total_pcs\":\"" + total_pcs + "\", \"guide_num\":\"" + guide_num
+				+ "\", \"data_num\":\"" + data_num + "\", \"sell_ox\":\"" + sell_ox + "\", \"out_ox\":\""
+				+ out_ox + "\", \"indate\":\"" + indate + "\", \"sale\":\"" + sale + "\", \"out_time\":\""
+				+ out_time + "\"}";
 	}
+	
 	
 	
 }
