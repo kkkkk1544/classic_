@@ -17,12 +17,7 @@
 <script src='<c:url value="/public/js/jquery-ui/jquery-ui.min.js"/>'></script>
 <!-- kakao 지도 api -->
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9634cbc392b8b80779d4f419ee72bf3a"></script>
-<<<<<<< HEAD
 <!-- 개인 lib -->
-=======
-<!-- 개인 js lib -->
-<!-- 개인 css lib -->
->>>>>>> 6414e85db22886efb1d9771ccc6cef70b63ac747
 <link rel="stylesheet" href="<c:url value='/public/css/common.css' />">
 <script src='<c:url value="/public/js/script_header.js"/>'></script>
 <title>CLASSIC</title>
