@@ -39,11 +39,8 @@
 										<li class="list-group-item"><strong>color : ${wish.colour}   <input type="hidden" name="product_colour" value="${wish.colour}" class="paramValue">size : ${wish.sizu}<input type="hidden" name="product_sizu" value="${wish.sizu}" class="paramValue"> </strong></li>
 										<!-- 모달버튼  -->
 										<li class="list-group-item">
-											<button class="btn btn-default" data-toggle = "popover" data-target = "#wishOption${wish.productNum}" type="button">옵션변경</button>
+											<button class="btn btn-default" data-toggle = "popover" data-trigger="focus" data-title="옵션선택" type="button">옵션변경</button>
 										</li>
-										<div id="wishOption${wish.productNum}">
-											
-										</div>			
 										<%-- <!-- 모달 -->
 										<div class="modal fade" id="wishOption${wish.productNum}" tabindex="-1" role="dialog">
   											<div class="modal-dialog" role="document">
@@ -225,7 +222,19 @@
 		</div> -->
 	</div>
 <script>
-$("[data-toggle = 'popover']").Popover({});
+/* var popoverTemplate = [
+	'<div class="popover" role="tooltip">',
+		' <div class="popover-arrow">',
+		'</div>',
+		'<h3 class="popover-title"></h3>',
+		'<div class="popover-content"></div>',
+	'</div>'
+].join(''); */
+/* $("[data-toggle = 'popover']").Popover({
+	/* html : true,
+	template : popoverTemplate 
+}); */
+$("[data-toggle = 'popover']").Popover();
 $("#allCheck").click(function(){
 	if(this.checked){
 		$('input:checkbox[class*="checkWish"]').each(function(){
