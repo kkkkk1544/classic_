@@ -956,6 +956,11 @@ INSERT INTO delivery VALUES(delivery_seq.nextval ,(select num from paid where or
 --order_State=-2주문취소 -> delivery_state=0배송준비
 INSERT INTO delivery VALUES(delivery_seq.nextval ,(select num from paid where order_state=-2 and num=21) ,NULL,NULL ,0 ,sysdate , NULL);
 
+--delivery
+INSERT INTO delivery VALUES(delivery_seq.nextval ,41 ,'CJ택배','6898000144426575' ,1 ,sysdate , NULL);
+INSERT INTO delivery VALUES(delivery_seq.nextval ,52 ,NULL,NULL ,0 ,sysdate , NULL);
+INSERT INTO delivery VALUES(delivery_seq.nextval ,43 ,'대한통운','1111222233334444' ,2 ,sysdate , NULL);
+INSERT INTO delivery VALUES(delivery_seq.nextval ,47 ,'대한통운','6666222233335555' ,3 ,sysdate , '20180107');
 
 --trade--다혜 디비수정0118 (order_state와 deliv_state 상황 맞춰서 재수정)
 INSERT INTO trade VALUES(trade_seq.nextval ,(select num from paid where order_state=-1 and num=22),0,sysdate,NULL,0);
@@ -989,3 +994,6 @@ INSERT INTO wish VALUES(wish_seq.nextval ,(select num from product where code='0
 INSERT INTO wish VALUES(wish_seq.nextval ,(select num from product where code='0000057'), (select num from member where id='member4'), sysdate);
 INSERT INTO wish VALUES(wish_seq.nextval ,(select num from product where code='0000057'), (select num from member where id='member4'), sysdate);
 
+--cancel
+INSERT INTO cancel VALUES(cancel_seq.nextval ,48,sysdate,NULL);
+INSERT INTO cancel VALUES(cancel_seq.nextval ,49,sysdate,'20180109');
