@@ -19,8 +19,9 @@ public class UserHeaderFilter implements Filter{
 	@Override
 	public void doFilter(ServletRequest arg0, ServletResponse arg1, FilterChain arg2)
 			throws IOException, ServletException {
-		arg1.getWriter().append("<h1>filter</h1>");
-		//arg2.doFilter(arg0, arg1);
+		//arg1.getWriter().append("<h1>filter</h1>");
+		System.out.println("필터 실행된다!");
+		arg2.doFilter(arg0, arg1);
 	}
 
 	@Override
