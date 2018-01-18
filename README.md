@@ -9,4 +9,22 @@
 
 ***
 
+#### PROJECT INFO
+> 1. Project Name : CLASSIC web shopping mall
+> 2. Develop Period : 2017-12-18 ~ 2018-01-00
+> 3. Participants : 7 people
+
+#### TEAM INFO
+> 1. Team Name : JSP & Spring
+> 2. TEAM :
+>> - __KIM JUYEON__ (juyeon1203@gmail.com)
+>> - __GWAK EUNKYEONG__ (iamgwak89@gmail.com)
+>> - __KIM DAHYE__ (da5879@nate.com)
+>> - __HAM HYEJIN__ (hammit0213@gmail.com)
+>> - __KIM GYEONGMI__ (gyeongmi12268@gmail.com)
+>> - __SONG YUJEONG__ (kkokrkeka@gmail.com)
+>> - __KIM HYESUN__ (mmmmm1544@gmail.com)
+
+
+
 
