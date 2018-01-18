@@ -12,7 +12,7 @@
 #### PROJECT INFO
 > 1. Project name : CLASSIC web shopping mall
 > 2. Develop period : 2017-12-18 ~ 2018-01-00
-> 3. Participants : 7 people
+> 3. Participants : 7
 
 #### TEAM INFO
 > 1. Team name : JSP & Spring
