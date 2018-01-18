@@ -15,7 +15,7 @@ import com.classic.order.daoImp.WishListDAOImp;
 import com.classic.order.dto.WishDTO;
 import com.classic.util.ClassicDBConnection;
 
-@WebServlet("/view/wish.do")
+@WebServlet("/user/wish.do")
 public class WIshListController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -33,6 +33,6 @@ public class WIshListController extends HttpServlet{
 			ClassicDBConnection.close(conn);
 		}
 		req.setAttribute("wishList", wishList);
-		req.getRequestDispatcher("/view/order/wish/wish.jsp").forward(req, resp);
+		req.getRequestDispatcher("/view/order/wish/list.jsp").forward(req, resp);
 	}
 }
