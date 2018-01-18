@@ -81,10 +81,10 @@
 						</td> --%>
 						<!-- 테스트 후 삭제예정 -->
 						<td><!-- 배송상태 검사 -->
-							<c:if test="${list.deliv_state==0}">배송준비</c:if>
-							<c:if test="${list.deliv_state==1}">배송중<br>(송장번호:${list.deliv_num})</c:if>
-							<c:if test="${list.deliv_state==2}">배송완료</c:if>
-							<c:if test="${list.deliv_state==3}">수취확인</c:if>
+							<c:if test="${list.deliv_state==0}"><strong>배송준비</strong></c:if>
+							<c:if test="${list.deliv_state==1}"><strong>배송중</strong><br>(송장번호:${list.deliv_num})</c:if>
+							<c:if test="${list.deliv_state==2}"><strong>배송완료</strong><br>(송장번호:${list.deliv_num})</c:if>
+							<c:if test="${list.deliv_state==3}"><strong>수취확인</strong></c:if>
 							
 						</td>
 						<!-- 배송상태에 따른 버튼 출력 0배송준비 1배송중 2배송완료 3수취확인 -->
