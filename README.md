@@ -2,10 +2,10 @@
 [Go to ver.ADMIN](https://github.com/juuuu6/classic_admin.git)
 ***
 
-> __INDEX
-1. PROJECT INFO
-2. TEAM INFO
-3. DEVELOPMENT ENVIRONMENT__
+> __INDEX__
+1. __PROJECT INFO__
+2. __TEAM INFO__
+3. __DEVELOPMENT ENVIRONMENT__
 
 ***
 
