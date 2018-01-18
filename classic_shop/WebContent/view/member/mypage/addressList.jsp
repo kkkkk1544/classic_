@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
- <link rel="stylesheet" href="<c:url value='/public/css/member.css' />">
+<link rel="stylesheet" href="<c:url value='/public/css/member.css' />">
 <script src="<c:url value='/public/js/member.js'/>"></script>
 </head>
 <body>   
@@ -11,7 +11,7 @@
 			<h2 class="addressTitle">ADRESS LIST</h2>
 			<table class="table address_table">
 			
-				<thead>
+				<tbody>
 					<tr>
 						<th class="col-sm-1">
 							<label>
@@ -22,7 +22,7 @@
 						<th class="col-sm-3">주소</th>
 						<th class="col-sm-1">삭제</th>
 					</tr>
-				</thead>
+				</tbody>
 				<tbody>
 					<c:forEach var="addr" items="${addrList}">
 						<tr>
@@ -32,14 +32,14 @@
 								</label>
 							</td>
 							<td>${addr.num }</td>
-							<td><a href="#">${addr.zip_code} ${addr.base_addr} ${addr.detail_addr}</a></td>
-							<td><button class="btn btn-default" type="button" onclick="addrDelBtn('${addr.num}')">삭제</button></td>
+							<td>${addr.zip_code} ${addr.base_addr} ${addr.detail_addr}</td>
+							<td><button class="btn btn-default" type="button" onclick="addrDelBtn(${addr.mem_num},${addr.num})">삭제</button></td>
 						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
  			<div class="adress_btn_group">
-				<button class="btn btn-default" type="button" onclick="location.href='<c:url value='addresslist/insert.do'/>'">주소 등록</button>
+				<button class="btn btn-default" type="button" onclick="location.href='<c:url value='/view/address/register.do'/>'">주소 등록</button>
 			</div>
 		</div>
 <%-- 		<!-- RECENT ADDRESS -->
@@ -86,7 +86,6 @@
 	</div>
 </div>
 
-
 <!-- member.js로 이동함 -->
 <!-- <script>
  	var addrDelBtn = function(num){
@@ -104,6 +103,6 @@
 			}
 		}
 	}
-	http.open("GET",url,true);
+	http.open(method,url,true);
 	http.send();
 </script> -->

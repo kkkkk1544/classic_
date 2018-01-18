@@ -25,15 +25,15 @@ public class AddrBookRegisterJSON extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String mem_num = req.getParameter("mem_num");
-		String zip_code = req.getParameter("zip_code");
-		String base_addr = req.getParameter("base_addr");
-		String detail_addr = req.getParameter("detail_addr");
+		String memNum = req.getParameter("mem_num");
+		String zipCode = req.getParameter("zip_code");
+		String baseAddr = req.getParameter("base_addr");
+		String detailAddr = req.getParameter("detail_addr");
 		AddrBookDTO addrDTO = new AddrBookDTO();
-		addrDTO.setMem_num(Integer.parseInt(mem_num));
-		addrDTO.setZip_code(zip_code);
-		addrDTO.setBase_addr(base_addr);
-		addrDTO.setDetail_addr(detail_addr);
+		addrDTO.setMem_num(Integer.parseInt(memNum));
+		addrDTO.setZip_code(zipCode);
+		addrDTO.setBase_addr(baseAddr);
+		addrDTO.setDetail_addr(detailAddr);
 		boolean register = false;
 		register = new AddrBookServiceImp().registerAddr(addrDTO);
 		resp.setCharacterEncoding("UTF-8");
