@@ -2,10 +2,10 @@
 [Go to ver.ADMIN](https://github.com/juuuu6/classic_admin.git)
 ***
 
-> __INDEX__
+> __INDEX
 1. PROJECT INFO
 2. TEAM INFO
-3. DEVELOPMENT ENVIRONMENT
+3. DEVELOPMENT ENVIRONMENT__
 
 ***
 
@@ -31,6 +31,9 @@
 >>> |
 >> - __KIM HYESUN__ (mmmmm1544@gmail.com)
 >>> |
+
+#### DEVELOPMENT ENVIRONMENT
+>
 
 
 
