@@ -28,29 +28,45 @@
 							<td class="infoList">
 								<div class="infoListDiv">
 									<div>
-										<p><a>이미지임</a></p>
+										<a href="<c:url value='/product/detail.do?num=${wish.productNum}'/>">
+											<p>이미지임</p>
+										</a>
 									</div>
 								</div>
-								<div>
+								<div class="infoListDiv">
 									<ul class="list-group">
-										<li class="list-group-item"><strong><a><input type="hidden" name="product_name" value="${wish.productName}" class="paramValue">${wish.productName}</a></strong></li>
+										<li class="list-group-item"><strong><a href="<c:url value='/product/detail.do?num=${wish.productNum}'/>"><input type="hidden" name="product_name" value="${wish.productName}" class="paramValue">${wish.productName}</a></strong></li>
 										<li class="list-group-item"><strong>color : ${wish.colour}   <input type="hidden" name="product_colour" value="${wish.colour}" class="paramValue">size : ${wish.sizu}<input type="hidden" name="product_sizu" value="${wish.sizu}" class="paramValue"> </strong></li>
-										<li class="list-group-item"><button class="btn btn-default" data-toggle = "modal" data-target = "#wishOption${wish.productNum}" type="button">옵션변경</button></li>
-										<div class="modal fade" id="wishOption${wish.productNum}">
-											<div class="modal-dialog">
-												<div class="modal-content">
-													<div class="modal-header">
-														<h3 class="modal-title"> 옵션변경 </h3><hr>
-														<select class="form-control">
-														
-														</select>
-														<select class="form-control">
-														
-														</select>
-													</div>
-												</div>
-											</div>
-										</div>
+										<!-- 모달버튼  -->
+										<li class="list-group-item">
+											<button class="btn btn-default" data-toggle = "popover" data-trigger="focus" data-title="옵션선택" type="button">옵션변경</button>
+										</li>
+										<%-- <!-- 모달 -->
+										<div class="modal fade" id="wishOption${wish.productNum}" tabindex="-1" role="dialog">
+  											<div class="modal-dialog" role="document">
+  												<div class="modal-content">
+     												<div class="modal-header">
+     	  												<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      													<h3 class="modal-title" id="myModalLabel">옵션변경</h3>
+      												</div>
+      												<div class="modal-body" class="wishOptionSelect">
+      													<div>
+	      													<select class="form-control">
+	      													
+	      													</select>
+      													</div>
+      													<div>
+	      													<select class="form-control">
+	      													
+	      													</select>
+      													</div>
+     												</div>
+      												<div class="modal-footer">
+        												<button type="button" class="btn btn-default">변경</button>
+      												</div>
+   												</div>
+ 											</div>
+										</div> --%>
 									</ul>
 								</div>
 							</td>
@@ -184,7 +200,8 @@
 			<button type="button" class="btn btn-default"  onclick="delWishSelected(${loginMem.num})">선택삭제</button>
 			<button class="btn btn-default pull-right">전체상품 주문</button>
 		</div>
-		<div id="pagingBtn">
+		<jsp:include page="/common/paging.jsp"/>
+		<!-- <div id="pagingBtn">
 			<ul class="pagination">
 				<li>
 					<a href="#" aria-label="Previous">
@@ -202,10 +219,22 @@
 					</a>	
 				</li>
 			</ul>
-		</div>
+		</div> -->
 	</div>
 <script>
-
+/* var popoverTemplate = [
+	'<div class="popover" role="tooltip">',
+		' <div class="popover-arrow">',
+		'</div>',
+		'<h3 class="popover-title"></h3>',
+		'<div class="popover-content"></div>',
+	'</div>'
+].join(''); */
+/* $("[data-toggle = 'popover']").Popover({
+	/* html : true,
+	template : popoverTemplate 
+}); */
+$("[data-toggle = 'popover']").Popover();
 $("#allCheck").click(function(){
 	if(this.checked){
 		$('input:checkbox[class*="checkWish"]').each(function(){
@@ -221,6 +250,7 @@ $("#allCheck").click(function(){
 var delWishSelected=function(mem_num){
 	if(${(fn:length(wishList))!=0}){
 		var url ="http://localhost:9999/classic_shop/user/wish/remove.do?num="+mem_num+"&product_num=";
+		/* var url ='<c:url value="/order/delwish.do?num='+mem_num+'&product_num="/>'; */
 		var method="GET";
 		var http = new XMLHttpRequest();
 		$('input:checkbox[class*="checkWish"]').each(function(){
@@ -249,6 +279,7 @@ var delWishSelected=function(mem_num){
 var allWishDel = function(mem_num){
 	if(${(fn:length(wishList))!=0}){
 		var url ="http://localhost:9999/classic_shop/user/wish/remove.do?num="+mem_num;
+		/* var url ='<c:url value="/order/delwish.do?num='+mem_num+'"/>'; */
 		var method="DELETE";
 		var http = new XMLHttpRequest();
 		http.onreadystatechange=function(){
@@ -256,6 +287,7 @@ var allWishDel = function(mem_num){
 				var delete_json = JSON.parse(this.response);
 				if(delete_json["delete"]){
 					alert("삭제되었습니다.");
+					location.reload();
 				}else{
 					alert("삭제실패");
 				}
@@ -269,6 +301,7 @@ var allWishDel = function(mem_num){
 }
 var pickWishDel = function(mem_num,product_num){
 	var url ="http://localhost:9999/classic_shop/user/wish/remove.do?num="+mem_num+"&product_num="+product_num;
+	/* var url ='<c:url value="/order/delwish.do?num='+mem_num+'&product_num='+product_num+'"/>'; */
 	var method= "PUT";
 	var http = new XMLHttpRequest();
 	console.log
