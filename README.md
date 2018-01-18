@@ -10,12 +10,12 @@
 ***
 
 #### PROJECT INFO
-> 1. Project Name : CLASSIC web shopping mall
-> 2. Develop Period : 2017-12-18 ~ 2018-01-00
+> 1. Project name : CLASSIC web shopping mall
+> 2. Develop period : 2017-12-18 ~ 2018-01-00
 > 3. Participants : 7 people
 
 #### TEAM INFO
-> 1. Team Name : JSP & Spring
+> 1. Team name : JSP & Spring
 > 2. TEAM :
 >> - __KIM JUYEON__ (juyeon1203@gmail.com)
 >> - __GWAK EUNKYEONG__ (iamgwak89@gmail.com)
