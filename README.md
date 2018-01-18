@@ -1,6 +1,6 @@
 ### CLASSIC SHOPPING MALL SITE *(ver.USER)*
 ***
-location link : [ver.admin](https://github.com/juuuu6/classic_admin.git)
+[Go to ver.admin](https://github.com/juuuu6/classic_admin.git)
 > INDEX
 
 1. project info
