@@ -11,9 +11,14 @@
       <include-prelude>/WEB-INF/include/include_tag.jsp</include-prelude>
     </jsp-property-group>
     <jsp-property-group>
-      <url-pattern>*.jsp</url-pattern>
+      <url-pattern>/view/*</url-pattern>
       <include-prelude>/template/header.jsp</include-prelude>
       <include-coda>/template/footer.jsp</include-coda>
+    </jsp-property-group>
+    <jsp-property-group>
+      <url-pattern>/admin/view/*</url-pattern>
+      <include-prelude>/admin/template/header.jsp</include-prelude>
+      <include-coda>/admin/template/footer.jsp</include-coda>
     </jsp-property-group>
   </jsp-config>  
     <!-- <error-page>
@@ -28,4 +33,30 @@
     <error-code>500</error-code>
     <location>/error/500code.html</location>
   </error-page> -->
+<!--   <servlet>
+  	<servlet-name>qnaList</servlet-name>
+  	<servlet-class>com.classic.comu.controller.QnaListJSON</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>qnaList</servlet-name>
+  	<url-pattern>/community/qna.do</url-pattern>
+  </servlet-mapping> -->
+<!--     <filter>
+  	<filter-name>UserHeaderFilter</filter-name>
+  	<filter-class>com.classic.common.filter.UserHeaderFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>UserHeaderFilter</filter-name>
+  	<url-pattern>/user/*</url-pattern>
+  </filter-mapping> -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 </web-app>

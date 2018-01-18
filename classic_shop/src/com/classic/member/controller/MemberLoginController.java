@@ -13,14 +13,12 @@ import com.classic.member.dto.MemberDTO;
 import com.classic.member.service.MemberService;
 import com.classic.member.serviceImp.MemberServiceImp;
 
-
-
 @WebServlet("/login.do")
 public class MemberLoginController extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher("/member/login.jsp").forward(req, resp);
+		req.getRequestDispatcher("/view/member/login.jsp").forward(req, resp);
 	}
 	
 	@Override

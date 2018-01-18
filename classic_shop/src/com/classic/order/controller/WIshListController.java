@@ -2,7 +2,6 @@ package com.classic.order.controller;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -11,35 +10,43 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.classic.common.controller.Paging;
+import com.classic.common.dto.PagingDTO;
 import com.classic.order.dao.WishListDAO;
 import com.classic.order.daoImp.WishListDAOImp;
 import com.classic.order.dto.WishDTO;
 import com.classic.util.ClassicDBConnection;
 
-@WebServlet("/order/wishlist.do")
+@WebServlet("/user/wish.do")
 public class WIshListController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setCharacterEncoding("utf-8");
-		String strMemNum = req.getParameter("num");
 		Connection conn =null;
+		int memNum = Integer.parseInt(req.getParameter("num"));
+		int totalRecode = 0;
+		String strPageNum = (req.getParameter("pageNum")!=null)?req.getParameter("page"):"1";
+		String url = req.getContextPath()+"/view/wish.do?num="+memNum+"&pageNum=";
 		List<WishDTO> wishList = null;
+		PagingDTO pagingDTO = null;
 		try {
 			conn = ClassicDBConnection.getConnection();
 			WishListDAO wish = new WishListDAOImp(conn);
-			wishList = wish.selectWish(Integer.parseInt(strMemNum));//�굹以묒뿉 mem_num�쑝濡� 諛붽퓭�빞�븿
+			pagingDTO = new PagingDTO();
+			totalRecode = wish.recodeTotal(memNum);
+			wishList = wish.selectWish(memNum);
+			pagingDTO.setTotalRecord(totalRecode);
+			pagingDTO.setPageNum_temp(strPageNum);
+			pagingDTO = Paging.setPaging(pagingDTO);
+			System.out.println(pagingDTO);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			ClassicDBConnection.close(null,null,conn);
+			ClassicDBConnection.close(conn);
 		}
-		if(wishList.isEmpty()) {
-			req.getSession().setAttribute("wishList", null);
-			req.getRequestDispatcher("/order/wish/wish.jsp").forward(req, resp);
-		} else {
-			req.getSession().setAttribute("wishList", wishList);
-			req.getRequestDispatcher("/order/wish/wish.jsp").forward(req, resp);
-		}
+		req.setAttribute("url", url);
+		req.setAttribute("p", pagingDTO);
+		req.setAttribute("wishList", wishList);
+		req.getRequestDispatcher("/view/order/wish/list.jsp").forward(req, resp);
 	}
-	
 }

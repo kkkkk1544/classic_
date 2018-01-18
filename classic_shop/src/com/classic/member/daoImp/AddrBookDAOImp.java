@@ -18,18 +18,17 @@ public class AddrBookDAOImp implements AddrBookDAO {
 	}
 
 	@Override
-	public List<AddrBookDTO> addrBookSelect() throws Exception {
+	public List<AddrBookDTO> addrBookSelect(int mem_num) throws Exception {
 		List<AddrBookDTO> addrBookList = new ArrayList<AddrBookDTO>();
-		String sql="select a.num, a.zip_code, a.base_addr, a.mem_num, a.detail_addr from addr_book a, member m where a.mem_num=m.num";
-		PreparedStatement pstmt=null;
-		ResultSet rs = null;
-		pstmt = conn.prepareStatement(sql);
-		rs = pstmt.executeQuery();
+		String sql="select * from addr_book a, member m where a.mem_num=m.num and a.mem_num=? order by a.num desc";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, mem_num);
+		ResultSet rs = pstmt.executeQuery();
 		while(rs.next()) {
 			AddrBookDTO addrBookDTO = new AddrBookDTO();
 			addrBookDTO.setNum(rs.getInt("num"));
-			addrBookDTO.setZip_code(rs.getString("zip_code"));
 			addrBookDTO.setMem_num(rs.getInt("mem_num"));
+			addrBookDTO.setZip_code(rs.getString("zip_code"));
 			addrBookDTO.setBase_addr(rs.getString("base_addr"));
 			addrBookDTO.setDetail_addr(rs.getString("detail_addr"));
 			addrBookList.add(addrBookDTO);
@@ -40,8 +39,7 @@ public class AddrBookDAOImp implements AddrBookDAO {
 	@Override
 	public int addrBookInsert(AddrBookDTO addrBookDTO) throws Exception {
 		int insert=0;
-		String sql="INSERT INTO addr_book(num, mem_num, zip_code, base_addr, detail_addr)"
-				+ " VALUES(addr_book_seq.nextval, ?, ?, ?, ?)";
+		String sql="INSERT INTO addr_book(num, mem_num, zip_code, base_addr, detail_addr) VALUES(addr_book_seq.nextval, ?, ?, ?, ?)";
 		PreparedStatement pstmt = null;
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, addrBookDTO.getMem_num());
@@ -50,5 +48,17 @@ public class AddrBookDAOImp implements AddrBookDAO {
 		pstmt.setString(4, addrBookDTO.getDetail_addr());
 		insert = pstmt.executeUpdate();
 		return insert;
+	}
+
+	@Override
+	public int addrBookDelete(int num, int mem_num) throws Exception {
+		int delete = 0;
+		String sql ="delete from addr_book where mem_num=? and num=?";
+		PreparedStatement pstmt = null;
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, mem_num);
+		pstmt.setInt(2, num);
+		delete = pstmt.executeUpdate();
+		return delete;
 	}
 }

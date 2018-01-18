@@ -1,3 +1,35 @@
+-- 예전 파일
+-- 다른 분들이 달아놓은 주석이 있음..!
+
+-- ▼ 1/10 기준 수정사항 포함된 최신 sql
+-- classic.sql 			: table DB
+-- classic_test_data : test data DB
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 DROP tablespace CLASSIC_DB including contents AND datafiles;
 
 create tablespace CLASSIC_DB
@@ -225,12 +257,14 @@ create table paid(
 	paid_date date,
 	pay_with number(1) default 2 not null constraint paid_ck_pay_with check(pay_with between -1 and 3),
 	order_money number(12) not null,
-	payment	number(12) not null,
+	payment		number(12) not null,
 	order_date date not null,
 	order_state number(1) default 0 not null constraint paid_ck_order_state check(order_state between -2 and 3),
 	deposit_name varchar2(10) not null,
 	cancel_start date,
-	cancel_end date
+	cancel_end date,
+	sizu_num number(8) CONSTRAINT paid_fk_sizu_num references sizu(num),
+	colour_num number(8) constraint paid_fk_colour_num references colour(num) 
 );
 
 create sequence delivery_seq start with 1 increment by 1;
@@ -678,6 +712,7 @@ create synonym cancel_seq for classic_dba.cancel_seq;
 create synonym mileage_seq for classic_dba.mileage_seq;
 create synonym img_path_seq for classic_dba.img_path_seq;
 
+
 -- 테이블 수정
 
 conn classic_dba/dba1234
@@ -700,7 +735,7 @@ conn classic_admin/admin1234
 
 -- 주문 db
 insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
-values (paid_seq.nextval,1,1,null,2017110812345678,'김경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','벨고장났어요',to_date('2017-11-09','yyyy-mm-dd'),0,100000,90000,to_date('2017-11-08','yyyy-mm-dd'),1,'김경미');
+values (paid_seq.nextval,1,1,null,2017110812345678,'김경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','벨고장났어요',to_date('2017-11-09','yyyy-mm-dd'),0,100000,90000,to_date('2017-11-08','yyyy-mm-dd'),1,'김경미',);
 insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
 values (paid_seq.nextval,1,1,null,2017112900000001,'박경미',01012341234,11758,'경기도 의정부시 장암동','**아파트 101동 504호','배송 전 연락 부탁드려요',null,0,100000,90000,to_date('2017-11-29','yyyy-mm-dd'),0,'함혜진');
 insert into paid(num,mem_num,product_num,coupon_num, order_num, name, phone, zip_code, base_addr, detail_addr, memo, paid_date, pay_with, order_money, payment, order_date, order_state,deposit_name) 
@@ -808,6 +843,8 @@ INSERT INTO cancel VALUES(cancel_seq.nextval ,49,sysdate,'20180109');
 -- 수정사항: 주문테이블(paid) 주문번호에 uk 빼야함니다!!
 -- 주문디비 다 수정함!! 
 -- 18/01/09 DB 수정 
+
+conn classic_dba/dba1234
 ALTER TABLE product DROP COLUMN sizu;
 CREATE sequence sizu_seq start WITH 1 increment BY 1;
 CREATE table sizu(
@@ -816,8 +853,6 @@ CREATE table sizu(
 	product_num number(8) constraint sizu_fk_product_num references product(num)
 );
 INSERT INTO sizu VALUES(sizu_seq.nextval, 'FREE', (Select num from product where name='상품명1'));
-
-INSERT INTO sizu VALUES(sizu_seq.nextval, 'S', (Select num from product where name='상품명1'));
 INSERT INTO sizu VALUES(sizu_seq.nextval, 'M', (Select num from product where name='상품명1'));
 INSERT INTO sizu VALUES(sizu_seq.nextval, 'L', (Select num from product where name='상품명1'));
 INSERT INTO sizu VALUES(sizu_seq.nextval, 'FREE', (Select num from product where name='상품명2'));
@@ -1003,6 +1038,10 @@ INSERT INTO sizu VALUES(sizu_seq.nextval, 'FREE', (Select num from product where
 INSERT INTO sizu VALUES(sizu_seq.nextval, 'FREE', (Select num from product where name='상품명51'));
 INSERT INTO sizu VALUES(sizu_seq.nextval, 'FREE', (Select num from product where name='상품명52'));
 
+conn classic_admin/admin1234
+create synonym sizu for classic_dba.sizu;
+create synonym sizu_seq for classic_dba.sizu_seq;
+
 --혜진 필요 DB
 INSERT INTO member VALUES(member_seq.nextval, 'member4', '1234', '01099998888', 'member4@c.com', 3, sysdate);
 INSERT INTO product VALUES(product_seq.nextval,'0000053',1,'상품명53','서브 설명','메인 설명',100000,50000,'FREE',999,1,1,1,1,sysdate,0,sysdate);
@@ -1024,3 +1063,8 @@ INSERT INTO colour VALUES(colour_seq.nextval, (select num from product where cod
 INSERT INTO wish VALUES(wish_seq.nextval ,(select num from product where code='0000053'), (select num from member where id='member4'), sysdate);
 INSERT INTO wish VALUES(wish_seq.nextval ,(select num from product where code='0000057'), (select num from member where id='member4'), sysdate);
 INSERT INTO wish VALUES(wish_seq.nextval ,(select num from product where code='0000057'), (select num from member where id='member4'), sysdate);
+
+--shop guide temporary data insert
+insert into shop_guide values(shop_guide_seq.nextval, 1, 0, '배송안내 샵가이드 테스트 데이터 입니다.', '환불규정 안내 샵가이드 테스트 데이터입니다.','교환 안내 샵가이드 테스트 데이터입니다.', '고장수리 안내 샵가이드 테스트 데이터입니다.','탈퇴 안내 샵가이드 테스트 데이터입니다.' )
+
+

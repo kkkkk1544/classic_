@@ -13,36 +13,16 @@ public class MemberDAOImp implements MemberDAO{
 	public MemberDAOImp(Connection conn) {
 		this.conn = conn;
 	}
-
-//주연 시작
-	//로그인
+	
 	@Override
-	public MemberDTO memberSelect(String id, String pw) throws Exception{
+	public MemberDTO memberSelect(String id, String pw) throws Exception {
 		MemberDTO memDTO = null;
-		String sql = "SELECT num, id, grade FROM member WHERE id=? AND pw=?";
+		String sql = "SELECT * FROM member WHERE id=? AND pw=?";
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, id);
 		pstmt.setString(2, pw);
-		rs = pstmt.executeQuery();
-		if(rs.next()) {
-			memDTO = new MemberDTO();
-			memDTO.setNum(rs.getInt("num"));
-			memDTO.setId(rs.getString("id"));
-			memDTO.setGrade(rs.getInt("grade"));
-		}
-		return memDTO;
-	}
-	//id 중복체크
-	@Override
-	public MemberDTO memberSelect(String id) throws Exception {
-		MemberDTO memDTO = null;
-		String sql = "SELECT * FROM member WHERE id=?";
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		pstmt = conn.prepareStatement(sql);
-		pstmt.setString(1, id);
 		rs = pstmt.executeQuery();
 		if(rs.next()) {
 			memDTO = new MemberDTO();
@@ -56,7 +36,57 @@ public class MemberDAOImp implements MemberDAO{
 		}
 		return memDTO;
 	}
-	//회원가입
+	
+	@Override
+	public MemberDTO memberSelect(int num) throws Exception {
+		MemberDTO memDTO = null;
+		String sql = "SELECT * FROM member WHERE num=?";
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, num);
+		rs = pstmt.executeQuery();
+		if(rs.next()) {
+			memDTO = new MemberDTO();
+			memDTO.setNum(rs.getInt("num"));
+			memDTO.setId(rs.getString("id"));
+			memDTO.setPw(rs.getString("pw"));
+			memDTO.setPhone(rs.getString("phone"));
+			memDTO.setMail(rs.getString("mail"));
+			memDTO.setGrade(rs.getInt("grade"));
+			memDTO.setIndate(rs.getDate("indate"));
+		}
+		return memDTO;
+	}
+	
+	@Override
+	public int selectMemId(String id) throws Exception {
+		int idNumber = 0;
+		String sql = "SELECT * FROM member WHERE id=?";
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, id);
+		rs = pstmt.executeQuery();
+		if(rs.next()) {
+			idNumber = 1;
+		}
+		return idNumber;
+	}
+	@Override
+	public int selectMemMail(String mail) throws Exception {
+		int mailNumber = 0;
+		String sql = "SELECT * FROM member WHERE mail=?";
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, mail);
+		rs = pstmt.executeQuery();
+		if(rs.next()) {
+			mailNumber = 1;
+		}
+		return mailNumber;
+	}
 	@Override
 	public int memberInsert(MemberDTO memDTO) throws Exception {
 		int insert = 0;
@@ -71,22 +101,17 @@ public class MemberDAOImp implements MemberDAO{
 		insert = pstmt.executeUpdate();
 		return insert;
 	}
-
 	@Override
-	public MemberDTO selectMail(String mail) throws Exception {
-		MemberDTO memDTO = null;
-		String sql = "SELECT num FROM member WHERE mail=?";
+	public int memberUpdate(MemberDTO memDTO) throws Exception {
+		int update = 0;
+		String sql = "UPDATE member SET pw=?, phone=? WHERE num=?";
 		PreparedStatement pstmt = null;
-		ResultSet rs = null;
 		pstmt = conn.prepareStatement(sql);
-		pstmt.setString(1, mail);
-		rs = pstmt.executeQuery();
-		if(rs.next()) {
-			memDTO = new MemberDTO();
-			memDTO.setNum(rs.getInt("num"));
-		}
-		return memDTO;
+		pstmt.setString(1, memDTO.getPw());
+		pstmt.setString(2, memDTO.getPhone());
+		pstmt.setInt(3, memDTO.getNum());
+		update = pstmt.executeUpdate();
+		return update;
 	}
-//주연 끝	
 
 }

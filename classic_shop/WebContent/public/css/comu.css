@@ -31,7 +31,7 @@
 }
 
 .qna_btn_group{
-	margin-left: 90%;
+	margin-left: 85%;
 	margin-bottom: 3%;
 }
 
@@ -49,14 +49,6 @@
 
 #qnaReplyId{
 	text-align: right;
-}
-
-#subjectField{
-	padding-right: 30px;
-}
-
-#optionField{
-	width: 50%;
 }
 
 .pwd_popup_form{

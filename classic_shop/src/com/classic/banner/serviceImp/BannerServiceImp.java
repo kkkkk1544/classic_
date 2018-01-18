@@ -1,8 +1,6 @@
 package com.classic.banner.serviceImp;
 
 import java.sql.Connection;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.classic.banner.daoImp.BannerDAOImp;
 import com.classic.banner.dto.BannerDTO;
@@ -14,17 +12,18 @@ public class BannerServiceImp implements BannerService{
 	static Connection conn = null;
 	
 	@Override
-	public List<BannerDTO> readBanner() {
-		List<BannerDTO> bannerList = new ArrayList<BannerDTO>();
+	public BannerDTO readBanner() {
+		BannerDTO bannerDTO = null;
 		try {
 			conn = ClassicDBConnection.getConnection();
-			bannerList = new BannerDAOImp(conn).selectBanner();
+			bannerDTO = new BannerDAOImp(conn).selectBanner();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			ClassicDBConnection.close(conn);
 		}
-		return bannerList;
+		return bannerDTO;
 	}
+	
 
 }

@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.classic.order.dao.OrderDAO;
-import com.classic.order.dto.ListDTO;
+import com.classic.order.dto.PaidDTO;
+import com.classic.util.ClassicDBConnection;
 
 public class OrderDaoImp implements OrderDAO{
 	
@@ -16,49 +17,71 @@ public class OrderDaoImp implements OrderDAO{
 	public OrderDaoImp(Connection conn) {
 		this.conn = conn;
 	}
+	@Override
+	public List<PaidDTO> ListSelect(int mem_num) throws Exception {
+		List<PaidDTO> orderList = new ArrayList<PaidDTO>();
+		String sql ="select p.num, p.order_num, p.payment, p.order_state, p.mem_num, " + 
+				"g.num as g_num, g.name as g_name, d.state as deliv_state, d.deliv_num " + 
+				"from paid p, member m, product g, delivery d " + 
+				"where p.product_num=g.num " + 
+				"and p.mem_num=m.num " + 
+				"and p.num=d.paid_num(+) " + 
+				"and mem_num=?";
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, mem_num);
+		rs=pstmt.executeQuery();
+		while(rs.next()) {
+			PaidDTO order = new PaidDTO();
+			order.setNum(rs.getInt("num"));
+			order.setOrder_num(rs.getString("order_num"));
+			order.setPayment(rs.getInt("payment"));
+			order.setOrder_state(rs.getInt("order_state"));
+			order.setMem_num(rs.getInt("mem_num"));
+			order.setG_num(rs.getInt("g_num"));
+			order.setG_name(rs.getString("g_name"));
+			order.setDeliv_state(rs.getInt("deliv_state"));
+			order.setDeliv_num(rs.getString("deliv_num"));
+			orderList.add(order);
+		}
+		
+		/*System.out.println("DaoImp_orderList: "+orderList);*/
+		return orderList;
+	}
+	@Override
+	public int cancelUpdate(PaidDTO paidDto) throws Exception {
+		//주문취소
+		int update=0;
+		String sql="UPDATE paid SET order_state=-2 " + 
+				"WHERE order_num=?";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, paidDto.getOrder_num());
+		update=pstmt.executeUpdate();
+		
+		return update;
+	}
+	@Override
+	public int shippingUpdate(String order_num) throws Exception {
+		int update=0;
+		return update;
+	}
+	
+	
 	
 	//▼ 이거 나중에 개발 다 끝났을 땐 지우셔야 돼요(다른 곳에 있는 syso 포함!)
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		Connection conn=null;
 		try {
-			conn=ClassicConnection.getConnection();
+			conn=ClassicDBConnection.getConnection();
 			OrderDAO dao = new OrderDaoImp(conn);
 			System.out.println(dao.ListSelect(1));
+			//System.out.println(dao.DetailSelect(1, 43));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
+	}*/
 
-	@Override
-	public List<ListDTO> ListSelect(int mem_num) throws Exception {
-		List<ListDTO> orderList = new ArrayList<ListDTO>();
-		String sql="select p.num paid_num,g.name as g_name,p.payment,p.order_state " + 
-				"from paid p, product g, member m " + 
-				"where m.num=? and " + 
-				"p.product_num=g.num and " + 
-				"p.mem_num=m.num";
-		PreparedStatement pstmt = conn.prepareStatement(sql);
-		pstmt.setInt(1, mem_num);
-		ResultSet rs = pstmt.executeQuery();
-		while(rs.next()) {
-			ListDTO order = new ListDTO();
-			order.setPaid_num(rs.getInt("paid_num"));
-			order.setG_name(rs.getString("g_name"));
-			order.setG_color(rs.getString("g_color"));
-			order.setG_size(rs.getString("g_size"));
-			order.setPayment(rs.getInt("payment"));
-			order.setOrder_state(rs.getInt("order_state"));
-			orderList.add(order);
-		}
-		System.out.println("orderList: "+orderList);
-		return orderList;
-	}
-
-	@Override
-	public List<ListDTO> DetailSelect() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 }

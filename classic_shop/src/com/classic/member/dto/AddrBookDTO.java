@@ -18,6 +18,10 @@ public class AddrBookDTO {
 	private String base_addr;
 	private String detail_addr;
 	
+/*	private String addrbook;
+	private String phone;*/
+	
+	
 	public int getNum() {
 		return num;
 	}
@@ -48,9 +52,29 @@ public class AddrBookDTO {
 	public void setDetail_addr(String detail_addr) {
 		this.detail_addr = detail_addr;
 	}
+/*	public String getAddrbook() {
+		return addrbook;
+	}
+	public void setAddrbook(String addrbook) {
+		this.addrbook = addrbook;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}*/
+/*	@Override
+	public String toString() {
+		return "{\"num\":\"" + num + "\", \"mem_num\":\"" + mem_num + "\", \"zip_code\":\"" + zip_code
+				+ "\", \"base_addr\":\"" + base_addr + "\", \"detail_addr\":\"" + detail_addr + "\", \"addrbook\":\""
+				+ addrbook + "\", \"phone\":\"" + phone + "\"}";
+	}*/
 	@Override
 	public String toString() {
-		return "AddrBookDTO [num=" + num + ", mem_num=" + mem_num + ", zip_code=" + zip_code + ", base_addr="
-				+ base_addr + ", detail_addr=" + detail_addr + "]";
+		return "{\"num\":\"" + num + "\", \"mem_num\":\"" + mem_num + "\", \"zip_code\":\"" + zip_code
+				+ "\", \"base_addr\":\"" + base_addr + "\", \"detail_addr\":\"" + detail_addr + "\"}";
 	}
+	
+
 }

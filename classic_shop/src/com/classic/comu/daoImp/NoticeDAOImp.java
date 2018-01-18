@@ -7,6 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+
+
+import com.classic.common.dto.PagingDTO;
+
 import com.classic.comu.dao.NoticeDAO;
 import com.classic.comu.dto.NoticeDTO;
 import com.classic.util.ClassicDBConnection;
@@ -20,7 +24,7 @@ public class NoticeDAOImp implements NoticeDAO{
 		this.conn = conn;
 	}
 	
-	@Override
+/*	@Override
 	public List<NoticeDTO> selectNotice() throws Exception{
 		List<NoticeDTO> noticeList = new ArrayList<NoticeDTO>();
 		String sql = "SELECT n.num, m.id as name, n.title, n.count, n.indate"
@@ -41,7 +45,38 @@ public class NoticeDAOImp implements NoticeDAO{
 			noticeList.add(noticeDTO);
 		}
 		return noticeList;
+	}*/
+	
+	@Override
+	public List<NoticeDTO> selectNotice(PagingDTO pagingDTO) throws Exception {
+		List<NoticeDTO> noticeList = new ArrayList<NoticeDTO>();
+		String sql = "SELECT * FROM"
+					+ " (SELECT ROWNUM row_num, notice.* FROM"
+						+ " (SELECT n.num, m.id as name, n.title, n.count, n.indate"
+						+ " FROM notice n, member m"
+						+ " WHERE n.mem_num=m.num"
+						+ " ORDER BY n.num DESC) notice"
+					+ " WHERE ROWNUM <=?)"
+				+ " WHERE row_num >=?";
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, pagingDTO.getEndRecord());
+		pstmt.setInt(2, pagingDTO.getStartRecord());
+		rs = pstmt.executeQuery();
+		while(rs.next()) {
+			NoticeDTO noticeDTO = new NoticeDTO();
+			noticeDTO.setRow_num(rs.getInt("row_num"));
+			noticeDTO.setNum(rs.getInt("num"));
+			noticeDTO.setName(rs.getString("name"));
+			noticeDTO.setTitle(rs.getString("title"));
+			noticeDTO.setCount(rs.getInt("count"));
+			noticeDTO.setIndate(rs.getDate("indate"));
+			noticeList.add(noticeDTO);
+		}
+		return noticeList;
 	}
+
 
 	@Override
 	public NoticeDTO selectNotice(int num) throws Exception {
@@ -66,9 +101,25 @@ public class NoticeDAOImp implements NoticeDAO{
 		}
 		return noticeDTO;
 	}
-}
-	
 
+
+
+
+
+	@Override
+	public int noticeTotalRecord() throws Exception {
+		int totalRecord = 0;
+		String sql = "SELECT COUNT(*) as total FROM notice";
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		pstmt = conn.prepareStatement(sql);
+		rs = pstmt.executeQuery();
+		if(rs.next()) {
+			totalRecord = rs.getInt("total");
+		}
+		return totalRecord;
+	}
+}
 	
 //유정이가 전에 해놓은 거
 /*	@Override
