@@ -48,6 +48,7 @@ public class CartListController extends HttpServlet {
 		resp.addCookie(priceCookie);
 		resp.addCookie(pNameCookie);
 		resp.addCookie(quentityCookie);
-		resp.sendRedirect("order/cart/cart.jsp");
+		req.getRequestDispatcher("order/cart/cart.jsp").forward(req, resp);
+		//resp.sendRedirect("order/cart/cart.jsp");
 	}
 }
