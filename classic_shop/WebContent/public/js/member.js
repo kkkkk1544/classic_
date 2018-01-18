@@ -185,3 +185,7 @@ var memModify = function(memModifyForm){
 	}
 	http.send();
 }
+
+//배송주소록 등록
+
+//배송주소록 삭제

@@ -39,7 +39,7 @@
 				</tbody>
 			</table>
  			<div class="adress_btn_group">
-				<button class="btn btn-default" type="button" onclick="location.href='<c:url value='/view/address/register.do'/>'">주소 등록</button>
+				<button class="btn btn-default" type="button" onclick="location.href='<c:url value='/user/address/register.do'/>'">주소 등록</button>
 			</div>
 		</div>
 <%-- 		<!-- RECENT ADDRESS -->
