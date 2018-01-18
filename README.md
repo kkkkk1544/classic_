@@ -1,7 +1,7 @@
 ### CLASSIC SHOPPING MALL SITE *(ver.USER)*
 ***
 
-> 
+> INDEX
 
 1. project info
 2. team info
