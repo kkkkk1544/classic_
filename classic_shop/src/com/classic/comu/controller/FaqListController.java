@@ -1,6 +1,7 @@
 package com.classic.comu.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,19 +9,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.classic.comu.dto.NoticeDTO;
-import com.classic.comu.serviceImp.NoticeServiceImp;
+import com.classic.comu.dto.FaqDTO;
+import com.classic.comu.serviceImp.FaqServiceImp;
 
-@WebServlet("/notice/read.do")
-public class NoticeReadAJAX extends HttpServlet{
-	
+
+@WebServlet("/community/faq.do")
+public class FaqListController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
-		String str_num = req.getParameter("num");
-		NoticeDTO noticeDTO = new NoticeServiceImp().readNotice(Integer.parseInt(str_num));
-		resp.setCharacterEncoding("UTF-8");
-		resp.setContentType("application/json");
-		resp.getWriter().append(noticeDTO.toString());
+		List<FaqDTO> faqList = new FaqServiceImp().readFaq();
+		req.setAttribute("faqList", faqList);
+		req.getRequestDispatcher("/view/comu/faqList.jsp").forward(req, resp);
 	}
 }
