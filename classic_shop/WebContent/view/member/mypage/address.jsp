@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
- <link rel="stylesheet" href="<c:url value='/public/css/member.css' />">
+<link rel="stylesheet" href="<c:url value='/public/css/member.css' />">
 <script src="<c:url value='/public/js/member.js'/>"></script>
 </head>
 <body>   
@@ -19,7 +19,7 @@
 							</label>
 						</th>
 						<th class="col-sm-1">No.</th>
-						<th class="col-sm-3">주소d</th>
+						<th class="col-sm-3">주소</th>
 						<th class="col-sm-1">삭제</th>
 					</tr>
 				</tbody>

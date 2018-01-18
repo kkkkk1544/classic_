@@ -168,21 +168,21 @@
 }
 .recentaddr_wrap .table{	
 	border-top: none;
-	border-bottom: 1px solid #e6e6e6;
 }
 .table.address_table{
-	border-top: 3px solid #000;
-	border-bottom: 4px solid #000;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
 }
 .table.address_table label{
 	margin-bottom: 0px;
 }
-/* .table>tbody>tr>td{
-	vertical-align: bottom;
+ .table>tbody>tr>td{
+	vertical-align: middle;
 }
+
 .table>tbody>tr>th{
-	vertical-align: bottom;
-} */
+	vertical-align: middle;
+}
 
 /* 배송주소록 등록 */
 
