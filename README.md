@@ -1,4 +1,7 @@
 ### CLASSIC SHOPPING MALL SITE *(ver.USER)*
+***
+
+> 
 
 1. project info
 2. team info
