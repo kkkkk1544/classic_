@@ -29,7 +29,6 @@ public class CartListController extends HttpServlet {
 		Cookie priceCookie = null;
 		Cookie quentityCookie = null;
 		if(memNum!=0 ||productNum != 0) {
-			
 			try {
 				conn = ClassicDBConnection.getConnection();
 				CartDao cart = new CartDaoImp(conn);
