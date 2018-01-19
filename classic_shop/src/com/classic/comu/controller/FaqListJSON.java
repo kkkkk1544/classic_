@@ -20,7 +20,7 @@ import com.classic.util.ClassicDBConnection;
 
 @WebServlet("/community/faq.do")
 public class FaqListJSON extends HttpServlet{
-	@Override											//git 01-17
+	@Override											
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		List<FaqDTO> faqList = new FaqServiceImp().readFaq();
 		String str_num=req.getParameter("num");
