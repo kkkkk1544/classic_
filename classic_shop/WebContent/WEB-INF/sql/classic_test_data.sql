@@ -918,6 +918,8 @@ INSERT INTO bank VALUES(bank_seq.nextval ,'우리은행' ,'1002536238755','클�
 INSERT INTO bank VALUES(bank_seq.nextval ,'신한은행' ,'22875504956326','클래식');
 INSERT INTO bank VALUES(bank_seq.nextval ,'국민은행' ,'5678920563257','클래식');
 
+
+---------------------!!!!!!!!DO NOT INSERT DATA DOWN BELOW!!!!!!!!!!!!------------------------
 --delivery// 요 밑에 디비 못넣음 혜진 체크용 
 INSERT INTO delivery VALUES(delivery_seq.nextval ,41 ,'CJ택배','6898000144426575' ,1 ,sysdate , NULL);
 INSERT INTO delivery VALUES(delivery_seq.nextval ,52 ,NULL,NULL ,0 ,sysdate , NULL);
@@ -935,6 +937,8 @@ INSERT INTO refund VALUES(refund_seq.nextval ,47,sysdate,5,NULL,2,'우리은행'
 --cancel
 INSERT INTO cancel VALUES(cancel_seq.nextval ,48,sysdate,NULL);
 INSERT INTO cancel VALUES(cancel_seq.nextval ,49,sysdate,'20180109');
+
+---------------------!!!!!!!!DO NOT INSERT DATA ABOVE!!!!!!!!!!!! 디비안들어가는 거 확인함------------------------
 
 --혜진 필요 DB
 INSERT INTO member VALUES(member_seq.nextval, 'member4', '1234', '01099998888', 'member4@c.com', 3, sysdate);
@@ -957,4 +961,3 @@ INSERT INTO colour VALUES(colour_seq.nextval, (select num from product where cod
 INSERT INTO wish VALUES(wish_seq.nextval ,(select num from product where code='0000053'), (select num from member where id='member4'), sysdate);
 INSERT INTO wish VALUES(wish_seq.nextval ,(select num from product where code='0000057'), (select num from member where id='member4'), sysdate);
 INSERT INTO wish VALUES(wish_seq.nextval ,(select num from product where code='0000057'), (select num from member where id='member4'), sysdate);
-
